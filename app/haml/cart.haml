@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+  %body.b-page
+    .b-page__content
+      
+      +include 'app/haml/shared/_navbar.haml'
+
+      %section.b-cart
+        .b-cart__content
+          %h1.b-cart__title(data-title="Корзина номер 123") Корзина
+          %form
+            %ul.b-cart__list
+              - for i in [1..5]
+                %li.b-cart__item{cart-item: i, data-item-price: '12000', data-item-total-price: '24000'}
+                  .b-cart__item__col-img
+                    %img.b-cart__item__img{ src: "http://placehold.it/92x92", alt: 'cart item'}
+
+                  .b-cart__item__col-content
+                    %h2.b-cart__item__title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .b-cart__item__option
+                      Размер 16
+                    .b-cart__item__option
+                      Арт. 123456
+
+                  .b-cart__item__col-quantity
+                    .b-cart__item__quantity
+                      %span.b-cart__item__quantity__text{cart-item-block: 'basic'}
+                        Количество
+                      .b-cart__item__quantity__select
+                        %select{cart-item-selector: 'basic'}
+                          %option 1
+                          %option{selected} 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                          %option 10
+
+                  .b-cart__item__col-price  
+                    .b-cart__item__price
+                      24 000 руб.
+
+                  .b-cart__item__col-remove  
+                    %a.b-cart__item__remove{href:'#'}
+                      %img{src: 'images/cross_white.svg', alt: ''}
+
+            .b-cart__total-sum
+              Итого:
+              %span{cart-total: true} 24 000 руб.
+
+            .b-cart__action
+              .b-cart__action__container
+                .b-cart__action__col-clear
+                  %a.b-cart__action__clear.b-btn.b-btn_trans{href: 'welcome.html'}
+                    Очистить корзину
+
+                .b-cart__action__col-code
+                  %input.b-cart__action__code{type: 'text', placeholder: 'Промо-код (если есть)'}
+                  %button.b-cart__action__submit.b-btn{type: 'submit'}
+                    Оформить заказ
+
+
+      +include 'app/haml/shared/_footer.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

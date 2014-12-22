@@ -1,0 +1,9 @@
+.b-slider#product-slider
+  - for i in [1..8]
+    %a.b-slider__item{lightbox: true, href: 'http://citycycle.ru/upload/product_images/13976/ac433b32eeb1e39147083a6d0c6cbfe9_0x0.jpg', rel: 'photo-stack'}
+      %img{src: 'http://citycycle.ru/upload/product_images/13976/ac433b32eeb1e39147083a6d0c6cbfe9_0x0.jpg', alt: ''}
+
+.b-slider.b-slider_thumbs#product-thumbs
+  - for i in [1..8]
+    %a.b-slider__item{lightbox: true, href: 'http://citycycle.ru/upload/product_images/13976/ac433b32eeb1e39147083a6d0c6cbfe9_0x0.jpg', rel: 'photo-stack'}
+      %img{src: 'http://citycycle.ru/upload/product_images/13976/ac433b32eeb1e39147083a6d0c6cbfe9_0x0.jpg', alt: ''}

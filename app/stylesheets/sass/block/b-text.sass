@@ -1,0 +1,71 @@
+.b-text
+  font-size: 1.143em
+  @include grid-media-query("palm")
+    font-size: 1em
+  h1
+    font-size: 3.000em
+    margin: 0 0 38px
+    line-height: 1.2
+    @include grid-media-query("palm")
+      font-size: 2em
+  
+  h2
+    font-size: 1.625em
+    font-weight: normal
+    margin: 0 0 50px
+    @include grid-media-query("palm")
+      font-size: 1.4em
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    text-align: center
+  
+  p
+    margin: 20px 0
+
+  ul
+    padding-left: 1em
+    li
+      margin: 1em 0
+
+  table
+    width: 100%
+    th,
+    td
+      padding: 15px
+
+    th
+      border-bottom: 1px solid #e2e2e2
+      text-align: left
+      font-weight: normal
+
+  &__image
+    margin: 0 -140px
+    overflow: hidden
+    @include grid-media-query("lap")
+      margin: 0 -20px
+    @include grid-media-query("palm")
+      margin: 0
+    &__container
+      @extend %grid
+    &__wrap
+      @extend %grid__item
+      @extend %one-half
+      @extend %palm--one-whole
+    img
+      width: 100%
+      max-width: 100%
+    @include grid-media-query("lap")
+      margin-left: 0
+      margin-right: 0
+
+.map-embed
+  overflow: hidden
+  height: 400px
+  max-width: 800px
+  width: 100%
+  margin: 40px auto

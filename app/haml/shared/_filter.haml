@@ -1,0 +1,115 @@
+.b-full-filter
+  
+  %input.b-full-filter__toggle#filter-toggle{type: 'checkbox'}
+  %label.b-full-filter__trigger{for: 'filter-toggle'}
+    %span.b-btn.b-full-filter__trigger__action.b-full-filter__trigger__action_open Показать фильтр
+    %span.b-btn.b-full-filter__trigger__action.b-full-filter__trigger__action_close Скрыть фильтр
+  
+  %ul.b-full-filter__list-wrap
+    %li.b-full-filter__item
+      .b-full-filter__item__title Текущий выбор
+      .b-full-filter__widget
+        %span.b-full-filter__value Цена от 20 000 до 5000 Р
+        %span.b-full-filter__value Категория: гибридные
+        %span.b-full-filter__value Материал: карбон
+
+    %li.b-full-filter__item
+      .b-full-filter__item__title Показывать
+      .b-full-filter__widget
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val Все
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val В наличии
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val Под заказ
+        .b-full-filter__notifiction-wrap
+          .b-full-filter__notifiction 
+            Показать
+            %a{href: '#'} 12 вариантов
+          %label.b-cbox
+            %input.b-cbox__native{type: 'checkbox'}
+            .b-cbox__val Распродажа
+            
+    %li.b-full-filter__item.b-full-filter__item_price
+      .b-full-filter__item__title Ценовой диапазон
+      .b-full-filter__widget
+        .b-full-filter__slider
+          .b-full-filter__slider__value
+            20 000 
+            %span  – 
+            90 000 Р
+          .b-full-filter__slider__embed(range_slider)
+
+    %li.b-full-filter__item
+      .b-full-filter__item__title Показывать
+      .b-full-filter__widget
+        - for i in [1..3]
+          %label.b-cbox
+            %input.b-cbox__native{type: 'checkbox', 'checked': true}
+            .b-cbox__val Все
+          %label.b-cbox
+            %input.b-cbox__native{type: 'checkbox'}
+            .b-cbox__val Гибридные
+          %label.b-cbox
+            %input.b-cbox__native{type: 'checkbox'}
+            .b-cbox__val Складные
+          %label.b-cbox
+            %input.b-cbox__native{type: 'checkbox'}
+            .b-cbox__val Электро
+          
+    %li.b-full-filter__item
+      .b-full-filter__item__title Цвет
+      .b-full-filter__widget
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #fe2a2a'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #feac2a'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #2fe1ec'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #eee'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #aeaeae'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val{style: 'background-color: #efefef'}
+        %label.b-cbox.b-cbox_color
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val
+
+    %li.b-full-filter__item
+      .b-full-filter__item__title Материал рамы
+      .b-full-filter__widget
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val Сталь
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val Карбон
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val Алюминий
+
+    %li.b-full-filter__item
+      .b-full-filter__item__title Модельный ряд
+      .b-full-filter__widget
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val 2014
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val 2013
+        %label.b-cbox
+          %input.b-cbox__native{type: 'checkbox'}
+          .b-cbox__val 2012
+
+    %li.b-full-filter__item
+      %button.b-full-filter__submit.b-btn{type: 'submit'} Показать

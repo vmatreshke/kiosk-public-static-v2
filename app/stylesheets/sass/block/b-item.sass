@@ -1,5 +1,6 @@
 .b-item
   display: block
+  font-size: 1rem
   &__pic
     width: 100%
     vertical-align: top
@@ -19,8 +20,13 @@
   &__name
     margin: 0
     font-weight: normal
-    font-size: 1.143em
+    font-size: 1em
 
   &__price
     // margin: 0.5em 0 0
-    font-size: 1.143em
+    font-size: 1em
+
+  @include grid-media-query("palm")
+    &__name,
+    &__price
+      font-size: .9em

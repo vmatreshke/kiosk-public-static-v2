@@ -52,7 +52,7 @@
       &-back,
       &-submit
         @extend %grid__item
-      
+
       &-clear
         @extend %six-twelfths
         @extend %lap--four-twelfths
@@ -110,6 +110,7 @@
   &__item
     @extend %grid
     padding-bottom: 25px
+    font-size: 0
     position: relative
 
     &__img
@@ -118,15 +119,15 @@
     &__title,
     &__option
       margin: 0
-      font-size: 1.143em
+      font-size: 1rem
       @include grid-media-query("palm")
-        font-size: 1em
+        font-size: 0.875rem
 
     &__option
       margin-top: 3px
 
     &__price
-      font-size: 1.429em
+      font-size: 1.250rem
       margin-top: -5px
 
     &__quantity
@@ -146,6 +147,7 @@
         select
           width: 100%
           box-sizing: border-box
+          font-size: 0.875rem
 
     &__remove
       display: block

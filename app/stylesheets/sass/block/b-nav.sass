@@ -1,24 +1,23 @@
 .b-nav
   @extend .b-layout
   margin-top: 30px
-  border: 1px solid $basicBorderColor
-  border-width: 1px 0
   position: relative
   z-index: 5
-  @include grid-media-query("lap")
-    display: none
-  @include grid-media-query("palm")
+  @include grid-media-query((lap,palm))
     display: none
   &__list
     list-style: none
     margin: 0
     padding: 0
     text-align: center
+    border: 1px solid $basicBorderColor
+    border-width: 1px 0
     &_sub
       position: absolute
       top: 100%
       left: 15px
       background-color: rgba(0, 0, 0, 0.9)
+      border: none
       display: none
       padding: 21px 24px 19px
       white-space: nowrap
@@ -47,6 +46,8 @@
           border-top: 1px solid rgba(255, 255, 255, 0.1)
           &:first-child
             border-top: 0
+        &__list
+          border: none
     &__col
       width: 240px
       display: inline-block
@@ -62,6 +63,34 @@
     vertical-align: top
     text-align: left
     font-size: 1.143em
+    &_has-banner
+      position: absolute
+      right: 130px
+      top: -13px
+      .b-nav__link
+        width: 74px
+        padding: 10px 14px 18px
+        background-color: #2bcd7f
+        line-height: 15px
+        text-align: center
+        position: relative
+        &:hover
+          img
+            margin-top: 10px
+        img
+          display: block
+          margin: 0 auto 13px
+          transition: margin-top .2s ease
+        &:after
+          content: ""
+          width: 0
+          height: 0
+          position: absolute;
+          top: 100%
+          left: 0
+          border-top: 11px solid #2bcd7f
+          border-left: 102px solid transparent
+
     &_has-sub
       position: relative
       &:before

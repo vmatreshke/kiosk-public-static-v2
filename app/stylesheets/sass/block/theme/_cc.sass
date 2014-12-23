@@ -59,10 +59,20 @@
       @extend %palm--one-whole
 
   .b-nav
-    border-top: none
     margin: 0
     padding-left: 0
+    padding-right: 0
+    &__item
+      &_has-banner
+        .b-nav__link
+          color: #fff
+          font-size: 12px
+          // font-family: "Apercu Pro", Arial, Helvetica, sans-serif
+          font-weight: normal
+          padding: 20px 14px 18px
+          text-transform: none
     &__list
+      border-top: none
       text-align: left
       &_sub
         .b-nav__link

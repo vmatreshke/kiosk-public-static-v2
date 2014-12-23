@@ -10,7 +10,7 @@ $ ->
   })
 
   if(searchBlock.length)
-    searchBlock.clone().appendTo(menuCopy.find('#mm-0')).wrap('<li/>')
+    searchBlock.clone().prependTo(menuCopy.find('#mm-0')).wrap('<li/>')
 
   navOpen = $('[ks-open-nav]')
 

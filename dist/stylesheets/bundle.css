@@ -1383,7 +1383,7 @@ html.mm-opened.mm-black .mm-page {
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -1395,7 +1395,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 body {
   margin: 0; }
 
@@ -1407,7 +1407,7 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 45, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 
@@ -1415,7 +1415,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 57, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 57, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 audio, canvas, progress, video {
   display: inline-block;
   /* 1 */
@@ -1426,7 +1426,7 @@ audio, canvas, progress, video {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 67, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 67, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -1435,7 +1435,7 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-/* line 78, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 78, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 [hidden], template {
   display: none; }
 
@@ -1444,14 +1444,14 @@ audio:not([controls]) {
 /**
  * Remove the gray background color from active links in IE 10.
  */
-/* line 89, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 89, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 a {
   background-color: transparent; }
 
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-/* line 98, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 98, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 a:active, a:hover {
   outline: 0; }
 
@@ -1460,21 +1460,21 @@ a:active, a:hover {
 /**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-/* line 109, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 109, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 abbr[title] {
   border-bottom: 1px dotted; }
 
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-/* line 118, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 b, strong {
   font-weight: bold; }
 
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 126, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 126, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 dfn {
   font-style: italic; }
 
@@ -1482,7 +1482,7 @@ dfn {
  * Address variable `h1` font-size and margin within `section` and `article`
  * contexts in Firefox 4+, Safari, and Chrome.
  */
-/* line 135, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 135, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -1490,7 +1490,7 @@ h1 {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 144, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 144, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 mark {
   background: #ff0;
   color: #000; }
@@ -1498,25 +1498,25 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 153, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 153, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 small {
   font-size: 80%; }
 
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 162, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 162, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline; }
 
-/* line 169, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 169, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 sup {
   top: -0.5em; }
 
-/* line 173, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 173, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 sub {
   bottom: -0.25em; }
 
@@ -1525,14 +1525,14 @@ sub {
 /**
  * Remove border when inside `a` element in IE 8/9/10.
  */
-/* line 184, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 184, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 img {
   border: 0; }
 
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 192, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 192, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -1541,14 +1541,14 @@ svg:not(:root) {
 /**
  * Address margin not present in IE 8/9 and Safari.
  */
-/* line 203, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 203, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 figure {
   margin: 1em 40px; }
 
 /**
  * Address differences between Firefox and other browsers.
  */
-/* line 211, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 211, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 hr {
   box-sizing: content-box;
   height: 0; }
@@ -1556,14 +1556,14 @@ hr {
 /**
  * Contain overflow in all browsers.
  */
-/* line 221, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 221, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 pre {
   overflow: auto; }
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-/* line 232, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 232, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 code, kbd, pre, samp {
   font-family: monospace, monospace;
   font-size: 1em; }
@@ -1580,7 +1580,7 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-/* line 256, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 256, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button, input, optgroup, select, textarea {
   color: inherit;
   /* 1 */
@@ -1592,7 +1592,7 @@ button, input, optgroup, select, textarea {
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
-/* line 266, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 266, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button {
   overflow: visible; }
 
@@ -1602,7 +1602,7 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-/* line 278, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 278, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button, select {
   text-transform: none; }
 
@@ -1613,7 +1613,7 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-/* line 293, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 293, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -1623,14 +1623,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 303, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 303, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button[disabled], html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 312, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 312, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -1639,7 +1639,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 322, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 322, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 input {
   line-height: normal; }
 
@@ -1650,7 +1650,7 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-/* line 335, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 335, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
@@ -1662,7 +1662,7 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 347, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 347, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
@@ -1671,7 +1671,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 357, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 357, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -1683,14 +1683,14 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 371, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 371, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 379, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 379, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -1700,7 +1700,7 @@ fieldset {
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  */
-/* line 390, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 390, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 legend {
   border: 0;
   /* 1 */
@@ -1710,7 +1710,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 399, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 399, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 textarea {
   overflow: auto; }
 
@@ -1718,7 +1718,7 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 408, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 408, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 optgroup {
   font-weight: bold; }
 
@@ -1727,12 +1727,12 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-/* line 419, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 419, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* line 425, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/_normalize */
+/* line 425, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/_normalize */
 td, th {
   padding: 0; }
 
@@ -1864,7 +1864,7 @@ td, th {
  * 2. Remove any margins and paddings that might affect the grid system.
  * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
-/* line 212, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 212, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
   list-style: none;
   /* [1] */
@@ -1877,9 +1877,9 @@ td, th {
   letter-spacing: -0.31em; }
 
 /* Opera hack */
-/* line 224, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 224, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
-  word-spacing: -0.43em; }
+  word-spacing: -0.04em; }
 
 /**
      * 1. Cause columns to stack side-by-side.
@@ -1888,7 +1888,7 @@ td, th {
      * 4. Full-width unless told to behave otherwise.
      * 5. Required to combine fluid widths and fixed gutters.
      */
-/* line 237, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 237, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__item, .b-item-list__paginator, .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right, .b-item-full__form__option, .b-item-full__form__submit, .b-float-cart__item__img, .b-float-cart__item__info, .b-float-cart__item__q, .b-float-cart__item__price, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__item__col-img, .b-cart__item__col-content, .b-cart__item__col-quantity, .b-cart__item__col-price, .b-cart__item__col-remove, .b-text__image__wrap, .b-feature-list > li, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav {
   display: inline-block;
   /* [1] */
@@ -1942,36 +1942,36 @@ td, th {
 /**
      * Whole
      */
-/* line 365, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 365, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__paginator, .b-page_theme-etc .b-item-full__gallery, .b-page_theme-etc .b-item-full__description {
   width: 100%; }
 
 /**
      * Halves
      */
-/* line 371, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 371, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-cart__action__col-clear, .b-cart__action__col-code, .b-item-full__gallery, .b-item-full__description, .b-item-full__form__option, .b-item-full__form__submit, .b-text__image__wrap, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search {
   width: 50%; }
 
 /**
      * Thirds
      */
-/* line 377, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 377, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__item, .b-cart__item__col-content, .b-header__search, .b-header__desc, .b-header__logo {
   width: 33.333%; }
 
-/* line 378, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 378, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-header__nav {
   width: 66.666%; }
 
 /**
      * Quarters
      */
-/* line 384, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
-.b-item-list_four-in-row .b-item-list__item, .b-float-cart__item__img, .b-cart__item__col-quantity, .b-footer__nav_soc {
+/* line 384, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+.b-item-list_four-in-row .b-item-list__item, .b-float-cart__item__img, .b-float-cart__item__price, .b-cart__item__col-quantity, .b-footer__nav_soc {
   width: 25%; }
 
-/* line 386, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 386, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-footer__nav_main {
   width: 75%; }
 
@@ -1981,11 +1981,11 @@ td, th {
 /**
      * Sixths
      */
-/* line 401, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
-.b-float-cart__item__q, .b-float-cart__item__price, .b-cart__item__col-img, .b-cart__item__col-price, .b-page_theme-cc .b-header__logo, .b-feature-list > li {
+/* line 401, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+.b-cart__item__col-img, .b-cart__item__col-price, .b-page_theme-cc .b-header__logo, .b-feature-list > li {
   width: 16.666%; }
 
-/* line 405, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 405, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-page_theme-cc .b-header__nav {
   width: 83.333%; }
 
@@ -1998,15 +1998,15 @@ td, th {
 /**
      * Twelfths
      */
-/* line 437, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
-.b-cart__item__col-remove {
+/* line 437, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+.b-float-cart__item__q, .b-cart__item__col-remove {
   width: 8.333%; }
 
-/* line 441, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 441, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-full__description-inner__col-left, .b-float-cart__item__info, .b-cart__action__col-back, .b-cart__action__col-submit, .b-modification__action {
   width: 41.666%; }
 
-/* line 443, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 443, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-full__description-inner__col-right, .b-modification__content {
   width: 58.333%; }
 
@@ -2041,16 +2041,16 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 365, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 365, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-item-full__form__option, .b-item-full__form__submit, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-text__image__wrap, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
-  /* line 371, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
-  .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-cart__item__col-price, .b-cart__item__col-quantity, .b-feature-list > li {
+  /* line 371, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-feature-list > li {
     width: 50%; }
-  /* line 377, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
-  .b-cart__item__col-img {
+  /* line 377, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  .b-cart__item__col-img, .b-cart__item__col-price, .b-cart__item__col-quantity {
     width: 33.333%; }
-  /* line 378, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 378, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-content {
     width: 66.666%; } }
 
@@ -2082,16 +2082,16 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 365, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 365, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
-  /* line 371, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 371, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item {
     width: 50%; }
-  /* line 377, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 377, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-feature-list > li, .b-cart__action__col-clear, .b-footer__nav_soc {
     width: 33.333%; }
-  /* line 378, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 378, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__action__col-code, .b-footer__nav_main {
     width: 66.666%; } }
 
@@ -2123,7 +2123,7 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 365, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 365, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right {
     width: 100%; } }
 
@@ -2155,7 +2155,7 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 384, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 384, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__action__col-clear {
     width: 25%; } }
 
@@ -2168,7 +2168,7 @@ td, th {
 /**
      * Not a particularly great selector, but the DRYest way to do things.
      */
-/* line 576, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 576, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 [class*="push--"] {
   position: relative; }
 
@@ -2226,7 +2226,11 @@ td, th {
      */
   /**
      * Twelfths
-     */ }
+     */
+  /* line 498, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  .b-cart__item__col-price, .b-cart__item__col-quantity {
+    left: 33.333%;
+    position: relative; } }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   /**
@@ -2314,7 +2318,7 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 505, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+  /* line 505, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__action__col-code {
     left: 25%;
     position: relative; } }
@@ -2328,7 +2332,7 @@ td, th {
 /**
      * Not a particularly great selector, but the DRYest way to do things.
      */
-/* line 696, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/utilities/grid */
+/* line 696, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 [class*="pull--"] {
   position: relative; }
 
@@ -2545,18 +2549,18 @@ td, th {
   font-weight: bold;
   font-style: normal; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-carousel {
   display: none;
   position: relative;
   width: 100%;
   -ms-touch-action: pan-y; }
-  /* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-carousel .owl-wrapper {
     display: none;
     position: relative;
     -webkit-transform: translate3d(0px, 0px, 0px); }
-    /* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-carousel .owl-wrapper:after {
       content: ".";
       display: block;
@@ -2564,20 +2568,20 @@ td, th {
       visibility: hidden;
       line-height: 0;
       height: 0; }
-  /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-carousel .owl-wrapper-outer {
     overflow: hidden;
     position: relative;
     width: 100%; }
-    /* line 21, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-carousel .owl-wrapper-outer.autoHeight {
       -webkit-transition: height 500ms ease-in-out;
       transition: height 500ms ease-in-out; }
-  /* line 27, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-carousel .owl-item {
     float: left; }
 
-/* line 30, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-controls {
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -2585,11 +2589,11 @@ td, th {
   -ms-user-select: none;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-  /* line 31, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-controls .owl-page, .owl-controls .owl-buttons div {
     cursor: pointer; }
 
-/* line 41, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 41, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-carousel .owl-wrapper, .owl-carousel .owl-item {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -2598,11 +2602,11 @@ td, th {
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0); }
 
-/* line 49, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-theme .owl-controls {
   margin-top: 10px;
   text-align: center; }
-  /* line 52, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls .owl-buttons div {
     color: #FFF;
     display: inline-block;
@@ -2615,17 +2619,17 @@ td, th {
     background: #869791;
     filter: Alpha(Opacity=50);
     opacity: 0.5; }
-  /* line 66, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls.clickable .owl-buttons div:hover {
     filter: Alpha(Opacity=100);
     opacity: 1;
     text-decoration: none; }
-  /* line 70, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 70, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls .owl-page {
     display: inline-block;
     zoom: 1;
     *display: inline; }
-    /* line 74, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-theme .owl-controls .owl-page span {
       display: block;
       width: 12px;
@@ -2635,15 +2639,15 @@ td, th {
       opacity: 0.5;
       border-radius: 20px;
       background: #869791; }
-    /* line 85, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 85, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-theme .owl-controls .owl-page.active span {
       filter: Alpha(Opacity=100);
       opacity: 1; }
-  /* line 88, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 88, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls.clickable .owl-page:hover span {
     filter: Alpha(Opacity=100);
     opacity: 1; }
-  /* line 91, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 91, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls .owl-page span.owl-numbers {
     height: auto;
     width: auto;
@@ -2652,25 +2656,25 @@ td, th {
     font-size: 12px;
     border-radius: 30px; }
 
-/* line 101, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 101, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-item.loading {
   min-height: 150px;
   background: url(/assets/loader.gif) center center no-repeat; }
 
-/* line 105, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 105, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-buttons {
   opacity: 0;
   -webkit-transition: opacity 0.2s ease;
           transition: opacity 0.2s ease; }
 
-/* line 111, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 111, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-carousel:hover .owl-buttons {
   opacity: 1; }
 
-/* line 114, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 114, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-theme .owl-controls {
   line-height: 0; }
-  /* line 116, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 116, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-theme .owl-controls .owl-buttons div {
     width: 44px;
     height: 100px;
@@ -2682,16 +2686,16 @@ td, th {
     background: none;
     padding: 0;
     background-size: 100% 100%; }
-    /* line 128, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 128, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-theme .owl-controls .owl-buttons div.owl-prev {
       left: 20px;
       background-image: url(/assets/ar_right-c.svg); }
-    /* line 132, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+    /* line 132, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
     .owl-theme .owl-controls .owl-buttons div.owl-next {
       right: 20px;
       background-image: url(/assets/ar_left-c.svg); }
 
-/* line 136, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 136, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-theme .owl-controls {
   position: absolute;
   bottom: 0;
@@ -2700,7 +2704,7 @@ td, th {
   margin: 0;
   text-align: center; }
 
-/* line 144, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+/* line 144, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
 .owl-pagination {
   display: inline-block;
   vertical-align: top;
@@ -2709,7 +2713,7 @@ td, th {
   padding: 0 10px;
   margin: 0;
   box-sizing: border-box; }
-  /* line 152, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 152, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-pagination .owl-page span {
     box-sizing: content-box;
     display: block;
@@ -2720,12 +2724,12 @@ td, th {
     margin: 11px 6px;
     border-radius: 10px;
     box-sizing: border-box; }
-  /* line 162, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/owlcarousel */
+  /* line 162, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/owlcarousel */
   .owl-pagination .owl-page.active span {
     border-color: #fff;
     box-shadow: 0 0 0 3px #fff; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-wrap, .fancybox-skin, .fancybox-outer, .fancybox-inner, .fancybox-image {
   padding: 0;
   margin: 0;
@@ -2733,7 +2737,7 @@ td, th {
   outline: none;
   vertical-align: top; }
 
-/* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-wrap iframe, .fancybox-wrap object {
   padding: 0;
   margin: 0;
@@ -2741,14 +2745,14 @@ td, th {
   outline: none;
   vertical-align: top; }
 
-/* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-nav {
   padding: 0;
   margin: 0;
   border: 0;
   outline: none;
   vertical-align: top; }
-  /* line 22, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   .fancybox-nav span {
     padding: 0;
     margin: 0;
@@ -2756,7 +2760,7 @@ td, th {
     outline: none;
     vertical-align: top; }
 
-/* line 29, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-tmp {
   padding: 0;
   margin: 0;
@@ -2764,38 +2768,38 @@ td, th {
   outline: none;
   vertical-align: top; }
 
-/* line 36, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-wrap {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 8020; }
 
-/* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-skin {
   position: relative;
   background: #fff;
   color: #000;
   text-shadow: none; }
 
-/* line 48, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 48, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-opened {
   z-index: 8030; }
 
-/* line 51, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 51, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-outer {
   position: relative; }
 
-/* line 54, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 54, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-inner {
   position: relative;
   overflow: hidden; }
 
-/* line 58, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-type-iframe .fancybox-inner {
   -webkit-overflow-scrolling: touch; }
 
-/* line 61, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-error {
   color: #000;
   font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2803,18 +2807,18 @@ td, th {
   padding: 15px;
   white-space: nowrap; }
 
-/* line 68, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 68, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-image, .fancybox-iframe {
   display: block;
   width: 100%;
   height: 100%; }
 
-/* line 73, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 73, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-image {
   max-width: 100%;
   max-height: 100%; }
 
-/* line 77, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 #fancybox-loading {
   position: fixed;
   top: 50%;
@@ -2824,7 +2828,7 @@ td, th {
   opacity: 0.8;
   cursor: pointer;
   z-index: 8060; }
-  /* line 86, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 86, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   #fancybox-loading div {
     width: 40px;
     height: 40px;
@@ -2832,7 +2836,7 @@ td, th {
     border-radius: 10px;
     background-size: 20px 20px; }
 
-/* line 93, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 93, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-close {
   position: fixed;
   top: 20px;
@@ -2841,17 +2845,17 @@ td, th {
   height: 68px;
   cursor: pointer;
   z-index: 8040; }
-  /* line 101, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 101, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   .fancybox-close i {
     display: block;
     height: 68px;
     background: url(/assets/cross.svg) no-repeat;
     background-size: 68px 68px; }
-  /* line 106, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 106, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   .fancybox-close:hover {
     opacity: 0.8; }
 
-/* line 109, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 109, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-nav {
   position: absolute;
   top: 0;
@@ -2862,20 +2866,20 @@ td, th {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 8040; }
 
-/* line 120, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 120, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-prev, .fancybox-next {
   width: 60%; }
 
-/* line 123, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 123, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-prev {
   width: 40%;
   left: 0; }
 
-/* line 127, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 127, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-next {
   right: 0; }
 
-/* line 134, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 134, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-tmp {
   position: absolute;
   top: -99999px;
@@ -2885,19 +2889,19 @@ td, th {
   max-height: 99999px;
   overflow: visible !important; }
 
-/* line 143, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 143, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-lock {
   overflow: hidden !important;
   width: auto; }
-  /* line 146, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 146, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   .fancybox-lock body {
     overflow: hidden !important; }
 
-/* line 149, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 149, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-lock-test {
   overflow-y: hidden !important; }
 
-/* line 152, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 152, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-overlay {
   position: absolute;
   top: 0;
@@ -2907,18 +2911,18 @@ td, th {
   z-index: 8010;
   background: rgba(0, 0, 0, 0.9); }
 
-/* line 161, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 161, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-overlay-fixed {
   position: fixed;
   bottom: 0;
   right: 0; }
 
-/* line 166, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 166, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-lock .fancybox-overlay {
   overflow: auto;
   overflow-y: scroll; }
 
-/* line 170, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 170, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-title {
   visibility: hidden;
   font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2926,11 +2930,11 @@ td, th {
   text-shadow: none;
   z-index: 8050; }
 
-/* line 177, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 177, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-opened .fancybox-title {
   visibility: visible; }
 
-/* line 180, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 180, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-title-float-wrap {
   position: absolute;
   bottom: 0;
@@ -2938,7 +2942,7 @@ td, th {
   margin-bottom: -35px;
   z-index: 8050;
   text-align: center; }
-  /* line 187, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 187, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   .fancybox-title-float-wrap .child {
     display: inline-block;
     margin-right: -100%;
@@ -2952,17 +2956,17 @@ td, th {
     line-height: 24px;
     white-space: nowrap; }
 
-/* line 202, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 202, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-title-outside-wrap {
   position: relative;
   margin-top: 10px;
   color: #fff; }
 
-/* line 207, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 207, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-title-inside-wrap {
   padding-top: 10px; }
 
-/* line 210, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 210, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 .fancybox-title-over-wrap {
   position: absolute;
   bottom: 0;
@@ -2972,39 +2976,39 @@ td, th {
   background: #000;
   background: rgba(0, 0, 0, 0.8); }
 
-/* line 219, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 219, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 #fancybox-thumbs {
   position: fixed;
   left: 0;
   width: 100%;
   overflow: hidden;
   z-index: 8050; }
-  /* line 225, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 225, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   #fancybox-thumbs.bottom {
     bottom: 2px; }
-  /* line 227, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 227, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   #fancybox-thumbs.top {
     top: 2px; }
-  /* line 229, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 229, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   #fancybox-thumbs ul {
     position: relative;
     list-style: none;
     margin: 0;
     padding: 0; }
-    /* line 234, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+    /* line 234, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
     #fancybox-thumbs ul li {
       float: left;
       padding: 1px;
       opacity: 0.9; }
-      /* line 238, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+      /* line 238, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
       #fancybox-thumbs ul li.active {
         opacity: 0.5;
         padding: 0;
         border: 1px solid #fff; }
-      /* line 242, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+      /* line 242, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
       #fancybox-thumbs ul li:hover {
         opacity: 1; }
-      /* line 244, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+      /* line 244, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
       #fancybox-thumbs ul li a {
         display: block;
         position: relative;
@@ -3012,7 +3016,7 @@ td, th {
         border: 1px solid #fff;
         background: #fff;
         outline: none; }
-      /* line 251, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+      /* line 251, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
       #fancybox-thumbs ul li img {
         display: block;
         position: relative;
@@ -3020,12 +3024,12 @@ td, th {
         padding: 0;
         max-width: none; }
 
-/* line 259, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+/* line 259, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
 #fancybox-thumbs ul {
   position: static;
   text-align: center;
   width: 100% !important; }
-  /* line 263, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+  /* line 263, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
   #fancybox-thumbs ul li {
     float: none;
     display: inline-block;
@@ -3034,7 +3038,7 @@ td, th {
     cursor: pointer;
     width: 16px !important;
     opacity: 0.5; }
-    /* line 271, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+    /* line 271, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
     #fancybox-thumbs ul li a {
       display: block;
       overflow: hidden;
@@ -3042,17 +3046,17 @@ td, th {
       height: 10px;
       background: #fff;
       border-radius: 5px; }
-    /* line 278, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+    /* line 278, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
     #fancybox-thumbs ul li img {
       width: 100%; }
-    /* line 281, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/fancybox */
+    /* line 281, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/fancybox */
     #fancybox-thumbs ul li.active {
       background: none;
       opacity: 1;
       border: none;
       padding: 0 3px; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-target {
   position: relative;
   -webkit-touch-callout: none;
@@ -3061,7 +3065,7 @@ td, th {
   -ms-user-select: none;
   -moz-user-select: none;
   box-sizing: border-box; }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
   .noUi-target * {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -3070,13 +3074,13 @@ td, th {
     -moz-user-select: none;
     box-sizing: border-box; }
 
-/* line 20, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-base {
   width: 100%;
   height: 100%;
   position: relative; }
 
-/* line 25, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-origin {
   position: absolute;
   right: 0;
@@ -3084,79 +3088,79 @@ td, th {
   left: 0;
   bottom: 0; }
 
-/* line 32, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-handle {
   position: relative;
   z-index: 1; }
 
-/* line 37, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 37, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-stacking .noUi-handle {
   z-index: 10; }
-/* line 39, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 39, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-stacking + .noUi-origin {
   *z-index: -1; }
 
-/* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-state-tap .noUi-origin {
   -webkit-transition: left 0.3s, top 0.3s;
   transition: left 0.3s, top 0.3s; }
 
-/* line 46, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-state-drag * {
   cursor: inherit !important; }
 
-/* line 49, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-base {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
-/* line 53, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 53, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-horizontal {
   height: 4px; }
-  /* line 55, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+  /* line 55, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
   .noUi-horizontal .noUi-handle {
     width: 14px;
     height: 14px;
     left: -13px;
     top: -5px; }
 
-/* line 61, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-vertical {
   width: 18px; }
-  /* line 63, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+  /* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
   .noUi-vertical .noUi-handle {
     width: 28px;
     height: 34px;
     left: -6px;
     top: -17px; }
 
-/* line 69, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-background {
   background: #dbdbdb; }
 
-/* line 72, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 72, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-connect {
   background: #2bcd7f;
   -webkit-transition: background 450ms;
   transition: background 450ms; }
 
-/* line 77, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-origin {
   border-radius: 2px; }
 
-/* line 80, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 80, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-target {
   border-radius: 2px; }
 
-/* line 83, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 83, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-dragable {
   cursor: w-resize; }
 
-/* line 86, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 86, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-vertical .noUi-dragable {
   cursor: n-resize; }
 
-/* line 89, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 89, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-handle {
   border: 4px solid #2bcd7f;
   border-radius: 3px;
@@ -3164,27 +3168,27 @@ td, th {
   cursor: pointer;
   border-radius: 14px; }
 
-/* line 96, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 96, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 .noUi-active {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1); }
 
-/* line 100, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 100, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 [disabled].noUi-connect, [disabled] .noUi-connect {
   background: #B8B8B8; }
-/* line 102, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/modules/range */
+/* line 102, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/modules/range */
 [disabled] .noUi-handle {
   cursor: not-allowed; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-layout */
-.b-layout, .b-item-list, .b-item-full, .b-cart__content, .b-article, .b-header__container, .b-nav, .b-footer__container {
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-layout */
+.b-layout, .b-item-list, .b-item-full, .b-slider_promo, .b-cart__content, .b-article, .b-header__container, .b-nav, .b-footer__container {
   max-width: 980px;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px; }
 
-/* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-btn */
+/* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
 .b-btn, .b-paginator__item {
   display: inline-block;
   vertical-align: middle;
@@ -3196,17 +3200,17 @@ td, th {
   -webkit-transition: color 0.2s ease, background-color 0.2s ease;
           transition: color 0.2s ease, background-color 0.2s ease;
   box-sizing: border-box; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-btn */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
   .b-btn:hover, .b-paginator__item:hover {
     background-color: #cbcbcb;
     color: #fff; }
-  /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-btn */
+  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
   .b-btn_trans {
     background: none;
     color: #000;
     border: 1px solid #cbcbcb; }
 
-/* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-alert */
+/* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
 .b-alert {
   display: block;
   text-align: center;
@@ -3215,161 +3219,171 @@ td, th {
   border-radius: 3px;
   padding: 11px;
   margin: 0 0 20px; }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-alert */
+  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
   .b-alert_danger {
     background-color: #da2a41;
     border-color: #da2a41;
     color: #fff; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-logo */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-logo */
 .b-logo {
   text-align: center;
   display: block; }
-  /* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-logo */
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-logo */
   .b-logo__img {
     max-width: 100%;
     vertical-align: top; }
 
-/* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-site-description */
+/* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-site-description */
 .b-site-description ul {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-/* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+/* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+.b-item-list_additional .b-item-list__title {
+  font-size: 2em;
+  font-weight: normal;
+  margin-bottom: 1em; }
+/* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list__title {
   font-size: 53px;
   text-align: center;
   margin: 42px 0 46px; }
-/* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+/* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list__item .b-item {
   margin: 15px 0;
   -webkit-transition: color 0.1s ease;
           transition: color 0.1s ease; }
-  /* line 20, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list__item .b-item__pic {
     -webkit-transition: opacity 0.1s ease;
             transition: opacity 0.1s ease;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden; }
-  /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+  /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list__item .b-item:hover .b-item__pic {
     opacity: 0.9; }
   @media only screen and (max-width: 480px) {
-    /* line 28, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+    /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list__item .b-item__name, .b-item-list__item .b-item__price {
       font-size: 1em; } }
-/* line 38, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+/* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list__paginator {
   padding-top: 20px; }
-/* line 43, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+/* line 50, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list_has-filter {
-  margin-top: 55px;
+  margin-top: 40px;
   overflow: hidden; }
   @media only screen and (max-width: 480px) {
     .b-item-list_has-filter {
       margin-top: 0; } }
-  /* line 49, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+  /* line 56, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list_has-filter .b-item-list__filter {
     width: 190px;
     float: left;
-    border-right: 1px solid #f0f0f0;
+    border-right: 1px solid rgba(114, 114, 114, 0.3);
     padding-right: 10px; }
-  /* line 54, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list_has-filter .b-item-list__content {
     margin-left: 210px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
-    /* line 59, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__filter {
       float: none;
       width: 100%;
       padding: 0;
-      border: none; }
-    /* line 64, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+      border: none;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; }
+    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__content {
-      margin-left: 0; } }
+      margin-left: -18px; } }
   @media only screen and (max-width: 480px) {
-    /* line 69, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__filter {
       float: none;
       width: 100%;
       padding: 0;
-      border: none; }
-    /* line 74, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-list */
+      border: none;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto; }
+    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__content {
-      margin-left: 0; } }
+      margin-left: -18px; } }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
 .b-item {
   display: block; }
-  /* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+  /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__pic {
     width: 100%;
     vertical-align: top; }
-    /* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+    /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__pic-wrap {
       position: relative; }
-  /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+  /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__status {
     position: absolute;
     bottom: 0;
     left: 0; }
-    /* line 13, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+    /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__status .b-status {
       display: block; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__info {
     margin: 8px 0 0; }
-  /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__name {
     margin: 0;
     font-weight: normal;
     font-size: 1.143em; }
-  /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item */
+  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__price {
-    margin: 0.5em 0 0;
     font-size: 1.143em; }
 
-/* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+/* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
 .b-item-full {
-  margin-top: 70px; }
+  margin-top: 40px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-item-full__header {
       display: none; } }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__header_mobile {
     display: none; }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
       .b-item-full__header_mobile {
         display: block; } }
-  /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__description-inner {
     margin-bottom: 55px; }
-  /* line 37, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 37, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__title {
     font-size: 2em;
     font-weight: normal;
     margin: 0 0 1em; }
-  /* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__articul {
     font-weight: normal;
     color: #828282;
     font-size: 0.429em; }
-  /* line 47, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 47, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__price {
     font-size: 2em;
     margin: 0 0 10px; }
-    /* line 50, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 50, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__currency {
       font-size: 0.324em;
       display: inline-block;
       vertical-align: top;
       padding: 9px 0; }
-    /* line 56, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 56, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old, .b-item-full__price__sale {
       display: inline-block;
       vertical-align: top; }
-    /* line 59, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__sale {
       font-size: 0.412em;
       background-color: #f05a61;
@@ -3377,22 +3391,22 @@ td, th {
       text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px; }
-    /* line 66, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old {
       font-size: 0.471em;
       text-decoration: line-through;
       color: #353535; }
-  /* line 71, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 75, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 75, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143em; }
-  /* line 78, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+  /* line 78, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 84, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 84, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -3409,55 +3423,55 @@ td, th {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 102, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-item-full */
+    /* line 102, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item {
       display: block;
       width: 100%; }
 
-/* line 7, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-status */
+/* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
 .b-status {
   background-color: #E8E8E8;
   color: #4D4D4D;
   padding: 5px 8px;
   text-transform: uppercase; }
-  /* line 13, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-status */
+  /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_sale, .b-status_preorder {
     color: #FFF; }
-  /* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-status */
+  /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_sale {
     background-color: #F60528; }
-  /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-status */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_preorder {
     background-color: #10C1F8; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
 .b-instafeed {
   max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
   -webkit-transition: height 0.2s ease;
           transition: height 0.2s ease; }
-  /* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+  /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
   .b-instafeed__photo {
     display: block;
     overflow: hidden; }
-    /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+    /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
     .b-instafeed__photo img {
       width: 100%; }
-  /* line 11, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+  /* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
   .b-instafeed_invisible {
     height: 0; }
-  /* line 14, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+  /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
   .b-instafeed_loading {
     text-align: center; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-instafeed */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
   .b-instafeed__loader {
     display: inline-block;
     height: 40px;
     width: 40px;
     background: url(/assets/loader.gif); }
 
-/* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-admin */
+/* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-admin */
 .b-admin {
   position: fixed;
   z-index: 10;
@@ -3471,7 +3485,7 @@ td, th {
   text-indent: -9999px;
   -webkit-transition: background-color 0.2s ease;
           transition: background-color 0.2s ease; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-admin */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-admin */
   .b-admin:hover {
     background-color: #4d5257; }
   @media only screen and (max-width: 480px) {
@@ -3480,14 +3494,14 @@ td, th {
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-admin {
       display: none; } }
-  /* line 23, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-admin */
+  /* line 23, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-admin */
   .fancybox-lock .b-admin {
     display: none; }
 
-/* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-search */
+/* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-search */
 .b-search {
   position: relative; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-search */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-search */
   .b-search__field {
     border: 1px solid #E3E3E3;
     width: 100%;
@@ -3497,11 +3511,11 @@ td, th {
     box-sizing: border-box;
     box-shadow: none;
     color: #121212; }
-    /* line 14, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-search */
+    /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-search */
     .b-search__field:focus {
       outline: none;
       box-shadow: 0 0 0 1px #E3E3E3; }
-  /* line 18, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-search */
+  /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-search */
   .b-search__submit {
     width: 39px;
     height: 40px;
@@ -3512,7 +3526,7 @@ td, th {
     background-size: 20px 20px;
     border: none; }
 
-/* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+/* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
 .b-cart-trigger {
   position: fixed;
   z-index: 10;
@@ -3523,7 +3537,7 @@ td, th {
   border-radius: 25px;
   margin: 0;
   background-color: #353535; }
-  /* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+  /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
   .b-cart-trigger__count {
     position: absolute;
     bottom: 100%;
@@ -3538,7 +3552,7 @@ td, th {
     font-size: 14px;
     color: #fff;
     font-weight: bold; }
-  /* line 29, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+  /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
   .b-cart-trigger:before {
     content: '';
     width: 26px;
@@ -3548,33 +3562,33 @@ td, th {
     position: absolute;
     top: 50%;
     left: 50%; }
-  /* line 38, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+  /* line 38, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
   .b-cart-trigger_full {
     background-color: #121212;
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease;
     cursor: pointer; }
-    /* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+    /* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
     .b-cart-trigger_full:hover {
       background-color: #353535; }
-  /* line 45, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart-trigger */
+  /* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart-trigger */
   .fancybox-lock .b-cart-trigger {
     display: none; }
   @media only screen and (max-width: 480px) {
     .b-cart-trigger {
       right: 10px; } }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
 .b-slider {
   margin: 0 auto 14px; }
-  /* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+  /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
   .b-slider__item {
     display: block; }
-    /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+    /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider__item img {
       max-width: 100%;
       vertical-align: top; }
-  /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+  /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
   .b-slider .owl-pagination {
     display: none; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -3583,92 +3597,108 @@ td, th {
   @media only screen and (max-width: 480px) {
     .b-slider_thumbs {
       display: none !important; } }
-  /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
   .b-slider_thumbs .owl-item {
     -webkit-transition: opacity 0.2s ease;
             transition: opacity 0.2s ease; }
-    /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+    /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_thumbs .owl-item.synced {
       opacity: 0.8; }
-  /* line 22, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
   .b-slider_promo {
-    max-height: 731px;
-    max-width: 1000px;
-    margin: 0 auto;
     overflow: hidden; }
-    /* line 28, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+    @media only screen and (max-width: 480px) {
+      .b-slider_promo {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0; } }
+    @media only screen and (min-width: 481px) and (max-width: 1023px) {
+      .b-slider_promo {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0; } }
+    /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .owl-controls {
       position: static; }
-    /* line 31, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-slider */
+    /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .b-slider__item {
       text-align: center;
       background-color: #CCCCCC; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-characteristics */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-characteristics */
 .b-characteristics {
   list-style: none;
   margin: 1em 0;
   padding: 0; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-characteristics */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-characteristics */
   .b-characteristics li {
     margin: 3px 0 0; }
-    /* line 7, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-characteristics */
+    /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-characteristics */
     .b-characteristics li:before {
       content: '\b7\a0'; }
 
-/* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+/* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
 .b-float-cart {
   position: fixed;
   z-index: 5;
   background-color: #fff;
   top: 90px;
   right: 30px;
-  width: 600px;
+  margin-left: 30px;
+  max-width: 600px;
   padding: 18px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   border-radius: 3px;
   box-sizing: border-box; }
-  /* line 14, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  @media only screen and (max-width: 480px) {
+    .b-float-cart {
+      display: none !important; } }
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart_invisible {
     display: none; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart__item-wrap {
     max-height: 280px;
     overflow: hidden;
     overflow-y: auto;
     margin: 0 0 20px; }
-  /* line 21, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart__item {
     font-size: 1.2em;
     margin: 20px 0 0; }
-    /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+    @media only screen and (min-width: 481px) and (max-width: 1023px) {
+      .b-float-cart__item {
+        font-size: 1em; } }
+    /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
     .b-float-cart__item:first-child {
       margin-top: 0; }
-    /* line 35, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+    /* line 40, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
     .b-float-cart__item__img img {
       width: 100%;
       vertical-align: top; }
-    /* line 40, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+    /* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
     .b-float-cart__item__info a {
       font-weight: bold;
       display: block; }
-    /* line 44, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+    /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
     .b-float-cart__item__q, .b-float-cart__item__price {
       text-align: right; }
-  /* line 48, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  /* line 56, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart__control {
     overflow: hidden; }
-  /* line 51, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart__url {
     float: right; }
-  /* line 54, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-float-cart */
+  /* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-float-cart */
   .b-float-cart__clear {
     color: #cbcbcb;
     padding: 13px 0 11px;
     text-decoration: none;
     float: left; }
 
-/* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__title {
   text-transform: uppercase;
   padding: 19px 0 13px;
@@ -3678,17 +3708,17 @@ td, th {
   text-align: center;
   font-weight: normal;
   font-size: 18px; }
-/* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__message {
   padding: 38px 0;
   max-width: 500px;
   margin: 47px auto 0;
   text-align: center; }
-  /* line 21, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__message p {
     margin: 0 0 100px;
     font-size: 1.571em; }
-/* line 27, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__list, .b-cart__total-sum, .b-cart__action {
   margin: 47px 60px 0 100px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -3699,69 +3729,79 @@ td, th {
     .b-cart__list, .b-cart__total-sum, .b-cart__action {
       margin-left: 0;
       margin-right: 0; } }
-/* line 36, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__total-sum {
   text-align: right;
   font-size: 2.143em; }
-/* line 57, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 57, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__col-code {
   text-align: right; }
   @media only screen and (max-width: 480px) {
     .b-cart__action__col-code {
       padding-top: 10px; } }
-/* line 72, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 72, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__col-submit .b-cart__action__submit {
   width: 100%;
   margin-left: 0; }
   @media only screen and (max-width: 480px) {
     .b-cart__action__col-submit .b-cart__action__submit {
       margin-top: 10px; } }
-/* line 79, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 78, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+.b-cart__action__submit {
+  margin-left: 2%; }
+/* line 82, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__code, .b-cart__action__submit {
   width: 46%;
   display: inline-block;
   vertical-align: top; }
-/* line 84, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
-.b-cart__action__submit {
-  margin-left: 2%; }
-/* line 87, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  @media only screen and (max-width: 480px) {
+    .b-cart__action__code, .b-cart__action__submit {
+      width: 100%;
+      margin: 0 0 10px; } }
+/* line 90, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__code {
   border: 1px solid #e2e2e2;
   padding: 13px 3px 12px 17px;
   box-sizing: border-box; }
-/* line 92, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  @media only screen and (max-width: 480px) {
+    .b-cart__action__code {
+      text-align: center; } }
+/* line 97, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__clear {
   display: block; }
-/* line 96, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 101, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__list {
   list-style: none;
   padding: 0; }
-/* line 100, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 105, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__item {
   padding-bottom: 25px;
   position: relative; }
-  /* line 105, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 110, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__img {
     width: 100%; }
-  /* line 109, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 114, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__title, .b-cart__item__option {
     margin: 0;
     font-size: 1.143em; }
     @media only screen and (max-width: 480px) {
       .b-cart__item__title, .b-cart__item__option {
         font-size: 1em; } }
-  /* line 115, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 120, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__option {
     margin-top: 3px; }
-  /* line 118, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 123, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__price {
     font-size: 1.429em;
     margin-top: -5px; }
-  /* line 123, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 128, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__quantity__text {
     float: left;
     width: 90px; }
-  /* line 126, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+    @media only screen and (max-width: 480px) {
+      .b-cart__item__quantity__text {
+        float: none; } }
+  /* line 133, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__quantity__select {
     margin-left: 90px;
     max-width: 60px; }
@@ -3769,11 +3809,15 @@ td, th {
       .b-cart__item__quantity__select {
         margin-left: 0;
         max-width: 100%; } }
-    /* line 132, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+    @media only screen and (max-width: 480px) {
+      .b-cart__item__quantity__select {
+        margin-left: 0;
+        max-width: 100%; } }
+    /* line 139, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
     .b-cart__item__quantity__select select {
       width: 100%;
       box-sizing: border-box; }
-  /* line 136, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 143, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__remove {
     display: block;
     border-radius: 17px;
@@ -3783,7 +3827,7 @@ td, th {
     cursor: pointer;
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease; }
-    /* line 144, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+    /* line 151, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
     .b-cart__item__remove img {
       width: 100%; }
     @media only screen and (max-width: 480px) {
@@ -3794,16 +3838,16 @@ td, th {
   @media only screen and (max-width: 480px) {
     .b-cart__item__col-content {
       padding-right: 30px; } }
-/* line 182, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+/* line 191, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__form {
   max-width: 580px;
   margin: 55px 0 0 205px; }
-  /* line 186, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 195, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__form__delivery-name, .b-cart__form__delivery-price {
     display: inline-block;
     vertical-align: top;
     width: 40%; }
-  /* line 190, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cart */
+  /* line 199, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__form .b-cart__action {
     margin: 0; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -3814,21 +3858,21 @@ td, th {
     .b-cart__form {
       margin-left: 0; } }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-article */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-article */
 .b-article {
-  margin-top: 55px; }
-  /* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-article */
+  margin-top: 40px; }
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-article */
   .b-article .b-text {
     margin: 0 auto;
     max-width: 600px; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
 .b-text {
   font-size: 1.143em; }
   @media only screen and (max-width: 480px) {
     .b-text {
       font-size: 1em; } }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h1 {
     font-size: 3em;
     margin: 0 0 38px;
@@ -3836,7 +3880,7 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text h1 {
         font-size: 2em; } }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h2 {
     font-size: 1.625em;
     font-weight: normal;
@@ -3844,30 +3888,30 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text h2 {
         font-size: 1.4em; } }
-  /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h1, .b-text h2, .b-text h3, .b-text h4, .b-text h5, .b-text h6 {
     text-align: center; }
-  /* line 27, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text p {
     margin: 20px 0; }
-  /* line 30, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text ul {
     padding-left: 1em; }
-    /* line 32, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+    /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text ul li {
       margin: 1em 0; }
-  /* line 35, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text table {
     width: 100%; }
-    /* line 38, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+    /* line 38, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text table th, .b-text table td {
       padding: 15px; }
-    /* line 41, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+    /* line 41, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text table th {
       border-bottom: 1px solid #e2e2e2;
       text-align: left;
       font-weight: normal; }
-  /* line 46, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+  /* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text__image {
     margin: 0 -140px;
     overflow: hidden; }
@@ -3877,7 +3921,7 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text__image {
         margin: 0; } }
-    /* line 59, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+    /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text__image img {
       width: 100%;
       max-width: 100%; }
@@ -3886,7 +3930,7 @@ td, th {
         margin-left: 0;
         margin-right: 0; } }
 
-/* line 66, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-text */
+/* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
 .map-embed {
   overflow: hidden;
   height: 400px;
@@ -3894,11 +3938,14 @@ td, th {
   width: 100%;
   margin: 40px auto; }
 
-/* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+/* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__row {
   margin: 0 0 20px;
   overflow: hidden; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+  @media only screen and (max-width: 480px) {
+    .b-form__row {
+      overflow: visible; } }
+  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__num {
     float: left;
     height: 44px;
@@ -3909,21 +3956,28 @@ td, th {
     color: #fff;
     font-size: 22px;
     border-radius: 22px; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+    @media only screen and (max-width: 480px) {
+      .b-form__row__num {
+        float: none;
+        margin: 0 auto; } }
+  /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__content {
     margin-left: 62px; }
-  /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+    @media only screen and (max-width: 480px) {
+      .b-form__row__content {
+        margin-left: 0; } }
+  /* line 26, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__title {
     font-size: 1.571em;
     margin: 6px 0 28px; }
-  /* line 23, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__widget {
     margin: 30px 0 0; }
-  /* line 26, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+  /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row .b-alert {
     position: relative;
     z-index: 2; }
-/* line 32, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+/* line 39, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form input[type='text'], .b-form textarea {
   resize: none;
   background: #fff;
@@ -3934,25 +3988,25 @@ td, th {
   box-shadow: none;
   height: auto;
   box-sizing: border-box; }
-  /* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form input[type='text'] + .b-alert, .b-form textarea + .b-alert {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 47, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+/* line 54, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 52, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-form */
+/* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__radio input {
   margin-right: 20px; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
 .b-cbox {
   display: block;
   position: relative;
   margin-bottom: 5px; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
   .b-cbox input[type="checkbox"] {
     display: block;
     position: absolute;
@@ -3963,13 +4017,13 @@ td, th {
     opacity: 0;
     z-index: 2;
     cursor: pointer; }
-    /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+    /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
     .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val {
       color: #4e4e4e; }
-      /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+      /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
       .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val:before {
         background-color: #121212; }
-  /* line 21, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+  /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
   .b-cbox__val {
     color: #a1a1a1;
     padding-left: 23px;
@@ -3977,7 +4031,7 @@ td, th {
     font-size: 14px;
     -webkit-transition: color 0.2s ease;
             transition: color 0.2s ease; }
-    /* line 27, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+    /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
     .b-cbox__val:before {
       content: '';
       position: absolute;
@@ -3990,12 +4044,12 @@ td, th {
       border-radius: 3px;
       -webkit-transition: background-color 0.2s ease;
               transition: background-color 0.2s ease; }
-  /* line 39, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+  /* line 39, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
   .b-cbox_color {
     display: inline-block;
     vertical-align: top;
     margin: 0 8px 8px 0; }
-    /* line 44, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+    /* line 44, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
     .b-cbox_color .b-cbox__val {
       width: 20px;
       height: 20px;
@@ -4005,18 +4059,18 @@ td, th {
       -webkit-transition: -webkit-transform 0.2s ease;
               transition: transform 0.2s ease;
       padding-left: 0; }
-      /* line 52, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+      /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
       .b-cbox_color .b-cbox__val:before {
         opacity: 0;
         top: 5px;
         left: 5px; }
-    /* line 59, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-cbox */
+    /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cbox */
     .b-cbox_color input[type="checkbox"]:checked ~ .b-cbox__val {
       -webkit-transform: scale(1.3);
           -ms-transform: scale(1.3);
               transform: scale(1.3); }
 
-/* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__list-wrap {
   list-style: none;
   padding: 0;
@@ -4026,34 +4080,35 @@ td, th {
       display: none; } }
   @media only screen and (max-width: 480px) {
     .b-full-filter__list-wrap {
-      display: none; } }
-/* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+      display: none;
+      padding: 0 5px; } }
+/* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__submit {
   max-width: 125px; }
-/* line 13, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__item {
   margin: 22px 0 0; }
-  /* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__item:first-child {
     margin-top: 0; }
-  /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__item_price {
     margin-top: 36px; }
-  /* line 20, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__item__title {
     font-size: 1.143em;
     margin: 0 0 12px; }
-/* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__slider {
   padding: 5px 0 0; }
-  /* line 27, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 28, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__slider__value span {
     color: #bebebe; }
-  /* line 29, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__slider__embed {
     margin: 17px 0 44px;
     padding: 0 2px; }
-/* line 33, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__value {
   cursor: pointer;
   font-size: 12px;
@@ -4068,7 +4123,7 @@ td, th {
   line-height: 1.6;
   box-sizing: border-box;
   width: 100%; }
-  /* line 47, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 48, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__value:before {
     content: '';
     position: absolute;
@@ -4079,17 +4134,17 @@ td, th {
     height: 20px;
     background: url(/assets/cross_white.svg);
     background-size: 20px 20px; }
-  /* line 58, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__value:hover:before {
     -webkit-transform: scale(1.2);
         -ms-transform: scale(1.2);
             transform: scale(1.2); }
-/* line 61, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__notifiction-wrap {
   position: relative;
   display: inline-block;
   vertical-align: top; }
-/* line 66, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 67, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__notifiction {
   position: absolute;
   left: 100%;
@@ -4102,7 +4157,7 @@ td, th {
   margin: -6px 0 0 19px;
   white-space: nowrap;
   z-index: 5; }
-  /* line 78, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 79, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__notifiction:before {
     content: '';
     width: 0;
@@ -4113,12 +4168,12 @@ td, th {
     position: absolute;
     right: 100%;
     top: 13px; }
-  /* line 88, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 89, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__notifiction a {
     color: #fff;
     text-decoration: none;
     border-bottom: 1px solid; }
-/* line 93, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 94, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__trigger {
   cursor: pointer;
   display: none;
@@ -4128,38 +4183,39 @@ td, th {
       display: block; } }
   @media only screen and (max-width: 480px) {
     .b-full-filter__trigger {
-      display: block; } }
-  /* line 101, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+      display: block;
+      padding: 0 0 0 5px; } }
+  /* line 103, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__trigger__action {
     display: block; }
-    /* line 103, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+    /* line 105, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
     .b-full-filter__trigger__action_close {
       display: none; }
-/* line 106, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 108, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__toggle {
   visibility: hidden;
   height: 0;
   overflow: hidden;
   display: block; }
-  /* line 113, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 115, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__toggle:checked ~ .b-full-filter__trigger .b-full-filter__trigger__action_close {
     display: block; }
-  /* line 115, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 117, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__toggle:checked ~ .b-full-filter__trigger .b-full-filter__trigger__action_open {
     display: none; }
-  /* line 117, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+  /* line 119, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__toggle:checked ~ .b-full-filter__list-wrap {
     display: block; }
 
-/* line 123, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 125, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .noUi-handle {
   border-color: #121212; }
 
-/* line 126, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-full-filter */
+/* line 128, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .noUi-connect {
   background-color: #121212; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
 .b-theme-switch {
   position: fixed;
   bottom: 0;
@@ -4168,11 +4224,11 @@ td, th {
   overflow: hidden;
   -webkit-transition: width 0.2s ease;
           transition: width 0.2s ease; }
-  /* line 8, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+  /* line 8, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
   .b-theme-switch:hover {
     width: 140px; }
 
-/* line 11, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+/* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
 .b-theme-switch__item {
   cursor: pointer;
   font-size: 12px;
@@ -4182,61 +4238,61 @@ td, th {
   font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   color: #fff; }
-  /* line 20, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
   .b-theme-switch__item:hover {
     background-color: tomato; }
-  /* line 22, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
   .b-theme-switch__item:active {
     background-color: red; }
 
-/* line 26, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-theme-switcher */
+/* line 26, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-theme-switcher */
 .feature_touch .b-theme-switch {
   width: 140px; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-feature-list */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-feature-list */
 .b-feature-list {
   border-top: 1px solid #dcdcdc; }
 
-/* line 11, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-feature-list */
+/* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-feature-list */
 .b-feature {
   text-align: center;
   margin: 35px 0 60px; }
-  /* line 14, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-feature-list */
+  /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-feature-list */
   .b-feature__pic {
     margin: 0 auto 20px;
     border-radius: 50px;
     overflow: hidden;
     width: 100px;
     height: 100px; }
-    /* line 20, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-feature-list */
+    /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-feature-list */
     .b-feature__pic img {
       height: 100%; }
-  /* line 23, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-feature-list */
+  /* line 23, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-feature-list */
   .b-feature__name {
     font-size: 1.071em;
     font-weight: normal;
     margin: 0; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-modification-list */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-modification-list */
 .b-modification-list {
   padding: 0;
   margin: 0 0 10px;
   list-style: none; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-modification-list */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-modification-list */
   .b-modification-list > li {
     padding: 20px 0;
     border-top: 1px solid #e2e2e2; }
-    /* line 8, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-modification-list */
+    /* line 8, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-modification-list */
     .b-modification-list > li:first-child {
       padding-top: 0;
       border-top: 0; }
 
-/* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-modification-list */
+/* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-modification-list */
 .b-modification__action .b-btn, .b-modification__action .b-paginator__item {
   display: block;
   width: 100%; }
 
-/* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-q-status */
+/* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-q-status */
 .b-q-status__state {
   width: 4px;
   height: 4px;
@@ -4245,29 +4301,29 @@ td, th {
   background-color: #b2b2b2;
   vertical-align: middle;
   border-radius: 2px; }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-q-status */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-q-status */
   .b-q-status__state_ok {
     background-color: #000; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-paginator */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
 .b-paginator {
   font-size: 1.143em; }
-  /* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-paginator */
+  /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
   .b-paginator__item {
     display: inline-block;
     vertical-align: middle;
     margin: 0 3px;
     padding: 2px 10px; }
-    /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-paginator */
+    /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
     .b-paginator__item_current {
       background-color: #e2e2e2; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-show-more */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-show-more */
 .b-show-more {
   border-bottom: 1px dashed;
   cursor: pointer; }
 
-/* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-list > li > a, .b-page .mm-list > li > span {
   color: #fff;
   padding: 23px 16px;
@@ -4275,50 +4331,50 @@ td, th {
   display: block;
   line-height: 1.3;
   font-weight: normal; }
-/* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-list a.mm-subopen:after {
   right: 10px; }
-/* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-list a.mm-subopen + a, .b-page .mm-list a.mm-subopen + span {
   margin-right: 0; }
-/* line 18, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-menu {
   list-style: none;
   overflow-y: auto;
   background-color: #252525;
   max-width: 200px;
   min-width: 170px; }
-  /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   .b-page .mm-menu .b-search {
     margin: 10px 7px; }
-  /* line 26, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 26, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   .b-page .mm-menu .mm-counter {
     color: #fff; }
-  /* line 28, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 28, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   .b-page .mm-menu .mm-subclose {
     text-indent: 0;
     margin: 0; }
-    /* line 31, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+    /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
     .b-page .mm-menu .mm-subclose:before {
       margin-bottom: -4px;
       left: 6px; }
-  /* line 34, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   .b-page .mm-menu li {
     border-bottom: 2px solid #2d2d2d; }
-    /* line 36, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+    /* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
     .b-page .mm-menu li:after {
       display: none !important; }
-/* line 39, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 39, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-list {
   padding: 0; }
-/* line 43, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-menu .mm-list > li > a.mm-subopen:after, .b-page .mm-menu .mm-list > li > a.mm-subclose:before {
   border-color: #fff; }
-/* line 46, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mm-menu .mm-list > li > a.mm-subclose {
   background-color: #5f5f5f;
   color: #fff; }
-/* line 50, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 50, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open {
   display: none;
   position: fixed;
@@ -4336,7 +4392,7 @@ td, th {
     .b-page .mmenu-open {
       display: block;
       left: 10px; } }
-/* line 65, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 65, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open__tick {
   height: 2px;
   position: absolute;
@@ -4347,65 +4403,65 @@ td, th {
   margin-top: -6px;
   -webkit-transition: -webkit-transform 0.2s ease, margin-top 0.2s ease, opacity 0.2s ease;
           transition: transform 0.2s ease, margin-top 0.2s ease, opacity 0.2s ease; }
-/* line 74, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open__tick_s {
   margin-top: -1px; }
-/* line 76, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 76, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open__tick_t {
   margin-top: 4px; }
-/* line 79, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 79, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open_active .mmenu-open__tick_f {
   margin-top: 0;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg); }
-/* line 82, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 82, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open_active .mmenu-open__tick_s {
   opacity: 0; }
-/* line 84, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 84, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 .b-page .mmenu-open_active .mmenu-open__tick_t {
   margin-top: 0;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg); }
 
-/* line 88, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 88, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 html.mm-opened .mm-page {
   box-shadow: none; }
 
-/* line 92, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 92, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   -webkit-transform: translate(200px, 0);
   -ms-transform: translate(200px, 0);
       transform: translate(200px, 0); }
 
-/* line 96, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+/* line 96, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
 #nav {
   height: 0;
   overflow: hidden; }
-  /* line 99, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 99, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   #nav * {
     box-sizing: border-box; }
-  /* line 101, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/mmenu */
+  /* line 101, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/mmenu */
   #nav.mm-menu {
     height: 100%; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-page */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
 a {
   text-decoration: none;
   color: #121212; }
-  /* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-page */
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
   a:hover {
     color: #353535; }
-  /* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-page */
+  /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
   a:focus {
     outline: none; }
 
-/* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-page */
+/* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
 body {
   min-width: 300px; }
 
-/* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-page */
+/* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
 .b-page {
   background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4414,16 +4470,16 @@ body {
   line-height: 1.42857;
   -webkit-font-smoothing: antialiased; }
 
-/* line 2, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-header */
+/* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__content {
   padding: 30px 0 15px; }
-/* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-header */
+/* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__container {
   position: relative; }
-/* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-header */
+/* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__search {
   text-align: right; }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-header */
+  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
   .b-header__search .b-search {
     max-width: 250px;
     display: inline-block;
@@ -4438,15 +4494,13 @@ body {
   .b-header__search, .b-header__desc, .b-header__logo {
     text-align: center;
     margin-bottom: 20px; } }
-/* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-header */
+/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__top-line .b-header__content {
   padding: 6px 0; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
 .b-nav {
   margin-top: 30px;
-  border: 1px solid #e2e2e2;
-  border-width: 1px 0;
   position: relative;
   z-index: 5; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -4455,22 +4509,25 @@ body {
   @media only screen and (max-width: 480px) {
     .b-nav {
       display: none; } }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+  /* line 8, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
   .b-nav__list {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center; }
-    /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    border-width: 1px 0; }
+    /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
     .b-nav__list_sub {
       position: absolute;
       top: 100%;
       left: 15px;
       background-color: rgba(0, 0, 0, 0.9);
+      border: none;
       display: none;
       padding: 21px 24px 19px;
       white-space: nowrap; }
-      /* line 26, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__link {
         display: block;
         padding: 8px 20px 4px 0;
@@ -4482,24 +4539,27 @@ body {
         position: relative;
         color: #fff;
         border: none; }
-        /* line 37, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+        /* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:after {
           content: attr(data-count);
           color: #5d5d5d;
           position: absolute;
           right: 5px;
           top: 8px; }
-        /* line 43, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+        /* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__link:hover {
           color: #e2e2e2; }
-      /* line 45, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 44, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__list_sub .b-nav__item {
         display: block;
         border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        /* line 48, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+        /* line 47, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
         .b-nav__list_sub .b-nav__item:first-child {
           border-top: 0; }
-    /* line 50, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+      .b-nav__list_sub .b-nav__list {
+        border: none; }
+    /* line 51, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
     .b-nav__list__col {
       width: 240px;
       display: inline-block;
@@ -4507,19 +4567,51 @@ body {
       white-space: normal;
       text-align: left;
       margin-left: 24px; }
-      /* line 57, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__list__col:first-child {
         margin-left: 0; }
-  /* line 60, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
   .b-nav__item {
     display: inline-block;
     vertical-align: top;
     text-align: left;
     font-size: 1.143em; }
-    /* line 65, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+    .b-nav__item_has-banner {
+      position: absolute;
+      right: 130px;
+      top: -13px; }
+      /* line 70, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+      .b-nav__item_has-banner .b-nav__link {
+        width: 74px;
+        padding: 10px 14px 18px;
+        background-color: #2bcd7f;
+        line-height: 15px;
+        text-align: center;
+        position: relative; }
+        /* line 78, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+        .b-nav__item_has-banner .b-nav__link:hover img {
+          margin-top: 10px; }
+        /* line 80, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+        .b-nav__item_has-banner .b-nav__link img {
+          display: block;
+          margin: 0 auto 13px;
+          -webkit-transition: margin-top 0.2s ease;
+                  transition: margin-top 0.2s ease; }
+        /* line 84, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
+        .b-nav__item_has-banner .b-nav__link:after {
+          content: "";
+          width: 0;
+          height: 0;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          border-top: 11px solid #2bcd7f;
+          border-left: 102px solid transparent; }
+    /* line 94, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
     .b-nav__item_has-sub {
       position: relative; }
-      /* line 67, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 96, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:before {
         display: none;
         content: '';
@@ -4533,21 +4625,21 @@ body {
         bottom: 0;
         left: 50%;
         margin-left: -6px; }
-      /* line 81, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 110, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub_reverse .b-nav__list_sub {
         left: auto;
         right: 15px; }
-        /* line 84, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+        /* line 113, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
         .b-nav__item_has-sub_reverse .b-nav__list_sub:before {
           left: auto;
           right: 30px; }
-      /* line 90, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 119, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover .b-nav__list_sub {
         display: block; }
-      /* line 92, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+      /* line 121, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
       .b-nav__item_has-sub:hover:before {
         display: block; }
-  /* line 95, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-nav */
+  /* line 124, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
   .b-nav__link {
     padding: 18px 20px 15px;
     display: inline-block;
@@ -4555,31 +4647,31 @@ body {
     -webkit-transition: color 0.2s ease;
             transition: color 0.2s ease; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
 .b-footer {
   margin-top: 70px; }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
   .b-footer__nav {
     margin: 20px 0; }
     @media only screen and (max-width: 480px) {
       .b-footer__nav {
         margin: 5px 0; } }
-    /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+    /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
     .b-footer__nav_soc {
       text-align: right; }
       @media only screen and (max-width: 480px) {
         .b-footer__nav_soc {
           text-align: left; } }
-      /* line 23, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+      /* line 23, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
       .b-footer__nav_soc .b-footer__link {
         margin: 0 0 0 25px; }
-  /* line 29, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+  /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
   .b-footer__link {
     font-size: 1.143em;
     margin-left: 25px;
     -webkit-transition: color 0.2s ease;
             transition: color 0.2s ease; }
-    /* line 33, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/b-footer */
+    /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-footer */
     .b-footer__link:first-child {
       margin-left: 0; }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -4591,105 +4683,105 @@ body {
         font-size: 1em;
         margin-left: 10px; } }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
 .b-page_theme-dark {
   background-color: #444349;
   color: #fff; }
-  /* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark a {
     color: #fff; }
-  /* line 7, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark .b-nav__link {
     color: #d4d4d4; }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark .b-nav__list_sub .b-nav__item {
     border-color: rgba(212, 212, 212, 0.3); }
-  /* line 13, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark select {
     color: #fff;
     border-color: #fff;
     background-color: #444349; }
-  /* line 18, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val {
     color: #fff; }
-  /* line 22, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
   .b-page_theme-dark .b-cart-trigger_full {
     background-color: #d4d4d4; }
-    /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/dark */
+    /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
     .b-page_theme-dark .b-cart-trigger_full:hover {
       background-color: #e2e2e2; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/wannabe */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
 .b-page_theme-wannabe {
   font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  /* line 3, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/wannabe */
-  .b-page_theme-wannabe .b-nav {
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
+  .b-page_theme-wannabe .b-nav__list {
     border-color: transparent; }
-    /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/wannabe */
-    .b-page_theme-wannabe .b-nav__link {
-      text-transform: uppercase;
-      font-weight: bold; }
-    /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/wannabe */
-    .b-page_theme-wannabe .b-nav__list_sub .b-nav__link {
-      font-weight: normal; }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/wannabe */
+  /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
+  .b-page_theme-wannabe .b-nav__link {
+    text-transform: uppercase;
+    font-weight: bold; }
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
+  .b-page_theme-wannabe .b-nav__list_sub .b-nav__link {
+    font-weight: normal; }
+  /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-footer {
     border-top: 1px solid #EFEFEF; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
 .b-page_theme-sugar {
   color: #222;
   font-family: Verdana, Geneva, sans-serif; }
-  /* line 4, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
-  .b-page_theme-sugar .b-nav {
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
+  .b-page_theme-sugar .b-nav__list {
     border-color: transparent; }
-    /* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
-    .b-page_theme-sugar .b-nav__link {
-      text-transform: uppercase; }
-  /* line 9, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
+  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
+  .b-page_theme-sugar .b-nav__link {
+    text-transform: uppercase; }
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
   .b-page_theme-sugar .b-item-list__title {
     font-weight: normal; }
-  /* line 14, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
+  /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
   .b-page_theme-sugar .b-item__price, .b-page_theme-sugar .b-item-list__title, .b-page_theme-sugar .b-item-full__title {
     font-style: italic;
     font-family: "minion-pro", TimesNewRoman, "Times New Roman", times, serif; }
-  /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/sugar */
+  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/sugar */
   .b-page_theme-sugar .b-slider_promo {
     max-height: 400px; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
 .b-page_theme-etc {
   color: #fff;
   background-color: #000;
   font-family: Verdana, Geneva, sans-serif; }
-  /* line 5, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc a {
     color: #fff; }
-    /* line 7, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc a:hover {
       color: #868383; }
-  /* line 10, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
-  .b-page_theme-etc .b-nav {
+  /* line 11, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  .b-page_theme-etc .b-nav__list {
     border-color: transparent; }
-  /* line 13, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-item-list__title {
     font-weight: normal; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-item {
     color: #000; }
-    /* line 18, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item__info {
       background-color: #fff;
       margin-top: 0;
       padding: 7px 7px 10px;
       text-align: center; }
-    /* line 24, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item__name, .b-page_theme-etc .b-item__price {
       font-size: 1em; }
-    /* line 26, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item__price {
       font-weight: bold; }
-  /* line 34, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-item-full__content {
     max-width: 700px;
     margin: 0 auto;
@@ -4697,79 +4789,79 @@ body {
     color: #000;
     padding: 0 95px 24px 71px;
     box-sizing: border-box; }
-    /* line 42, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item-full__content .b-breadcrumbs a {
       color: #000; }
     @media only screen and (max-width: 480px) {
       .b-page_theme-etc .b-item-full__content {
         padding: 0 24px 24px 0; } }
-  /* line 48, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-slider_thumbs {
     display: none !important; }
-  /* line 51, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-slider .owl-pagination {
     background: none; }
-  /* line 54, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 55, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .owl-theme .owl-controls .owl-page span {
     background: #000;
     width: 6px;
     height: 6px; }
-  /* line 60, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-full-filter .b-btn, .b-page_theme-etc .b-full-filter .b-paginator__item {
     background-color: #fff;
     color: #000; }
-    /* line 63, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 64, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-full-filter .b-btn:hover, .b-page_theme-etc .b-full-filter .b-paginator__item:hover {
       background-color: #868383; }
-  /* line 65, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-full-filter__value {
     background-color: #fff;
     color: #000; }
-    /* line 68, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-full-filter__value:before {
       background-image: url(/assets/cross_black.svg); }
-  /* line 71, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 72, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val {
     color: #fff; }
-    /* line 73, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val:before {
       background-color: #868383; }
-  /* line 76, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .noUi-handle {
     border-color: #868383; }
-  /* line 79, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 80, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .noUi-connect {
     background-color: #fff; }
-  /* line 82, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/etc */
+  /* line 83, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-form__row__num {
     background-color: #fff;
     color: #000; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
 .b-page_theme-cc {
   font-family: "apercu", Arial, Helvetica, sans-serif;
   line-height: 1.538;
   color: #242427; }
-  /* line 7, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-cart-trigger, .b-page_theme-cc .b-admin {
     border-radius: 3px;
     height: 44px;
     top: 13px; }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .mmenu-open {
     top: 13px; }
-  /* line 15, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-header {
     position: relative;
     z-index: 2; }
-    /* line 18, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-header__content {
       padding-top: 13px; }
-    /* line 21, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-header__top-line {
       background-color: #242427;
       color: #7d7d7d; }
-      /* line 31, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-header__top-line .b-header__content {
         padding: 6px 0; }
       @media only screen and (max-width: 480px) {
@@ -4784,99 +4876,107 @@ body {
       @media only screen and (min-width: 481px) and (max-width: 1023px) {
         .b-page_theme-cc .b-header__top-line .b-header__search {
           display: none; } }
-      /* line 44, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 44, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-header__top-line .b-site-description {
         padding: 9px 0; }
-        /* line 46, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+        /* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
         .b-page_theme-cc .b-header__top-line .b-site-description a {
           color: #7d7d7d; }
-          /* line 48, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+          /* line 48, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
           .b-page_theme-cc .b-header__top-line .b-site-description a:hover {
             color: #ef5a61; }
-  /* line 61, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-nav {
-    border-top: none;
     margin: 0;
-    padding-left: 0; }
-    /* line 65, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    padding-left: 0;
+    padding-right: 0; }
+    /* line 67, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-nav__item_has-banner .b-nav__link {
+      color: #fff;
+      font-size: 12px;
+      font-weight: normal;
+      padding: 20px 14px 18px;
+      text-transform: none; }
+    /* line 73, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-nav__list {
+      border-top: none;
       text-align: left; }
-      /* line 68, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-nav__list_sub .b-nav__link {
         padding: 8px 20px 4px 0; }
-    /* line 70, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 79, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-nav__link {
       font-weight: bold;
       text-transform: uppercase;
       padding: 0 7px 13px;
       letter-spacing: 0.04em;
       font-size: 13px; }
-  /* line 78, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 87, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-slider_promo {
     margin-top: -69px; }
-  /* line 80, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 89, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-slider_thumbs {
     display: none !important; }
-  /* line 83, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 92, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-btn, .b-page_theme-cc .b-paginator__item {
     border-radius: 2em;
     padding-top: 10px;
     padding-bottom: 9px; }
-    /* line 87, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 96, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-btn:hover, .b-page_theme-cc .b-paginator__item:hover {
       color: #fff;
       background-color: #ef5a61; }
-  /* line 91, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 100, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-show-more {
     color: #303030;
     font-size: 14px; }
-    /* line 94, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 103, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-show-more:hover {
       color: #ef5a61; }
-  /* line 98, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 107, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item__name {
     font-size: 1em; }
-  /* line 100, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 109, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item__price {
     font-weight: bold; }
-  /* line 104, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 113, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item-list__title {
     font-size: 20px;
     text-align: left;
     margin: 17px 0 16px; }
-  /* line 109, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item-list {
     margin-top: 60px; }
-    /* line 111, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 120, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-list:first-child {
       margin-top: 0; }
-  /* line 115, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 124, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-full-filter__notifiction {
     font-size: 1em; }
-  /* line 119, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 128, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .owl-pagination {
     display: inline-block;
     background: none; }
-  /* line 123, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 132, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .owl-theme .owl-controls .owl-page span {
     width: 6px;
     height: 6px; }
   @media only screen and (max-width: 480px) {
     .b-page_theme-cc .b-feature {
       margin: 15px 0 20px; } }
-  /* line 131, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 140, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item-full {
     margin-top: 0; }
-    /* line 134, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 143, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__gallery, .b-page_theme-cc .b-item-full__description {
       width: 100%; }
-    /* line 137, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 146, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__gallery {
       margin-bottom: 20px; }
-    /* line 140, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 149, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__header {
       text-align: center; }
-    /* line 143, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 152, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__title {
       margin: 12px 20px 8px;
       font-size: 3.214em;
@@ -4885,96 +4985,96 @@ body {
         .b-page_theme-cc .b-item-full__title {
           margin: 12px 10px 8px;
           font-size: 2em; } }
-    /* line 152, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 161, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__text_intro {
       font-size: 1.357em; }
-    /* line 154, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 163, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__text_etc {
       font-size: 1em; }
-      /* line 156, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 165, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-item-full__text_etc h2 {
         margin: 0 0 12px;
         font-size: 1.429em; }
-      /* line 159, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 168, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-item-full__text_etc p {
         margin: 0 0 10px; }
-    /* line 162, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 171, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__price {
       font-size: 2.429em; }
-  /* line 165, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 174, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-characteristics {
     font-size: 1em; }
-    /* line 167, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 176, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-characteristics li {
       margin: 0 0 12px; }
-      /* line 169, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 178, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-characteristics li:before {
         display: none; }
-    /* line 171, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 180, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-characteristics__name {
       width: 105px;
       float: left;
       color: #999; }
-    /* line 175, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 184, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-characteristics__val {
       margin-left: 120px;
       display: block; }
-  /* line 179, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 188, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-footer {
     background-color: #242427;
     color: #7d7d7d; }
-    /* line 182, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 191, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-footer__link {
       font-size: 1em;
       font-weight: bold;
       color: #fff; }
-      /* line 186, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+      /* line 195, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-footer__link:hover {
         color: #7d7d7d; }
-  /* line 190, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 199, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-cart__title {
     border: none; }
-  /* line 194, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 203, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-cart__action__code {
     border-color: #cbcbcb;
     border-radius: 2em;
     padding-top: 10px;
     padding-bottom: 9px; }
-    /* line 199, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+    /* line 208, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-cart__action__code:focus {
       outline: none;
       border-color: #ef5a61; }
-  /* line 203, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 212, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-cart__message {
     margin-top: 10px; }
-  /* line 207, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/block/theme/cc */
+  /* line 216, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-paginator__item {
     padding: 0 6px;
     min-width: 22px;
     border-radius: 0; }
 
-/* line 1, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/demo */
+/* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/demo */
 .text-center {
   text-align: center;
   font-size: 24px;
   margin: 10px 0; }
 
-/* line 6, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/demo */
+/* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/demo */
 .login__form {
   text-align: center;
   margin: 0 auto;
   max-width: 400px;
   background: #000;
   border-radius: 8px; }
-  /* line 12, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/demo */
+  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/demo */
   .login__form h3 {
     font-size: 16px;
     margin: 0;
     padding: 10px 5px;
     font-weight: normal; }
-  /* line 17, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/demo */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/demo */
   .login__form a {
     color: #fff; }
-    /* line 19, /Volumes/hdd/work/kiosk-public-static_forked/app/stylesheets/sass/demo */
+    /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/demo */
     .login__form a:hover {
       text-decoration: underline; }

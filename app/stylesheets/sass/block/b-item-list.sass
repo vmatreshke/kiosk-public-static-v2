@@ -1,6 +1,13 @@
 .b-item-list
   @extend .b-layout
 
+  &_additional
+    .b-item-list
+      &__title
+        font-size: 2em
+        font-weight: normal
+        margin-bottom: 1em
+
   &__title
     font-size: 53px
     text-align: center
@@ -41,7 +48,7 @@
     padding-top: 20px
 
   &_has-filter
-    margin-top: 55px
+    margin-top: 40px
     overflow: hidden
     @include grid-media-query("palm")
       margin-top: 0
@@ -49,28 +56,20 @@
       &__filter
         width: 190px
         float: left
-        border-right: 1px solid #f0f0f0
+        border-right: 1px solid rgba(114, 114, 114, .3)
         padding-right: 10px
       &__content
         margin-left: 210px
 
-    @include grid-media-query("lap")
+    @include grid-media-query((lap, palm))
       .b-item-list
         &__filter
           float: none
           width: 100%
           padding: 0
           border: none
+          max-width: 500px
+          margin-left: auto
+          margin-right: auto
         &__content
-          margin-left: 0
-
-    @include grid-media-query("palm")
-      .b-item-list
-        &__filter
-          float: none
-          width: 100%
-          padding: 0
-          border: none
-        &__content
-          margin-left: 0
-        
+          margin-left: -18px

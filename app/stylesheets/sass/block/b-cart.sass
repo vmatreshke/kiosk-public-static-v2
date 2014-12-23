@@ -80,19 +80,24 @@
           @include grid-media-query("palm")
             margin-top: 10px
 
+    &__submit
+      margin-left: 2%
+
     &__code,
     &__submit
       width: 46%
       display: inline-block
       vertical-align: top
-
-    &__submit
-      margin-left: 2%
+      @include grid-media-query("palm")
+        width: 100%
+        margin: 0 0 10px
 
     &__code
       border: 1px solid #e2e2e2
       padding: 13px 3px 12px 17px
       box-sizing: border-box
+      @include grid-media-query("palm")
+        text-align: center
 
     &__clear
       display: block
@@ -125,13 +130,17 @@
       margin-top: -5px
 
     &__quantity
+      // @include grid-media-query("palm")
+      //   margin-left: -6%
       &__text
         float: left
         width: 90px
+        @include grid-media-query("palm")
+          float: none
       &__select
         margin-left: 90px
         max-width: 60px
-        @include grid-media-query("lap")
+        @include grid-media-query((lap, palm))
           margin-left: 0
           max-width: 100%
         select
@@ -181,12 +190,14 @@
       &-price
         @extend %two-twelfths
         // @extend %lap--two-twelfths
-        @extend %palm--one-half
+        @extend %push--palm--one-third
+        @extend %palm--one-third
 
       &-quantity
         @extend %three-twelfths
         // @extend %lap--three-twelfths
-        @extend %palm--one-half
+        @extend %push--palm--one-third
+        @extend %palm--one-third
 
       &-remove
         @extend %one-twelfth

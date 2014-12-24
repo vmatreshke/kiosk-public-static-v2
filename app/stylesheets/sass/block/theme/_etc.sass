@@ -21,9 +21,9 @@
       margin-top: 0
       padding: 7px 7px 10px
       text-align: center
-    &__name,
-    &__price
-      font-size: 1em
+    // &__name,
+    // &__price
+    //   font-size: 1rem
     &__price
       font-weight: bold
 
@@ -80,8 +80,22 @@
   .noUi-connect
     background-color: $etcText
 
-  .b-form__row__num
-    background-color: $etcText
-    color: $etcPageBg
+  .b-form
+    &__row
+      &__num
+        background-color: $etcText
+        color: $etcPageBg
+    input[type='text'],
+    textarea
+      color: $etcPageBg
+
+  .b-cart
+    &__action
+      &__submit
+        background-color: invert($btnBgColor)
+        color: invert($btnColor)
+        &:hover
+          background-color: invert($btnBgColorHover)
+          color: $etcText
 
 

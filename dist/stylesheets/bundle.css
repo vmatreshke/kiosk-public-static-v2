@@ -1879,7 +1879,7 @@ td, th {
 /* Opera hack */
 /* line 224, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
 .b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
-  word-spacing: -0.04em; }
+  word-spacing: -0.31em; }
 
 /**
      * 1. Cause columns to stack side-by-side.
@@ -2048,11 +2048,17 @@ td, th {
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-feature-list > li {
     width: 50%; }
   /* line 377, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
-  .b-cart__item__col-img, .b-cart__item__col-price, .b-cart__item__col-quantity {
+  .b-cart__item__col-quantity {
     width: 33.333%; }
-  /* line 378, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  /* line 384, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  .b-cart__item__col-img {
+    width: 25%; }
+  /* line 386, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-content {
-    width: 66.666%; } }
+    width: 75%; }
+  /* line 441, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  .b-cart__item__col-price {
+    width: 41.666%; } }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
   /**
@@ -2083,7 +2089,7 @@ td, th {
      * Twelfths
      */
   /* line 365, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
-  .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
+  .b-header__search, .b-header__desc, .b-header__logo, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
   /* line 371, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item {
@@ -2227,9 +2233,9 @@ td, th {
   /**
      * Twelfths
      */
-  /* line 498, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
+  /* line 505, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-price, .b-cart__item__col-quantity {
-    left: 33.333%;
+    left: 25%;
     position: relative; } }
 
 @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -3185,8 +3191,8 @@ td, th {
 .b-layout, .b-item-list, .b-item-full, .b-slider_promo, .b-cart__content, .b-article, .b-header__container, .b-nav, .b-footer__container {
   max-width: 980px;
   margin: 0 auto;
-  padding-left: 10px;
-  padding-right: 10px; }
+  padding-left: 15px;
+  padding-right: 15px; }
 
 /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
 .b-btn, .b-paginator__item {
@@ -3250,45 +3256,44 @@ td, th {
   font-size: 53px;
   text-align: center;
   margin: 42px 0 46px; }
-/* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+/* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+.b-item-list__content {
+  font-size: 0; }
+/* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list__item .b-item {
   margin: 15px 0;
   -webkit-transition: color 0.1s ease;
           transition: color 0.1s ease; }
-  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+  /* line 28, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list__item .b-item__pic {
     -webkit-transition: opacity 0.1s ease;
             transition: opacity 0.1s ease;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden; }
-  /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+  /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list__item .b-item:hover .b-item__pic {
     opacity: 0.9; }
-  @media only screen and (max-width: 480px) {
-    /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
-    .b-item-list__item .b-item__name, .b-item-list__item .b-item__price {
-      font-size: 1em; } }
-/* line 45, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list__paginator {
   padding-top: 20px; }
-/* line 50, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+/* line 47, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
 .b-item-list_has-filter {
   margin-top: 40px;
   overflow: hidden; }
   @media only screen and (max-width: 480px) {
     .b-item-list_has-filter {
       margin-top: 0; } }
-  /* line 56, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+  /* line 53, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list_has-filter .b-item-list__filter {
     width: 190px;
     float: left;
     border-right: 1px solid rgba(114, 114, 114, 0.3);
     padding-right: 10px; }
-  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+  /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list_has-filter .b-item-list__content {
     margin-left: 210px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
-    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+    /* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__filter {
       float: none;
       width: 100%;
@@ -3297,11 +3302,11 @@ td, th {
       max-width: 500px;
       margin-left: auto;
       margin-right: auto; }
-    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+    /* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__content {
       margin-left: -18px; } }
   @media only screen and (max-width: 480px) {
-    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+    /* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__filter {
       float: none;
       width: 100%;
@@ -3310,39 +3315,44 @@ td, th {
       max-width: 500px;
       margin-left: auto;
       margin-right: auto; }
-    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
+    /* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
     .b-item-list_has-filter .b-item-list__content {
       margin-left: -18px; } }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
 .b-item {
-  display: block; }
-  /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  display: block;
+  font-size: 1rem; }
+  /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__pic {
     width: 100%;
     vertical-align: top; }
-    /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__pic-wrap {
       position: relative; }
-  /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__status {
     position: absolute;
     bottom: 0;
     left: 0; }
-    /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__status .b-status {
       display: block; }
-  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__info {
     margin: 8px 0 0; }
-  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__name {
     margin: 0;
     font-weight: normal;
-    font-size: 1.143em; }
-  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    font-size: 1em; }
+  /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__price {
-    font-size: 1.143em; }
+    font-size: 1em; }
+  @media only screen and (max-width: 480px) {
+    /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    .b-item__name, .b-item__price {
+      font-size: 0.9em; } }
 
 /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
 .b-item-full {
@@ -3433,14 +3443,15 @@ td, th {
   background-color: #E8E8E8;
   color: #4D4D4D;
   padding: 5px 8px;
-  text-transform: uppercase; }
-  /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
+  text-transform: uppercase;
+  font-size: 0.875rem; }
+  /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_sale, .b-status_preorder {
     color: #FFF; }
-  /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
+  /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_sale {
     background-color: #F60528; }
-  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
+  /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_preorder {
     background-color: #10C1F8; }
 
@@ -3609,20 +3620,16 @@ td, th {
     overflow: hidden; }
     @media only screen and (max-width: 480px) {
       .b-slider_promo {
-        margin-left: 0;
-        margin-right: 0;
         padding-left: 0;
         padding-right: 0; } }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
       .b-slider_promo {
-        margin-left: 0;
-        margin-right: 0;
         padding-left: 0;
         padding-right: 0; } }
-    /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
+    /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .owl-controls {
       position: static; }
-    /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
+    /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .b-slider__item {
       text-align: center;
       background-color: #CCCCCC; }
@@ -3729,95 +3736,106 @@ td, th {
     .b-cart__list, .b-cart__total-sum, .b-cart__action {
       margin-left: 0;
       margin-right: 0; } }
-/* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__total-sum {
   text-align: right;
   font-size: 2.143em; }
-/* line 57, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  @media only screen and (max-width: 480px) {
+    .b-cart__total-sum {
+      text-align: center; } }
+/* line 56, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__col-code {
   text-align: right; }
   @media only screen and (max-width: 480px) {
     .b-cart__action__col-code {
       padding-top: 10px; } }
-/* line 72, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__col-submit .b-cart__action__submit {
   width: 100%;
   margin-left: 0; }
   @media only screen and (max-width: 480px) {
     .b-cart__action__col-submit .b-cart__action__submit {
       margin-top: 10px; } }
-/* line 78, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__submit {
   margin-left: 2%; }
-/* line 82, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 81, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__code, .b-cart__action__submit {
   width: 46%;
   display: inline-block;
   vertical-align: top; }
-  @media only screen and (max-width: 480px) {
-    .b-cart__action__code, .b-cart__action__submit {
-      width: 100%;
-      margin: 0 0 10px; } }
-/* line 90, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 86, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__code {
   border: 1px solid #e2e2e2;
   padding: 13px 3px 12px 17px;
   box-sizing: border-box; }
   @media only screen and (max-width: 480px) {
     .b-cart__action__code {
-      text-align: center; } }
-/* line 97, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+      text-align: center;
+      width: 100%;
+      margin: 0 0 10px; } }
+@media only screen and (max-width: 480px) {
+  .b-cart__action__submit {
+    position: fixed;
+    z-index: 3;
+    bottom: 15px;
+    width: 355px;
+    margin: 0 0 0 -178px;
+    left: 50%; } }
+/* line 104, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__action__clear {
   display: block; }
-/* line 101, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 108, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__list {
   list-style: none;
   padding: 0; }
-/* line 105, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+/* line 112, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__item {
   padding-bottom: 25px;
+  font-size: 0;
   position: relative; }
-  /* line 110, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  /* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__img {
     width: 100%; }
-  /* line 114, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  /* line 122, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__title, .b-cart__item__option {
     margin: 0;
-    font-size: 1.143em; }
-    @media only screen and (max-width: 480px) {
-      .b-cart__item__title, .b-cart__item__option {
-        font-size: 1em; } }
-  /* line 120, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+    font-size: 0.875rem; }
+  /* line 126, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__option {
     margin-top: 3px; }
-  /* line 123, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  /* line 129, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__price {
-    font-size: 1.429em;
+    font-size: 1.25rem;
     margin-top: -5px; }
-  /* line 128, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  /* line 134, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__quantity__text {
-    float: left;
-    width: 90px; }
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 0.875rem; }
     @media only screen and (max-width: 480px) {
       .b-cart__item__quantity__text {
-        float: none; } }
-  /* line 133, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+        display: block; } }
+  /* line 141, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__quantity__select {
-    margin-left: 90px;
-    max-width: 60px; }
+    max-width: 60px;
+    display: inline-block;
+    vertical-align: middle; }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
       .b-cart__item__quantity__select {
-        margin-left: 0;
-        max-width: 100%; } }
+        max-width: 90%;
+        display: block; } }
     @media only screen and (max-width: 480px) {
       .b-cart__item__quantity__select {
-        margin-left: 0;
-        max-width: 100%; } }
-    /* line 139, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+        max-width: 90%;
+        display: block; } }
+    /* line 148, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
     .b-cart__item__quantity__select select {
       width: 100%;
-      box-sizing: border-box; }
-  /* line 143, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+      box-sizing: border-box;
+      font-size: 0.875rem; }
+  /* line 153, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__item__remove {
     display: block;
     border-radius: 17px;
@@ -3827,7 +3845,7 @@ td, th {
     cursor: pointer;
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease; }
-    /* line 151, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+    /* line 161, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
     .b-cart__item__remove img {
       width: 100%; }
     @media only screen and (max-width: 480px) {
@@ -3838,16 +3856,25 @@ td, th {
   @media only screen and (max-width: 480px) {
     .b-cart__item__col-content {
       padding-right: 30px; } }
-/* line 191, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  @media only screen and (min-width: 481px) and (max-width: 1023px) {
+    .b-cart__item__col-price, .b-cart__item__col-quantity {
+      padding-top: 10px; } }
+  @media only screen and (max-width: 480px) {
+    .b-cart__item__col-price, .b-cart__item__col-quantity {
+      padding-top: 10px; } }
+/* line 206, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__form {
   max-width: 580px;
   margin: 55px 0 0 205px; }
-  /* line 195, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+  /* line 210, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__form__delivery-name, .b-cart__form__delivery-price {
     display: inline-block;
     vertical-align: top;
     width: 40%; }
-  /* line 199, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
+    @media only screen and (max-width: 480px) {
+      .b-cart__form__delivery-name, .b-cart__form__delivery-price {
+        width: auto; } }
+  /* line 216, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
   .b-cart__form .b-cart__action {
     margin: 0; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
@@ -3911,7 +3938,11 @@ td, th {
       border-bottom: 1px solid #e2e2e2;
       text-align: left;
       font-weight: normal; }
-  /* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    @media only screen and (max-width: 480px) {
+      .b-text table {
+        overflow-x: auto;
+        display: block; } }
+  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text__image {
     margin: 0 -140px;
     overflow: hidden; }
@@ -3921,7 +3952,7 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text__image {
         margin: 0; } }
-    /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    /* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text__image img {
       width: 100%;
       max-width: 100%; }
@@ -3930,7 +3961,7 @@ td, th {
         margin-left: 0;
         margin-right: 0; } }
 
-/* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+/* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
 .map-embed {
   overflow: hidden;
   height: 400px;
@@ -3944,8 +3975,9 @@ td, th {
   overflow: hidden; }
   @media only screen and (max-width: 480px) {
     .b-form__row {
-      overflow: visible; } }
-  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+      overflow: visible;
+      margin-bottom: 50px; } }
+  /* line 8, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__num {
     float: left;
     height: 44px;
@@ -3960,24 +3992,27 @@ td, th {
       .b-form__row__num {
         float: none;
         margin: 0 auto; } }
-  /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__content {
     margin-left: 62px; }
     @media only screen and (max-width: 480px) {
       .b-form__row__content {
         margin-left: 0; } }
-  /* line 26, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__title {
     font-size: 1.571em;
     margin: 6px 0 28px; }
-  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+    @media only screen and (max-width: 480px) {
+      .b-form__row__title {
+        text-align: center; } }
+  /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__widget {
     margin: 30px 0 0; }
-  /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row .b-alert {
     position: relative;
     z-index: 2; }
-/* line 39, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form input[type='text'], .b-form textarea {
   resize: none;
   background: #fff;
@@ -3988,16 +4023,16 @@ td, th {
   box-shadow: none;
   height: auto;
   box-sizing: border-box; }
-  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form input[type='text'] + .b-alert, .b-form textarea + .b-alert {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 54, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 57, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__radio input {
   margin-right: 20px; }
 
@@ -4494,7 +4529,11 @@ body {
   .b-header__search, .b-header__desc, .b-header__logo {
     text-align: center;
     margin-bottom: 20px; } }
-/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  .b-header__search, .b-header__desc, .b-header__logo {
+    text-align: center;
+    margin-bottom: 20px; } }
+/* line 41, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__top-line .b-header__content {
   padding: 6px 0; }
 
@@ -4710,6 +4749,12 @@ body {
     /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
     .b-page_theme-dark .b-cart-trigger_full:hover {
       background-color: #e2e2e2; }
+  /* line 28, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
+  .b-page_theme-dark .b-admin, .b-page_theme-dark .b-cart-trigger {
+    background-color: #cacaca; }
+  /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
+  .b-page_theme-dark .b-admin:hover, .b-page_theme-dark .b-cart-trigger_full:hover {
+    background-color: #ededed; }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/wannabe */
 .b-page_theme-wannabe {
@@ -4775,13 +4820,10 @@ body {
       margin-top: 0;
       padding: 7px 7px 10px;
       text-align: center; }
-    /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
-    .b-page_theme-etc .b-item__name, .b-page_theme-etc .b-item__price {
-      font-size: 1em; }
-    /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item__price {
       font-weight: bold; }
-  /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-item-full__content {
     max-width: 700px;
     margin: 0 auto;
@@ -4789,53 +4831,64 @@ body {
     color: #000;
     padding: 0 95px 24px 71px;
     box-sizing: border-box; }
-    /* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    /* line 40, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-item-full__content .b-breadcrumbs a {
       color: #000; }
     @media only screen and (max-width: 480px) {
       .b-page_theme-etc .b-item-full__content {
         padding: 0 24px 24px 0; } }
-  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 46, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-slider_thumbs {
     display: none !important; }
-  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-slider .owl-pagination {
     background: none; }
-  /* line 55, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .owl-theme .owl-controls .owl-page span {
     background: #000;
     width: 6px;
     height: 6px; }
-  /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-full-filter .b-btn, .b-page_theme-etc .b-full-filter .b-paginator__item {
     background-color: #fff;
     color: #000; }
-    /* line 64, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-full-filter .b-btn:hover, .b-page_theme-etc .b-full-filter .b-paginator__item:hover {
       background-color: #868383; }
-  /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-full-filter__value {
     background-color: #fff;
     color: #000; }
-    /* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    /* line 66, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-full-filter__value:before {
       background-image: url(/assets/cross_black.svg); }
-  /* line 72, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val {
     color: #fff; }
-    /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    /* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
     .b-page_theme-etc .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val:before {
       background-color: #868383; }
-  /* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .noUi-handle {
     border-color: #868383; }
-  /* line 80, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 77, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .noUi-connect {
     background-color: #fff; }
-  /* line 83, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  /* line 82, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-form__row__num {
     background-color: #fff;
     color: #000; }
+  /* line 86, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  .b-page_theme-etc .b-form input[type='text'], .b-page_theme-etc .b-form textarea {
+    color: #000; }
+  /* line 91, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+  .b-page_theme-etc .b-cart__action__submit {
+    background-color: white;
+    color: black; }
+    /* line 94, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
+    .b-page_theme-etc .b-cart__action__submit:hover {
+      background-color: #343434;
+      color: #fff; }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
 .b-page_theme-cc {

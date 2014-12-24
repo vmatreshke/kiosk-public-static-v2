@@ -76,21 +76,12 @@
 
     &__submit
       margin-left: 2%
-      @include grid-media-query("palm")
-        position: fixed
-        z-index: 3
-        bottom: 15px
-        left: 15px
-        right: 15px
 
     &__code,
     &__submit
       width: 46%
       display: inline-block
-      vertical-align: top
-      @include grid-media-query("palm")
-        width: 100%
-        margin: 0 0 10px
+      vertical-align: top     
 
     &__code
       border: 1px solid #e2e2e2
@@ -98,6 +89,17 @@
       box-sizing: border-box
       @include grid-media-query("palm")
         text-align: center
+        width: 100%
+        margin: 0 0 10px
+
+    &__submit
+      @include grid-media-query("palm")
+        position: fixed
+        z-index: 3
+        bottom: 15px
+        width: 355px
+        margin: 0 0 0 -178px
+        left: 50%
 
     &__clear
       display: block

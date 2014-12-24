@@ -4,6 +4,7 @@
     overflow: hidden
     @include grid-media-query("palm")
       overflow: visible
+      margin-bottom: 50px
     &__num
       float: left
       height: 44px
@@ -26,6 +27,8 @@
     &__title
       font-size: 1.571em
       margin: 6px 0 28px
+      @include grid-media-query("palm")
+        text-align: center
 
     &__widget
       margin: 30px 0 0

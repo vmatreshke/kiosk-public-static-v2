@@ -21,27 +21,21 @@
     p
       margin: 0 0 100px
       font-size: 1.571em
-    // a
-    //   padding-bottom: 6px
-    //   color: #121212
-    //   font-weight: bold
-    //   border-bottom: 1px solid #e2e2e2
 
   &__list,
   &__total-sum,
   &__action
     margin: 47px 60px 0 100px
-    @include grid-media-query("lap")
-      margin-left: 0
-      margin-right: 0
-    @include grid-media-query("palm")
+    @include grid-media-query((lap, palm))
       margin-left: 0
       margin-right: 0
 
   &__total-sum
     text-align: right
     font-size: 2.143em
-
+    @include grid-media-query(palm)
+      text-align: center
+  
   &__action
     &__container
       @extend %grid
@@ -82,6 +76,12 @@
 
     &__submit
       margin-left: 2%
+      @include grid-media-query("palm")
+        position: fixed
+        z-index: 3
+        bottom: 15px
+        left: 15px
+        right: 15px
 
     &__code,
     &__submit
@@ -119,9 +119,7 @@
     &__title,
     &__option
       margin: 0
-      font-size: 1rem
-      @include grid-media-query("palm")
-        font-size: 0.875rem
+      font-size: 0.875rem
 
     &__option
       margin-top: 3px
@@ -134,16 +132,19 @@
       // @include grid-media-query("palm")
       //   margin-left: -6%
       &__text
-        float: left
-        width: 90px
+        display: inline-block
+        vertical-align: middle
+        margin-right: 10px
+        font-size: 0.875rem
         @include grid-media-query("palm")
-          float: none
+          display: block
       &__select
-        margin-left: 90px
         max-width: 60px
+        display: inline-block
+        vertical-align: middle
         @include grid-media-query((lap, palm))
-          margin-left: 0
-          max-width: 100%
+          max-width: 90%
+          display: block
         select
           width: 100%
           box-sizing: border-box
@@ -174,13 +175,11 @@
       
       &-img
         @extend %two-twelfths
-        // @extend %lap--one-twelfths
-        @extend %palm--one-third
+        @extend %palm--three-twelfths
 
       &-content
         @extend %four-twelfths
-        // @extend %lap--four-twelfths
-        @extend %palm--two-thirds
+        @extend %palm--nine-twelfths
         @include grid-media-query("palm")
           padding-right: 30px
 
@@ -191,15 +190,18 @@
 
       &-price
         @extend %two-twelfths
-        // @extend %lap--two-twelfths
-        @extend %push--palm--one-third
-        @extend %palm--one-third
+        @extend %push--palm--three-twelfths
+        @extend %palm--five-twelfths
 
       &-quantity
         @extend %three-twelfths
-        // @extend %lap--three-twelfths
-        @extend %push--palm--one-third
-        @extend %palm--one-third
+        @extend %push--palm--three-twelfths
+        @extend %palm--four-twelfths
+
+      &-price,
+      &-quantity
+        @include grid-media-query((lap, palm))
+          padding-top: 10px
 
       &-remove
         @extend %one-twelfth
@@ -213,6 +215,8 @@
       display: inline-block
       vertical-align: top
       width: 40%
+      @include grid-media-query("palm")
+        width: auto
     .b-cart__action
       margin: 0
     @include grid-media-query("lap")

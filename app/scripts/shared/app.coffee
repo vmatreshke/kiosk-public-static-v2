@@ -16,3 +16,13 @@ $ ->
         'max': 100
       }
     )
+
+  if $("[fontsize_slider]").length
+    $("[fontsize_slider]").noUiSlider(
+      start: 14
+      step: 2
+      range: {
+        'min': 12
+        'max': 16
+      }
+    )

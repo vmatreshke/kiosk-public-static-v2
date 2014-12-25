@@ -1,0 +1,89 @@
+.b-design-option
+  position: absolute
+  z-index: 20
+  top: 20px
+  left: 20px
+  width: 360px
+  font-family: $font-stack-gotham-family
+  &__close
+    position: absolute
+    top: 6px
+    right: 6px
+    width: 25px
+    height: 25px
+    text-indent: -9999px
+    background: url(#{$images-path}/cross_black.svg)
+    background-size: 25px 25px
+    cursor: pointer
+  &__title
+    text-align: center
+    padding: 12px
+    background-color: #f5f5f5
+    font-size: 11px
+    text-transform: uppercase
+    letter-spacing: .14em
+    font-weight: 700
+    color: #616161
+    border-radius: 5px 5px 0 0
+  
+  &__body
+    border-radius: 0 0 5px 5px
+    background-color: rgba(51,51,51,.93)
+    color: #fff
+    font-size: 0
+
+  &__color
+    height: 18px
+    width: 18px
+    border-radius: 9px
+    display: inline-block
+    vertical-align: middle
+    position: relative
+    cursor: pointer
+    &:before
+      content: ''
+      position: absolute
+      top: -6px
+      left: -6px
+      right: -6px
+      bottom: -6px
+      border: 2px solid #f8c700
+      border-radius: 50%
+    &_img
+      background-color: #fff
+      img
+        width: 100%
+        border-radius: 14px
+
+  &__item
+    padding: 0 10px
+    height: 51px
+    position: relative
+    &__name
+      display: inline-block
+      vertical-align: middle
+      width: 205px
+      padding: 16px 0
+      font-size: 14px
+      color: #888
+    &__val
+      display: inline-block
+      vertical-align: middle
+      width: 130px
+      text-align: right
+
+  &__type
+    font-size: 18px
+    padding-left: 10px
+    color: #fff
+    cursor: pointer
+    &:hover
+      color: #f8c700
+    &_verdana
+      font-family: $font-stack-verdana-family
+    &_gotham
+      font-family: $font-stack-gotham-family
+    &_default
+      font-family: $font-stack-default-family
+    &_apercu
+      font-family: $font-stack-apercu-family

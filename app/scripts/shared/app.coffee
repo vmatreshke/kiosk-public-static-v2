@@ -26,3 +26,10 @@ $ ->
         'max': 16
       }
     )
+
+  bPage = $('.b-page')
+
+  $('[ks-design]').on 'click', ()->
+    className = $(@).data 'classname'
+    bPage.addClass className
+    return false

@@ -58,38 +58,69 @@
   .b-design-option__close Закрыть
   .b-design-option__body
     .b-design-option__item
-      %span.b-design-option__item__name цвет страницы
-      .b-design-option__item__val
-        .b-design-option__color{style: 'background-color: red'}
+      .b-design-option__item__current-params
+        %span.b-design-option__item__name цвет страницы
+        .b-design-option__item__val
+          .b-design-option__color{style: 'background-color: white'}
+      .b-design-option__item__available-params
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: red'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: tomato'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: green'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: black'}
 
     .b-design-option__item
-      %span.b-design-option__item__name фон страницы
-      .b-design-option__item__val
-        .b-design-option__color.b-design-option__color_img
+      .b-design-option__item__current-params
+        %span.b-design-option__item__name фон страницы
+        .b-design-option__item__val
+          .b-design-option__color.b-design-option__color_img
+            %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
+      .b-design-option__item__available-params
+        .b-design-option__color.b-design-option__color_img{'ks-design': '', 'data-classname': 'b-page_bg-pic-p'}
+          %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
+        .b-design-option__color.b-design-option__color_img{'ks-design': '', 'data-classname': 'b-page_bg-pic-p'}
           %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
 
-    .b-design-option__item
-      %span.b-design-option__item__name цвет ленты
-      .b-design-option__item__val
-        .b-design-option__color{style: 'background-color: green'}
 
     .b-design-option__item
-      %span.b-design-option__item__name цвет текста
-      .b-design-option__item__val
-        .b-design-option__color{style: 'background-color: black'}
+      .b-design-option__item__current-params
+        %span.b-design-option__item__name цвет ленты
+        .b-design-option__item__val
+          .b-design-option__color{style: 'background-color: green'}
+      .b-design-option__item__available-params
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_layer-light',style: 'background-color: white'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_layer-light',style: 'background-color: gray'}
 
     .b-design-option__item
-      %span.b-design-option__item__name цвет активных элементов
+      %span.b-design-option__item__name прозрачность ленты
       .b-design-option__item__val
-        .b-design-option__color{style: 'background-color: purple'}
+        %div(fontsize_slider)
+
+    .b-design-option__item
+      .b-design-option__item__current-params
+        %span.b-design-option__item__name цвет текста
+        .b-design-option__item__val
+          .b-design-option__color{style: 'background-color: black'}
+      .b-design-option__item__available-params
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: tomato'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: green'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: black'}
+
+    .b-design-option__item
+      .b-design-option__item__current-params
+        %span.b-design-option__item__name цвет активных элементов
+        .b-design-option__item__val
+          .b-design-option__color{style: 'background-color: purple'}
+      .b-design-option__item__available-params
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_active-dark',style: 'background-color: tomato'}
+        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_active-dark',style: 'background-color: green'}
 
     .b-design-option__item
       %span.b-design-option__item__name шрифт
       .b-design-option__item__val
-        %span.b-design-option__type.b-design-option__type_verdana Aa
-        %span.b-design-option__type.b-design-option__type_gotham Aa
-        %span.b-design-option__type.b-design-option__type_default Aa
-        %span.b-design-option__type.b-design-option__type_apercu Aa
+        %span.b-design-option__type.b-design-option__type_verdana{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
+        %span.b-design-option__type.b-design-option__type_gotham{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
+        %span.b-design-option__type.b-design-option__type_default{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
+        %span.b-design-option__type.b-design-option__type_apercu{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
 
     .b-design-option__item
       %span.b-design-option__item__name размер шрифта

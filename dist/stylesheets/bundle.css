@@ -3296,7 +3296,7 @@ td, th {
   .b-item-list_has-filter .b-item-list__filter {
     width: 190px;
     float: left;
-    border-right: 1px solid rgba(114, 114, 114, 0.3);
+    border-right: 1px solid rgba(114, 114, 114, 0.7);
     padding-right: 10px; }
   /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-list */
   .b-item-list_has-filter .b-item-list__content {
@@ -4524,7 +4524,9 @@ html {
   /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
   .b-page__content__inner {
     max-width: 1010px;
-    margin: 15px auto; }
+    margin: 15px auto;
+    -webkit-transition: background-color 0.4s linear;
+            transition: background-color 0.4s linear; }
 
 /* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__content {
@@ -4575,7 +4577,7 @@ html {
     margin: 0;
     padding: 0;
     text-align: center;
-    border: 1px solid #e2e2e2;
+    border: 1px solid rgba(114, 114, 114, 0.7);
     border-width: 1px 0; }
     /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-nav */
     .b-nav__list_sub {

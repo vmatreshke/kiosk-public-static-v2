@@ -20,4 +20,40 @@
   &_ff-gotham
     font-family: $font-stack-gotham-family
 
+  &_hide-slider
+    .b-slider_promo
+      display: none !important
 
+  &_layout-l1
+    .b-item-full__content
+      @extend %grid--rev
+
+
+  &_hide-catalog
+    .b-item-list_has-filter
+      .b-item-list__filter
+        float: none
+        display: none
+      .b-item-list__content
+        margin-left: 0
+
+  &[data-in-row="2"]
+    .b-item-list
+      &__item
+        @extend %one-half
+        @extend %lap--one-half
+        @extend %palm--one-half
+
+  &[data-in-row="3"]
+    .b-item-list
+      &__item
+        @extend %one-third
+        @extend %lap--one-half
+        @extend %palm--one-half
+
+  &[data-in-row="4"]
+    .b-item-list
+      &__item
+        @extend %three-twelfths
+        @extend %lap--one-half
+        @extend %palm--one-half

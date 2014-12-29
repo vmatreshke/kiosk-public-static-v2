@@ -93,7 +93,7 @@
     .b-design-option__item
       %span.b-design-option__item__name прозрачность ленты
       .b-design-option__item__val
-        %div(fontsize_slider)
+        %div(ks-opacity_slider)
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -126,32 +126,32 @@
       %span.b-design-option__item__name размер шрифта
       .b-design-option__item__val
         %span.b-design-option__font-size
-          %div(fontsize_slider)
+          %div(ks-fontsize_slider)
 
     .b-design-option__item
       %span.b-design-option__item__name лейаут товара
       .b-design-option__item__val
-        %span.b-design-option__layout 1
-        %span.b-design-option__layout 2
-        %span.b-design-option__layout 3
+        %span.b-design-option__layout{'ks-layout-change': ''} 1
+        %span.b-design-option__layout{'ks-layout-change': ''} 2
+        %span.b-design-option__layout{'ks-layout-change': ''} 3
 
     .b-design-option__item
       %span.b-design-option__item__name каталог
       .b-design-option__item__val
         %label.b-design-option__cbox
-          %input{type: 'checkbox'}
+          %input{'ks-show-filter': '',type: 'checkbox', checked: 'true'}
           фильтр
 
     .b-design-option__item
       %span.b-design-option__item__name товаров в ряд
       .b-design-option__item__val
         %span.b-design-option__font-size
-          %div(fontsize_slider)
+          %div(ks-row_slider)
 
     .b-design-option__item
       %span.b-design-option__item__name главная страница
       .b-design-option__item__val
         %label.b-design-option__cbox
-          %input{type: 'checkbox'}
+          %input{'ks-show-slider': '', type: 'checkbox', checked: 'true'}
           большой баннер
   

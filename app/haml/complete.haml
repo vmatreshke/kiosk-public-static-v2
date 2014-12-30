@@ -4,18 +4,18 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page
     .b-page__content
-      
-      +include 'app/haml/shared/_navbar.haml'
+      .b-page__content__inner
+        +include 'app/haml/shared/_navbar.haml'
 
-      %section.b-cart
-        .b-cart__content
-          %h1.b-cart__title Спасибо за заказ
-          .b-cart__message
-            %p Спасибо за заказ. Тут еще какой-то текст, но я не могу скопипастить. Наш телефон +7 (395) 228-88-14
-            %a.b-btn{href: 'welcome.html'} Продолжить покупку
+        %section.b-cart
+          .b-cart__content
+            %h1.b-cart__title Спасибо за заказ
+            .b-cart__message
+              %p Спасибо за заказ. Тут еще какой-то текст, но я не могу скопипастить. Наш телефон +7 (395) 228-88-14
+              %a.b-btn{href: 'welcome.html'} Продолжить покупку
 
 
-      +include 'app/haml/shared/_footer.haml'
+        +include 'app/haml/shared/_footer.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

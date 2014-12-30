@@ -3227,6 +3227,7 @@ td, th {
 
 /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
 .b-alert {
+  font-size: 1rem;
   display: block;
   text-align: center;
   font-weight: normal;
@@ -3234,7 +3235,7 @@ td, th {
   border-radius: 3px;
   padding: 11px;
   margin: 0 0 20px; }
-  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
+  /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
   .b-alert_danger {
     background-color: #da2a41;
     border-color: #da2a41;
@@ -3343,25 +3344,27 @@ td, th {
   .b-item__status {
     position: absolute;
     bottom: 0;
-    left: 0; }
-    /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    left: 0;
+    font-size: 0; }
+    /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__status .b-status {
-      display: block; }
-  /* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+      display: inline-block;
+      vertical-align: bottom; }
+  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__info {
     margin: 8px 0 0; }
-  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__name {
     margin: 0;
     font-weight: normal;
     font-size: 1em; }
-  /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
   .b-item__price {
-    font-size: 1em; }
+    font-size: 1rem; }
   @media only screen and (max-width: 480px) {
-    /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
+    /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item */
     .b-item__name, .b-item__price {
-      font-size: 0.9em; } }
+      font-size: 0.9rem; } }
 
 /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
 .b-item-full {
@@ -3463,6 +3466,9 @@ td, th {
   /* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
   .b-status_preorder {
     background-color: #10C1F8; }
+  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-status */
+  .b-status_old-price {
+    text-decoration: line-through; }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-instafeed */
 .b-instafeed {
@@ -3723,7 +3729,7 @@ td, th {
   margin: 0;
   text-align: center;
   font-weight: normal;
-  font-size: 18px; }
+  font-size: 1.286rem; }
 /* line 15, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-cart */
 .b-cart__message {
   padding: 38px 0;
@@ -3981,12 +3987,13 @@ td, th {
 /* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__row {
   margin: 0 0 20px;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 1rem; }
   @media only screen and (max-width: 480px) {
     .b-form__row {
       overflow: visible;
       margin-bottom: 50px; } }
-  /* line 8, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__num {
     float: left;
     height: 44px;
@@ -4001,27 +4008,27 @@ td, th {
       .b-form__row__num {
         float: none;
         margin: 0 auto; } }
-  /* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 23, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__content {
     margin-left: 62px; }
     @media only screen and (max-width: 480px) {
       .b-form__row__content {
         margin-left: 0; } }
-  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 28, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__title {
-    font-size: 1.571em;
+    font-size: 1.571rem;
     margin: 6px 0 28px; }
     @media only screen and (max-width: 480px) {
       .b-form__row__title {
         text-align: center; } }
-  /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row__widget {
     margin: 30px 0 0; }
-  /* line 36, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 37, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form__row .b-alert {
     position: relative;
     z-index: 2; }
-/* line 42, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form input[type='text'], .b-form textarea {
   resize: none;
   background: #fff;
@@ -4032,16 +4039,16 @@ td, th {
   box-shadow: none;
   height: auto;
   box-sizing: border-box; }
-  /* line 52, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  /* line 53, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
   .b-form input[type='text'] + .b-alert, .b-form textarea + .b-alert {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 57, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__radio input {
   margin-right: 20px; }
 
@@ -4140,7 +4147,7 @@ td, th {
     margin-top: 36px; }
   /* line 21, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__item__title {
-    font-size: 1.143em;
+    font-size: 1.143rem;
     margin: 0 0 12px; }
 /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__slider {
@@ -4155,7 +4162,7 @@ td, th {
 /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-full-filter */
 .b-full-filter__value {
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.857rem;
   padding: 5px 30px 5px 10px;
   background-color: #121212;
   border-radius: 3px;
@@ -4196,8 +4203,8 @@ td, th {
   border-radius: 3px;
   background-color: #4e4e4e;
   color: #fff;
-  font-size: 12px;
-  padding: 9px 12px;
+  font-size: 0.857rem;
+  padding: 9px 0.857rem;
   margin: -6px 0 0 19px;
   white-space: nowrap;
   z-index: 5; }

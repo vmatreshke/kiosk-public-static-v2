@@ -4,41 +4,41 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page.b-page_theme-cc
     .b-page__content
-      
-      +include 'app/haml/shared/_navbar_cc.haml'
+      .b-page__content__inner
+        +include 'app/haml/shared/_navbar_cc.haml'
 
-      %section.b-item-list.b-item-list_has-filter
-        .b-item-list__filter
-          +include 'app/haml/shared/_filter.haml'
-        
-        .b-item-list__content
-          - for i in [1..8]
-            .b-item-list__item
-              %a.b-item{href: 'product.html'}
-                .b-item__pic-wrap
-                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
-                  .b-item__status
-                    -if i == 1
-                      %span.b-status.b-status_sold Распродано
-                    -if i == 2
-                      %span.b-status.b-status_preorder Под заказ
-                    -if i == 3
-                      %span.b-status.b-status_sale Sale -24%
-                .b-item__info
-                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                  .b-item__price 8 900 руб.
+        %section.b-item-list.b-item-list_has-filter
+          .b-item-list__filter
+            +include 'app/haml/shared/_filter.haml'
+          
+          .b-item-list__content
+            - for i in [1..8]
+              .b-item-list__item
+                %a.b-item{href: 'product.html'}
+                  .b-item__pic-wrap
+                    %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                    .b-item__status
+                      -if i == 1
+                        %span.b-status.b-status_sold Распродано
+                      -if i == 2
+                        %span.b-status.b-status_preorder Под заказ
+                      -if i == 3
+                        %span.b-status.b-status_sale Sale -24%
+                  .b-item__info
+                    %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .b-item__price 8 900 руб.
 
-          .b-item-list__paginator
-            .b-paginator
-              - for i in [1..4]
-                -if i == 1
-                  %span.b-paginator__item.b-paginator__item_current{href: '#'}
-                    = i
-                -else
-                  %a.b-paginator__item{href: '#'}
-                    = i
+            .b-item-list__paginator
+              .b-paginator
+                - for i in [1..4]
+                  -if i == 1
+                    %span.b-paginator__item.b-paginator__item_current{href: '#'}
+                      = i
+                  -else
+                    %a.b-paginator__item{href: '#'}
+                      = i
 
-      +include 'app/haml/shared/_footer.haml'
+        +include 'app/haml/shared/_footer.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

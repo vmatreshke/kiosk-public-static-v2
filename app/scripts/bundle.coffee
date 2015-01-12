@@ -21,6 +21,7 @@ require './react/components/basket/button'
 require './react/components/basket/popup'
 require './react/components/product/add_to_basket_button'
 require './react/components/instagram/instagram'
+require './react/components/design/page_color'
 
 require './react/dispatchers/basket'
 require './react/actions/view/basket'

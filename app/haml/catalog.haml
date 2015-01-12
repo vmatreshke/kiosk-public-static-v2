@@ -30,16 +30,30 @@
 
             .b-item-list__paginator
               .pagination
-                - for i in [1..4]
-
+                %li.first
+                  %a{href: '#'}
+                    «
+                %li.prev
+                  %a{href: '#'}
+                    <
+                - for i in [1..6]
                   -if i == 1
                     %li.page.active
                       %a{href: '#'}
                         = i
+                  -if i == 4
+                    %li.page.disabled.gap
+                      %a{href: '#'} ...
                   -else
                     %li.page
                       %a{href: '#'}
                         = i
+                %li.next
+                  %a{href: '#'}
+                    >
+                %li.last
+                  %a{href: '#'}
+                    »
 
         +include 'app/haml/shared/_footer.haml'
 

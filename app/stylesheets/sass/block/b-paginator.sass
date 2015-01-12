@@ -11,6 +11,14 @@
 
 .pagination
     @extend .b-paginator
+    .next,
+    .prev,
+    .first,
+    .last
+        display: inline
+        a
+            @extend .b-paginator__item
+            font-weight: bold
     .page
         display: inline
         a
@@ -18,3 +26,7 @@
         &.active
             a
                 @extend .b-paginator__item_current
+        &.disabled
+            a
+                background-color: $basicBorderColor
+                cursor: not-allowed

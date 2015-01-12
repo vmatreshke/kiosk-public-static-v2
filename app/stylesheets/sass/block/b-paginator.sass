@@ -8,3 +8,13 @@
     padding: 2px 10px
     &_current
       background-color: $basicBorderColor
+
+.pagination
+    @extend .b-paginator
+    .page
+        display: inline
+        a
+            @extend .b-paginator__item
+        &.active
+            a
+                @extend .b-paginator__item_current

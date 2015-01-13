@@ -1,64 +1,45 @@
 ###* @jsx React.DOM ###
 
-window.PageColor = React.createClass
+window.ColorList = React.createClass
   propTypes:
-    colors: React.PropTypes.object.isRequired
+    colorSet: React.PropTypes.object.isRequired
+    type: React.PropTypes.string.isRequired
+    value: React.PropTypes.string
 
   getDefaultProps: ->
-    colors: 
+    type: 'color'
+    colorSet: 
       'bg-dark': '#000'
       'bg-white': '#fff'
-  
-  render: ->
-    return null unless @props.colors
-    colorList = _.map @props.colors, (color) ->
-      `<ColorSelect color={color}/>`
-
-    return `<div>{colorList}</div>`
-
-window.LayerColor = React.createClass
-  propTypes:
-    colors: React.PropTypes.object.isRequired
-
-  getDefaultProps: ->
-    colors: 
       'layer-dark': '#000'
       'layer-light': '#fff'
+
+  handleClick: ->
+    console.log arguments
   
   render: ->
-    return null unless @props.colors
-    colorList = _.map @props.colors, (color) ->
-      `<ColorSelect color={color}/>`
+    return null unless @props.colorSet
 
-    return `<div>{colorList}</div>`
+    if @props.type == 'image'
+      colorSetList = _.map @props.colorSet, (background, i) =>
+        `<BackgroundSelect background={background} key={i} onClick={_this.handleClick.bind(background, i)}/>`
+    else
+      colorSetList = _.map @props.colorSet, (color, i) =>
+        `<ColorSelect color={color} key={i} onClick={_this.handleClick.bind(color, i)}/>`
+
+    return `<div>{colorSetList}</div>`
 
 window.ColorSelect = React.createClass
   propTypes:
-    background: React.PropTypes.string.isRequired
+    color: React.PropTypes.string.isRequired
 
   render: ->
     divStyle =
       'background-color': @props.color
 
-    return `<div className="b-design-option__color" style={divStyle}></div>`
+    return `<div className="b-design-option__color" onClick={this.props.onClick} style={divStyle}></div>`
 
-window.PageBackgroundImage = React.createClass
-  propTypes:
-    backgrounds: React.PropTypes.object.isRequired
-
-  getDefaultProps: ->
-    backgrounds: 
-      'bg-pic-pikachu': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
-      'bg-pic-slowpoke': 'http://cs304103.vk.me/g38535380/e_f3dd7860.jpg'
-  
-  render: ->
-    return null unless @props.backgrounds
-    backgroundList = _.map @props.backgrounds, (background) ->
-      `<backgroundSelect background={background}/>`
-
-    return `<div>{backgroundList}</div>`
-
-window.backgroundSelect = React.createClass
+window.BackgroundSelect = React.createClass
   propTypes:
     background: React.PropTypes.string.isRequired
 

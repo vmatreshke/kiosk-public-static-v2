@@ -63,7 +63,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: white'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'PageColor'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -72,8 +72,7 @@
           .b-design-option__color.b-design-option__color_img
             %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
       .b-design-option__item__available-params
-        %div{data-react-class: 'PageBackgroundImage'}
-
+        %div{data-react-class: 'ColorList', data-react-props: '{"type": "image", "colorSet": {"bg-dark": "http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg", "bg-light": "http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -81,7 +80,8 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: green'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'LayerColor'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+        
 
     .b-design-option__item
       %span.b-design-option__item__name прозрачность ленты

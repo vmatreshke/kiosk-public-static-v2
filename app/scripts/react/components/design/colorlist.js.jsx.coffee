@@ -14,8 +14,9 @@ window.ColorList = React.createClass
       'layer-dark': '#000'
       'layer-light': '#fff'
 
-  handleClick: ->
-    console.log arguments
+  handleClick: (name)->
+    console.log name
+    @setState value: name
   
   render: ->
     return null unless @props.colorSet
@@ -44,6 +45,6 @@ window.BackgroundSelect = React.createClass
     background: React.PropTypes.string.isRequired
 
   render: ->
-    return `<div className="b-design-option__color b-design-option__color_img">
+    return `<div className="b-design-option__color b-design-option__color_img" onClick={this.props.onClick}>
         <img src={this.props.background} alt=""/>
       </div>`

@@ -6,24 +6,27 @@ window.LayoutList = React.createClass
     value: React.PropTypes.string
 
   getDefaultProps: ->
-    layoutSet: ['default', 'verdana', 'gotham', 'apercu']
-
-  handleClick: (number)->
-    console.log number
+    layoutSet:
+      'layout-one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+      'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
   
+  onChange: (layout)->
+    @setState value: layout
+
   render: ->
-    return null unless @props.fontSet
+    return null unless @props.layoutSet
 
-    fontSetList = _.map @props.fontSet, (font, i) =>
-      console.log font
-      `<FontSelect font={font} key={font} onClick={_this.handleClick.bind(font, i)}/>`
+    layoutSetList = _.map @props.layoutSet, (i, layout) =>
+      `<LayoutSelect layout={layout} key={layout} onChange={_this.onChange.bind(i, layout)}/>`
 
-    return `<div>{fontSetList}</div>`
+    return `<div>{layoutSetList}</div>`
 
-window.FontSelect = React.createClass
+window.LayoutSelect = React.createClass
   propTypes:
-    font: React.PropTypes.string.isRequired
+    layout: React.PropTypes.string.isRequired
 
   render: ->
-    className = "b-design-option__type b-design-option__type_" + @props.font
-    return `<span className={className} onClick={this.props.onClick}>Aa</span>`
+    return `<label className="b-design-option__layout">
+      {this.props.layout}
+      <input onChange={this.props.onChange} type="radio" value={this.props.layout} name="layout-stack"/>
+      </label>`

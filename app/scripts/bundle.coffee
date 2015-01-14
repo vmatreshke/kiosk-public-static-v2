@@ -26,6 +26,7 @@ require './react/components/design/bglist'
 require './react/components/design/fontlist'
 require './react/components/design/toggle'
 require './react/components/design/valueslider'
+require './react/components/design/layoutlist'
 
 require './react/dispatchers/basket'
 require './react/actions/view/basket'

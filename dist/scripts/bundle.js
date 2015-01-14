@@ -31,6 +31,18 @@ require('./react/components/product/add_to_basket_button');
 
 require('./react/components/instagram/instagram');
 
+require('./react/components/design/colorlist');
+
+require('./react/components/design/bglist');
+
+require('./react/components/design/fontlist');
+
+require('./react/components/design/toggle');
+
+require('./react/components/design/valueslider');
+
+require('./react/components/design/layoutlist');
+
 require('./react/dispatchers/basket');
 
 require('./react/actions/view/basket');
@@ -41,7 +53,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/instagram/instagram":6,"./react/components/product/add_to_basket_button":7,"./react/dispatchers/basket":9,"./react/stores/basket":11,"./routes/routes":12,"./shared/app":13,"./shared/application_slider":14,"./shared/cart":15,"./shared/checkout":16,"./shared/jump":17,"./shared/lightbox":18,"./shared/load_more":19,"./shared/mobile_navigation":20,"./shared/product_images_slider":21,"./shared/theme_switcher":22}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/fontlist":8,"./react/components/design/layoutlist":9,"./react/components/design/toggle":10,"./react/components/design/valueslider":11,"./react/components/instagram/instagram":12,"./react/components/product/add_to_basket_button":13,"./react/dispatchers/basket":15,"./react/stores/basket":17,"./routes/routes":18,"./shared/app":19,"./shared/application_slider":20,"./shared/cart":21,"./shared/checkout":22,"./shared/jump":23,"./shared/lightbox":24,"./shared/load_more":25,"./shared/mobile_navigation":26,"./shared/product_images_slider":27,"./shared/theme_switcher":28}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -89,7 +101,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":23,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":29,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addItem: function(productItem) {
     return this._addItemToServer(productItem);
@@ -330,6 +342,265 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 },{}],6:[function(require,module,exports){
 
 /** @jsx React.DOM */
+window.BgList = React.createClass({displayName: 'BgList',
+  propTypes: {
+    bgSet: React.PropTypes.object.isRequired,
+    type: React.PropTypes.string.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      bgSet: {
+        'bg-pikachu': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+        'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+      }
+    };
+  },
+  handleClick: function(name) {
+    return this.setState({
+      value: name
+    });
+  },
+  render: function() {
+    var bgSetList;
+    if (!this.props.bgSet) {
+      return null;
+    }
+    bgSetList = _.map(this.props.bgSet, (function(_this) {
+      return function(background, i) {
+        return BackgroundSelect({background: background, key: i, onClick: _this.handleClick.bind(background, i)});
+      };
+    })(this));
+    return React.DOM.div(null, bgSetList);
+  }
+});
+
+window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
+  propTypes: {
+    background: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__color b-design-option__color_img", onClick: this.props.onClick}, 
+        React.DOM.img({src: this.props.background, alt: ""})
+      );
+  }
+});
+
+
+
+},{}],7:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.ColorList = React.createClass({displayName: 'ColorList',
+  propTypes: {
+    colorSet: React.PropTypes.object.isRequired,
+    type: React.PropTypes.string.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      colorSet: {
+        'bg-dark': '#000',
+        'bg-white': '#fff',
+        'layer-dark': '#000',
+        'layer-light': '#fff'
+      }
+    };
+  },
+  handleClick: function(name) {
+    return this.setState({
+      value: name
+    });
+  },
+  render: function() {
+    var colorSetList;
+    if (!this.props.colorSet) {
+      return null;
+    }
+    colorSetList = _.map(this.props.colorSet, (function(_this) {
+      return function(color, i) {
+        return ColorSelect({color: color, key: i, onClick: _this.handleClick.bind(color, i)});
+      };
+    })(this));
+    return React.DOM.div(null, colorSetList);
+  }
+});
+
+window.ColorSelect = React.createClass({displayName: 'ColorSelect',
+  propTypes: {
+    color: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    var divStyle;
+    divStyle = {
+      'background-color': this.props.color
+    };
+    return React.DOM.div({className: "b-design-option__color", onClick: this.props.onClick, style: divStyle});
+  }
+});
+
+
+
+},{}],8:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.FontList = React.createClass({displayName: 'FontList',
+  propTypes: {
+    fontSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      fontSet: ['default', 'verdana', 'gotham', 'apercu']
+    };
+  },
+  onChange: function(font) {
+    return this.setState({
+      value: font
+    });
+  },
+  render: function() {
+    var fontSetList;
+    if (!this.props.fontSet) {
+      return null;
+    }
+    fontSetList = _.map(this.props.fontSet, (function(_this) {
+      return function(font, i) {
+        return FontSelect({font: font, key: font, onChange: _this.onChange.bind(i, font)});
+      };
+    })(this));
+    return React.DOM.div(null, fontSetList);
+  }
+});
+
+window.FontSelect = React.createClass({displayName: 'FontSelect',
+  propTypes: {
+    font: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    var className;
+    className = "b-design-option__type b-design-option__type_" + this.props.font;
+    return React.DOM.label({className: className}, "Aa", React.DOM.input({type: "radio", onChange: this.props.onChange, name: "font-list-stack", value: this.props.font}));
+  }
+});
+
+
+
+},{}],9:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.LayoutList = React.createClass({displayName: 'LayoutList',
+  propTypes: {
+    layoutSet: React.PropTypes.object.isRequired,
+    value: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      layoutSet: {
+        'layout-one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+        'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+      }
+    };
+  },
+  onChange: function(layout) {
+    return this.setState({
+      value: layout
+    });
+  },
+  render: function() {
+    var layoutSetList;
+    if (!this.props.layoutSet) {
+      return null;
+    }
+    layoutSetList = _.map(this.props.layoutSet, (function(_this) {
+      return function(i, layout) {
+        return LayoutSelect({layout: layout, key: layout, onChange: _this.onChange.bind(i, layout)});
+      };
+    })(this));
+    return React.DOM.div(null, layoutSetList);
+  }
+});
+
+window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
+  propTypes: {
+    layout: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return React.DOM.label({className: "b-design-option__layout"}, 
+      this.props.layout, 
+      React.DOM.input({onChange: this.props.onChange, type: "radio", value: this.props.layout, name: "layout-stack"})
+      );
+  }
+});
+
+
+
+},{}],10:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.Toggle = React.createClass({displayName: 'Toggle',
+  propTypes: {
+    name: React.PropTypes.string,
+    value: React.PropTypes.bool
+  },
+  getDefaultProps: function() {
+    return {
+      value: false
+    };
+  },
+  handleChange: function(e) {
+    var toggleState;
+    toggleState = $(e.target).prop('checked');
+    return this.setState({
+      value: toggleState
+    });
+  },
+  render: function() {
+    return React.DOM.label({className: "b-design-option__cbox"}, 
+      React.DOM.input({type: "checkbox", defaultChecked: this.props.value, onChange: this.handleChange}), 
+      this.props.name
+    );
+  }
+});
+
+
+
+},{}],11:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.ValueSlider = React.createClass({displayName: 'ValueSlider',
+  propTypes: {
+    range: React.PropTypes.object.isRequired,
+    step: React.PropTypes.number.isRequired,
+    start: React.PropTypes.string
+  },
+  getDefaultProps: function() {
+    return {
+      range: {
+        min: 0,
+        max: 1
+      },
+      value: 0,
+      step: .1
+    };
+  },
+  componentDidMount: function() {
+    return $(this.getDOMNode()).noUiSlider({
+      start: this.props.value,
+      step: this.props.step,
+      range: this.props.range
+    });
+  },
+  render: function() {
+    return React.DOM.div(null);
+  }
+});
+
+
+
+},{}],12:[function(require,module,exports){
+
+/** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
 
 STATE_LOADING = 'loading';
@@ -500,7 +771,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],7:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -540,7 +811,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],8:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -574,7 +845,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],9:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -583,7 +854,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":8}],10:[function(require,module,exports){
+},{"./_base":14}],16:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -617,7 +888,7 @@ module.exports = BaseStore;
 
 
 
-},{}],11:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 var BaseStore, _basketItems;
 
 BaseStore = require('./_base');
@@ -679,7 +950,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":10}],12:[function(require,module,exports){
+},{"./_base":16}],18:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -688,7 +959,7 @@ window.Routes = {
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -783,7 +1054,7 @@ $(function() {
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -817,7 +1088,7 @@ $(function() {
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -854,7 +1125,7 @@ $(function() {
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -923,7 +1194,7 @@ $(function() {
 
 
 
-},{}],17:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -943,7 +1214,7 @@ $(function() {
 
 
 
-},{}],18:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -964,7 +1235,7 @@ $(function() {
 
 
 
-},{}],19:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -1008,7 +1279,7 @@ $(function() {
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -1031,7 +1302,7 @@ $(function() {
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -1092,7 +1363,7 @@ $(function() {
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -1107,7 +1378,7 @@ $(function() {
 
 
 
-},{}],23:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1119,7 +1390,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":24}],24:[function(require,module,exports){
+},{"./lib/Dispatcher":30}],30:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1371,7 +1642,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":25}],25:[function(require,module,exports){
+},{"./invariant":31}],31:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

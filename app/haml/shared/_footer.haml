@@ -63,10 +63,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: white'}
       .b-design-option__item__available-params
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: red'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: tomato'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: green'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_bg-dark',style: 'background-color: black'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -75,11 +72,7 @@
           .b-design-option__color.b-design-option__color_img
             %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
       .b-design-option__item__available-params
-        .b-design-option__color.b-design-option__color_img{'ks-design': '', 'data-classname': 'b-page_bg-pic-p'}
-          %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
-        .b-design-option__color.b-design-option__color_img{'ks-design': '', 'data-classname': 'b-page_bg-pic-p'}
-          %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
-
+        %div{data-react-class: 'BgList'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -87,13 +80,12 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: green'}
       .b-design-option__item__available-params
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_layer-light',style: 'background-color: white'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_layer-light',style: 'background-color: gray'}
-
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+        
     .b-design-option__item
       %span.b-design-option__item__name прозрачность ленты
       .b-design-option__item__val
-        %div(ks-opacity_slider)
+        %div{data-react-class: 'ValueSlider'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -101,9 +93,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: black'}
       .b-design-option__item__available-params
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: tomato'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: green'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_text-light',style: 'background-color: black'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"text-dark": "#000", "text-light": "#fff"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -111,47 +101,34 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: purple'}
       .b-design-option__item__available-params
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_active-dark',style: 'background-color: tomato'}
-        .b-design-option__color{'ks-design': '', 'data-classname': 'b-page_active-dark',style: 'background-color: green'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"active-dark": "#000", "active-light": "#fff"}}'}
 
     .b-design-option__item
       %span.b-design-option__item__name шрифт
       .b-design-option__item__val
-        %span.b-design-option__type.b-design-option__type_verdana{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
-        %span.b-design-option__type.b-design-option__type_gotham{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
-        %span.b-design-option__type.b-design-option__type_default{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
-        %span.b-design-option__type.b-design-option__type_apercu{'ks-design': '', 'data-classname': 'b-page_ff-gotham'} Aa
+        %div{data-react-class: 'FontList'}
 
     .b-design-option__item
       %span.b-design-option__item__name размер шрифта
       .b-design-option__item__val
-        %span.b-design-option__font-size
-          %div(ks-fontsize_slider)
+        %div{data-react-class: 'ValueSlider', data-react-props: '{"step": 1, "range":{"min": 13, "max": 15}}'}
 
     .b-design-option__item
       %span.b-design-option__item__name лейаут товара
       .b-design-option__item__val
-        %span.b-design-option__layout{'ks-layout-change': ''} 1
-        %span.b-design-option__layout{'ks-layout-change': ''} 2
-        %span.b-design-option__layout{'ks-layout-change': ''} 3
+        %div{data-react-class: 'LayoutList'}
 
     .b-design-option__item
       %span.b-design-option__item__name каталог
       .b-design-option__item__val
-        %label.b-design-option__cbox
-          %input{'ks-show-filter': '',type: 'checkbox', checked: 'true'}
-          фильтр
+        %div{data-react-class: 'Toggle', data-react-props: '{"name": "фильтр", "value": true}'}
 
     .b-design-option__item
       %span.b-design-option__item__name товаров в ряд
       .b-design-option__item__val
-        %span.b-design-option__font-size
-          %div(ks-row_slider)
+        %div{data-react-class: 'ValueSlider', data-react-props: '{"step": 1, "value": 3, "range":{"min": 2, "max": 4}}'}
 
     .b-design-option__item
       %span.b-design-option__item__name главная страница
       .b-design-option__item__val
-        %label.b-design-option__cbox
-          %input{'ks-show-slider': '', type: 'checkbox', checked: 'true'}
-          большой баннер
-  
+        %div{data-react-class: 'Toggle', data-react-props: '{"name": "большой баннер", "value": true}'}

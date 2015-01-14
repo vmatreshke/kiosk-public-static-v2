@@ -4,9 +4,10 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page
     .b-page__content
-      .b-page__content__inner
+      .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
 
+      .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list.b-item-list_has-filter
           .b-item-list__filter
             +include 'app/haml/shared/_filter.haml'

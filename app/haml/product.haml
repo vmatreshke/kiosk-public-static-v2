@@ -4,8 +4,10 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page
     .b-page__content
-      .b-page__content__inner
+      .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
+
+      .b-page__content__inner.b-page__content__inner_content
         .b-item-full
           / Шапка, которая используется для мобильных устройств
           .b-item-full__header.b-item-full__header_mobile

@@ -4,9 +4,10 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page
     .b-page__content
-      .b-page__content__inner
+      .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
 
+      .b-page__content__inner.b-page__content__inner_slider
         .b-slider.b-slider_promo(application-slider)
           .b-slider__item
             %img{src: 'images/slidertest.jpg', alt: ''}
@@ -15,6 +16,7 @@
           .b-slider__item
             %img{src: 'http://placehold.it/400x400', alt: ''}
 
+      .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list
           %h1.b-item-list__title Табуретки
           .b-item-list__content

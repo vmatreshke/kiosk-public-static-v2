@@ -3650,8 +3650,7 @@ td, th {
       position: static; }
     /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .b-slider__item {
-      text-align: center;
-      background-color: #CCCCCC; }
+      text-align: center; }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-characteristics */
 .b-characteristics {
@@ -4368,21 +4367,22 @@ td, th {
     display: inline-block;
     vertical-align: middle;
     margin: 0 3px;
-    padding: 2px 10px; }
-    /* line 9, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
+    padding: 2px 10px;
+    background-color: #e2e2e2; }
+    /* line 10, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
     .b-paginator__item_current, .pagination .page.active a {
-      background-color: #e2e2e2; }
+      background-color: #000; }
 
-/* line 17, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
+/* line 18, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
 .pagination .next, .pagination .prev, .pagination .first, .pagination .last {
   display: inline; }
-  /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
+  /* line 20, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
   .pagination .next a, .pagination .prev a, .pagination .first a, .pagination .last a {
     font-weight: bold; }
-/* line 22, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
+/* line 23, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
 .pagination .page {
   display: inline; }
-  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
+  /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-paginator */
   .pagination .page.disabled a {
     background-color: #e2e2e2;
     cursor: not-allowed; }
@@ -4549,9 +4549,18 @@ html {
   /* line 25, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
   .b-page__content__inner {
     max-width: 1010px;
-    margin: 15px auto;
+    margin: 0 auto;
     -webkit-transition: background-color 0.4s linear;
             transition: background-color 0.4s linear; }
+    /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
+    .b-page__content__inner:first-child {
+      margin-top: 15px; }
+    /* line 31, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
+    .b-page__content__inner:last-child {
+      margin-bottom: 15px; }
+    /* line 33, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-page */
+    .b-page__content__inner_slider {
+      max-width: 100%; }
 
 /* line 2, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-header */
 .b-header__content {
@@ -4888,23 +4897,31 @@ html {
     font-size: 16px;
     padding-left: 5px;
     color: #fff;
-    cursor: pointer; }
-    /* line 107, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    cursor: pointer;
+    position: relative; }
+    /* line 108, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type:hover {
       color: #f8c700; }
-    /* line 109, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 110, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_verdana {
       font-family: Verdana, Geneva, sans-serif; }
-    /* line 111, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 112, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_gotham {
       font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 113, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 114, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_default {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 115, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 116, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_apercu {
       font-family: "apercu", Arial, Helvetica, sans-serif; }
-  /* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    .b-design-option__type input {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer; }
+  /* line 125, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
   .b-design-option__cbox {
     font-size: 12px; }
 

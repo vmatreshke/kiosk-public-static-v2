@@ -8,15 +8,14 @@ window.FontList = React.createClass
   getDefaultProps: ->
     fontSet: ['default', 'verdana', 'gotham', 'apercu']
 
-  handleClick: (number)->
-    console.log number
+  onChange: (font)->
+    @setState value: font
   
   render: ->
     return null unless @props.fontSet
 
     fontSetList = _.map @props.fontSet, (font, i) =>
-      console.log font
-      `<FontSelect font={font} key={font} onClick={_this.handleClick.bind(font, i)}/>`
+      `<FontSelect font={font} key={font} onChange={_this.onChange.bind(i, font)}/>`
 
     return `<div>{fontSetList}</div>`
 
@@ -26,4 +25,4 @@ window.FontSelect = React.createClass
 
   render: ->
     className = "b-design-option__type b-design-option__type_" + @props.font
-    return `<span className={className} onClick={this.props.onClick}>Aa</span>`
+    return `<label className={className}>Aa<input type="radio" onChange={this.props.onChange} name="font-list-stack" value={this.props.font}/></label>`

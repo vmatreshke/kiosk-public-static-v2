@@ -104,6 +104,7 @@
     padding-left: 5px
     color: #fff
     cursor: pointer
+    position: relative
     &:hover
       color: #f8c700
     &_verdana
@@ -114,6 +115,12 @@
       font-family: $font-stack-default-family
     &_apercu
       font-family: $font-stack-apercu-family
+    input
+      position: absolute
+      bottom: 0
+      right: 0
+      opacity: 0
+      cursor: pointer
 
   &__cbox
     font-size: 12px

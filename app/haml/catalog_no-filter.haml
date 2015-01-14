@@ -4,9 +4,10 @@
     +include 'app/haml/shared/_head.haml'
   %body.b-page
     .b-page__content
-      .b-page__content__inner
+      .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
-
+      
+      .b-page__content__inner.b-page__content__inner_slider
         %section.b-item-list.b-item-list_four-in-row
           .b-item-list__content
             - for i in [1..8]

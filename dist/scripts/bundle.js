@@ -356,7 +356,7 @@ window.BgList = React.createClass({displayName: 'BgList',
       }
     };
   },
-  onChange: function(background) {
+  handleChange: function(background) {
     return this.setState({
       value: background
     });
@@ -368,7 +368,7 @@ window.BgList = React.createClass({displayName: 'BgList',
     }
     bgSetList = _.map(this.props.bgSet, (function(_this) {
       return function(background, key) {
-        return BackgroundSelect({name: _this.props.name, background: background, key: key, onChange: _this.onChange.bind(background, key)});
+        return BackgroundSelect({name: _this.props.name, background: background, key: key, onChange: _this.handleChange.bind(background, key)});
       };
     })(this));
     return React.DOM.div(null, bgSetList);
@@ -409,7 +409,7 @@ window.ColorList = React.createClass({displayName: 'ColorList',
       }
     };
   },
-  onChange: function(color) {
+  handleChange: function(color) {
     return this.setState({
       value: color
     });
@@ -421,7 +421,7 @@ window.ColorList = React.createClass({displayName: 'ColorList',
     }
     colorSetList = _.map(this.props.colorSet, (function(_this) {
       return function(color, key) {
-        return ColorSelect({name: _this.props.name, color: color, colorName: key, key: key, onChange: _this.onChange.bind(color, key)});
+        return ColorSelect({name: _this.props.name, color: color, colorName: key, key: key, onChange: _this.handleChange.bind(color, key)});
       };
     })(this));
     return React.DOM.div(null, colorSetList);
@@ -460,7 +460,7 @@ window.FontList = React.createClass({displayName: 'FontList',
       fontSet: ['default', 'verdana', 'gotham', 'apercu']
     };
   },
-  onChange: function(font) {
+  handleChange: function(font) {
     return this.setState({
       value: font
     });
@@ -472,7 +472,7 @@ window.FontList = React.createClass({displayName: 'FontList',
     }
     fontSetList = _.map(this.props.fontSet, (function(_this) {
       return function(font, i) {
-        return FontSelect({font: font, key: font, onChange: _this.onChange.bind(i, font)});
+        return FontSelect({font: font, key: font, onChange: _this.handleChange.bind(i, font)});
       };
     })(this));
     return React.DOM.div(null, fontSetList);
@@ -508,7 +508,7 @@ window.LayoutList = React.createClass({displayName: 'LayoutList',
       }
     };
   },
-  onChange: function(layout) {
+  handleChange: function(layout) {
     return this.setState({
       value: layout
     });
@@ -520,7 +520,7 @@ window.LayoutList = React.createClass({displayName: 'LayoutList',
     }
     layoutSetList = _.map(this.props.layoutSet, (function(_this) {
       return function(i, layout) {
-        return LayoutSelect({layout: layout, key: layout, onChange: _this.onChange.bind(i, layout)});
+        return LayoutSelect({layout: layout, key: layout, onChange: _this.handleChange.bind(i, layout)});
       };
     })(this));
     return React.DOM.div(null, layoutSetList);

@@ -13,14 +13,14 @@ window.ColorList = React.createClass
       'layer-dark': '#000'
       'layer-light': '#fff'
 
-  onChange: (color)->
+  handleChange: (color)->
     @setState value: color
   
   render: ->
     return null unless @props.colorSet
 
     colorSetList = _.map @props.colorSet, (color, key) =>
-      `<ColorSelect name={_this.props.name} color={color} colorName={key} key={key} onChange={_this.onChange.bind(color, key)}/>`
+      `<ColorSelect name={_this.props.name} color={color} colorName={key} key={key} onChange={_this.handleChange.bind(color, key)}/>`
 
     return `<div>{colorSetList}</div>`
 

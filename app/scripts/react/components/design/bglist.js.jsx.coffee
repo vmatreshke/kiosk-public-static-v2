@@ -11,14 +11,14 @@ window.BgList = React.createClass
       'bg-pikachu': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
       'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
 
-  onChange: (background)->
+  handleChange: (background)->
     @setState value: background
   
   render: ->
     return null unless @props.bgSet
 
     bgSetList = _.map @props.bgSet, (background, key) =>
-      `<BackgroundSelect name={_this.props.name} background={background} key={key} onChange={_this.onChange.bind(background, key)}/>`
+      `<BackgroundSelect name={_this.props.name} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
 
     return `<div>{bgSetList}</div>`
 

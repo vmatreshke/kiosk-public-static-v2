@@ -63,7 +63,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: white'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"name": "page-color", "colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -72,7 +72,7 @@
           .b-design-option__color.b-design-option__color_img
             %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
       .b-design-option__item__available-params
-        %div{data-react-class: 'BgList'}
+        %div{data-react-class: 'BgList', data-react-props: '{"name": "bg-pic"}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -80,7 +80,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: green'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"name": "layout-color","colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
         
     .b-design-option__item
       %span.b-design-option__item__name прозрачность ленты
@@ -93,7 +93,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: black'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"text-dark": "#000", "text-light": "#fff"}}'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"name": "text-color","colorSet": {"text-dark": "#000", "text-light": "#fff"}}'}
 
     .b-design-option__item
       .b-design-option__item__current-params
@@ -101,7 +101,7 @@
         .b-design-option__item__val
           .b-design-option__color{style: 'background-color: purple'}
       .b-design-option__item__available-params
-        %div{data-react-class: 'ColorList', data-react-props: '{"colorSet": {"active-dark": "#000", "active-light": "#fff"}}'}
+        %div{data-react-class: 'ColorList', data-react-props: '{"name": "active-color","colorSet": {"active-dark": "#000", "active-light": "#fff"}}'}
 
     .b-design-option__item
       %span.b-design-option__item__name шрифт
@@ -132,3 +132,5 @@
       %span.b-design-option__item__name главная страница
       .b-design-option__item__val
         %div{data-react-class: 'Toggle', data-react-props: '{"name": "большой баннер", "value": true}'}
+
+    %button.b-design-option__save Сохранить

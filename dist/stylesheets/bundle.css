@@ -3204,7 +3204,7 @@ td, th {
   padding-right: 15px; }
 
 /* line 6, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
-.b-btn, .b-paginator__item, .pagination .next a, .pagination .prev a, .pagination .first a, .pagination .last a, .pagination .page a {
+.b-btn, .b-paginator__item, .pagination .next a, .pagination .prev a, .pagination .first a, .pagination .last a, .pagination .page a, .b-design-option__save {
   display: inline-block;
   vertical-align: middle;
   background: #000;
@@ -3216,7 +3216,7 @@ td, th {
           transition: color 0.2s ease, background-color 0.2s ease;
   box-sizing: border-box; }
   /* line 16, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
-  .b-btn:hover, .b-paginator__item:hover, .pagination .next a:hover, .pagination .prev a:hover, .pagination .first a:hover, .pagination .last a:hover, .pagination .page a:hover {
+  .b-btn:hover, .b-paginator__item:hover, .pagination .next a:hover, .pagination .prev a:hover, .pagination .first a:hover, .pagination .last a:hover, .pagination .page a:hover, .b-design-option__save:hover {
     background-color: #cbcbcb;
     color: #fff; }
   /* line 19, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-btn */
@@ -3450,7 +3450,7 @@ td, th {
       -webkit-appearance: none;
       appearance: none; }
     /* line 102, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-item-full */
-    .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a {
+    .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }
 
@@ -4342,7 +4342,7 @@ td, th {
       border-top: 0; }
 
 /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-modification-list */
-.b-modification__action .b-btn, .b-modification__action .b-paginator__item, .b-modification__action .pagination .next a, .pagination .next .b-modification__action a, .b-modification__action .pagination .prev a, .pagination .prev .b-modification__action a, .b-modification__action .pagination .first a, .pagination .first .b-modification__action a, .b-modification__action .pagination .last a, .pagination .last .b-modification__action a, .b-modification__action .pagination .page a, .pagination .page .b-modification__action a {
+.b-modification__action .b-btn, .b-modification__action .b-paginator__item, .b-modification__action .pagination .next a, .pagination .next .b-modification__action a, .b-modification__action .pagination .prev a, .pagination .prev .b-modification__action a, .b-modification__action .pagination .first a, .pagination .first .b-modification__action a, .b-modification__action .pagination .last a, .pagination .last .b-modification__action a, .b-modification__action .pagination .page a, .pagination .page .b-modification__action a, .b-modification__action .b-design-option__save {
   display: block;
   width: 100%; }
 
@@ -4825,6 +4825,12 @@ html {
     position: relative;
     cursor: pointer; }
     /* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    .b-design-option__color input {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0; }
+    /* line 48, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color:before {
       content: '';
       position: absolute;
@@ -4836,25 +4842,25 @@ html {
       border-radius: 50%;
       -webkit-transition: -webkit-transform 0.2s ease;
               transition: transform 0.2s ease; }
-    /* line 53, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color_img {
       background-color: #fff; }
-      /* line 55, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+      /* line 60, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
       .b-design-option__color_img img {
         width: 100%;
         border-radius: 14px; }
-    /* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 64, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color:hover:before {
       -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
               transform: scale(1.1); }
-  /* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+  /* line 67, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
   .b-design-option__item {
     margin: 0 10px;
     height: 51px;
     position: relative;
     overflow: hidden; }
-    /* line 68, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 73, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__current-params, .b-design-option__item__available-params {
       position: absolute;
       top: 0;
@@ -4863,21 +4869,21 @@ html {
       bottom: 0;
       -webkit-transition: top 0.2s ease;
               transition: top 0.2s ease; }
-    /* line 75, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 80, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__available-params {
       top: 61px;
       left: 20px;
       right: 20px; }
-      /* line 79, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+      /* line 84, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
       .b-design-option__item__available-params .b-design-option__color {
         margin: 18px 30px 0 0; }
-    /* line 84, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 89, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item:hover .b-design-option__item__current-params {
       top: -61px; }
-    /* line 86, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 91, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item:hover .b-design-option__item__available-params {
       top: 0; }
-    /* line 88, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 93, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__name {
       display: inline-block;
       vertical-align: middle;
@@ -4885,45 +4891,52 @@ html {
       padding: 16px 0;
       font-size: 14px;
       color: #888; }
-    /* line 95, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 100, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__val {
       display: inline-block;
       vertical-align: middle;
       width: 120px;
       text-align: right;
       font-size: 14px; }
-  /* line 102, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+  /* line 107, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
   .b-design-option__type {
     font-size: 16px;
     padding-left: 5px;
     color: #fff;
     cursor: pointer;
     position: relative; }
-    /* line 108, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 113, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type:hover {
       color: #f8c700; }
-    /* line 110, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 115, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_verdana {
       font-family: Verdana, Geneva, sans-serif; }
-    /* line 112, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 117, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_gotham {
       font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 114, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 119, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_default {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 116, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 121, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_apercu {
       font-family: "apercu", Arial, Helvetica, sans-serif; }
-    /* line 118, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+    /* line 123, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type input {
       position: absolute;
       bottom: 0;
       right: 0;
       opacity: 0;
       cursor: pointer; }
-  /* line 125, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+  /* line 130, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
   .b-design-option__cbox {
     font-size: 12px; }
+  /* line 133, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-design-option */
+  .b-design-option__save {
+    background: #f8c700;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    font-size: 14px; }
 
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/dark */
 .b-page_theme-dark {
@@ -5052,11 +5065,11 @@ html {
     width: 6px;
     height: 6px; }
   /* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
-  .b-page_theme-etc .b-full-filter .b-btn, .b-page_theme-etc .b-full-filter .b-paginator__item, .b-page_theme-etc .b-full-filter .pagination .next a, .pagination .next .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .prev a, .pagination .prev .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .first a, .pagination .first .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .last a, .pagination .last .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .page a, .pagination .page .b-page_theme-etc .b-full-filter a {
+  .b-page_theme-etc .b-full-filter .b-btn, .b-page_theme-etc .b-full-filter .b-paginator__item, .b-page_theme-etc .b-full-filter .pagination .next a, .pagination .next .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .prev a, .pagination .prev .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .first a, .pagination .first .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .last a, .pagination .last .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .pagination .page a, .pagination .page .b-page_theme-etc .b-full-filter a, .b-page_theme-etc .b-full-filter .b-design-option__save {
     background-color: #fff;
     color: #000; }
     /* line 61, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
-    .b-page_theme-etc .b-full-filter .b-btn:hover, .b-page_theme-etc .b-full-filter .b-paginator__item:hover, .b-page_theme-etc .b-full-filter .pagination .next a:hover, .pagination .next .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .prev a:hover, .pagination .prev .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .first a:hover, .pagination .first .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .last a:hover, .pagination .last .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .page a:hover, .pagination .page .b-page_theme-etc .b-full-filter a:hover {
+    .b-page_theme-etc .b-full-filter .b-btn:hover, .b-page_theme-etc .b-full-filter .b-paginator__item:hover, .b-page_theme-etc .b-full-filter .pagination .next a:hover, .pagination .next .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .prev a:hover, .pagination .prev .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .first a:hover, .pagination .first .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .last a:hover, .pagination .last .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .pagination .page a:hover, .pagination .page .b-page_theme-etc .b-full-filter a:hover, .b-page_theme-etc .b-full-filter .b-design-option__save:hover {
       background-color: #868383; }
   /* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/etc */
   .b-page_theme-etc .b-full-filter__value {
@@ -5174,12 +5187,12 @@ html {
   .b-page_theme-cc .b-slider_thumbs {
     display: none !important; }
   /* line 92, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
-  .b-page_theme-cc .b-btn, .b-page_theme-cc .b-paginator__item, .b-page_theme-cc .pagination .next a, .pagination .next .b-page_theme-cc a, .b-page_theme-cc .pagination .prev a, .pagination .prev .b-page_theme-cc a, .b-page_theme-cc .pagination .first a, .pagination .first .b-page_theme-cc a, .b-page_theme-cc .pagination .last a, .pagination .last .b-page_theme-cc a, .b-page_theme-cc .pagination .page a, .pagination .page .b-page_theme-cc a {
+  .b-page_theme-cc .b-btn, .b-page_theme-cc .b-paginator__item, .b-page_theme-cc .pagination .next a, .pagination .next .b-page_theme-cc a, .b-page_theme-cc .pagination .prev a, .pagination .prev .b-page_theme-cc a, .b-page_theme-cc .pagination .first a, .pagination .first .b-page_theme-cc a, .b-page_theme-cc .pagination .last a, .pagination .last .b-page_theme-cc a, .b-page_theme-cc .pagination .page a, .pagination .page .b-page_theme-cc a, .b-page_theme-cc .b-design-option__save {
     border-radius: 2em;
     padding-top: 10px;
     padding-bottom: 9px; }
     /* line 96, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */
-    .b-page_theme-cc .b-btn:hover, .b-page_theme-cc .b-paginator__item:hover, .b-page_theme-cc .pagination .next a:hover, .pagination .next .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .prev a:hover, .pagination .prev .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .first a:hover, .pagination .first .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .last a:hover, .pagination .last .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .page a:hover, .pagination .page .b-page_theme-cc a:hover {
+    .b-page_theme-cc .b-btn:hover, .b-page_theme-cc .b-paginator__item:hover, .b-page_theme-cc .pagination .next a:hover, .pagination .next .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .prev a:hover, .pagination .prev .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .first a:hover, .pagination .first .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .last a:hover, .pagination .last .b-page_theme-cc a:hover, .b-page_theme-cc .pagination .page a:hover, .pagination .page .b-page_theme-cc a:hover, .b-page_theme-cc .b-design-option__save:hover {
       color: #fff;
       background-color: #ef5a61; }
   /* line 100, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/theme/cc */

@@ -10,14 +10,14 @@ window.LayoutList = React.createClass
       'layout-one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
       'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
   
-  onChange: (layout)->
+  handleChange: (layout)->
     @setState value: layout
 
   render: ->
     return null unless @props.layoutSet
 
     layoutSetList = _.map @props.layoutSet, (i, layout) =>
-      `<LayoutSelect layout={layout} key={layout} onChange={_this.onChange.bind(i, layout)}/>`
+      `<LayoutSelect layout={layout} key={layout} onChange={_this.handleChange.bind(i, layout)}/>`
 
     return `<div>{layoutSetList}</div>`
 

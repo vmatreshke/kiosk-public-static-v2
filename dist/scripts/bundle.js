@@ -344,8 +344,8 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 /** @jsx React.DOM */
 window.BgList = React.createClass({displayName: 'BgList',
   propTypes: {
+    name: React.PropTypes.string.isRequired,
     bgSet: React.PropTypes.object.isRequired,
-    type: React.PropTypes.string.isRequired,
     value: React.PropTypes.string
   },
   getDefaultProps: function() {
@@ -356,9 +356,9 @@ window.BgList = React.createClass({displayName: 'BgList',
       }
     };
   },
-  handleClick: function(name) {
+  onChange: function(background) {
     return this.setState({
-      value: name
+      value: background
     });
   },
   render: function() {
@@ -367,8 +367,8 @@ window.BgList = React.createClass({displayName: 'BgList',
       return null;
     }
     bgSetList = _.map(this.props.bgSet, (function(_this) {
-      return function(background, i) {
-        return BackgroundSelect({background: background, key: i, onClick: _this.handleClick.bind(background, i)});
+      return function(background, key) {
+        return BackgroundSelect({name: _this.props.name, background: background, key: key, onChange: _this.onChange.bind(background, key)});
       };
     })(this));
     return React.DOM.div(null, bgSetList);
@@ -377,11 +377,13 @@ window.BgList = React.createClass({displayName: 'BgList',
 
 window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
   propTypes: {
-    background: React.PropTypes.string.isRequired
+    background: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired
   },
   render: function() {
-    return React.DOM.div({className: "b-design-option__color b-design-option__color_img", onClick: this.props.onClick}, 
-        React.DOM.img({src: this.props.background, alt: ""})
+    return React.DOM.label({className: "b-design-option__color b-design-option__color_img"}, 
+        React.DOM.img({src: this.props.background, alt: ""}), 
+        React.DOM.input({type: "radio", name: this.props.name, value: this.props.background, onChange: this.props.onChange})
       );
   }
 });
@@ -393,8 +395,8 @@ window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
 /** @jsx React.DOM */
 window.ColorList = React.createClass({displayName: 'ColorList',
   propTypes: {
+    name: React.PropTypes.string.isRequired,
     colorSet: React.PropTypes.object.isRequired,
-    type: React.PropTypes.string.isRequired,
     value: React.PropTypes.string
   },
   getDefaultProps: function() {
@@ -407,9 +409,9 @@ window.ColorList = React.createClass({displayName: 'ColorList',
       }
     };
   },
-  handleClick: function(name) {
+  onChange: function(color) {
     return this.setState({
-      value: name
+      value: color
     });
   },
   render: function() {
@@ -418,8 +420,8 @@ window.ColorList = React.createClass({displayName: 'ColorList',
       return null;
     }
     colorSetList = _.map(this.props.colorSet, (function(_this) {
-      return function(color, i) {
-        return ColorSelect({color: color, key: i, onClick: _this.handleClick.bind(color, i)});
+      return function(color, key) {
+        return ColorSelect({name: _this.props.name, color: color, colorName: key, key: key, onChange: _this.onChange.bind(color, key)});
       };
     })(this));
     return React.DOM.div(null, colorSetList);
@@ -428,14 +430,18 @@ window.ColorList = React.createClass({displayName: 'ColorList',
 
 window.ColorSelect = React.createClass({displayName: 'ColorSelect',
   propTypes: {
-    color: React.PropTypes.string.isRequired
+    color: React.PropTypes.string.isRequired,
+    colorName: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired
   },
   render: function() {
     var divStyle;
     divStyle = {
       'background-color': this.props.color
     };
-    return React.DOM.div({className: "b-design-option__color", onClick: this.props.onClick, style: divStyle});
+    return React.DOM.label({className: "b-design-option__color", style: divStyle}, 
+      React.DOM.input({type: "radio", name: this.props.name, value: this.props.colorName, onChange: this.props.onChange})
+      );
   }
 });
 
@@ -585,10 +591,21 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
     };
   },
   componentDidMount: function() {
-    return $(this.getDOMNode()).noUiSlider({
+    var domNode;
+    domNode = $(this.getDOMNode());
+    domNode.noUiSlider({
       start: this.props.value,
       step: this.props.step,
       range: this.props.range
+    });
+    return domNode.on({
+      slide: (function(_this) {
+        return function() {
+          return _this.setState({
+            value: domNode.val()
+          });
+        };
+      })(this)
     });
   },
   render: function() {

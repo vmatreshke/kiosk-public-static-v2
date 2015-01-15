@@ -14,11 +14,18 @@ window.ValueSlider = React.createClass
     step: .1
 
   componentDidMount: ->
-    $(@getDOMNode()).noUiSlider(
+    domNode = $(@getDOMNode())
+    
+    domNode.noUiSlider(
       start: @props.value
       step: @props.step
       range: @props.range
     )
+
+    domNode.on
+      slide: =>
+        @setState value: domNode.val()
+
   
   render: ->
     return `<div/>`

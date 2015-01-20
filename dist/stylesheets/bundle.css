@@ -3226,7 +3226,7 @@ td, th {
     border: 1px solid #cbcbcb; }
 
 /* line 4, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
-.b-alert {
+.b-alert, .alert, .help-block {
   font-size: 1rem;
   display: block;
   text-align: center;
@@ -3236,7 +3236,7 @@ td, th {
   padding: 11px;
   margin: 0 0 20px; }
   /* line 13, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-alert */
-  .b-alert_danger {
+  .b-alert_danger, .alert-danger, .help-block {
     background-color: #da2a41;
     border-color: #da2a41;
     color: #fff; }
@@ -3914,10 +3914,13 @@ td, th {
 /* line 1, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
 .b-text {
   font-size: 1.143rem; }
+  /* line 3, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  .b-text_center {
+    text-align: center; }
   @media only screen and (max-width: 480px) {
     .b-text {
       font-size: 1rem; } }
-  /* line 5, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 7, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h1 {
     font-size: 3rem;
     margin: 0 0 38px;
@@ -3925,7 +3928,7 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text h1 {
         font-size: 2em; } }
-  /* line 12, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 14, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h2 {
     font-size: 1.625rem;
     font-weight: normal;
@@ -3933,25 +3936,25 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text h2 {
         font-size: 1.4rem; } }
-  /* line 24, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 26, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text h1, .b-text h2, .b-text h3, .b-text h4, .b-text h5, .b-text h6 {
     text-align: center; }
-  /* line 27, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 29, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text p {
     margin: 20px 0; }
-  /* line 30, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text ul {
     padding-left: 1em; }
-    /* line 32, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    /* line 34, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text ul li {
       margin: 1em 0; }
-  /* line 35, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 37, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text table {
     width: 100%; }
-    /* line 38, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    /* line 40, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text table th, .b-text table td {
       padding: 15px; }
-    /* line 41, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    /* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text table th {
       border-bottom: 1px solid rgba(114, 114, 114, 0.3);
       text-align: left;
@@ -3960,7 +3963,7 @@ td, th {
       .b-text table {
         overflow-x: auto;
         display: block; } }
-  /* line 49, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  /* line 51, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
   .b-text__image {
     margin: 0 -140px;
     overflow: hidden; }
@@ -3970,7 +3973,7 @@ td, th {
     @media only screen and (max-width: 480px) {
       .b-text__image {
         margin: 0; } }
-    /* line 62, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+    /* line 64, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
     .b-text__image img {
       width: 100%;
       max-width: 100%; }
@@ -3978,8 +3981,11 @@ td, th {
       .b-text__image {
         margin-left: 0;
         margin-right: 0; } }
+  /* line 71, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+  .b-text .b-btn, .b-text .b-paginator__item, .b-text .pagination .next a, .pagination .next .b-text a, .b-text .pagination .prev a, .pagination .prev .b-text a, .b-text .pagination .first a, .pagination .first .b-text a, .b-text .pagination .last a, .pagination .last .b-text a, .b-text .pagination .page a, .pagination .page .b-text a, .b-text .b-design-option__save {
+    margin: 0 auto; }
 
-/* line 69, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
+/* line 74, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-text */
 .map-embed {
   overflow: hidden;
   height: 400px;
@@ -4028,11 +4034,11 @@ td, th {
   .b-form__row__widget {
     margin: 30px 0 0; }
   /* line 37, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
-  .b-form__row .b-alert {
+  .b-form__row .b-alert, .b-form__row .alert, .b-form__row .help-block {
     position: relative;
     z-index: 2; }
-/* line 43, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
-.b-form input[type='text'], .b-form textarea {
+/* line 44, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+.b-form input[type='text'], .b-form input[type='email'], .b-form textarea {
   resize: none;
   background: #fff;
   border-radius: 2px;
@@ -4042,16 +4048,16 @@ td, th {
   box-shadow: none;
   height: auto;
   box-sizing: border-box; }
-  /* line 53, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
-  .b-form input[type='text'] + .b-alert, .b-form textarea + .b-alert {
+  /* line 54, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+  .b-form input[type='text'] + .b-alert, .b-form input[type='text'] + .alert, .b-form input[type='text'] + .help-block, .b-form input[type='email'] + .b-alert, .b-form input[type='email'] + .alert, .b-form input[type='email'] + .help-block, .b-form textarea + .b-alert, .b-form textarea + .alert, .b-form textarea + .help-block {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 58, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 59, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 63, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
+/* line 64, /Volumes/hdd/work/kiosk2/app/stylesheets/sass/block/b-form */
 .b-form__radio input {
   margin-right: 20px; }
 

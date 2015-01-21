@@ -46,29 +46,29 @@ window.BasketPopup = React.createClass
     classNameValue = "b-float-cart"
     classNameValue += " b-float-cart_invisible" if @state.isVisible is false
     return `<div className={classNameValue}><div className='b-float-cart__content' onClick={this.handleClick}>
-          <BasketPopupList items={this.state.items}/>
+          <BasketPopupList items={this.props.items}/>
           <BasketPopupControl cartUrl={this.props.cartUrl} cartClearUrl={this.props.cartClearUrl}/>
         </div></div>`
 
 window.BasketPopupList = React.createClass
   propTypes:
-    items: React.PropTypes.array    
+    items: React.PropTypes.array
 
   render: ->
     return null unless @props.items
     itemsList = @props.items.map((item) ->
       return (
-        `<BasketPopupItem key={item.order_product_id} item={item}/>`
+        `<BasketPopupItem key={item.id} item={item}/>`
         )
     )
-    
+
     return `<div className="b-float-cart__item-wrap">
         {itemsList}
       </div>`
 
 window.BasketPopupItem = React.createClass
   propTypes:
-    order_product_id: React.PropTypes.number
+    id: React.PropTypes.number
     product_id: React.PropTypes.number
     price: React.PropTypes.number
     count: React.PropTypes.number
@@ -76,7 +76,6 @@ window.BasketPopupItem = React.createClass
     title: React.PropTypes.string
     description: React.PropTypes.string
     article: React.PropTypes.string
-    product: React.PropTypes.object.isRequired
 
   render: ->
     @props = @props.item
@@ -84,18 +83,18 @@ window.BasketPopupItem = React.createClass
               <div className="b-float-cart__item__inner">
                 <div className="b-float-cart__item__img">
                   <a href={this.props.product_id}>
-                    <img src={this.props.product.image.url} alt={this.props.title}/>
+                    <img src={this.props.image_url} alt={this.props.title}/>
                   </a>
                 </div>
                 <div className="b-float-cart__item__info">
-                  <a className="b-float-cart__item__name" href={this.props.product_id}>{this.props.product.title}</a>
+                  <a className="b-float-cart__item__name" href={this.props.product_id}>{this.props.title}</a>
                   <div className="b-float-cart__item__param">{this.props.description}</div>
                   <div className="b-float-cart__item__param">{this.props.article}</div>
                 </div>
                 <div className="b-float-cart__item__q">{this.props.count}</div>
                 <div className="b-float-cart__item__price">
                   <div className="b-float-cart__item__price-val">
-                    {accounting.formatMoney(this.props.product.price.cents * this.props.count)}
+                    {accounting.formatMoney((this.props.price.cents/100).toFixed(2) * this.props.count)}
                   </div>
                 </div>
               </div>

@@ -145,7 +145,6 @@ window.BasketActions = {
 window.BasketButton = React.createClass({displayName: 'BasketButton',
   propTypes: {
     itemsCount: React.PropTypes.object.isRequired,
-    totalPrice: React.PropTypes.object,
     cartUrl: React.PropTypes.object
   },
   getDefaultProps: function() {
@@ -155,8 +154,7 @@ window.BasketButton = React.createClass({displayName: 'BasketButton',
   },
   getInitialState: function() {
     return {
-      itemsCount: BasketStore.getBasketCount(),
-      totalPrice: 0
+      itemsCount: BasketStore.getBasketCount()
     };
   },
   componentDidMount: function() {
@@ -169,9 +167,9 @@ window.BasketButton = React.createClass({displayName: 'BasketButton',
   },
   render: function() {
     if (this.state.itemsCount > 0) {
-      return BasketButton_Full({cartUrl: this.props.cartUrl, itemsCount: this.state.itemsCount, totalPrice: this.props.totalPrice});
+      return BasketButton_Full({cartUrl: this.props.cartUrl, itemsCount: this.state.itemsCount});
     } else {
-      return BasketButton_Empty(null);
+      return BasketButton_Empty({cartUrl: this.props.cartUrl});
     }
   }
 });
@@ -179,7 +177,6 @@ window.BasketButton = React.createClass({displayName: 'BasketButton',
 window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
   propTypes: {
     itemsCount: React.PropTypes.object.isRequired,
-    totalPrice: React.PropTypes.object,
     cartUrl: React.PropTypes.object
   },
   render: function() {
@@ -188,8 +185,11 @@ window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
 });
 
 window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty',
+  propTypes: {
+    cartUrl: React.PropTypes.object
+  },
   render: function() {
-    return React.DOM.span({className: "b-cart-trigger"});
+    return React.DOM.a({className: "b-cart-trigger", href: this.props.cartUrl});
   }
 });
 

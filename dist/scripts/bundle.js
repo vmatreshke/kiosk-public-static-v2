@@ -263,7 +263,7 @@ window.BasketPopup = React.createClass({displayName: 'BasketPopup',
       classNameValue += " b-float-cart_invisible";
     }
     return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
-          BasketPopupList({items: this.state.items}), 
+          BasketPopupList({items: this.props.items}), 
           BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
         ));
   }
@@ -279,7 +279,7 @@ window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
       return null;
     }
     itemsList = this.props.items.map(function(item) {
-      return BasketPopupItem({key: item.order_product_id, item: item});
+      return BasketPopupItem({key: item.id, item: item});
     });
     return React.DOM.div({className: "b-float-cart__item-wrap"}, 
         itemsList
@@ -289,15 +289,14 @@ window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
 
 window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
   propTypes: {
-    order_product_id: React.PropTypes.number,
+    id: React.PropTypes.number,
     product_id: React.PropTypes.number,
     price: React.PropTypes.number,
     count: React.PropTypes.number,
     image_url: React.PropTypes.string,
     title: React.PropTypes.string,
     description: React.PropTypes.string,
-    article: React.PropTypes.string,
-    product: React.PropTypes.object.isRequired
+    article: React.PropTypes.string
   },
   render: function() {
     this.props = this.props.item;
@@ -305,18 +304,18 @@ window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
               React.DOM.div({className: "b-float-cart__item__inner"}, 
                 React.DOM.div({className: "b-float-cart__item__img"}, 
                   React.DOM.a({href: this.props.product_id}, 
-                    React.DOM.img({src: this.props.product.image.url, alt: this.props.title})
+                    React.DOM.img({src: this.props.image_url, alt: this.props.title})
                   )
                 ), 
                 React.DOM.div({className: "b-float-cart__item__info"}, 
-                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_id}, this.props.product.title), 
+                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_id}, this.props.title), 
                   React.DOM.div({className: "b-float-cart__item__param"}, this.props.description), 
                   React.DOM.div({className: "b-float-cart__item__param"}, this.props.article)
                 ), 
                 React.DOM.div({className: "b-float-cart__item__q"}, this.props.count), 
                 React.DOM.div({className: "b-float-cart__item__price"}, 
                   React.DOM.div({className: "b-float-cart__item__price-val"}, 
-                    accounting.formatMoney(this.props.product.price.cents * this.props.count)
+                    accounting.formatMoney((this.props.price.cents/100).toFixed(2) * this.props.count)
                   )
                 )
               )

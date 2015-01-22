@@ -2,19 +2,23 @@
 
 window.BasketButton = React.createClass
   propTypes:
-    itemsCount: React.PropTypes.object.isRequired
-    cartUrl: React.PropTypes.object
+    # Если количество не установлено, то оно берется из BasketStore
+    itemsCount: React.PropTypes.object
+    cartUrl:    React.PropTypes.object.isRequired
 
   getDefaultProps: ->
     cartUrl: "/cart.html"
 
   getInitialState: ->
-    itemsCount: BasketStore.getBasketCount()
+    itemsCount: @props.itemsCount || BasketStore.getBasketCount()
 
-  componentDidMount: ()->
+  componentDidMount: ->
     BasketStore.addChangeListener @_onChange
 
-  _onChange: ()->
+  componentDidUnmount: ->
+    BasketStore.removeChangeListener @_onChange
+
+  _onChange: ->
     @setState itemsCount: BasketStore.getBasketCount()
 
   render: ->

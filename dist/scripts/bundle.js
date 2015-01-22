@@ -144,8 +144,8 @@ window.BasketActions = {
 /** @jsx React.DOM */
 window.BasketButton = React.createClass({displayName: 'BasketButton',
   propTypes: {
-    itemsCount: React.PropTypes.object.isRequired,
-    cartUrl: React.PropTypes.object
+    itemsCount: React.PropTypes.object,
+    cartUrl: React.PropTypes.object.isRequired
   },
   getDefaultProps: function() {
     return {
@@ -154,11 +154,14 @@ window.BasketButton = React.createClass({displayName: 'BasketButton',
   },
   getInitialState: function() {
     return {
-      itemsCount: BasketStore.getBasketCount()
+      itemsCount: this.props.itemsCount || BasketStore.getBasketCount()
     };
   },
   componentDidMount: function() {
     return BasketStore.addChangeListener(this._onChange);
+  },
+  componentDidUnmount: function() {
+    return BasketStore.removeChangeListener(this._onChange);
   },
   _onChange: function() {
     return this.setState({

@@ -9,6 +9,24 @@
     &__list_sub
       .b-nav__link
         font-weight: normal
+
+  .b-item-list
+    &__item
+      @extend %three-twelfths
+      @extend %lap--one-half
+      @extend %palm--one-half
     
+  .b-item
+    color: #000
+    &__name,
+    &__price
+      font-size: 1.143em
+    &__price
+      font-weight: bold
+
+  .b-status
+    &_sold
+      background-color: transparent
+
   .b-footer
     border-top: 1px solid $wannabeBorderColor

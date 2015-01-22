@@ -103,36 +103,36 @@ window.accounting.settings = {
 
 },{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":29,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
-  addItem: function(productItem) {
-    return this._addItemToServer(productItem);
+  addGood: function(good) {
+    return this._addItemToServer(good);
   },
-  _addItemToServer: function(productItem) {
-    var count, productId;
-    productId = productItem.product_id;
-    count = productItem.count;
+  _addItemToServer: function(good, count) {
+    if (count == null) {
+      count = 1;
+    }
     return $.ajax({
       dataType: 'json',
       method: 'post',
       data: {
-        product_item_id: productId,
+        good_id: good.good_id,
         count: count
       },
       url: Routes.vendor_cart_items_path(),
       error: function(xhr, status, err) {
-        return console.log(err);
+        return typeof console.error === "function" ? console.error(err) : void 0;
       },
       success: function(response) {
         return BasketDispatcher.handleServerAction({
           actionType: 'productAddedToBasket',
-          productItem: productItem
+          cartItem: cartItem
         });
       }
     });
   },
-  receiveBasket: function(basketItems) {
+  receiveBasket: function(cartItems) {
     return BasketDispatcher.handleViewAction({
       actionType: 'receiveBasket',
-      basketItems: basketItems
+      cartItems: cartItems
     });
   }
 };
@@ -144,8 +144,8 @@ window.BasketActions = {
 /** @jsx React.DOM */
 window.BasketButton = React.createClass({displayName: 'BasketButton',
   propTypes: {
-    itemsCount: React.PropTypes.object,
-    cartUrl: React.PropTypes.object.isRequired
+    itemsCount: React.PropTypes.number,
+    cartUrl: React.PropTypes.string.isRequired
   },
   getDefaultProps: function() {
     return {
@@ -204,14 +204,54 @@ window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty'
 window.BasketPopup = React.createClass({displayName: 'BasketPopup',
   propTypes: {
     cartUrl: React.PropTypes.string.isRequired,
-    cartClearUrl: React.PropTypes.string,
-    items: React.PropTypes.array
+    cartClearUrl: React.PropTypes.string.isRequired,
+    cartItems: React.PropTypes.array.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      cartUrl: "/cart.html",
+      cartClearUrl: "/cart.html?clear",
+      items: null
+    };
   },
   getInitialState: function() {
     return {
       isVisible: false,
       items: null
     };
+  },
+  componentDidMount: function() {
+    $(document).on("click", this.handleBodyClick);
+    $(document).on("cart:clicked", this.handleCartClicked);
+    $(document).on("keyup", this.handleBodyKey);
+    return BasketStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    $(document).off("click", this.handleBodyClick);
+    $(document).off("cart:clicked", this.handleCartClicked);
+    return $(document).off("keyup", this.handleBodyKey);
+  },
+  render: function() {
+    var classNameValue;
+    classNameValue = "b-float-cart";
+    if (this.state.isVisible === false) {
+      classNameValue += " b-float-cart_invisible";
+    }
+    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
+          BasketPopupList({items: this.props.items}), 
+          BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
+        ));
+  },
+  _onChange: function() {
+    this.setState({
+      items: BasketStore.getBasketItems()
+    });
+    return this.handleCartClicked();
+  },
+  handleCartClicked: function(e) {
+    return this.setState({
+      isVisible: true
+    });
   },
   handleClick: function(e) {
     return $(document).trigger("cart:clicked");
@@ -229,46 +269,6 @@ window.BasketPopup = React.createClass({displayName: 'BasketPopup',
         isVisible: false
       });
     }
-  },
-  componentDidMount: function() {
-    $(document).on("click", this.handleBodyClick);
-    $(document).on("cart:clicked", this.handleCartClicked);
-    $(document).on("keyup", this.handleBodyKey);
-    return BasketStore.addChangeListener(this._onChange);
-  },
-  componentWillUnmount: function() {
-    $(document).off("click", this.handleBodyClick);
-    $(document).off("cart:clicked", this.handleCartClicked);
-    return $(document).off("keyup", this.handleBodyKey);
-  },
-  _onChange: function() {
-    this.setState({
-      items: BasketStore.getBasketItems()
-    });
-    return this.handleCartClicked();
-  },
-  handleCartClicked: function(e) {
-    return this.setState({
-      isVisible: true
-    });
-  },
-  getDefaultProps: function() {
-    return {
-      cartUrl: "/cart.html",
-      cartClearUrl: "/cart.html?clear",
-      items: null
-    };
-  },
-  render: function() {
-    var classNameValue;
-    classNameValue = "b-float-cart";
-    if (this.state.isVisible === false) {
-      classNameValue += " b-float-cart_invisible";
-    }
-    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
-          BasketPopupList({items: this.props.items}), 
-          BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
-        ));
   }
 });
 
@@ -292,26 +292,26 @@ window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
 
 window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
   propTypes: {
-    id: React.PropTypes.number,
-    product_id: React.PropTypes.number,
+    product_url: React.PropTypes.string,
+    good_id: React.PropTypes.number,
     price: React.PropTypes.number,
     count: React.PropTypes.number,
     image_url: React.PropTypes.string,
     title: React.PropTypes.string,
     description: React.PropTypes.string,
-    article: React.PropTypes.string
+    article: React.PropTypes.string,
+    count: React.PropTypes.number
   },
   render: function() {
-    this.props = this.props.item;
     return React.DOM.div({className: "b-float-cart__item"}, 
               React.DOM.div({className: "b-float-cart__item__inner"}, 
                 React.DOM.div({className: "b-float-cart__item__img"}, 
-                  React.DOM.a({href: this.props.product_id}, 
+                  React.DOM.a({href: this.props.product_url}, 
                     React.DOM.img({src: this.props.image_url, alt: this.props.title})
                   )
                 ), 
                 React.DOM.div({className: "b-float-cart__item__info"}, 
-                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_id}, this.props.title), 
+                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_url}, this.props.title), 
                   React.DOM.div({className: "b-float-cart__item__param"}, this.props.description), 
                   React.DOM.div({className: "b-float-cart__item__param"}, this.props.article)
                 ), 
@@ -329,7 +329,7 @@ window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
 window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl',
   propTypes: {
     cartUrl: React.PropTypes.string.isRequired,
-    cartClearUrl: React.PropTypes.string
+    cartClearUrl: React.PropTypes.string.isRequired
   },
   render: function() {
     return React.DOM.div({className: "b-float-cart__control"}, 
@@ -795,32 +795,22 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
   propTypes: {
-    product_item_id: React.PropTypes.number.isRequired,
-    product_id: React.PropTypes.number.isRequired,
-    price: React.PropTypes.number,
-    count: React.PropTypes.number,
-    image_url: React.PropTypes.string,
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-    articul: React.PropTypes.number
+    elementQuery: React.PropTypes.string,
+    dataAttr: React.PropTypes.string
   },
   getDefaultProps: function() {
     return {
-      product_item_id: 4,
-      product_id: 2,
-      price: 123,
-      count: 1,
-      image_url: 'http://placehold.it/120x120',
-      title: 'title',
-      description: 'descr',
-      articul: 123
+      elementQuery: '[good-select] option:selected',
+      dataAttr: 'good'
     };
   },
   addToBasket: function() {
-    var props;
-    props = $('[product-select] option:selected').data('productitem');
-    if (props != null) {
-      return BasketActions.addItem(props);
+    var good;
+    good = $(this.props.elementQuery).data(this.props.dataAttr);
+    if (good != null) {
+      return BasketActions.addGood(good);
+    } else {
+      return alert("Ошибка при добавлении товара в корзину. Нет атрибута good в выбранном пункте");
     }
   },
   render: function() {
@@ -908,11 +898,11 @@ module.exports = BaseStore;
 
 
 },{}],17:[function(require,module,exports){
-var BaseStore, _basketItems;
+var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
 
-_basketItems = [];
+_cartItems = [];
 
 window.BasketDispatcher.register(function(payload) {
   var action;
@@ -923,7 +913,7 @@ window.BasketDispatcher.register(function(payload) {
       BasketStore.emitChange();
       break;
     case 'receiveBasket':
-      BasketStore._receiveBasket(action.basketItems);
+      BasketStore._receiveBasket(action.cartItems);
       BasketStore.emitChange();
       break;
   }
@@ -931,37 +921,37 @@ window.BasketDispatcher.register(function(payload) {
 
 window.BasketStore = _.extend(new BaseStore(), {
   getBasketItems: function() {
-    return _basketItems;
+    return _cartItems;
   },
   getBasketCount: function() {
     var total;
     total = 0;
-    _.forEach(_basketItems, function(item) {
+    _.forEach(_cartItems, function(item) {
       return total += item.count;
     });
     return total;
   },
   _findItem: function(productItem) {
     var thisItem;
-    thisItem = _.findIndex(_basketItems, function(item) {
+    thisItem = _.findIndex(_cartItems, function(item) {
       return item.product_item_id === productItem.product_item_id;
     });
-    return _basketItems[thisItem];
+    return _cartItems[thisItem];
   },
   _addItem: function(productItem) {
-    var basketItem;
-    basketItem = BasketStore._findItem(productItem);
-    if (basketItem != null) {
-      return basketItem.count += 1;
+    var cartItem;
+    cartItem = BasketStore._findItem(productItem);
+    if (cartItem != null) {
+      return cartItem.count += 1;
     } else {
       productItem.count = 1;
-      return _basketItems.push(productItem);
+      return _cartItems.push(productItem);
     }
   },
-  _receiveBasket: function(basketItems) {
-    if (basketItems != null) {
-      return _.forEach(basketItems.items, function(basketItem) {
-        return _basketItems.push(basketItem.product_item);
+  _receiveBasket: function(cartItems) {
+    if (cartItems != null) {
+      return _.forEach(cartItems.items, function(cartItem) {
+        return _cartItems.push(cartItem.product_item);
       });
     }
   }

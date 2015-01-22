@@ -1,26 +1,26 @@
 window.BasketActions =
-  addItem: (productItem) ->
-    @_addItemToServer productItem
+  addGood: (good) ->
+    @_addItemToServer good
 
-  _addItemToServer: (productItem) ->
-    productId = productItem.product_id
-    count = productItem.count
+  _addItemToServer: (good, count=1) ->
 
     $.ajax
       dataType: 'json'
       method:   'post'
       data:
-        product_item_id: productId
-        count: count
-      url:      Routes.vendor_cart_items_path()
+        good_id: good.good_id
+        count:   count
+      url:       Routes.vendor_cart_items_path()
       error: (xhr, status, err) ->
-        console.log err
+        console.error? err
       success: (response) ->
         BasketDispatcher.handleServerAction
           actionType: 'productAddedToBasket'
-          productItem: productItem
+          cartItem:    cartItem
 
-  receiveBasket: (basketItems) ->
+  # Принимает корзина с сервера через html.
+  # Таким образом мы передаем товары в Store при загрузке страницы.
+  receiveBasket: (cartItems) ->
     BasketDispatcher.handleViewAction
       actionType: 'receiveBasket'
-      basketItems: basketItems
+      cartItems: cartItems

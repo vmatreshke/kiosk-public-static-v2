@@ -1,6 +1,6 @@
 BaseStore = require './_base'
 
-_basketItems = []
+_cartItems = []
 
 window.BasketDispatcher.register (payload) ->
   action = payload.action
@@ -12,37 +12,38 @@ window.BasketDispatcher.register (payload) ->
       break
 
     when 'receiveBasket'
-      BasketStore._receiveBasket action.basketItems
+      BasketStore._receiveBasket action.cartItems
       BasketStore.emitChange()
       break
 
+
 window.BasketStore = _.extend new BaseStore(), {
   getBasketItems: ->
-    _basketItems
+    _cartItems
 
   getBasketCount: ->
     total = 0
-    _.forEach _basketItems, (item)->
+    _.forEach _cartItems, (item)->
       total += item.count
     return total
 
   _findItem: (productItem) ->
-    thisItem = _.findIndex _basketItems, (item) ->
+    thisItem = _.findIndex _cartItems, (item) ->
       item.product_item_id == productItem.product_item_id
-    return _basketItems[thisItem]
+    return _cartItems[thisItem]
 
   _addItem: (productItem)->
-    basketItem = BasketStore._findItem productItem
-    if basketItem?
-      basketItem.count += 1
+    cartItem = BasketStore._findItem productItem
+    if cartItem?
+      cartItem.count += 1
     else
       productItem.count = 1
-      _basketItems.push productItem
+      _cartItems.push productItem
 
-  _receiveBasket: (basketItems)->
-    if basketItems?
-      _.forEach basketItems.items, (basketItem)->
-        _basketItems.push basketItem.product_item
+  _receiveBasket: (cartItems)->
+    if cartItems?
+      _.forEach cartItems.items, (cartItem)->
+        _cartItems.push cartItem.product_item
 
 
 }

@@ -3,8 +3,8 @@
 window.BasketButton = React.createClass
   propTypes:
     # Если количество не установлено, то оно берется из BasketStore
-    itemsCount: React.PropTypes.object
-    cartUrl:    React.PropTypes.object.isRequired
+    itemsCount: React.PropTypes.number
+    cartUrl:    React.PropTypes.string.isRequired
 
   getDefaultProps: ->
     cartUrl: "/cart.html"

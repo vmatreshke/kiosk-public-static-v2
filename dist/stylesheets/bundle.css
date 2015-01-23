@@ -4386,19 +4386,23 @@ td, th {
     .b-paginator__item_current, .pagination .page.active a {
       background-color: #000; }
 
-/* line 18, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
-.pagination .next, .pagination .prev, .pagination .first, .pagination .last {
-  display: inline; }
+/* line 13, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
+.pagination {
+  margin: 0;
+  padding: 30px 0 0; }
   /* line 20, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
-  .pagination .next a, .pagination .prev a, .pagination .first a, .pagination .last a {
-    font-weight: bold; }
-/* line 23, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
-.pagination .page {
-  display: inline; }
-  /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
-  .pagination .page.disabled a {
-    background-color: #e2e2e2;
-    cursor: not-allowed; }
+  .pagination .next, .pagination .prev, .pagination .first, .pagination .last {
+    display: inline; }
+    /* line 22, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
+    .pagination .next a, .pagination .prev a, .pagination .first a, .pagination .last a {
+      font-weight: bold; }
+  /* line 25, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
+  .pagination .page {
+    display: inline; }
+    /* line 33, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-paginator */
+    .pagination .page.disabled a {
+      background-color: #e2e2e2;
+      cursor: not-allowed; }
 
 /* line 1, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-show-more */
 .b-show-more {

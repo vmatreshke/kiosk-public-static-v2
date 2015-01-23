@@ -97,9 +97,12 @@
         position: fixed
         z-index: 3
         bottom: 15px
-        width: 355px
-        margin: 0 0 0 -178px
-        left: 50%
+        width: -moz-calc(100% - 30px) !important
+        width: calc(100% - 30px) !important
+        display: block
+        left: 15px
+        right: 15px
+        margin: 0
 
     &__clear
       display: block
@@ -221,8 +224,12 @@
         width: auto
     .b-cart__action
       margin: 0
+    .cart__form__delivery-address
+        margin:10px 32px
     @include grid-media-query("lap")
       margin-left: auto
       margin-right: auto
     @include grid-media-query("palm")
       margin-left: 0
+      .cart__form__delivery-address
+        font-size: .875rem

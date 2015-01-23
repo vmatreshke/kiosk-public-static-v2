@@ -2,7 +2,7 @@ $articulColor: #828282
 
 .b-item-full
   @extend .b-layout
-  margin-top: 40px
+  padding-top: 40px
 
   &__header
     @include grid-media-query("lap")
@@ -20,6 +20,13 @@ $articulColor: #828282
     @extend %grid__item
     @extend %one-half
     @extend %portable--one-whole
+
+  &__gallery
+    position: relative
+    .b-status
+      position: absolute
+      bottom: 0
+      left: 0
 
   &__description-inner
     @extend %grid

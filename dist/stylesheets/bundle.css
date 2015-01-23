@@ -3241,9 +3241,8 @@ td, th {
   display: block; }
   /* line 4, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-logo */
   .b-logo img {
-    width: 100%;
-    width-max-width: 100%;
-    width-vertical-align: top; }
+    max-width: 100%;
+    vertical-align: top; }
 
 /* line 2, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-site-description */
 .b-site-description ul {
@@ -3368,7 +3367,7 @@ td, th {
 
 /* line 3, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
 .b-item-full {
-  margin-top: 40px; }
+  padding-top: 40px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-item-full__header {
       display: none; } }
@@ -3379,33 +3378,41 @@ td, th {
       .b-item-full__header_mobile {
         display: block; } }
   /* line 24, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  .b-item-full__gallery {
+    position: relative; }
+    /* line 26, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    .b-item-full__gallery .b-status {
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+  /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__description-inner {
     margin-bottom: 55px; }
-  /* line 37, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 44, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__title {
     font-size: 2rem;
     font-weight: normal;
     margin: 0 0 1em; }
-  /* line 42, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 49, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__articul {
     font-weight: normal;
     color: #828282;
     font-size: 0.429em; }
-  /* line 47, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 54, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__price {
     font-size: 2rem;
     margin: 0 0 10px; }
-    /* line 50, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 57, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__currency {
       font-size: 0.324em;
       display: inline-block;
       vertical-align: top;
       padding: 9px 0; }
-    /* line 56, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old, .b-item-full__price__sale {
       display: inline-block;
       vertical-align: top; }
-    /* line 59, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__sale {
       font-size: 0.412em;
       background-color: #f05a61;
@@ -3413,22 +3420,22 @@ td, th {
       text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px; }
-    /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 73, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old {
       font-size: 0.471em;
       text-decoration: line-through;
       color: #353535; }
-  /* line 71, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 78, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 75, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 82, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143rem; }
-  /* line 78, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 85, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 84, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 91, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -3445,7 +3452,7 @@ td, th {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 102, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 109, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }

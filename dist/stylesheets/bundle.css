@@ -3384,7 +3384,7 @@ td, th {
     .b-item-full__gallery .b-status {
       position: absolute;
       bottom: 0;
-      left: 0; }
+      left: 24px; }
   /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__description-inner {
     margin-bottom: 55px; }

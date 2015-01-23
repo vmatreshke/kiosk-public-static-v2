@@ -15,7 +15,7 @@
       margin: 5px 0
     &_soc
       @extend %three-twelfths
-      @extend %lap--four-twelfths
+      @extend %lap--three-twelfths
       text-align: right
       @include grid-media-query("palm")
         text-align: left
@@ -23,8 +23,18 @@
       //   &__link
       //     margin: 0 0 0 25px
     &_main
-      @extend %nine-twelfths
-      @extend %lap--eight-twelfths
+      @extend %six-twelfths
+      @extend %lap--six-twelfths
+
+  &__cpr
+    @extend %grid__item
+    @extend %three-twelfths
+    @extend %lap--three-twelfths
+    @extend %palm--one-whole
+    text-align: right
+    @include grid-media-query("palm")
+      text-align: left
+
 
   &__link
     font-size: 1.143rem

@@ -3240,9 +3240,10 @@ td, th {
   text-align: center;
   display: block; }
   /* line 4, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-logo */
-  .b-logo__img {
-    max-width: 100%;
-    vertical-align: top; }
+  .b-logo img {
+    width: 100%;
+    width-max-width: 100%;
+    width-vertical-align: top; }
 
 /* line 2, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-site-description */
 .b-site-description ul {
@@ -3352,13 +3353,15 @@ td, th {
     font-size: 1em; }
   /* line 27, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item */
   .b-item__price {
+    padding-right: 5px;
+    display: inline;
     font-size: 1rem; }
-    /* line 29, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item */
+    /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item */
     .b-item__price_old {
       text-decoration: line-through;
       color: #e2e2e2; }
   @media only screen and (max-width: 480px) {
-    /* line 35, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item */
+    /* line 37, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item */
     .b-item__name, .b-item__price {
       font-size: 0.9rem; } }
 

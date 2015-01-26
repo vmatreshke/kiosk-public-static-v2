@@ -1,14 +1,34 @@
 @charset "UTF-8";
 
-@import "jQuery.mmenu/src/scss/jquery.mmenu.all";
+// Normalize
 @import "utilities/_normalize";
+
+// Grid
 @import "utilities/grid";
 
+// Bootstrap variables/mixins
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
+
+// Bootstrap components
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/labels";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/badges";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/grid";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/alerts";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap/button-groups";
+
+// Fonts
 @import "fonts/gotham";
 @import "fonts/apercu";
 
-@import "settings/vars"; // Переменные
+// Variables
+@import "settings/vars";
 
+// Plugins
+@import "jQuery.mmenu/src/scss/jquery.mmenu.all";
 @import "modules/owlcarousel";
 @import "modules/fancybox";
 @import "modules/range";

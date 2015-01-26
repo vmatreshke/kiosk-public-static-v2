@@ -1,5 +1,6 @@
+// для .b-page
 .b-page_theme-wannabe
-  font-family: $font-stack-gotham-family
+  font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif
   .b-nav
     &__list
       border-color: transparent
@@ -10,12 +11,6 @@
       .b-nav__link
         font-weight: normal
 
-  .b-item-list
-    &__item
-      @extend %three-twelfths
-      @extend %lap--one-half
-      @extend %palm--one-half
-    
   .b-item
     color: #000
     &__name,
@@ -31,4 +26,12 @@
       background-color: transparent
 
   .b-footer
-    border-top: 1px solid $wannabeBorderColor
+    border-top: 1px solid #EFEFEF
+
+  // Чтобы сделать товары по 4 в ряд нужно
+  // к .b-page добавить аттрибут data-in-row="2, 3 или 4"
+  // .b-item-list
+  //   &__item
+  //     @extend %three-twelfths
+  //     @extend %lap--one-half
+  //     @extend %palm--one-half

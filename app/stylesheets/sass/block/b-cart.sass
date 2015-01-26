@@ -213,8 +213,8 @@
         // @extend %lap--one-twelfths
 
   &__form
-    // max-width: 580px
-    margin: 55px 0 0
+    max-width: 580px
+    margin: 55px auto 0
     &__delivery-name,
     &__delivery-price
       display: inline-block
@@ -230,17 +230,17 @@
       margin:10px 0
     
     &__inner
-      @extend %grid
-      @extend %grid--wide
+      // @extend %grid
+      // @extend %grid--wide
       margin-bottom: 55px
       @include grid-media-query((lap, palm))
         margin-bottom: 0
 
-    &__data-row
-      @extend %grid__item
-      @extend %four-twelfths
-      @extend %lap--one-whole
-      @extend %palm--one-whole
+    // &__data-row
+    //   @extend %grid__item
+    //   @extend %four-twelfths
+    //   @extend %lap--one-whole
+    //   @extend %palm--one-whole
 
     @include grid-media-query("lap")
       margin-left: auto

@@ -7,6 +7,7 @@
       overflow: visible
       margin-bottom: 50px
     &__num
+      float: left
       height: 44px
       width: 44px
       text-align: center
@@ -15,13 +16,13 @@
       color: #fff
       font-size: 22px
       border-radius: 22px
-      margin-bottom: 25px
       @include grid-media-query((lap, palm))
         margin: 0 auto 25px
+        float: none
     
     &__content
+      margin-left: 62px
       @include grid-media-query((lap, palm))
-        max-width: 600px
         margin: 0 auto
 
     &__title

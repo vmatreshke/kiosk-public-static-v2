@@ -1,5 +1,6 @@
 .b-item-list
   @extend .b-layout
+  padding-bottom: 40px
 
   &_additional
     .b-item-list
@@ -47,10 +48,10 @@
     padding-top: 40px
 
   &_has-filter
-    margin-top: 40px
+    padding-top: 40px
     overflow: hidden
     @include grid-media-query("palm")
-      margin-top: 0
+      padding-top: 0
     .b-item-list
       &__filter
         width: 190px

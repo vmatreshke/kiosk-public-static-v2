@@ -4941,7 +4941,7 @@ html.mm-opened.mm-black .mm-page {
   .b-item-full .b-status {
     display: inline-block; }
   /* line 10, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
-  .b-item-full .b-item__price {
+  .b-item-full .b-item__price_old {
     padding-left: 15px; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-item-full__header {

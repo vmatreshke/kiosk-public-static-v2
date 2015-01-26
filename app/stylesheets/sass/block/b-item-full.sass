@@ -4,12 +4,15 @@ $articulColor: #828282
   @extend .b-layout
   padding-top: 40px
 
+  .b-status
+    display: inline-block
+
   &__header
-    @include grid-media-query("lap")
+    @include grid-media-query((lap, palm))
       display: none
     &_mobile
       display: none
-      @include grid-media-query("lap")
+      @include grid-media-query((lap, palm))
         display: block
 
   &__content

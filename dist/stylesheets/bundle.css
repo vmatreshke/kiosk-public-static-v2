@@ -1864,7 +1864,7 @@ td, th {
  * 3. Apply a negative `margin-left` to negate the columns’ gutters.
  */
 /* line 212, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
+.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-cart__form__inner, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
   list-style: none;
   /* [1] */
   margin: 0;
@@ -1877,7 +1877,7 @@ td, th {
 
 /* Opera hack */
 /* line 224, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
+.b-item-list__content, .b-item-full__content, .b-item-full__description-inner, .b-item-full__form, .b-float-cart__item__inner, .b-cart__action__container, .b-cart__item, .b-cart__form__inner, .b-text__image__container, .b-feature-list, .b-modification, .b-header__content, .b-footer__content {
   word-spacing: -0.31em; }
 
 /**
@@ -1888,7 +1888,7 @@ td, th {
      * 5. Required to combine fluid widths and fixed gutters.
      */
 /* line 237, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-.b-item-list__item, .b-item-list__paginator, .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right, .b-item-full__form__option, .b-item-full__form__submit, .b-float-cart__item__img, .b-float-cart__item__info, .b-float-cart__item__q, .b-float-cart__item__price, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__item__col-img, .b-cart__item__col-content, .b-cart__item__col-quantity, .b-cart__item__col-price, .b-cart__item__col-remove, .b-text__image__wrap, .b-feature-list > li, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav {
+.b-item-list__item, .b-item-list__paginator, .b-item-full__gallery, .b-item-full__description, .b-item-full__description-inner__col-left, .b-item-full__description-inner__col-right, .b-item-full__form__option, .b-item-full__form__submit, .b-float-cart__item__img, .b-float-cart__item__info, .b-float-cart__item__q, .b-float-cart__item__price, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__item__col-img, .b-cart__item__col-content, .b-cart__item__col-quantity, .b-cart__item__col-price, .b-cart__item__col-remove, .b-cart__form__data-row, .b-text__image__wrap, .b-feature-list > li, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav {
   display: inline-block;
   /* [1] */
   padding-left: 24px;
@@ -1913,7 +1913,7 @@ td, th {
   direction: rtl;
   text-align: left; }
   /* line 262, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-  .b-page_layout-l1 .b-item-full__content > .b-item-list__item, .b-page_layout-l1 .b-item-full__content > .b-item-list__paginator, .b-page_layout-l1 .b-item-full__content > .b-item-full__gallery, .b-page_layout-l1 .b-item-full__content > .b-item-full__description, .b-page_layout-l1 .b-item-full__content > .b-item-full__description-inner__col-left, .b-page_layout-l1 .b-item-full__content > .b-item-full__description-inner__col-right, .b-page_layout-l1 .b-item-full__content > .b-item-full__form__option, .b-page_layout-l1 .b-item-full__content > .b-item-full__form__submit, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__img, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__info, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__q, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__price, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-clear, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-code, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-back, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-submit, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-img, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-content, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-quantity, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-price, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-remove, .b-page_layout-l1 .b-item-full__content > .b-text__image__wrap, .b-page_layout-l1 .b-item-full__content > .b-feature-list > li, .b-feature-list > .b-page_layout-l1 .b-item-full__content > li, .b-page_layout-l1 .b-item-full__content > .b-modification__content, .b-page_layout-l1 .b-item-full__content > .b-modification__action, .b-page_layout-l1 .b-item-full__content > .b-header__search, .b-page_layout-l1 .b-item-full__content > .b-header__desc, .b-page_layout-l1 .b-item-full__content > .b-header__logo, .b-page_layout-l1 .b-item-full__content > .b-header__nav, .b-page_layout-l1 .b-item-full__content > .b-footer__nav {
+  .b-page_layout-l1 .b-item-full__content > .b-item-list__item, .b-page_layout-l1 .b-item-full__content > .b-item-list__paginator, .b-page_layout-l1 .b-item-full__content > .b-item-full__gallery, .b-page_layout-l1 .b-item-full__content > .b-item-full__description, .b-page_layout-l1 .b-item-full__content > .b-item-full__description-inner__col-left, .b-page_layout-l1 .b-item-full__content > .b-item-full__description-inner__col-right, .b-page_layout-l1 .b-item-full__content > .b-item-full__form__option, .b-page_layout-l1 .b-item-full__content > .b-item-full__form__submit, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__img, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__info, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__q, .b-page_layout-l1 .b-item-full__content > .b-float-cart__item__price, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-clear, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-code, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-back, .b-page_layout-l1 .b-item-full__content > .b-cart__action__col-submit, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-img, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-content, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-quantity, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-price, .b-page_layout-l1 .b-item-full__content > .b-cart__item__col-remove, .b-page_layout-l1 .b-item-full__content > .b-cart__form__data-row, .b-page_layout-l1 .b-item-full__content > .b-text__image__wrap, .b-page_layout-l1 .b-item-full__content > .b-feature-list > li, .b-feature-list > .b-page_layout-l1 .b-item-full__content > li, .b-page_layout-l1 .b-item-full__content > .b-modification__content, .b-page_layout-l1 .b-item-full__content > .b-modification__action, .b-page_layout-l1 .b-item-full__content > .b-header__search, .b-page_layout-l1 .b-item-full__content > .b-header__desc, .b-page_layout-l1 .b-item-full__content > .b-header__logo, .b-page_layout-l1 .b-item-full__content > .b-header__nav, .b-page_layout-l1 .b-item-full__content > .b-footer__nav {
     direction: ltr;
     text-align: left; }
 
@@ -1938,6 +1938,13 @@ td, th {
 /**
  * Create grids with wider gutters. Extends `.grid`.
  */
+/* line 341, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
+.b-cart__form__inner {
+  margin-left: -48px; }
+  /* line 344, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
+  .b-cart__form__inner > .b-item-list__item, .b-cart__form__inner > .b-item-list__paginator, .b-cart__form__inner > .b-item-full__gallery, .b-cart__form__inner > .b-item-full__description, .b-cart__form__inner > .b-item-full__description-inner__col-left, .b-cart__form__inner > .b-item-full__description-inner__col-right, .b-cart__form__inner > .b-item-full__form__option, .b-cart__form__inner > .b-item-full__form__submit, .b-cart__form__inner > .b-float-cart__item__img, .b-cart__form__inner > .b-float-cart__item__info, .b-cart__form__inner > .b-float-cart__item__q, .b-cart__form__inner > .b-float-cart__item__price, .b-cart__form__inner > .b-cart__action__col-clear, .b-cart__form__inner > .b-cart__action__col-code, .b-cart__form__inner > .b-cart__action__col-back, .b-cart__form__inner > .b-cart__action__col-submit, .b-cart__form__inner > .b-cart__item__col-img, .b-cart__form__inner > .b-cart__item__col-content, .b-cart__form__inner > .b-cart__item__col-quantity, .b-cart__form__inner > .b-cart__item__col-price, .b-cart__form__inner > .b-cart__item__col-remove, .b-cart__form__inner > .b-cart__form__data-row, .b-cart__form__inner > .b-text__image__wrap, .b-cart__form__inner > .b-feature-list > li, .b-feature-list > .b-cart__form__inner > li, .b-cart__form__inner > .b-modification__content, .b-cart__form__inner > .b-modification__action, .b-cart__form__inner > .b-header__search, .b-cart__form__inner > .b-header__desc, .b-cart__form__inner > .b-header__logo, .b-cart__form__inner > .b-header__nav, .b-cart__form__inner > .b-footer__nav {
+    padding-left: 48px; }
+
 /*------------------------------------*\
     $WIDTHS
 \*------------------------------------*/
@@ -1965,7 +1972,7 @@ td, th {
      * Thirds
      */
 /* line 377, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-.b-item-list__item, .b-cart__item__col-content, .b-header__search, .b-header__desc, .b-header__logo, .b-page[data-in-row="3"] .b-item-list__item {
+.b-item-list__item, .b-cart__item__col-content, .b-cart__form__data-row, .b-header__search, .b-header__desc, .b-header__logo, .b-page[data-in-row="3"] .b-item-list__item {
   width: 33.333%; }
 
 /* line 378, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
@@ -2050,7 +2057,7 @@ td, th {
      * Twelfths
      */
   /* line 365, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-  .b-item-full__form__option, .b-item-full__form__submit, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-text__image__wrap, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
+  .b-item-full__form__option, .b-item-full__form__submit, .b-cart__action__col-clear, .b-cart__action__col-code, .b-cart__action__col-back, .b-cart__action__col-submit, .b-cart__form__data-row, .b-text__image__wrap, .b-modification__content, .b-modification__action, .b-header__search, .b-header__desc, .b-header__logo, .b-header__nav, .b-footer__nav, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
   /* line 371, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-feature-list > li, .b-page_theme-wannabe .b-item-list__item, .b-page[data-in-row="2"] .b-item-list__item, .b-page[data-in-row="3"] .b-item-list__item, .b-page[data-in-row="4"] .b-item-list__item {
@@ -2097,7 +2104,7 @@ td, th {
      * Twelfths
      */
   /* line 365, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
-  .b-header__search, .b-header__desc, .b-header__logo, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
+  .b-cart__form__data-row, .b-header__search, .b-header__desc, .b-header__logo, .b-page_theme-cc .b-header__top-line .b-header__desc, .b-page_theme-cc .b-header__top-line .b-header__search, .b-page_theme-cc .b-header__logo, .b-page_theme-cc .b-header__nav {
     width: 100%; }
   /* line 371, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/utilities/grid */
   .b-item-list__item, .b-item-list_four-in-row .b-item-list__item, .b-page_theme-wannabe .b-item-list__item, .b-page[data-in-row="2"] .b-item-list__item, .b-page[data-in-row="3"] .b-item-list__item, .b-page[data-in-row="4"] .b-item-list__item {
@@ -3368,51 +3375,60 @@ td, th {
 /* line 3, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
 .b-item-full {
   padding-top: 40px; }
+  /* line 7, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  .b-item-full .b-status {
+    display: inline-block; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-item-full__header {
       display: none; } }
-  /* line 10, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  @media only screen and (max-width: 480px) {
+    .b-item-full__header {
+      display: none; } }
+  /* line 13, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__header_mobile {
     display: none; }
     @media only screen and (min-width: 481px) and (max-width: 1023px) {
       .b-item-full__header_mobile {
         display: block; } }
-  /* line 24, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    @media only screen and (max-width: 480px) {
+      .b-item-full__header_mobile {
+        display: block; } }
+  /* line 27, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__gallery {
     position: relative; }
-    /* line 26, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 29, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__gallery .b-status {
       position: absolute;
       bottom: 0;
       left: 24px; }
-  /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 34, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__description-inner {
     margin-bottom: 55px; }
-  /* line 44, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 47, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__title {
     font-size: 2rem;
     font-weight: normal;
     margin: 0 0 1em; }
-  /* line 49, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 52, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__articul {
     font-weight: normal;
     color: #828282;
     font-size: 0.429em; }
-  /* line 54, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 57, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__price {
     font-size: 2rem;
     margin: 0 0 10px; }
-    /* line 57, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 60, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__currency {
       font-size: 0.324em;
       display: inline-block;
       vertical-align: top;
       padding: 9px 0; }
-    /* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old, .b-item-full__price__sale {
       display: inline-block;
       vertical-align: top; }
-    /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 69, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__sale {
       font-size: 0.412em;
       background-color: #f05a61;
@@ -3420,22 +3436,22 @@ td, th {
       text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px; }
-    /* line 73, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 76, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old {
       font-size: 0.471em;
       text-decoration: line-through;
       color: #353535; }
-  /* line 78, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 81, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 82, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 85, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143rem; }
-  /* line 85, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 88, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 91, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 94, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -3452,7 +3468,7 @@ td, th {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 109, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 112, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }
@@ -3747,66 +3763,63 @@ td, th {
     font-size: 1.571rem; }
 /* line 27, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
 .b-cart__list, .b-cart__total-sum, .b-cart__action {
-  margin: 47px 60px 0 100px; }
-  @media only screen and (min-width: 481px) and (max-width: 1023px) {
-    .b-cart__list, .b-cart__total-sum, .b-cart__action {
-      margin-left: 0;
-      margin-right: 0; } }
-  @media only screen and (max-width: 480px) {
-    .b-cart__list, .b-cart__total-sum, .b-cart__action {
-      margin-left: 0;
-      margin-right: 0; } }
-/* line 33, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  margin: 47px 0 0; }
+/* line 30, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
 .b-cart__total-sum {
   text-align: right;
   font-size: 2.143em; }
   @media only screen and (max-width: 480px) {
     .b-cart__total-sum {
       text-align: center; } }
-/* line 56, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__col-code {
-  text-align: right; }
-  @media only screen and (max-width: 480px) {
-    .b-cart__action__col-code {
-      padding-top: 10px; } }
-/* line 71, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__col-submit .b-cart__action__submit {
-  width: 100%;
-  margin-left: 0; }
-  @media only screen and (max-width: 480px) {
-    .b-cart__action__col-submit .b-cart__action__submit {
-      margin-top: 10px; } }
-/* line 77, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__submit {
-  margin-left: 2%; }
-/* line 81, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__code, .b-cart__action__submit {
-  width: 46%;
-  display: inline-block;
-  vertical-align: top; }
-/* line 86, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__code {
-  border: 1px solid #e2e2e2;
-  padding: 13px 3px 12px 17px;
-  box-sizing: border-box; }
-  @media only screen and (max-width: 480px) {
-    .b-cart__action__code {
-      text-align: center;
-      width: 100%;
-      margin: 0 0 10px; } }
-@media only screen and (max-width: 480px) {
+/* line 36, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+.b-cart__action {
+  margin-bottom: 40px; }
+  /* line 54, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__action__col-code {
+    text-align: right; }
+    @media only screen and (max-width: 480px) {
+      .b-cart__action__col-code {
+        padding-top: 10px; } }
+  /* line 69, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__action__col-submit .b-cart__action__submit {
+    width: 100%;
+    margin-left: 0; }
+    @media only screen and (max-width: 480px) {
+      .b-cart__action__col-submit .b-cart__action__submit {
+        margin-top: 10px; } }
+  /* line 75, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
   .b-cart__action__submit {
-    position: fixed;
-    z-index: 3;
-    bottom: 15px;
-    width: calc(100% - 30px) !important;
-    display: block;
-    left: 15px;
-    right: 15px;
-    margin: 0; } }
-/* line 107, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
-.b-cart__action__clear {
-  display: block; }
+    margin-left: 2%;
+    padding-top: 13px;
+    padding-bottom: 13px; }
+  /* line 81, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__action__code, .b-cart__action__submit {
+    width: 46%;
+    display: inline-block;
+    vertical-align: top; }
+  /* line 86, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__action__code {
+    border: 1px solid #e2e2e2;
+    padding: 14px 3px 13px 17px;
+    box-sizing: border-box; }
+    @media only screen and (max-width: 480px) {
+      .b-cart__action__code {
+        text-align: center;
+        width: 100%;
+        margin: 0 0 10px; } }
+  @media only screen and (max-width: 480px) {
+    .b-cart__action__submit {
+      position: fixed;
+      z-index: 3;
+      bottom: 15px;
+      width: calc(100% - 30px) !important;
+      display: block;
+      left: 15px;
+      right: 15px;
+      margin: 0; } }
+  /* line 107, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__action__clear {
+    display: block; }
 /* line 111, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
 .b-cart__list {
   list-style: none;
@@ -3885,9 +3898,8 @@ td, th {
       padding-top: 10px; } }
 /* line 209, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
 .b-cart__form {
-  max-width: 580px;
-  margin: 55px 0 0 205px; }
-  /* line 213, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  margin: 55px 0 0; }
+  /* line 212, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
   .b-cart__form__delivery-name, .b-cart__form__delivery-price {
     display: inline-block;
     vertical-align: top;
@@ -3898,9 +3910,18 @@ td, th {
   /* line 219, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
   .b-cart__form .b-cart__action {
     margin: 0; }
-  /* line 221, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  /* line 222, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
   .b-cart__form .cart__form__delivery-address {
-    margin: 10px 32px; }
+    margin: 10px 0; }
+  /* line 225, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+  .b-cart__form__inner {
+    margin-bottom: 55px; }
+    @media only screen and (min-width: 481px) and (max-width: 1023px) {
+      .b-cart__form__inner {
+        margin-bottom: 0; } }
+    @media only screen and (max-width: 480px) {
+      .b-cart__form__inner {
+        margin-bottom: 0; } }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-cart__form {
       margin-left: auto;
@@ -3908,7 +3929,7 @@ td, th {
   @media only screen and (max-width: 480px) {
     .b-cart__form {
       margin-left: 0; }
-      /* line 228, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
+      /* line 243, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-cart */
       .b-cart__form .cart__form__delivery-address {
         font-size: 0.875rem; } }
 
@@ -4014,7 +4035,6 @@ td, th {
       margin-bottom: 50px; } }
   /* line 9, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__row__num {
-    float: left;
     height: 44px;
     width: 44px;
     text-align: center;
@@ -4022,32 +4042,37 @@ td, th {
     background-color: #121212;
     color: #fff;
     font-size: 22px;
-    border-radius: 22px; }
+    border-radius: 22px;
+    margin-bottom: 25px; }
+    @media only screen and (min-width: 481px) and (max-width: 1023px) {
+      .b-form__row__num {
+        margin: 0 auto 25px; } }
     @media only screen and (max-width: 480px) {
       .b-form__row__num {
-        float: none;
-        margin: 0 auto; } }
-  /* line 23, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
-  .b-form__row__content {
-    margin-left: 62px; }
-    @media only screen and (max-width: 480px) {
-      .b-form__row__content {
-        margin-left: 0; } }
-  /* line 28, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+        margin: 0 auto 25px; } }
+  @media only screen and (min-width: 481px) and (max-width: 1023px) {
+    .b-form__row__content {
+      max-width: 600px;
+      margin: 0 auto; } }
+  @media only screen and (max-width: 480px) {
+    .b-form__row__content {
+      max-width: 600px;
+      margin: 0 auto; } }
+  /* line 27, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__row__title {
     font-size: 1.571rem;
     margin: 6px 0 28px; }
     @media only screen and (max-width: 480px) {
       .b-form__row__title {
         text-align: center; } }
-  /* line 34, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+  /* line 33, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__row__widget {
     margin: 30px 0 0; }
-  /* line 37, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+  /* line 36, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__row .b-alert, .b-form__row .alert, .b-form__row .help-block {
     position: relative;
     z-index: 2; }
-/* line 44, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+/* line 43, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
 .b-form input[type='text'], .b-form input[type='email'], .b-form textarea {
   resize: none;
   background: #fff;
@@ -4058,21 +4083,21 @@ td, th {
   box-shadow: none;
   height: auto;
   box-sizing: border-box; }
-  /* line 54, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+  /* line 53, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form input[type='text'] + .b-alert, .b-form input[type='text'] + .alert, .b-form input[type='text'] + .help-block, .b-form input[type='email'] + .b-alert, .b-form input[type='email'] + .alert, .b-form input[type='email'] + .help-block, .b-form textarea + .b-alert, .b-form textarea + .alert, .b-form textarea + .help-block {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 59, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+/* line 58, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+/* line 62, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
 .b-form__radio {
   display: block;
   padding-left: 20px;
   position: relative; }
-  /* line 67, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+  /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__radio input {
     position: absolute;
     top: 2px;
@@ -4587,10 +4612,18 @@ html {
     .b-page__content__inner_slider {
       padding: 0 35px;
       box-sizing: border-box; }
-    /* line 36, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+      @media only screen and (min-width: 481px) and (max-width: 1023px) {
+        .b-page__content__inner_slider {
+          padding-left: 0;
+          padding-right: 0; } }
+      @media only screen and (max-width: 480px) {
+        .b-page__content__inner_slider {
+          padding-left: 0;
+          padding-right: 0; } }
+    /* line 39, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_slider-max-width {
       max-width: 100%; }
-    /* line 38, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 41, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_footer {
       padding-top: 70px; }
 

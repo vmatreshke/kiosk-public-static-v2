@@ -25,10 +25,7 @@
   &__list,
   &__total-sum,
   &__action
-    margin: 47px 60px 0 100px
-    @include grid-media-query((lap, palm))
-      margin-left: 0
-      margin-right: 0
+    margin: 47px 0 0
 
   &__total-sum
     text-align: right
@@ -37,6 +34,7 @@
       text-align: center
   
   &__action
+    margin-bottom: 40px
     &__container
       @extend %grid
     
@@ -76,6 +74,8 @@
 
     &__submit
       margin-left: 2%
+      padding-top: 13px
+      padding-bottom: 13px
 
     &__code,
     &__submit
@@ -85,7 +85,7 @@
 
     &__code
       border: 1px solid #e2e2e2
-      padding: 13px 3px 12px 17px
+      padding: 14px 3px 13px 17px
       box-sizing: border-box
       @include grid-media-query("palm")
         text-align: center
@@ -213,8 +213,8 @@
         // @extend %lap--one-twelfths
 
   &__form
-    max-width: 580px
-    margin: 55px 0 0 205px
+    // max-width: 580px
+    margin: 55px 0 0
     &__delivery-name,
     &__delivery-price
       display: inline-block
@@ -222,10 +222,26 @@
       width: 40%
       @include grid-media-query("palm")
         width: auto
+    
     .b-cart__action
       margin: 0
+    
     .cart__form__delivery-address
-        margin:10px 32px
+      margin:10px 0
+    
+    &__inner
+      @extend %grid
+      @extend %grid--wide
+      margin-bottom: 55px
+      @include grid-media-query((lap, palm))
+        margin-bottom: 0
+
+    &__data-row
+      @extend %grid__item
+      @extend %four-twelfths
+      @extend %lap--one-whole
+      @extend %palm--one-whole
+
     @include grid-media-query("lap")
       margin-left: auto
       margin-right: auto

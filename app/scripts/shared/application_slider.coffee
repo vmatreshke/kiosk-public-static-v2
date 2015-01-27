@@ -13,6 +13,9 @@ $ ->
       options['singleItem'] = true
       options['autoHeight'] = true
       options['autoPlay'] = false
+      options['lazyLoad'] = true
+      options['afterInit'] = ()->
+        @.$elem.addClass 'loaded'
     if $(this).hasClass 'application-slider_photos'
       options['singleItem'] = false
       options['items'] = 3
@@ -24,4 +27,3 @@ $ ->
       options['lazyLoad'] = true
 
     $(this).owlCarousel options
-

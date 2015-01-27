@@ -4984,16 +4984,19 @@ html.mm-opened.mm-black .mm-page {
     font-size: 2rem;
     margin: 0 0 10px; }
     /* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    .b-item-full__price .b-item__price {
+      font-size: 1em; }
+    /* line 65, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__currency {
       font-size: 0.324em;
       display: inline-block;
       vertical-align: top;
       padding: 9px 0; }
-    /* line 69, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 71, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old, .b-item-full__price__sale {
       display: inline-block;
       vertical-align: top; }
-    /* line 72, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 74, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__sale {
       font-size: 0.412em;
       background-color: #f05a61;
@@ -5001,22 +5004,22 @@ html.mm-opened.mm-black .mm-page {
       text-transform: uppercase;
       color: #fff;
       letter-spacing: 2px; }
-    /* line 79, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 81, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__price__old {
       font-size: 0.471em;
       text-decoration: line-through;
       color: #353535; }
-  /* line 84, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 86, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 88, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 90, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143rem; }
-  /* line 91, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+  /* line 93, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 97, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 99, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -5033,7 +5036,7 @@ html.mm-opened.mm-black .mm-page {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 115, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
+    /* line 117, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }

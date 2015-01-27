@@ -6612,31 +6612,38 @@ html {
 .b-page_theme-wannabe {
   font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   /* line 4, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  .b-page_theme-wannabe .b-logo img {
+    max-width: 170px; }
+  /* line 8, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-nav__list {
     border-color: transparent; }
-  /* line 6, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  /* line 10, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-nav__link {
     text-transform: uppercase;
     font-weight: bold; }
-  /* line 10, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  /* line 14, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-nav__list_sub .b-nav__link {
     font-weight: normal; }
-  /* line 13, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  /* line 17, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-item {
     color: #000; }
-    /* line 16, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+    /* line 20, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
     .b-page_theme-wannabe .b-item__name, .b-page_theme-wannabe .b-item__price {
       font-size: 1.143em; }
-    /* line 18, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+    /* line 22, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
     .b-page_theme-wannabe .b-item__price {
       font-weight: bold; }
-      /* line 20, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+      /* line 24, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
       .b-page_theme-wannabe .b-item__price_old {
         font-weight: normal; }
-  /* line 24, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  /* line 28, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-status_sold {
-    background-color: transparent; }
-  /* line 27, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+    background-color: transparent;
+    padding-left: 0; }
+  /* line 32, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
+  .b-page_theme-wannabe .b-status_sale {
+    display: none !important; }
+  /* line 35, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/wannabe */
   .b-page_theme-wannabe .b-footer {
     border-top: 1px solid #EFEFEF; }
 

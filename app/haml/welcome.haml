@@ -10,11 +10,11 @@
       .b-page__content__inner.b-page__content__inner_slider
         .b-slider.b-slider_promo(application-slider)
           .b-slider__item
-            %img{src: 'images/slidertest.jpg', alt: ''}
+            %img.lazyOwl{'data-src': 'images/slidertest.jpg', alt: ''}
           .b-slider__item
-            %img{src: 'http://placehold.it/1000x300', alt: ''}
+            %img.lazyOwl{'data-src': 'http://placehold.it/1000x300', alt: ''}
           .b-slider__item
-            %img{src: 'http://placehold.it/400x400', alt: ''}
+            %img.lazyOwl{'data-src': 'http://placehold.it/400x400', alt: ''}
 
       .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list

@@ -21,6 +21,12 @@
 
   &_promo
     overflow: hidden
+    height: 40px
+    background: url(#{$images-path}/loader.gif) 50% 50% no-repeat
+    transition: height .2s ease
+    &.loaded
+      height: auto
+      background: none
     @include grid-media-query((palm, lap))
       padding-left: 0
       padding-right: 0

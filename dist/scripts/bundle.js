@@ -1079,6 +1079,10 @@ $(function() {
       options['singleItem'] = true;
       options['autoHeight'] = true;
       options['autoPlay'] = false;
+      options['lazyLoad'] = true;
+      options['afterInit'] = function() {
+        return this.$elem.addClass('loaded');
+      };
     }
     if ($(this).hasClass('application-slider_photos')) {
       options['singleItem'] = false;

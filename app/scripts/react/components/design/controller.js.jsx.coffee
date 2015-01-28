@@ -12,7 +12,7 @@ window.DesingController = React.createClass
       {"type": "Toggle", "name": "главная страница", "props": {"name":"banner", "label": "большой баннер", "value": true }}
     ]
 
-  _createDesignComponent: (option) ->
+  _createDesignComponent: (option) =>
     switch option.type
       when 'ColorList'
         designComponent = `<ColorList name={option.props.name} colorSet={option.props.colorSet} value={option.props.value}/>`
@@ -52,8 +52,6 @@ window.DesingController = React.createClass
     return designItem
 
   render: ->
-    return null unless @props.options
-
     designItems = _.map @props.options, (option) =>
       @._createDesignComponent option
 

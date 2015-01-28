@@ -6450,11 +6450,10 @@ html {
     border-radius: 5px 5px 0 0; }
   /* line 29, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__body {
-    border-radius: 0 0 5px 5px;
     background-color: rgba(51, 51, 51, 0.93);
     color: #fff;
     font-size: 0; }
-  /* line 35, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 34, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__color {
     height: 18px;
     width: 18px;
@@ -6463,13 +6462,13 @@ html {
     vertical-align: middle;
     position: relative;
     cursor: pointer; }
-    /* line 43, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 42, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color input {
       opacity: 0;
       position: absolute;
       top: 0;
       left: 0; }
-    /* line 48, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 47, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color:before {
       content: '';
       position: absolute;
@@ -6481,25 +6480,25 @@ html {
       border-radius: 50%;
       transition: -webkit-transform 0.2s ease;
       transition: transform 0.2s ease; }
-    /* line 58, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 57, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color_img {
       background-color: #fff; }
-      /* line 60, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+      /* line 59, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
       .b-design-option__color_img img {
         width: 100%;
         border-radius: 14px; }
-    /* line 64, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color:hover:before {
       -webkit-transform: scale(1.1);
           -ms-transform: scale(1.1);
               transform: scale(1.1); }
-  /* line 67, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 66, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__item {
     margin: 0 10px;
     height: 51px;
     position: relative;
     overflow: hidden; }
-    /* line 73, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 72, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__current-params, .b-design-option__item__available-params {
       position: absolute;
       top: 0;
@@ -6507,21 +6506,21 @@ html {
       right: 0;
       bottom: 0;
       transition: top 0.2s ease; }
-    /* line 80, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 79, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__available-params {
       top: 61px;
       left: 20px;
       right: 20px; }
-      /* line 84, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+      /* line 83, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
       .b-design-option__item__available-params .b-design-option__color {
         margin: 18px 30px 0 0; }
-    /* line 89, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 88, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item:hover .b-design-option__item__current-params {
       top: -61px; }
-    /* line 91, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 90, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item:hover .b-design-option__item__available-params {
       top: 0; }
-    /* line 93, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 92, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__name {
       display: inline-block;
       vertical-align: middle;
@@ -6529,52 +6528,53 @@ html {
       padding: 16px 0;
       font-size: 14px;
       color: #888; }
-    /* line 100, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 99, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__item__val {
       display: inline-block;
       vertical-align: middle;
       width: 120px;
       text-align: right;
       font-size: 14px; }
-  /* line 107, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 106, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__type {
     font-size: 16px;
     padding-left: 5px;
     color: #fff;
     cursor: pointer;
     position: relative; }
-    /* line 113, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 112, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type:hover {
       color: #f8c700; }
-    /* line 115, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 114, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_verdana {
       font-family: Verdana, Geneva, sans-serif; }
-    /* line 117, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 116, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_gotham {
       font-family: "Gotham Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 119, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 118, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_default {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    /* line 121, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 120, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type_apercu {
       font-family: "apercu", Arial, Helvetica, sans-serif; }
-    /* line 123, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    /* line 122, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
     .b-design-option__type input {
       position: absolute;
       bottom: 0;
       right: 0;
       opacity: 0;
       cursor: pointer; }
-  /* line 130, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 129, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__cbox {
     font-size: 12px; }
-  /* line 133, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 132, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__save {
     background: #f8c700;
     text-transform: uppercase;
     display: block;
     width: 100%;
-    font-size: 14px; }
+    font-size: 14px;
+    border-radius: 0 0 5px 5px; }
 
 /* line 1, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/dark */
 .b-page_theme-dark {

@@ -31,6 +31,8 @@ require('./react/components/product/add_to_basket_button');
 
 require('./react/components/instagram/instagram');
 
+require('./react/components/design/controller');
+
 require('./react/components/design/colorlist');
 
 require('./react/components/design/bglist');
@@ -53,7 +55,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/fontlist":8,"./react/components/design/layoutlist":9,"./react/components/design/toggle":10,"./react/components/design/valueslider":11,"./react/components/instagram/instagram":12,"./react/components/product/add_to_basket_button":13,"./react/dispatchers/basket":15,"./react/stores/basket":17,"./routes/routes":18,"./shared/app":19,"./shared/application_slider":20,"./shared/cart":21,"./shared/checkout":22,"./shared/jump":23,"./shared/lightbox":24,"./shared/load_more":25,"./shared/mobile_navigation":26,"./shared/product_images_slider":27,"./shared/theme_switcher":28}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/controller":8,"./react/components/design/fontlist":9,"./react/components/design/layoutlist":10,"./react/components/design/toggle":11,"./react/components/design/valueslider":12,"./react/components/instagram/instagram":13,"./react/components/product/add_to_basket_button":14,"./react/dispatchers/basket":16,"./react/stores/basket":18,"./routes/routes":19,"./shared/app":20,"./shared/application_slider":21,"./shared/cart":22,"./shared/checkout":23,"./shared/jump":24,"./shared/lightbox":25,"./shared/load_more":26,"./shared/mobile_navigation":27,"./shared/product_images_slider":28,"./shared/theme_switcher":29}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -101,7 +103,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":29,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":30,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -452,6 +454,119 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
 },{}],8:[function(require,module,exports){
 
 /** @jsx React.DOM */
+window.DesingController = React.createClass({displayName: 'DesingController',
+  propTypes: {
+    options: React.PropTypes.array.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      options: [
+        {
+          "type": "ColorList",
+          "name": "цвет страницы",
+          "props": {
+            "name": "background_color",
+            "colorSet": {
+              'dark': '#000',
+              'white': '#fff',
+              'gray': '#eee'
+            },
+            "value": "gray"
+          }
+        }, {
+          "type": "FontList",
+          "name": "шрифт",
+          "props": {
+            "name": "font_family"
+          }
+        }, {
+          "type": "ValueSlider",
+          "name": "размер шрифта",
+          "props": {
+            "name": "font_size",
+            "step": 1,
+            "range": {
+              "min": 13,
+              "max": 15
+            },
+            "value": 14
+          }
+        }, {
+          "type": "Toggle",
+          "name": "главная страница",
+          "props": {
+            "name": "banner",
+            "label": "большой баннер",
+            "value": true
+          }
+        }
+      ]
+    };
+  },
+  _createDesignComponent: (function(_this) {
+    return function(option) {
+      var designComponent, designItem, designVal;
+      switch (option.type) {
+        case 'ColorList':
+          designComponent = ColorList({name: option.props.name, colorSet: option.props.colorSet, value: option.props.value});
+          designVal = {
+            'background-color': option.props.colorSet[option.props.value]
+          };
+          designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.div({className: "b-design-option__item__current-params"}, 
+            React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+            React.DOM.div({className: "b-design-option__item__val"}, 
+              React.DOM.div({className: "b-design-option__color", style: designVal})
+            )
+          ), 
+          React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
+          );
+          break;
+        case 'FontList':
+          designComponent = FontList({name: option.name, fontSet: option.props.fontSet, value: option.props.value});
+          designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+          React.DOM.div({className: "b-design-option__item__val"}, designComponent)
+          );
+          break;
+        case 'ValueSlider':
+          designComponent = ValueSlider({name: option.name, range: option.props.range, value: option.props.value, step: option.props.step});
+          designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+          React.DOM.div({className: "b-design-option__item__val"}, designComponent)
+          );
+          break;
+        case 'Toggle':
+          designComponent = Toggle({name: option.props.label, value: option.props.value});
+          designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+          React.DOM.div({className: "b-design-option__item__val"}, designComponent)
+          );
+      }
+      return designItem;
+    };
+  })(this),
+  render: function() {
+    var designItems;
+    designItems = _.map(this.props.options, (function(_this) {
+      return function(option) {
+        return _this._createDesignComponent(option);
+      };
+    })(this));
+    return React.DOM.div({className: "b-design-option"}, 
+        React.DOM.div({className: "b-design-option__title"}, "Управление дизайном"), 
+        React.DOM.span({className: "b-design-option__close"}, "Закрыть"), 
+        React.DOM.div({className: "b-design-option__body"}, designItems), 
+        React.DOM.button({type: "button", className: "b-design-option__save"}, "Сохранить")
+      );
+  }
+});
+
+
+
+},{}],9:[function(require,module,exports){
+
+/** @jsx React.DOM */
 window.FontList = React.createClass({displayName: 'FontList',
   propTypes: {
     fontSet: React.PropTypes.object.isRequired,
@@ -494,7 +609,7 @@ window.FontSelect = React.createClass({displayName: 'FontSelect',
 
 
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.LayoutList = React.createClass({displayName: 'LayoutList',
@@ -543,7 +658,7 @@ window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
 
 
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Toggle = React.createClass({displayName: 'Toggle',
@@ -573,7 +688,7 @@ window.Toggle = React.createClass({displayName: 'Toggle',
 
 
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ValueSlider = React.createClass({displayName: 'ValueSlider',
@@ -617,7 +732,7 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
@@ -790,7 +905,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -820,7 +935,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -854,7 +969,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -863,7 +978,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":14}],16:[function(require,module,exports){
+},{"./_base":15}],17:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -897,7 +1012,7 @@ module.exports = BaseStore;
 
 
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -959,7 +1074,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":16}],18:[function(require,module,exports){
+},{"./_base":17}],19:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -968,7 +1083,7 @@ window.Routes = {
 
 
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -1063,7 +1178,7 @@ $(function() {
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -1101,7 +1216,7 @@ $(function() {
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -1138,7 +1253,7 @@ $(function() {
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -1207,7 +1322,7 @@ $(function() {
 
 
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -1227,7 +1342,7 @@ $(function() {
 
 
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -1248,7 +1363,7 @@ $(function() {
 
 
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -1292,7 +1407,7 @@ $(function() {
 
 
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -1315,7 +1430,7 @@ $(function() {
 
 
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -1376,7 +1491,7 @@ $(function() {
 
 
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -1391,7 +1506,7 @@ $(function() {
 
 
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1403,7 +1518,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":30}],30:[function(require,module,exports){
+},{"./lib/Dispatcher":31}],31:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1655,7 +1770,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":31}],31:[function(require,module,exports){
+},{"./invariant":32}],32:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

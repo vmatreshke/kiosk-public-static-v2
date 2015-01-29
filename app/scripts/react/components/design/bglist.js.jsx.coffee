@@ -13,10 +13,11 @@ window.BgList = React.createClass
 
   handleChange: (background)->
     @setState value: background
+
+    if @props.onChange
+      @props.onChange @props.name, background
   
   render: ->
-    return null unless @props.bgSet
-
     bgSetList = _.map @props.bgSet, (background, key) =>
       `<BackgroundSelect name={_this.props.name} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
 

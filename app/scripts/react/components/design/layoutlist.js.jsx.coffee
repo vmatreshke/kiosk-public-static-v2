@@ -2,6 +2,7 @@
 
 window.LayoutList = React.createClass
   propTypes:
+    name: React.PropTypes.string.isRequired
     layoutSet: React.PropTypes.object.isRequired
     value: React.PropTypes.string
 
@@ -12,6 +13,9 @@ window.LayoutList = React.createClass
   
   handleChange: (layout)->
     @setState value: layout
+
+    if @props.onChange
+      @props.onChange @props.name, layout
 
   render: ->
     return null unless @props.layoutSet

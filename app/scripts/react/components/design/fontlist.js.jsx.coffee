@@ -2,18 +2,24 @@
 
 window.FontList = React.createClass
   propTypes:
+    name: React.PropTypes.string.isRequired
     fontSet: React.PropTypes.object.isRequired
     value: React.PropTypes.string
 
   getDefaultProps: ->
-    fontSet: ['default', 'verdana', 'gotham', 'apercu']
+    fontSet: 
+      'default': 'default'
+      'verdana': 'verdana'
+      'gotham': 'gotham'
+      'apercu': 'apercu'
 
   handleChange: (font)->
     @setState value: font
   
-  render: ->
-    return null unless @props.fontSet
+    if @props.onChange
+      @props.onChange @props.name, font
 
+  render: ->
     fontSetList = _.map @props.fontSet, (font, i) =>
       `<FontSelect font={font} key={font} onChange={_this.handleChange.bind(i, font)}/>`
 

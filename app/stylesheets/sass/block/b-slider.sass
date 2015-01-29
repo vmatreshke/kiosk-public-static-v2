@@ -21,9 +21,10 @@
 
   &_promo
     overflow: hidden
-    height: 40px
     background: url(#{$images-path}/loader.gif) 50% 50% no-repeat
     transition: height .2s ease
+    &[application-slider]
+      height: 40px
     &.loaded
       height: auto
       background: none

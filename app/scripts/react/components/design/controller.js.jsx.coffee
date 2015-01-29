@@ -6,17 +6,16 @@ window.DesingController = React.createClass
 
   getDefaultProps: ()->
     options: [
-      {"type": "ColorList", "name": "цвет страницы", "props": {"name":"background_color", "colorSet":{'dark': '#000', 'white': '#fff', 'gray': '#eee'}, "value":"gray"}}
-      {"type": "BgList", "name": "фон страницы", "props": {"name":"background_image", "bgSet":{'pokeball': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg'}, "value":"pokeball"}}
-      {"type": "FontList", "name": "шрифт", "props": {"name":"font_family"}}
+      {"type": "ColorList", "name": "цвет страницы", "props": {"name":"background_color", "colorSet":{'dark': '#000', 'white': '#fff', 'gray': '#eee'}, "value":"white"}}
+      {"type": "BgList", "name": "фон страницы", "props": {"name":"background_image", "bgSet":{'pokeball': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg', 'bg2': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg'}, "value":"pokeball"}}
+      {"type": "FontList", "name": "шрифт", "props": {"name":"font_family", "value": "gotham"}}
       {"type": "ValueSlider", "name": "размер шрифта", "props": {"name":"font_size", "step": 1, "range":{"min": 13, "max": 15}, "value": 14 }}
       {"type": "Toggle", "name": "главная страница", "props": {"name":"banner", "label": "большой баннер", "value": true }}
     ]
 
-  handleChange: (option, name, newValue)->
+  handleChange: (option, newValue)->
     newState = {}
-    newState[name] = newValue
-    console.log newState
+    newState[option.props.name] = newValue
     @setState newState
 
   _createDesignComponent: (option) ->

@@ -29,7 +29,7 @@ window.ValueSlider = React.createClass
         @setState value: currentValue
 
         if @props.onChange
-          @props.onChange @props.name, currentValue
+          @props.onChange currentValue
 
   
   render: ->

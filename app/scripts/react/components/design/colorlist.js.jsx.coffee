@@ -13,18 +13,18 @@ window.ColorList = React.createClass
       'layer-dark': '#000'
       'layer-light': '#fff'
 
-  handleChange: (color)->
-    @setState value: color
-    
+  handleChange: (color)->    
     if @props.onChange
-      @props.onChange @props.name, color
+      @props.onChange color
   
   render: ->
     colorSetList = _.map @props.colorSet, (color, key) =>
-      if @props.value && key == @props.value
-        `<ColorSelect checked="true" name={_this.props.name} color={color} colorName={key} key={key} onChange={_this.handleChange.bind(color, key)}/>`
-      else
-        `<ColorSelect checked="false" name={_this.props.name} color={color} colorName={key} key={key} onChange={_this.handleChange.bind(color, key)}/>`
+      checked = false
+
+      if @props.value && @props.value == key
+        checked = true
+      
+      `<ColorSelect name={_this.props.name} checked={checked} color={color} colorName={key} key={key} onChange={_this.handleChange.bind(color, key)}/>`
 
     return `<div>{colorSetList}</div>`
 
@@ -33,17 +33,13 @@ window.ColorSelect = React.createClass
     color: React.PropTypes.string.isRequired
     colorName: React.PropTypes.string.isRequired
     name: React.PropTypes.string.isRequired
-    checked: React.PropTypes.string.isRequired
+    checked: React.PropTypes.bool.isRequired
 
   render: ->
     divStyle =
       'background-color': @props.color
 
-    className = "b-design-option__color"
-
-    if @props.checked == 'true'
-      className += " b-design-option__color_checked"
-
-    return `<label className={className} style={divStyle}>
-      <input type="radio" name={this.props.name} checked={this.props.checked} value={this.props.colorName} onChange={this.props.onChange}/>
+    return `<label className="b-design-option__color">
+      <input type="radio" name={this.props.name} defaultChecked={this.props.checked} value={this.props.colorName} onChange={this.props.onChange}/>
+      <span className="b-design-option__color__ind" style={divStyle}></span>
       </label>`

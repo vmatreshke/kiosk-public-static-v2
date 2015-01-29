@@ -361,18 +361,20 @@ window.BgList = React.createClass({displayName: 'BgList',
     };
   },
   handleChange: function(background) {
-    return this.setState({
-      value: background
-    });
+    if (this.props.onChange) {
+      return this.props.onChange(background);
+    }
   },
   render: function() {
     var bgSetList;
-    if (!this.props.bgSet) {
-      return null;
-    }
     bgSetList = _.map(this.props.bgSet, (function(_this) {
       return function(background, key) {
-        return BackgroundSelect({name: _this.props.name, background: background, key: key, onChange: _this.handleChange.bind(background, key)});
+        var checked;
+        checked = false;
+        if (_this.props.value && _this.props.value === key) {
+          checked = true;
+        }
+        return BackgroundSelect({name: _this.props.name, checked: checked, background: background, key: key, onChange: _this.handleChange.bind(background, key)});
       };
     })(this));
     return React.DOM.div(null, bgSetList);
@@ -382,12 +384,13 @@ window.BgList = React.createClass({displayName: 'BgList',
 window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
   propTypes: {
     background: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
   },
   render: function() {
     return React.DOM.label({className: "b-design-option__color b-design-option__color_img"}, 
-        React.DOM.img({src: this.props.background, alt: ""}), 
-        React.DOM.input({type: "radio", name: this.props.name, value: this.props.background, onChange: this.props.onChange})
+        React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.background, onChange: this.props.onChange}), 
+        React.DOM.span({className: "b-design-option__color__ind"}, React.DOM.img({src: this.props.background, alt: ""}))
       );
   }
 });
@@ -414,18 +417,20 @@ window.ColorList = React.createClass({displayName: 'ColorList',
     };
   },
   handleChange: function(color) {
-    return this.setState({
-      value: color
-    });
+    if (this.props.onChange) {
+      return this.props.onChange(color);
+    }
   },
   render: function() {
     var colorSetList;
-    if (!this.props.colorSet) {
-      return null;
-    }
     colorSetList = _.map(this.props.colorSet, (function(_this) {
       return function(color, key) {
-        return ColorSelect({name: _this.props.name, color: color, colorName: key, key: key, onChange: _this.handleChange.bind(color, key)});
+        var checked;
+        checked = false;
+        if (_this.props.value && _this.props.value === key) {
+          checked = true;
+        }
+        return ColorSelect({name: _this.props.name, checked: checked, color: color, colorName: key, key: key, onChange: _this.handleChange.bind(color, key)});
       };
     })(this));
     return React.DOM.div(null, colorSetList);
@@ -436,15 +441,17 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
   propTypes: {
     color: React.PropTypes.string.isRequired,
     colorName: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
   },
   render: function() {
     var divStyle;
     divStyle = {
       'background-color': this.props.color
     };
-    return React.DOM.label({className: "b-design-option__color", style: divStyle}, 
-      React.DOM.input({type: "radio", name: this.props.name, value: this.props.colorName, onChange: this.props.onChange})
+    return React.DOM.label({className: "b-design-option__color"}, 
+      React.DOM.input({type: "radio", name: this.props.name, defaultChecked: this.props.checked, value: this.props.colorName, onChange: this.props.onChange}), 
+      React.DOM.span({className: "b-design-option__color__ind", style: divStyle})
       );
   }
 });
@@ -471,13 +478,25 @@ window.DesingController = React.createClass({displayName: 'DesingController',
               'white': '#fff',
               'gray': '#eee'
             },
-            "value": "gray"
+            "value": "white"
+          }
+        }, {
+          "type": "BgList",
+          "name": "фон страницы",
+          "props": {
+            "name": "background_image",
+            "bgSet": {
+              'pokeball': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg',
+              'bg2': 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg'
+            },
+            "value": "pokeball"
           }
         }, {
           "type": "FontList",
           "name": "шрифт",
           "props": {
-            "name": "font_family"
+            "name": "font_family",
+            "value": "gotham"
           }
         }, {
           "type": "ValueSlider",
@@ -503,16 +522,21 @@ window.DesingController = React.createClass({displayName: 'DesingController',
       ]
     };
   },
-  _createDesignComponent: (function(_this) {
-    return function(option) {
-      var designComponent, designItem, designVal;
-      switch (option.type) {
-        case 'ColorList':
-          designComponent = ColorList({name: option.props.name, colorSet: option.props.colorSet, value: option.props.value});
-          designVal = {
-            'background-color': option.props.colorSet[option.props.value]
-          };
-          designItem = React.DOM.div({className: "b-design-option__item"}, 
+  handleChange: function(option, newValue) {
+    var newState;
+    newState = {};
+    newState[option.props.name] = newValue;
+    return this.setState(newState);
+  },
+  _createDesignComponent: function(option) {
+    var designComponent, designItem, designVal;
+    switch (option.type) {
+      case 'ColorList':
+        designComponent = ColorList({onChange: this.handleChange.bind(this, option), name: option.props.name, colorSet: option.props.colorSet, value: option.props.value});
+        designVal = {
+          'background-color': option.props.colorSet[option.props.value]
+        };
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
           React.DOM.div({className: "b-design-option__item__current-params"}, 
             React.DOM.span({className: "b-design-option__item__name"}, option.name), 
             React.DOM.div({className: "b-design-option__item__val"}, 
@@ -521,31 +545,41 @@ window.DesingController = React.createClass({displayName: 'DesingController',
           ), 
           React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
           );
-          break;
-        case 'FontList':
-          designComponent = FontList({name: option.name, fontSet: option.props.fontSet, value: option.props.value});
-          designItem = React.DOM.div({className: "b-design-option__item"}, 
+        break;
+      case 'BgList':
+        designComponent = BgList({onChange: this.handleChange.bind(this, option), name: option.props.name, bgSet: option.props.bgSet, value: option.props.value});
+        designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.div({className: "b-design-option__item__current-params"}, 
+            React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+            React.DOM.div({className: "b-design-option__item__val"}, designVal)
+          ), 
+          React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
+          );
+        break;
+      case 'FontList':
+        designComponent = FontList({onChange: this.handleChange.bind(this, option), name: option.props.name, fontSet: option.props.fontSet, value: option.props.value});
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
           React.DOM.span({className: "b-design-option__item__name"}, option.name), 
           React.DOM.div({className: "b-design-option__item__val"}, designComponent)
           );
-          break;
-        case 'ValueSlider':
-          designComponent = ValueSlider({name: option.name, range: option.props.range, value: option.props.value, step: option.props.step});
-          designItem = React.DOM.div({className: "b-design-option__item"}, 
+        break;
+      case 'ValueSlider':
+        designComponent = ValueSlider({onChange: this.handleChange.bind(this, option), name: option.props.name, range: option.props.range, value: option.props.value, step: option.props.step});
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
           React.DOM.span({className: "b-design-option__item__name"}, option.name), 
           React.DOM.div({className: "b-design-option__item__val"}, designComponent)
           );
-          break;
-        case 'Toggle':
-          designComponent = Toggle({name: option.props.label, value: option.props.value});
-          designItem = React.DOM.div({className: "b-design-option__item"}, 
+        break;
+      case 'Toggle':
+        designComponent = Toggle({onChange: this.handleChange.bind(this, option), name: option.props.name, value: option.props.value});
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
           React.DOM.span({className: "b-design-option__item__name"}, option.name), 
           React.DOM.div({className: "b-design-option__item__val"}, designComponent)
           );
-      }
-      return designItem;
-    };
-  })(this),
+    }
+    return designItem;
+  },
   render: function() {
     var designItems;
     designItems = _.map(this.props.options, (function(_this) {
@@ -569,27 +603,35 @@ window.DesingController = React.createClass({displayName: 'DesingController',
 /** @jsx React.DOM */
 window.FontList = React.createClass({displayName: 'FontList',
   propTypes: {
+    name: React.PropTypes.string.isRequired,
     fontSet: React.PropTypes.object.isRequired,
     value: React.PropTypes.string
   },
   getDefaultProps: function() {
     return {
-      fontSet: ['default', 'verdana', 'gotham', 'apercu']
+      fontSet: {
+        'default': 'default',
+        'verdana': 'verdana',
+        'gotham': 'gotham',
+        'apercu': 'apercu'
+      }
     };
   },
   handleChange: function(font) {
-    return this.setState({
-      value: font
-    });
+    if (this.props.onChange) {
+      return this.props.onChange(font);
+    }
   },
   render: function() {
     var fontSetList;
-    if (!this.props.fontSet) {
-      return null;
-    }
     fontSetList = _.map(this.props.fontSet, (function(_this) {
-      return function(font, i) {
-        return FontSelect({font: font, key: font, onChange: _this.handleChange.bind(i, font)});
+      return function(font, key) {
+        var checked;
+        checked = false;
+        if (_this.props.value && _this.props.value === key) {
+          checked = true;
+        }
+        return FontSelect({font: font, key: font, name: _this.props.name, checked: checked, onChange: _this.handleChange.bind(key, font)});
       };
     })(this));
     return React.DOM.div(null, fontSetList);
@@ -598,12 +640,17 @@ window.FontList = React.createClass({displayName: 'FontList',
 
 window.FontSelect = React.createClass({displayName: 'FontSelect',
   propTypes: {
-    font: React.PropTypes.string.isRequired
+    font: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
   },
   render: function() {
     var className;
     className = "b-design-option__type b-design-option__type_" + this.props.font;
-    return React.DOM.label({className: className}, "Aa", React.DOM.input({type: "radio", onChange: this.props.onChange, name: "font-list-stack", value: this.props.font}));
+    return React.DOM.label({className: className}, 
+      React.DOM.input({type: "radio", onChange: this.props.onChange, defaultChecked: this.props.checked, name: this.props.name, value: this.props.font}), 
+      React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
+      );
   }
 });
 
@@ -614,6 +661,7 @@ window.FontSelect = React.createClass({displayName: 'FontSelect',
 /** @jsx React.DOM */
 window.LayoutList = React.createClass({displayName: 'LayoutList',
   propTypes: {
+    name: React.PropTypes.string.isRequired,
     layoutSet: React.PropTypes.object.isRequired,
     value: React.PropTypes.string
   },
@@ -626,9 +674,12 @@ window.LayoutList = React.createClass({displayName: 'LayoutList',
     };
   },
   handleChange: function(layout) {
-    return this.setState({
+    this.setState({
       value: layout
     });
+    if (this.props.onChange) {
+      return this.props.onChange(this.props.name, layout);
+    }
   },
   render: function() {
     var layoutSetList;
@@ -663,7 +714,7 @@ window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
 /** @jsx React.DOM */
 window.Toggle = React.createClass({displayName: 'Toggle',
   propTypes: {
-    name: React.PropTypes.string,
+    name: React.PropTypes.string.isRequired,
     value: React.PropTypes.bool
   },
   getDefaultProps: function() {
@@ -674,9 +725,9 @@ window.Toggle = React.createClass({displayName: 'Toggle',
   handleChange: function(e) {
     var toggleState;
     toggleState = $(e.target).prop('checked');
-    return this.setState({
-      value: toggleState
-    });
+    if (this.props.onChange) {
+      return this.props.onChange(toggleState);
+    }
   },
   render: function() {
     return React.DOM.label({className: "b-design-option__cbox"}, 
@@ -693,6 +744,7 @@ window.Toggle = React.createClass({displayName: 'Toggle',
 /** @jsx React.DOM */
 window.ValueSlider = React.createClass({displayName: 'ValueSlider',
   propTypes: {
+    name: React.PropTypes.string.isRequired,
     range: React.PropTypes.object.isRequired,
     step: React.PropTypes.number.isRequired,
     start: React.PropTypes.string
@@ -718,9 +770,14 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
     return domNode.on({
       slide: (function(_this) {
         return function() {
-          return _this.setState({
-            value: domNode.val()
+          var currentValue;
+          currentValue = domNode.val();
+          _this.setState({
+            value: currentValue
           });
+          if (_this.props.onChange) {
+            return _this.props.onChange(currentValue);
+          }
         };
       })(this)
     });

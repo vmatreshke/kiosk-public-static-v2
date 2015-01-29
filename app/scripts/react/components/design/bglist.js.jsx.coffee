@@ -12,14 +12,17 @@ window.BgList = React.createClass
       'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
 
   handleChange: (background)->
-    @setState value: background
-
     if @props.onChange
-      @props.onChange @props.name, background
+      @props.onChange background
   
   render: ->
     bgSetList = _.map @props.bgSet, (background, key) =>
-      `<BackgroundSelect name={_this.props.name} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
+      checked = false
+
+      if @props.value && @props.value == key
+        checked = true
+
+      `<BackgroundSelect name={_this.props.name} checked={checked} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
 
     return `<div>{bgSetList}</div>`
 
@@ -27,9 +30,10 @@ window.BackgroundSelect = React.createClass
   propTypes:
     background: React.PropTypes.string.isRequired
     name: React.PropTypes.string.isRequired
+    checked: React.PropTypes.bool.isRequired
 
   render: ->
     return `<label className="b-design-option__color b-design-option__color_img">
-        <img src={this.props.background} alt=""/>
-        <input type="radio" name={this.props.name} value={this.props.background} onChange={this.props.onChange}/>
+        <input type="radio" name={this.props.name} defaultChecked={this.props.checked} value={this.props.background} onChange={this.props.onChange}/>
+        <span className="b-design-option__color__ind"><img src={this.props.background} alt=""/></span>
       </label>`

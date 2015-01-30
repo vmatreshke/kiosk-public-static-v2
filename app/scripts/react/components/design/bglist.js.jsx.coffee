@@ -18,8 +18,7 @@ window.BgList = React.createClass
     bgSetList = _.map @props.bgSet, (background, key) =>
       checked = false
 
-      if @props.value && @props.value == key
-        checked = true
+      checked = @props.value && @props.value == key
 
       `<BackgroundSelect name={_this.props.name} checked={checked} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
 

@@ -2,6 +2,7 @@
 
 window.LayoutList = React.createClass
   propTypes:
+    name: React.PropTypes.string.isRequired
     layoutSet: React.PropTypes.object.isRequired
     value: React.PropTypes.string
 
@@ -11,22 +12,29 @@ window.LayoutList = React.createClass
       'layout-two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
   
   handleChange: (layout)->
-    @setState value: layout
+    @props.onChange? layout
 
   render: ->
-    return null unless @props.layoutSet
+    layoutSetList = _.map @props.layoutSet, (layout, key) =>
+      console.log key
+      console.log layout
+      checked = false
 
-    layoutSetList = _.map @props.layoutSet, (i, layout) =>
-      `<LayoutSelect layout={layout} key={layout} onChange={_this.handleChange.bind(i, layout)}/>`
+      if @props.value && @props.value == key
+        checked = true
+      
+      `<LayoutSelect name={_this.props.name} layoutName={key} layout={layout} key={key} checked={checked} onChange={_this.handleChange.bind(layout, key)}/>`
 
     return `<div>{layoutSetList}</div>`
 
 window.LayoutSelect = React.createClass
   propTypes:
     layout: React.PropTypes.string.isRequired
+    name: React.PropTypes.string.isRequired
+    checked: React.PropTypes.bool.isRequired
 
   render: ->
     return `<label className="b-design-option__layout">
-      {this.props.layout}
-      <input onChange={this.props.onChange} type="radio" value={this.props.layout} name="layout-stack"/>
+        <input onChange={this.props.onChange} type="radio" defaultChecked={this.props.checked} value={this.props.layout} name={this.props.name}/>
+        <span className="b-design-option__layout__ind">{this.props.layoutName}</span>
       </label>`

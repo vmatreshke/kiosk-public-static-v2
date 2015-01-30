@@ -2,6 +2,7 @@
 
 window.ValueSlider = React.createClass
   propTypes:
+    name:  React.PropTypes.string.isRequired
     range: React.PropTypes.object.isRequired
     step:  React.PropTypes.number.isRequired
     start: React.PropTypes.string
@@ -24,8 +25,9 @@ window.ValueSlider = React.createClass
 
     domNode.on
       slide: =>
-        @setState value: domNode.val()
+        currentValue = domNode.val()
+        @setState value: currentValue
+        @props.onChange? currentValue
 
-  
   render: ->
     return `<div/>`

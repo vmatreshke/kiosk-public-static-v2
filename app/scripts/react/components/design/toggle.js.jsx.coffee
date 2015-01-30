@@ -2,7 +2,7 @@
 
 window.Toggle = React.createClass
   propTypes:
-    name: React.PropTypes.string
+    name: React.PropTypes.string.isRequired
     value: React.PropTypes.bool
 
   getDefaultProps: ->
@@ -10,7 +10,7 @@ window.Toggle = React.createClass
 
   handleChange: (e)->
     toggleState = $(e.target).prop 'checked'
-    @setState value: toggleState
+    @props.onChange? toggleState
   
   render: ->
     return `<label className="b-design-option__cbox">

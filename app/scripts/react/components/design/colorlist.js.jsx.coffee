@@ -14,8 +14,7 @@ window.ColorList = React.createClass
       'layer-light': '#fff'
 
   handleChange: (color)->    
-    if @props.onChange
-      @props.onChange color
+    @props.onChange? color
   
   render: ->
     colorSetList = _.map @props.colorSet, (color, key) =>

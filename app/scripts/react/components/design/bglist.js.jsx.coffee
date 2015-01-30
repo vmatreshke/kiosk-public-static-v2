@@ -12,8 +12,7 @@ window.BgList = React.createClass
       'bg-slowpoke': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
 
   handleChange: (background)->
-    if @props.onChange
-      @props.onChange background
+    @props.onChange? background
   
   render: ->
     bgSetList = _.map @props.bgSet, (background, key) =>

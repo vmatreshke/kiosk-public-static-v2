@@ -6576,9 +6576,31 @@ html {
       .b-design-option__type input:checked + .b-design-option__type__ind {
         text-decoration: underline; }
   /* line 143, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  .b-design-option__layout {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 5px 0 0;
+    color: #fff;
+    cursor: pointer;
+    position: relative; }
+    /* line 151, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    .b-design-option__layout:hover {
+      color: #f8c700; }
+    /* line 153, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+    .b-design-option__layout input {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer; }
+      /* line 159, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+      .b-design-option__layout input:checked + .b-design-option__layout__ind {
+        text-decoration: underline; }
+  /* line 162, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__cbox {
     font-size: 12px; }
-  /* line 146, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
+  /* line 165, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-design-option */
   .b-design-option__save {
     background: #f8c700;
     text-transform: uppercase;

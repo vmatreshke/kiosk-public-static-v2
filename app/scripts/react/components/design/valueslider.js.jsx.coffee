@@ -27,10 +27,7 @@ window.ValueSlider = React.createClass
       slide: =>
         currentValue = domNode.val()
         @setState value: currentValue
+        @props.onChange? currentValue
 
-        if @props.onChange
-          @props.onChange currentValue
-
-  
   render: ->
     return `<div/>`

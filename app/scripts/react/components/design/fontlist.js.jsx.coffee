@@ -14,8 +14,7 @@ window.FontList = React.createClass
       'apercu': 'apercu'
 
   handleChange: (font)->  
-    if @props.onChange
-      @props.onChange font
+    @props.onChange? font
 
   render: ->
     fontSetList = _.map @props.fontSet, (font, key) =>

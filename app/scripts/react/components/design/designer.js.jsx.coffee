@@ -1,6 +1,6 @@
 ###* @jsx React.DOM ###
 
-window.DesingController = React.createClass
+window.Designer = React.createClass
   propTypes:
     options: React.PropTypes.array.isRequired
 
@@ -11,6 +11,7 @@ window.DesingController = React.createClass
       {"type": "FontList", "name": "шрифт", "props": {"name":"font_family", "value": "gotham"}}
       {"type": "ValueSlider", "name": "размер шрифта", "props": {"name":"font_size", "step": 1, "range":{"min": 13, "max": 15}, "value": 14 }}
       {"type": "Toggle", "name": "главная страница", "props": {"name":"banner", "label": "большой баннер", "value": true }}
+      {"type": "LayoutList", "name": "лейаут страницы", "props": {"name":"layout", "layoutSet":{'one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', 'two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'}, "value":"one"}}
     ]
 
   handleChange: (option, newValue)->
@@ -30,6 +31,17 @@ window.DesingController = React.createClass
             <div className="b-design-option__item__val">
               <div className="b-design-option__color" style={designVal}></div>
             </div>
+          </div>
+          <div className="b-design-option__item__available-params">{designComponent}</div>
+          </div>`
+
+      when 'LayoutList'
+        designComponent = `<LayoutList onChange={this.handleChange.bind(this, option)} name={option.props.name} layoutSet={option.props.layoutSet} value={option.props.value}/>`
+        designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
+        designItem = `<div className="b-design-option__item">
+          <div className="b-design-option__item__current-params">
+            <span className="b-design-option__item__name">{option.name}</span>
+            <div className="b-design-option__item__val">{designVal}</div>
           </div>
           <div className="b-design-option__item__available-params">{designComponent}</div>
           </div>`

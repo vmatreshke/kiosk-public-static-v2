@@ -10,9 +10,7 @@ window.Toggle = React.createClass
 
   handleChange: (e)->
     toggleState = $(e.target).prop 'checked'
-    
-    if @props.onChange
-      @props.onChange toggleState
+    @props.onChange? toggleState
   
   render: ->
     return `<label className="b-design-option__cbox">

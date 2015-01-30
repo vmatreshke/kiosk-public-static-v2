@@ -31,7 +31,7 @@ require('./react/components/product/add_to_basket_button');
 
 require('./react/components/instagram/instagram');
 
-require('./react/components/design/controller');
+require('./react/components/design/designer');
 
 require('./react/components/design/colorlist');
 
@@ -55,7 +55,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/controller":8,"./react/components/design/fontlist":9,"./react/components/design/layoutlist":10,"./react/components/design/toggle":11,"./react/components/design/valueslider":12,"./react/components/instagram/instagram":13,"./react/components/product/add_to_basket_button":14,"./react/dispatchers/basket":16,"./react/stores/basket":18,"./routes/routes":19,"./shared/app":20,"./shared/application_slider":21,"./shared/cart":22,"./shared/checkout":23,"./shared/jump":24,"./shared/lightbox":25,"./shared/load_more":26,"./shared/mobile_navigation":27,"./shared/product_images_slider":28,"./shared/theme_switcher":29}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/designer":8,"./react/components/design/fontlist":9,"./react/components/design/layoutlist":10,"./react/components/design/toggle":11,"./react/components/design/valueslider":12,"./react/components/instagram/instagram":13,"./react/components/product/add_to_basket_button":14,"./react/dispatchers/basket":16,"./react/stores/basket":18,"./routes/routes":19,"./shared/app":20,"./shared/application_slider":21,"./shared/cart":22,"./shared/checkout":23,"./shared/jump":24,"./shared/lightbox":25,"./shared/load_more":26,"./shared/mobile_navigation":27,"./shared/product_images_slider":28,"./shared/theme_switcher":29}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -361,9 +361,8 @@ window.BgList = React.createClass({displayName: 'BgList',
     };
   },
   handleChange: function(background) {
-    if (this.props.onChange) {
-      return this.props.onChange(background);
-    }
+    var _base;
+    return typeof (_base = this.props).onChange === "function" ? _base.onChange(background) : void 0;
   },
   render: function() {
     var bgSetList;
@@ -417,9 +416,8 @@ window.ColorList = React.createClass({displayName: 'ColorList',
     };
   },
   handleChange: function(color) {
-    if (this.props.onChange) {
-      return this.props.onChange(color);
-    }
+    var _base;
+    return typeof (_base = this.props).onChange === "function" ? _base.onChange(color) : void 0;
   },
   render: function() {
     var colorSetList;
@@ -461,7 +459,7 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
 },{}],8:[function(require,module,exports){
 
 /** @jsx React.DOM */
-window.DesingController = React.createClass({displayName: 'DesingController',
+window.Designer = React.createClass({displayName: 'Designer',
   propTypes: {
     options: React.PropTypes.array.isRequired
   },
@@ -518,6 +516,17 @@ window.DesingController = React.createClass({displayName: 'DesingController',
             "label": "большой баннер",
             "value": true
           }
+        }, {
+          "type": "LayoutList",
+          "name": "лейаут страницы",
+          "props": {
+            "name": "layout",
+            "layoutSet": {
+              'one': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+              'two': 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+            },
+            "value": "one"
+          }
         }
       ]
     };
@@ -542,6 +551,17 @@ window.DesingController = React.createClass({displayName: 'DesingController',
             React.DOM.div({className: "b-design-option__item__val"}, 
               React.DOM.div({className: "b-design-option__color", style: designVal})
             )
+          ), 
+          React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
+          );
+        break;
+      case 'LayoutList':
+        designComponent = LayoutList({onChange: this.handleChange.bind(this, option), name: option.props.name, layoutSet: option.props.layoutSet, value: option.props.value});
+        designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
+        designItem = React.DOM.div({className: "b-design-option__item"}, 
+          React.DOM.div({className: "b-design-option__item__current-params"}, 
+            React.DOM.span({className: "b-design-option__item__name"}, option.name), 
+            React.DOM.div({className: "b-design-option__item__val"}, designVal)
           ), 
           React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
           );
@@ -618,9 +638,8 @@ window.FontList = React.createClass({displayName: 'FontList',
     };
   },
   handleChange: function(font) {
-    if (this.props.onChange) {
-      return this.props.onChange(font);
-    }
+    var _base;
+    return typeof (_base = this.props).onChange === "function" ? _base.onChange(font) : void 0;
   },
   render: function() {
     var fontSetList;
@@ -674,21 +693,21 @@ window.LayoutList = React.createClass({displayName: 'LayoutList',
     };
   },
   handleChange: function(layout) {
-    this.setState({
-      value: layout
-    });
-    if (this.props.onChange) {
-      return this.props.onChange(this.props.name, layout);
-    }
+    var _base;
+    return typeof (_base = this.props).onChange === "function" ? _base.onChange(layout) : void 0;
   },
   render: function() {
     var layoutSetList;
-    if (!this.props.layoutSet) {
-      return null;
-    }
     layoutSetList = _.map(this.props.layoutSet, (function(_this) {
-      return function(i, layout) {
-        return LayoutSelect({layout: layout, key: layout, onChange: _this.handleChange.bind(i, layout)});
+      return function(layout, key) {
+        var checked;
+        console.log(key);
+        console.log(layout);
+        checked = false;
+        if (_this.props.value && _this.props.value === key) {
+          checked = true;
+        }
+        return LayoutSelect({name: _this.props.name, layoutName: key, layout: layout, key: key, checked: checked, onChange: _this.handleChange.bind(layout, key)});
       };
     })(this));
     return React.DOM.div(null, layoutSetList);
@@ -697,12 +716,14 @@ window.LayoutList = React.createClass({displayName: 'LayoutList',
 
 window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
   propTypes: {
-    layout: React.PropTypes.string.isRequired
+    layout: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    checked: React.PropTypes.bool.isRequired
   },
   render: function() {
     return React.DOM.label({className: "b-design-option__layout"}, 
-      this.props.layout, 
-      React.DOM.input({onChange: this.props.onChange, type: "radio", value: this.props.layout, name: "layout-stack"})
+        React.DOM.input({onChange: this.props.onChange, type: "radio", defaultChecked: this.props.checked, value: this.props.layout, name: this.props.name}), 
+        React.DOM.span({className: "b-design-option__layout__ind"}, this.props.layoutName)
       );
   }
 });
@@ -723,11 +744,9 @@ window.Toggle = React.createClass({displayName: 'Toggle',
     };
   },
   handleChange: function(e) {
-    var toggleState;
+    var toggleState, _base;
     toggleState = $(e.target).prop('checked');
-    if (this.props.onChange) {
-      return this.props.onChange(toggleState);
-    }
+    return typeof (_base = this.props).onChange === "function" ? _base.onChange(toggleState) : void 0;
   },
   render: function() {
     return React.DOM.label({className: "b-design-option__cbox"}, 
@@ -770,14 +789,12 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
     return domNode.on({
       slide: (function(_this) {
         return function() {
-          var currentValue;
+          var currentValue, _base;
           currentValue = domNode.val();
           _this.setState({
             value: currentValue
           });
-          if (_this.props.onChange) {
-            return _this.props.onChange(currentValue);
-          }
+          return typeof (_base = _this.props).onChange === "function" ? _base.onChange(currentValue) : void 0;
         };
       })(this)
     });

@@ -25,26 +25,29 @@ CatalogFilterList = React.createClass
     listItems = @props.options.map (item, i) ->
       switch item.type
         when 'checkbox'
-          { title, items } = item
+          { title, paramName, items } = item
 
           `<CatalogFilterList_Checkbox
                title={ title }
+               paramName={ paramName }
                items={ items }
                key={ i } />`
         when 'range'
-          { title, units, from, to } = item
+          { title, paramName, units, from, to } = item
 
           `<CatalogFilterList_Range
                title={ title }
+               paramName={ paramName }
                units={ units }
                from={ from }
                to={ to }
                key={ i } />`
         when 'color'
-          { title, items } = item
+          { title, paramName, items } = item
 
           `<CatalogFilterList_Color
               title={ title }
+              paramName={ paramName }
               items={ items }
               key={ i } />`
         else console.warn? 'Unknown item type of CatalogFilterList component', item

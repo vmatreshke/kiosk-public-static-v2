@@ -5,10 +5,11 @@
 CatalogFilterList_Range = React.createClass
 
   propTypes:
-    title: PropTypes.string.isRequired
-    units: PropTypes.string
-    from:  PropTypes.number.isRequired
-    to:    PropTypes.number.isRequired
+    title:     PropTypes.string.isRequired
+    paramName: PropTypes.string.isRequired
+    units:     PropTypes.string
+    from:      PropTypes.number.isRequired
+    to:        PropTypes.number.isRequired
 
   getInitialState: ->
     from: @props.from
@@ -19,21 +20,13 @@ CatalogFilterList_Range = React.createClass
 
     $(slider)
       .noUiSlider
-        start: [@props.from, @props.to]
+        start: [@state.from, @state.to]
         connect: true
         range:
-          'min': @props.from
-          'max': @props.to
+          'min': @state.from
+          'max': @state.to
 
     $(slider).on 'slide', @handleSlide
-
-    # .on
-    #     slide: ->
-    #       console.log 'slide', arguments
-    #     set: ->
-    #       console.log 'set', arguments
-    #     change: ->
-    #       console.log 'change', arguments
 
   componentWillUnmount: ->
     slider = @refs.slider.getDOMNode()
@@ -51,12 +44,18 @@ CatalogFilterList_Range = React.createClass
           <div className="b-full-filter__slider__value">
             { this.state.from }
             <span> – </span>
-            { this.state.to } <span dangerouslySetInnerHTML={{ __html: this.props.units}} />
+            { this.state.to } <span dangerouslySetInnerHTML={{ __html: this.props.units }} />
           </div>
           <div ref="slider"
                className="b-full-filter__slider__embed" />
         </div>
       </div>
+      <input type="hidden"
+             name={ this.props.paramName + '[from]'}
+             value={ this.state.from } />
+      <input type="hidden"
+             name={ this.props.paramName + '[to]'}
+             value={ this.state.to } />
     </li>`
 
   handleSlide: (e, range) ->

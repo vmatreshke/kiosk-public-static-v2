@@ -2,11 +2,12 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.b-page.b-page_theme-cc
+  %body.b-page
     .b-page__content
-      .b-page__content__inner
-        +include 'app/haml/shared/_navbar_cc.haml'
+      .b-page__content__inner.b-page__content__inner_navbar
+        +include 'app/haml/shared/_navbar.haml'
 
+      .b-page__content__inner.b-page__content__inner_content
         %section.b-item-list.b-item-list_has-filter
           .b-item-list__filter
             %form{method: 'POST'}
@@ -30,14 +31,31 @@
                     .b-item__price 8 900 руб.
 
             .b-item-list__paginator
-              .b-paginator
-                - for i in [1..4]
+              .pagination
+                %li.first
+                  %a{href: '#'}
+                    «
+                %li.prev
+                  %a{href: '#'}
+                    <
+                - for i in [1..6]
                   -if i == 1
-                    %span.b-paginator__item.b-paginator__item_current{href: '#'}
-                      = i
+                    %li.page.active
+                      %a{href: '#'}
+                        = i
+                  -if i == 4
+                    %li.page.disabled.gap
+                      %a{href: '#'} ...
                   -else
-                    %a.b-paginator__item{href: '#'}
-                      = i
+                    %li.page
+                      %a{href: '#'}
+                        = i
+                %li.next
+                  %a{href: '#'}
+                    >
+                %li.last
+                  %a{href: '#'}
+                    »
 
         +include 'app/haml/shared/_footer_without_designer.haml'
 

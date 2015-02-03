@@ -437,26 +437,29 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
   renderListItems: function() {
     var listItems;
     return listItems = this.props.options.map(function(item, i) {
-      var from, items, title, to, units;
+      var from, items, paramName, title, to, units;
       switch (item.type) {
         case 'checkbox':
-          title = item.title, items = item.items;
+          title = item.title, paramName = item.paramName, items = item.items;
           return CatalogFilterList_Checkbox({
                title: title, 
+               paramName: paramName, 
                items: items, 
                key: i });
         case 'range':
-          title = item.title, units = item.units, from = item.from, to = item.to;
+          title = item.title, paramName = item.paramName, units = item.units, from = item.from, to = item.to;
           return CatalogFilterList_Range({
                title: title, 
+               paramName: paramName, 
                units: units, 
                from: from, 
                to: to, 
                key: i });
         case 'color':
-          title = item.title, items = item.items;
+          title = item.title, paramName = item.paramName, items = item.items;
           return CatalogFilterList_Color({
               title: title, 
+              paramName: paramName, 
               items: items, 
               key: i });
         default:
@@ -483,6 +486,7 @@ PropTypes = React.PropTypes;
 CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_Checkbox',
   propTypes: {
     title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired
   },
   render: function() {
@@ -494,10 +498,12 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
     );
   },
   renderListItems: function() {
-    var listItems;
+    var listItems, that;
+    that = this;
     listItems = this.props.items.map(function(item, i) {
       return React.DOM.label({className: "b-cbox", key: i }, 
         React.DOM.input({type: "checkbox", 
+               name:  that.getFieldName(item), 
                defaultChecked:  item.checked, 
                className: "b-cbox__native"}), 
         React.DOM.div({className: "b-cbox__val"}, 
@@ -508,6 +514,9 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
     return React.DOM.div({className: "b-full-filter__widget"}, 
               listItems
             );
+  },
+  getFieldName: function(item) {
+    return "" + this.props.paramName + "[" + item.paramValue + "]";
   }
 });
 
@@ -525,6 +534,7 @@ PropTypes = React.PropTypes;
 CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Color',
   propTypes: {
     title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired
   },
   render: function() {
@@ -536,20 +546,25 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
     );
   },
   renderListItems: function() {
-    var listItems;
+    var listItems, that;
+    that = this;
     listItems = this.props.items.map(function(item, i) {
       return React.DOM.label({className: "b-cbox b-cbox_color", key: i }, 
-         React.DOM.input({type: "checkbox", 
-                defaultChecked:  item.checked, 
-                title:  item.name, 
-                className: "b-cbox__native"}), 
-          React.DOM.div({style: { "background-color": item.hexCode}, 
-               className: "b-cbox__val"})
-        );
+        React.DOM.input({type: "checkbox", 
+               name:  that.getFieldName(item), 
+               defaultChecked:  item.checked, 
+               title:  item.name, 
+               className: "b-cbox__native"}), 
+        React.DOM.div({style: { "background-color": item.hexCode}, 
+             className: "b-cbox__val"})
+      );
     });
     return React.DOM.div({className: "b-full-filter__widget"}, 
               listItems
             );
+  },
+  getFieldName: function(item) {
+    return "" + this.props.paramName + "[" + item.paramValue + "]";
   }
 });
 
@@ -567,6 +582,7 @@ PropTypes = React.PropTypes;
 CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Range',
   propTypes: {
     title: PropTypes.string.isRequired,
+    paramName: PropTypes.string.isRequired,
     units: PropTypes.string,
     from: PropTypes.number.isRequired,
     to: PropTypes.number.isRequired
@@ -581,11 +597,11 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
     var slider;
     slider = this.refs.slider.getDOMNode();
     $(slider).noUiSlider({
-      start: [this.props.from, this.props.to],
+      start: [this.state.from, this.state.to],
       connect: true,
       range: {
-        'min': this.props.from,
-        'max': this.props.to
+        'min': this.state.from,
+        'max': this.state.to
       }
     });
     return $(slider).on('slide', this.handleSlide);
@@ -611,7 +627,13 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
           React.DOM.div({ref: "slider", 
                className: "b-full-filter__slider__embed"})
         )
-      )
+      ), 
+      React.DOM.input({type: "hidden", 
+             name:  this.props.paramName + '[from]', 
+             value:  this.state.from}), 
+      React.DOM.input({type: "hidden", 
+             name:  this.props.paramName + '[to]', 
+             value:  this.state.to})
     );
   },
   handleSlide: function(e, range) {
@@ -658,63 +680,79 @@ CatalogFilterMixin = {
         {
           title: 'Показывать',
           type: 'checkbox',
+          paramName: 'availability',
           items: [
             {
               name: 'Все',
+              paramValue: 'all',
               checked: true
             }, {
-              name: 'Гибридные',
+              name: 'В наличии',
+              paramValue: 'in-stock',
               checked: false
             }, {
-              name: 'Складные',
+              name: 'Под заказ',
+              paramValue: 'on-request',
               checked: false
             }, {
-              name: 'Электро',
+              name: 'Распродажа',
+              paramValue: 'sale',
               checked: true
             }
           ]
         }, {
           title: 'Ценовой диапазон',
           type: 'range',
+          paramName: 'price',
           units: '&#x20BD;',
           from: 10000,
           to: 50000
         }, {
           title: 'Показывать',
           type: 'checkbox',
+          paramName: 'type',
           items: [
             {
               name: 'Все',
+              paramValue: 'all',
               checked: true
             }, {
               name: 'Гибридные',
+              paramValue: 'hybrid',
               checked: false
             }, {
               name: 'Складные',
+              paramValue: 'foldable',
               checked: true
             }, {
               name: 'Электро',
+              paramValue: 'electro',
               checked: false
             }
           ]
         }, {
           title: 'Цвет',
           type: 'color',
+          paramName: 'color',
           items: [
             {
               name: 'Красный',
+              paramValue: 'red',
               hexCode: '#fe2a2a',
               checked: false
             }, {
               name: 'Оранжевый',
+              paramValue: 'orange',
               hexCode: '#feac2a',
               checked: true
             }, {
               name: 'Голубой',
+              paramValue: 'cyan',
               hexCode: '#2fe1ec',
               checked: false
             }, {
               name: 'Серый',
+              paramValue: 'grey',
               hexCode: '#aeaeae',
               checked: true
             }
@@ -722,30 +760,38 @@ CatalogFilterMixin = {
         }, {
           title: 'Материал рамы',
           type: 'checkbox',
+          paramName: 'frame-material',
           items: [
             {
               name: 'Сталь',
+              paramValue: 'steal',
               checked: false
             }, {
               name: 'Карбон',
+              paramValue: 'carbon',
               checked: true
             }, {
               name: 'Алюминий',
+              paramValue: 'aluminum',
               checked: false
             }
           ]
         }, {
           title: 'Модельный ряд',
           type: 'checkbox',
+          paramName: 'series',
           items: [
             {
               name: '2014',
+              paramValue: '2014',
               checked: false
             }, {
               name: '2013',
+              paramValue: '2013',
               checked: false
             }, {
               name: '2012',
+              paramValue: '2012',
               checked: true
             }
           ]

@@ -1,0 +1,139 @@
+%footer.b-footer
+  .b-footer__container
+    .b-footer__content
+      .b-footer__nav.b-footer__nav_main
+        - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+        - for l in footer_links
+          %a.b-footer__link{href: '#'}= "#{l}"
+      
+      .b-footer__nav.b-footer__nav_soc
+        %a.b-footer__link{href: '#'} Facebook
+        %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+        %a.b-footer__link{href: '#'} Сделано на «Киоск»
+
+%a.b-admin{href:'/admin'} Панель администратора
+
+#instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
+
+%div{data-react-class: 'BasketButton', data-react-props: '{"cartUrl": "cart.html", "itemsCount": 1}'}
+  
+%div{data-react-class: 'BasketPopup', data-react-props: '{"cartUrl": "cart.html", "cartClearUrl": "cart.html", "items": []}'}
+
+.b-theme-switch
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page", data-logourl: "images/wannabe/logo.png"} Basic
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-dark", data-logourl: "images/wannabe/logo.png"} Basic dark
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-wannabe", data-logourl: "images/wannabe/logo.svg"} Wannabe
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-sugar", data-logourl: "images/sugar/logo.png"} Sugar
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-cc", data-logourl: "images/cc/logo.png"} Citycicle
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-etc", data-logourl: "images/etc/logo.png"} etc
+
+#nav(ks-mob-nav)
+  %ul
+    - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+    - for c in categories
+      %li
+        %a{href: '#'}= "#{c}"
+    %li
+      %span Аксессуары
+      %ul
+        %li
+          %a{href: '#', data-count:'45'} Категория
+        %li
+          %a{href: '#', data-count:'1'} Категория
+        %li
+          %a{href: '#', data-count:'6'} Категория
+        %li
+          %a{href: '#', data-count:'12'} Категория
+        %li
+          %a{href: '#', data-count:'4'} Категория
+        %li
+          %a{href: '#', data-count:'9'} Категория
+
+%a#navopen.mmenu-open{href: "#nav", 'ks-open-nav': ''}
+  %span.mmenu-open__tick.mmenu-open__tick_f
+  %span.mmenu-open__tick.mmenu-open__tick_s
+  %span.mmenu-open__tick.mmenu-open__tick_t
+
+/ %div{data-react-class: 'Designer'}
+
+/ .b-design-option
+/   .b-design-option__title Управление дизайном
+/   .b-design-option__close Закрыть
+/   .b-design-option__body
+/     .b-design-option__item
+/       .b-design-option__item__current-params
+/         %span.b-design-option__item__name цвет страницы
+/         .b-design-option__item__val
+/           .b-design-option__color{style: 'background-color: white'}
+/       .b-design-option__item__available-params
+/         %div{data-react-class: 'ColorList', data-react-props: '{"name": "page-color", "colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+
+/     .b-design-option__item
+/       .b-design-option__item__current-params
+/         %span.b-design-option__item__name фон страницы
+/         .b-design-option__item__val
+/           .b-design-option__color.b-design-option__color_img
+/             %img{src: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg', alt:''}
+/       .b-design-option__item__available-params
+/         %div{data-react-class: 'BgList', data-react-props: '{"name": "bg-pic"}'}
+
+/     .b-design-option__item
+/       .b-design-option__item__current-params
+/         %span.b-design-option__item__name цвет ленты
+/         .b-design-option__item__val
+/           .b-design-option__color{style: 'background-color: green'}
+/       .b-design-option__item__available-params
+/         %div{data-react-class: 'ColorList', data-react-props: '{"name": "layout-color","colorSet": {"bg-dark": "#000", "bg-light": "#fff"}}'}
+        
+/     .b-design-option__item
+/       %span.b-design-option__item__name прозрачность ленты
+/       .b-design-option__item__val
+/         %div{data-react-class: 'ValueSlider'}
+
+/     .b-design-option__item
+/       .b-design-option__item__current-params
+/         %span.b-design-option__item__name цвет текста
+/         .b-design-option__item__val
+/           .b-design-option__color{style: 'background-color: black'}
+/       .b-design-option__item__available-params
+/         %div{data-react-class: 'ColorList', data-react-props: '{"name": "text-color","colorSet": {"text-dark": "#000", "text-light": "#fff"}}'}
+
+/     .b-design-option__item
+/       .b-design-option__item__current-params
+/         %span.b-design-option__item__name цвет активных элементов
+/         .b-design-option__item__val
+/           .b-design-option__color{style: 'background-color: purple'}
+/       .b-design-option__item__available-params
+/         %div{data-react-class: 'ColorList', data-react-props: '{"name": "active-color","colorSet": {"active-dark": "#000", "active-light": "#fff"}}'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name шрифт
+/       .b-design-option__item__val
+/         %div{data-react-class: 'FontList'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name размер шрифта
+/       .b-design-option__item__val
+/         %div{data-react-class: 'ValueSlider', data-react-props: '{"step": 1, "range":{"min": 13, "max": 15}}'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name лейаут товара
+/       .b-design-option__item__val
+/         %div{data-react-class: 'LayoutList'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name каталог
+/       .b-design-option__item__val
+/         %div{data-react-class: 'Toggle', data-react-props: '{"name": "фильтр", "value": true}'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name товаров в ряд
+/       .b-design-option__item__val
+/         %div{data-react-class: 'ValueSlider', data-react-props: '{"step": 1, "value": 3, "range":{"min": 2, "max": 4}}'}
+
+/     .b-design-option__item
+/       %span.b-design-option__item__name главная страница
+/       .b-design-option__item__val
+/         %div{data-react-class: 'Toggle', data-react-props: '{"name": "большой баннер", "value": true}'}
+
+/     %button.b-design-option__save Сохранить

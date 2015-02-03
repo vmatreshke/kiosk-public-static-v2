@@ -22,7 +22,7 @@ module.exports =
         entries: src + '/scripts/main.coffee'
         dest: build + '/scripts'
         outputName: 'client.js'
-        extensions: ['.coffee', '.js.jsx.coffee']
+        extensions: ['.coffee', '.js.jsx.coffee', '.jsx.coffee']
     haml:
       src: 'app/haml/**/*.haml'
       dest: build
@@ -41,7 +41,7 @@ module.exports =
       bundle:
         baseDir: src
         entries: './scripts/bundle.coffee'
-        extensions: ['.coffee', '.js.jsx.coffee']
+        extensions: ['.coffee', '.js.jsx.coffee', '.jsx.coffee']
         dest: dist + '/scripts/'
         outputName: 'bundle.js'
       minify:

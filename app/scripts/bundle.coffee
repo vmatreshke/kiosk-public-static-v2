@@ -29,6 +29,8 @@ require './react/components/design/toggle'
 require './react/components/design/valueslider'
 require './react/components/design/layoutlist'
 
+require './react/components/catalogFilter/catalogFilter'
+
 require './react/dispatchers/basket'
 require './react/actions/view/basket'
 require './react/stores/basket'

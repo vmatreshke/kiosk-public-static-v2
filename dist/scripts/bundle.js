@@ -45,6 +45,8 @@ require('./react/components/design/valueslider');
 
 require('./react/components/design/layoutlist');
 
+require('./react/components/catalogFilter/catalogFilter');
+
 require('./react/dispatchers/basket');
 
 require('./react/actions/view/basket');
@@ -55,7 +57,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/design/bglist":6,"./react/components/design/colorlist":7,"./react/components/design/designer":8,"./react/components/design/fontlist":9,"./react/components/design/layoutlist":10,"./react/components/design/toggle":11,"./react/components/design/valueslider":12,"./react/components/instagram/instagram":13,"./react/components/product/add_to_basket_button":14,"./react/dispatchers/basket":16,"./react/stores/basket":18,"./routes/routes":19,"./shared/app":20,"./shared/application_slider":21,"./shared/cart":22,"./shared/checkout":23,"./shared/jump":24,"./shared/lightbox":25,"./shared/load_more":26,"./shared/mobile_navigation":27,"./shared/product_images_slider":28,"./shared/theme_switcher":29}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/catalogFilter/catalogFilter":7,"./react/components/design/bglist":14,"./react/components/design/colorlist":15,"./react/components/design/designer":16,"./react/components/design/fontlist":17,"./react/components/design/layoutlist":18,"./react/components/design/toggle":19,"./react/components/design/valueslider":20,"./react/components/instagram/instagram":21,"./react/components/product/add_to_basket_button":22,"./react/dispatchers/basket":24,"./react/stores/basket":26,"./routes/routes":27,"./shared/app":28,"./shared/application_slider":29,"./shared/cart":30,"./shared/checkout":31,"./shared/jump":32,"./shared/lightbox":33,"./shared/load_more":34,"./shared/mobile_navigation":35,"./shared/product_images_slider":36,"./shared/theme_switcher":37}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -103,7 +105,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":30,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":38,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -346,6 +348,420 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 },{}],6:[function(require,module,exports){
 
 /** @jsx React.DOM */
+var CatalogFilter_ShowResultsButton, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilter_ShowResultsButton = React.createClass({displayName: 'CatalogFilter_ShowResultsButton',
+  propTypes: {
+    onClick: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.button({className: "b-btn b-full-filter__submit", 
+            onClick:  this.props.onClick}, 
+      "Показать"
+    );
+  }
+});
+
+module.exports = CatalogFilter_ShowResultsButton;
+
+
+
+},{}],7:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList, CatalogFilterMixin, PropTypes;
+
+CatalogFilterMixin = require('./mixins/catalogFilter');
+
+CatalogFilterList = require('./list');
+
+PropTypes = React.PropTypes;
+
+window.CatalogFilter = React.createClass({displayName: 'CatalogFilter',
+  mixins: [CatalogFilterMixin],
+  propTypes: {
+    options: PropTypes.array.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-full-filter"}, 
+      React.DOM.input({className: "b-full-filter__toggle", id: "filter-toggle", type: "checkbox"}), 
+      React.DOM.label({className: "b-full-filter__trigger", htmlFor: "filter-toggle"}, 
+        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_open"}, 
+          "Показать фильтр"
+        ), 
+        React.DOM.span({className: "b-btn b-full-filter__trigger__action b-full-filter__trigger__action_close"}, 
+          "Скрыть фильтр"
+        )
+      ), 
+      CatalogFilterList({options:  this.props.options})
+    );
+  }
+});
+
+module.exports = CatalogFilter;
+
+
+
+},{"./list":8,"./mixins/catalogFilter":13}],8:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, CatalogFilter_ShowResultsButton, PropTypes;
+
+CatalogFilterList_SelectedOptions = require('./list/selectedOptions');
+
+CatalogFilterList_Checkbox = require('./list/checkbox');
+
+CatalogFilterList_Range = require('./list/range');
+
+CatalogFilterList_Color = require('./list/color');
+
+CatalogFilter_ShowResultsButton = require('./buttons/showResults');
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
+  propTypes: {
+    options: PropTypes.array.isRequired
+  },
+  render: function() {
+    return React.DOM.ul({className: "b-full-filter__list-wrap"}, 
+      CatalogFilterList_SelectedOptions(null), 
+       this.renderListItems(), 
+      React.DOM.li({className: "b-full-filter__item"}, 
+        CatalogFilter_ShowResultsButton({onClick:  this.showResults})
+      )
+    );
+  },
+  renderListItems: function() {
+    var listItems;
+    return listItems = this.props.options.map(function(item, i) {
+      var from, items, title, to, units;
+      switch (item.type) {
+        case 'checkbox':
+          title = item.title, items = item.items;
+          return CatalogFilterList_Checkbox({
+               title: title, 
+               items: items, 
+               key: i });
+        case 'range':
+          title = item.title, units = item.units, from = item.from, to = item.to;
+          return CatalogFilterList_Range({
+               title: title, 
+               units: units, 
+               from: from, 
+               to: to, 
+               key: i });
+        case 'color':
+          title = item.title, items = item.items;
+          return CatalogFilterList_Color({
+              title: title, 
+              items: items, 
+              key: i });
+        default:
+          return typeof console.warn === "function" ? console.warn('Unknown item type of CatalogFilterList component', item) : void 0;
+      }
+    });
+  },
+  showResults: function() {
+    return console.log('Displaying filtered results');
+  }
+});
+
+module.exports = CatalogFilterList;
+
+
+
+},{"./buttons/showResults":6,"./list/checkbox":9,"./list/color":10,"./list/range":11,"./list/selectedOptions":12}],9:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Checkbox, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_Checkbox',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems;
+    listItems = this.props.items.map(function(item, i) {
+      return React.DOM.label({className: "b-cbox", key: i }, 
+        React.DOM.input({type: "checkbox", 
+               defaultChecked:  item.checked, 
+               className: "b-cbox__native"}), 
+        React.DOM.div({className: "b-cbox__val"}, 
+           item.name
+        )
+      );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems
+            );
+  }
+});
+
+module.exports = CatalogFilterList_Checkbox;
+
+
+
+},{}],10:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Color, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Color',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+       this.renderListItems() 
+    );
+  },
+  renderListItems: function() {
+    var listItems;
+    listItems = this.props.items.map(function(item, i) {
+      return React.DOM.label({className: "b-cbox b-cbox_color", key: i }, 
+         React.DOM.input({type: "checkbox", 
+                defaultChecked:  item.checked, 
+                title:  item.name, 
+                className: "b-cbox__native"}), 
+          React.DOM.div({style: { "background-color": item.hexCode}, 
+               className: "b-cbox__val"})
+        );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems
+            );
+  }
+});
+
+module.exports = CatalogFilterList_Color;
+
+
+
+},{}],11:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_Range, PropTypes;
+
+PropTypes = React.PropTypes;
+
+CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Range',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    units: PropTypes.string,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired
+  },
+  getInitialState: function() {
+    return {
+      from: this.props.from,
+      to: this.props.to
+    };
+  },
+  componentDidMount: function() {
+    var slider;
+    slider = this.refs.slider.getDOMNode();
+    $(slider).noUiSlider({
+      start: [this.props.from, this.props.to],
+      connect: true,
+      range: {
+        'min': this.props.from,
+        'max': this.props.to
+      }
+    });
+    return $(slider).on('slide', this.handleSlide);
+  },
+  componentWillUnmount: function() {
+    var slider;
+    slider = this.refs.slider.getDOMNode();
+    $(slider).on('off', this.handleSlide);
+    return $(slider).destroy();
+  },
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item b-full-filter__item_price"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-full-filter__widget"}, 
+        React.DOM.div({className: "b-full-filter__slider"}, 
+          React.DOM.div({className: "b-full-filter__slider__value"}, 
+             this.state.from, 
+            React.DOM.span(null, " – "), 
+             this.state.to, " ", React.DOM.span({dangerouslySetInnerHTML: { __html: this.props.units}})
+          ), 
+          React.DOM.div({ref: "slider", 
+               className: "b-full-filter__slider__embed"})
+        )
+      )
+    );
+  },
+  handleSlide: function(e, range) {
+    return this.setState({
+      from: parseInt(range[0]),
+      to: parseInt(range[1])
+    });
+  }
+});
+
+module.exports = CatalogFilterList_Range;
+
+
+
+},{}],12:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var CatalogFilterList_SelectedOptions;
+
+CatalogFilterList_SelectedOptions = React.createClass({displayName: 'CatalogFilterList_SelectedOptions',
+  render: function() {
+    return React.DOM.li({className: "b-full-filter__item"}, 
+      React.DOM.div({className: "b-full-filter__item__title"}, "Текущий выбор"), 
+      React.DOM.div({className: "b-full-filter__widget"}, 
+        React.DOM.span({className: "b-full-filter__value"}, "Цена от 20 000 до 5000 Р"), 
+        React.DOM.span({className: "b-full-filter__value"}, "Категория: гибридные"), 
+        React.DOM.span({className: "b-full-filter__value"}, "Материал: карбон")
+      )
+    );
+  }
+});
+
+module.exports = CatalogFilterList_SelectedOptions;
+
+
+
+},{}],13:[function(require,module,exports){
+var CatalogFilterMixin;
+
+CatalogFilterMixin = {
+  getDefaultProps: function() {
+    return {
+      options: [
+        {
+          title: 'Показывать',
+          type: 'checkbox',
+          items: [
+            {
+              name: 'Все',
+              checked: true
+            }, {
+              name: 'Гибридные',
+              checked: false
+            }, {
+              name: 'Складные',
+              checked: false
+            }, {
+              name: 'Электро',
+              checked: true
+            }
+          ]
+        }, {
+          title: 'Ценовой диапазон',
+          type: 'range',
+          units: '&#x20BD;',
+          from: 10000,
+          to: 50000
+        }, {
+          title: 'Показывать',
+          type: 'checkbox',
+          items: [
+            {
+              name: 'Все',
+              checked: true
+            }, {
+              name: 'Гибридные',
+              checked: false
+            }, {
+              name: 'Складные',
+              checked: true
+            }, {
+              name: 'Электро',
+              checked: false
+            }
+          ]
+        }, {
+          title: 'Цвет',
+          type: 'color',
+          items: [
+            {
+              name: 'Красный',
+              hexCode: '#fe2a2a',
+              checked: false
+            }, {
+              name: 'Оранжевый',
+              hexCode: '#feac2a',
+              checked: true
+            }, {
+              name: 'Голубой',
+              hexCode: '#2fe1ec',
+              checked: false
+            }, {
+              name: 'Серый',
+              hexCode: '#aeaeae',
+              checked: true
+            }
+          ]
+        }, {
+          title: 'Материал рамы',
+          type: 'checkbox',
+          items: [
+            {
+              name: 'Сталь',
+              checked: false
+            }, {
+              name: 'Карбон',
+              checked: true
+            }, {
+              name: 'Алюминий',
+              checked: false
+            }
+          ]
+        }, {
+          title: 'Модельный ряд',
+          type: 'checkbox',
+          items: [
+            {
+              name: '2014',
+              checked: false
+            }, {
+              name: '2013',
+              checked: false
+            }, {
+              name: '2012',
+              checked: true
+            }
+          ]
+        }
+      ]
+    };
+  }
+};
+
+module.exports = CatalogFilterMixin;
+
+
+
+},{}],14:[function(require,module,exports){
+
+/** @jsx React.DOM */
 window.BgList = React.createClass({displayName: 'BgList',
   propTypes: {
     name: React.PropTypes.string.isRequired,
@@ -396,7 +812,7 @@ window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
 
 
 
-},{}],7:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ColorList = React.createClass({displayName: 'ColorList',
@@ -456,7 +872,7 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
 
 
 
-},{}],8:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Designer = React.createClass({displayName: 'Designer',
@@ -618,7 +1034,7 @@ window.Designer = React.createClass({displayName: 'Designer',
 
 
 
-},{}],9:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.FontList = React.createClass({displayName: 'FontList',
@@ -675,7 +1091,7 @@ window.FontSelect = React.createClass({displayName: 'FontSelect',
 
 
 
-},{}],10:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.LayoutList = React.createClass({displayName: 'LayoutList',
@@ -730,7 +1146,7 @@ window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
 
 
 
-},{}],11:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Toggle = React.createClass({displayName: 'Toggle',
@@ -758,7 +1174,7 @@ window.Toggle = React.createClass({displayName: 'Toggle',
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ValueSlider = React.createClass({displayName: 'ValueSlider',
@@ -806,7 +1222,7 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
@@ -979,7 +1395,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -1009,7 +1425,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1043,7 +1459,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -1052,7 +1468,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":15}],17:[function(require,module,exports){
+},{"./_base":23}],25:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1086,7 +1502,7 @@ module.exports = BaseStore;
 
 
 
-},{}],18:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -1148,7 +1564,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":17}],19:[function(require,module,exports){
+},{"./_base":25}],27:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -1157,7 +1573,7 @@ window.Routes = {
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -1252,7 +1668,7 @@ $(function() {
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -1290,7 +1706,7 @@ $(function() {
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -1327,7 +1743,7 @@ $(function() {
 
 
 
-},{}],23:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -1396,7 +1812,7 @@ $(function() {
 
 
 
-},{}],24:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -1416,7 +1832,7 @@ $(function() {
 
 
 
-},{}],25:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -1437,7 +1853,7 @@ $(function() {
 
 
 
-},{}],26:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -1481,7 +1897,7 @@ $(function() {
 
 
 
-},{}],27:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -1504,7 +1920,7 @@ $(function() {
 
 
 
-},{}],28:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -1565,7 +1981,7 @@ $(function() {
 
 
 
-},{}],29:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -1580,7 +1996,7 @@ $(function() {
 
 
 
-},{}],30:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1592,7 +2008,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":31}],31:[function(require,module,exports){
+},{"./lib/Dispatcher":39}],39:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1844,7 +2260,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":32}],32:[function(require,module,exports){
+},{"./invariant":40}],40:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

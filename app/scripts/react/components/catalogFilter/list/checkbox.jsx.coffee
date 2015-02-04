@@ -5,9 +5,10 @@
 CatalogFilterList_Checkbox = React.createClass
 
   propTypes:
-    title:     PropTypes.string.isRequired
-    paramName: PropTypes.string.isRequired
-    items:     PropTypes.array.isRequired
+    title:      PropTypes.string.isRequired
+    paramName:  PropTypes.string.isRequired
+    filterName: PropTypes.string.isRequired
+    items:      PropTypes.array.isRequired
 
   render: ->
     `<li className="b-full-filter__item">
@@ -24,7 +25,8 @@ CatalogFilterList_Checkbox = React.createClass
         <input type="checkbox"
                name={ that.getFieldName(item) }
                defaultChecked={ item.checked }
-               className="b-cbox__native" />
+               className="b-cbox__native"
+               onChange={ that.handleChange } />
         <div className="b-cbox__val">
           { item.name }
         </div>
@@ -35,6 +37,17 @@ CatalogFilterList_Checkbox = React.createClass
             </div>`
 
   getFieldName: (item) ->
-    "#{ @props.paramName }[#{ item.paramValue }]"
+    "#{ @props.filterName }[#{ @props.paramName }][#{ item.paramValue }]"
+
+  handleChange: (e) ->
+    elRect     = e.target.getBoundingClientRect()
+    offsetLeft = 15
+
+    filter     = $(@getDOMNode()).closest('form').serialize()
+    position =
+      left: elRect.right + offsetLeft
+      top:  elRect.top + document.body.scrollTop - elRect.height / 2
+
+    KioskEvents.emit KioskEvents.keys.commandTooltipShow(), position, filter
 
 module.exports = CatalogFilterList_Checkbox

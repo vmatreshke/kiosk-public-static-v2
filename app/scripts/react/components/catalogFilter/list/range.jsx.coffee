@@ -5,11 +5,12 @@
 CatalogFilterList_Range = React.createClass
 
   propTypes:
-    title:     PropTypes.string.isRequired
-    paramName: PropTypes.string.isRequired
-    units:     PropTypes.string
-    from:      PropTypes.number.isRequired
-    to:        PropTypes.number.isRequired
+    title:      PropTypes.string.isRequired
+    paramName:  PropTypes.string.isRequired
+    filterName: PropTypes.string.isRequired
+    units:      PropTypes.string
+    from:       PropTypes.number.isRequired
+    to:         PropTypes.number.isRequired
 
   getInitialState: ->
     from: @props.from
@@ -26,12 +27,14 @@ CatalogFilterList_Range = React.createClass
           'min': @state.from
           'max': @state.to
 
-    $(slider).on 'slide', @handleSlide
+    $(slider).on 'slide',  @handleSlide
+    $(slider).on 'change', @handleChange
 
   componentWillUnmount: ->
     slider = @refs.slider.getDOMNode()
 
-    $(slider).on 'off', @handleSlide
+    $(slider).on 'off',    @handleSlide
+    $(slider).on 'change', @handleChange
     $(slider).destroy()
 
   render: ->
@@ -39,9 +42,11 @@ CatalogFilterList_Range = React.createClass
       <div className="b-full-filter__item__title">
         { this.props.title }
       </div>
-      <div className="b-full-filter__widget">
+      <div className="b-full-filter__widget"
+           onClick={ this.handleClick }>
         <div className="b-full-filter__slider">
-          <div className="b-full-filter__slider__value">
+          <div ref="rangeValue"
+               className="b-full-filter__slider__value">
             { this.state.from }
             <span> – </span>
             { this.state.to } <span dangerouslySetInnerHTML={{ __html: this.props.units }} />
@@ -51,10 +56,10 @@ CatalogFilterList_Range = React.createClass
         </div>
       </div>
       <input type="hidden"
-             name={ this.props.paramName + '[from]'}
+             name={ this.props.filterName + '[' + this.props.paramName + '][from]'}
              value={ this.state.from } />
       <input type="hidden"
-             name={ this.props.paramName + '[to]'}
+             name={ this.props.filterName + '[' + this.props.paramName + '][to]'}
              value={ this.state.to } />
     </li>`
 
@@ -62,5 +67,16 @@ CatalogFilterList_Range = React.createClass
     @setState
       from: parseInt range[0]
       to:   parseInt range[1]
+
+  handleChange: ->
+    elRect     = @refs.rangeValue.getDOMNode().getBoundingClientRect()
+    offsetLeft = 15
+
+    filter   = $(@getDOMNode()).closest('form').serialize()
+    position =
+      left: elRect.right + offsetLeft
+      top:  elRect.top + document.body.scrollTop - elRect.height / 2
+
+    KioskEvents.emit KioskEvents.keys.commandTooltipShow(), position, filter
 
 module.exports = CatalogFilterList_Range

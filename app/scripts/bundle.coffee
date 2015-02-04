@@ -10,8 +10,9 @@ require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
 
-require './routes/api'
-require './routes/routes'
+window.Routes    = require './routes/routes'
+window.ApiRoutes = require './routes/api'
+
 # /*=============================
 # =            React            =
 # =============================*/
@@ -37,6 +38,9 @@ window.Tooltip = require './react/components/common/tooltip/tooltip'
 require './react/dispatchers/basket'
 require './react/actions/view/basket'
 require './react/stores/basket'
+window.Api               = require './react/api/api'
+window.KioskEvents       = require './react/controllers/events'
+window.TooltipController = require './react/controllers/tooltip'
 
 # /*-----  End of React  ------*/
 

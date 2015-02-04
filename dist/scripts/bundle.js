@@ -995,20 +995,25 @@ window.Designer = React.createClass({displayName: 'Designer',
     newState[option.props.name] = newValue;
     return this.setState(newState);
   },
-  _createDesignComponent: function(option) {
-    switch (option.type) {
+  _createDesignComponent: function(options) {
+    var componentOptions;
+    componentOptions = {};
+    componentOptions.onChange = this.handleChange.bind(this, options);
+    componentOptions.name = options.name;
+    componentOptions.options = options.props;
+    switch (options.type) {
       case 'ColorList':
-        return DesignerColorList({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return ColorListProxy({options: componentOptions});
       case 'LayoutList':
-        return DesignerLayoutList({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return LayoutListProxy({options: componentOptions});
       case 'BgList':
-        return DesignerBgList({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return BgListProxy({options: componentOptions});
       case 'FontList':
-        return DesignerFontList({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return FontListProxy({options: componentOptions});
       case 'ValueSlider':
-        return DesignerValueSlider({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return ValueSliderProxy({options: componentOptions});
       case 'Toggle':
-        return DesignerToggle({onChange: this.handleChange.bind(this, option), name: option.name, option: option.props});
+        return ToggleProxy({options: componentOptions});
     }
   },
   render: function() {
@@ -1027,20 +1032,19 @@ window.Designer = React.createClass({displayName: 'Designer',
   }
 });
 
-window.DesignerColorList = React.createClass({displayName: 'DesignerColorList',
+window.ColorListProxy = React.createClass({displayName: 'ColorListProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent, designVal;
-    designComponent = ColorList({onChange: this.props.onChange, name: this.props.option.name, colorSet: this.props.option.colorSet, value: this.props.option.value});
+    designComponent = ColorList({onChange: this.props.options.onChange, name: this.props.options.options.name, colorSet: this.props.options.options.colorSet, value: this.props.options.options.value});
     designVal = {
-      'background-color': this.props.option.colorSet[this.props.option.value]
+      'background-color': this.props.options.options.colorSet[this.props.options.options.value]
     };
     return React.DOM.div({className: "b-design-option__item"}, 
       React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
         React.DOM.div({className: "b-design-option__item__val"}, 
           React.DOM.div({className: "b-design-option__color", style: designVal})
         )
@@ -1050,18 +1054,17 @@ window.DesignerColorList = React.createClass({displayName: 'DesignerColorList',
   }
 });
 
-window.DesignerLayoutList = React.createClass({displayName: 'DesignerLayoutList',
+window.LayoutListProxy = React.createClass({displayName: 'LayoutListProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent, designVal;
-    designComponent = LayoutList({onChange: this.props.onChange, name: this.props.option.name, layoutSet: this.props.option.layoutSet, value: this.props.option.value});
+    designComponent = LayoutList({onChange: this.props.options.onChange, name: this.props.options.options.name, layoutSet: this.props.options.options.layoutSet, value: this.props.options.options.value});
     designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
     return React.DOM.div({className: "b-design-option__item"}, 
       React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
         React.DOM.div({className: "b-design-option__item__val"}, designVal)
       ), 
       React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
@@ -1069,18 +1072,17 @@ window.DesignerLayoutList = React.createClass({displayName: 'DesignerLayoutList'
   }
 });
 
-window.DesignerBgList = React.createClass({displayName: 'DesignerBgList',
+window.BgListProxy = React.createClass({displayName: 'BgListProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent, designVal;
-    designComponent = BgList({onChange: this.props.onChange, name: this.props.option.name, bgSet: this.props.option.bgSet, value: this.props.option.value});
+    designComponent = BgList({onChange: this.props.options.onChange, name: this.props.options.options.name, bgSet: this.props.options.options.bgSet, value: this.props.options.options.value});
     designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
     return React.DOM.div({className: "b-design-option__item"}, 
       React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
         React.DOM.div({className: "b-design-option__item__val"}, designVal)
       ), 
       React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
@@ -1088,46 +1090,43 @@ window.DesignerBgList = React.createClass({displayName: 'DesignerBgList',
   }
 });
 
-window.DesignerFontList = React.createClass({displayName: 'DesignerFontList',
+window.FontListProxy = React.createClass({displayName: 'FontListProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent;
-    designComponent = FontList({onChange: this.props.onChange, name: this.props.option.name, fontSet: this.props.option.fontSet, value: this.props.option.value});
+    designComponent = FontList({onChange: this.props.options.onChange, name: this.props.options.options.name, fontSet: this.props.options.options.fontSet, value: this.props.options.options.value});
     return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+      React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
       React.DOM.div({className: "b-design-option__item__val"}, designComponent)
       );
   }
 });
 
-window.DesignerValueSlider = React.createClass({displayName: 'DesignerValueSlider',
+window.ValueSliderProxy = React.createClass({displayName: 'ValueSliderProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent;
-    designComponent = ValueSlider({onChange: this.props.onChange, name: this.props.option.name, range: this.props.option.range, value: this.props.option.value, step: this.props.option.step});
+    designComponent = ValueSlider({onChange: this.props.options.onChange, name: this.props.options.options.name, range: this.props.options.options.range, value: this.props.options.options.value, step: this.props.options.options.step});
     return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+      React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
       React.DOM.div({className: "b-design-option__item__val"}, designComponent)
       );
   }
 });
 
-window.DesignerToggle = React.createClass({displayName: 'DesignerToggle',
+window.ToggleProxy = React.createClass({displayName: 'ToggleProxy',
   propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
   },
   render: function() {
     var designComponent;
-    designComponent = Toggle({onChange: this.props.onChange, name: this.props.option.name, value: this.props.option.value});
+    designComponent = Toggle({onChange: this.props.options.onChange, name: this.props.options.options.name, value: this.props.options.options.value});
     return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
+      React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
       React.DOM.div({className: "b-design-option__item__val"}, designComponent)
       );
   }

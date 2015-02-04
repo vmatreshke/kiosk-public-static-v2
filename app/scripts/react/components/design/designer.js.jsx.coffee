@@ -20,29 +20,36 @@ window.Designer = React.createClass
     @setState newState
 
   _createDesignComponent: (options) ->
-    componentOptions = {}
-    componentOptions.onChange = this.handleChange.bind(this, options)
-    componentOptions.name = options.name
-    componentOptions.options = options.props
-    
     switch options.type
       when 'ColorList'
-        `<ColorListProxy options={componentOptions}/>`
-
-      when 'LayoutList'
-        `<LayoutListProxy options={componentOptions}/>`
+        `<DesignerElementLayout name={options.name}>
+          <ColorList name={options.props.name} colorSet={options.props.colorSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'BgList'
-        `<BgListProxy options={componentOptions}/>`
+        `<DesignerElementLayout name={options.name}>
+          <BackgroundList name={options.props.name} bgSet={options.props.bgSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
+
+      when 'LayoutList'
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <LayoutList name={options.props.name} layoutSet={options.props.layoutSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
       
       when 'FontList'
-        `<FontListProxy options={componentOptions}/>`
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <FontList name={options.props.name} fontSet={options.props.fontSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'ValueSlider'
-        `<ValueSliderProxy options={componentOptions}/>`
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <ValueSlider name={options.props.name} step={options.props.step} range={options.props.range} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'Toggle'
-        `<ToggleProxy options={componentOptions}/>`
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <Toggle name={options.props.name} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
   render: ->
     designItems = _.map @props.options, (option) =>
@@ -55,83 +62,19 @@ window.Designer = React.createClass
         <button type="button" className="b-design-option__save">Сохранить</button>
       </div>`
 
-window.ColorListProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
+window.DesignerElementLayout = React.createClass
   render: ->
-    designComponent = `<ColorList onChange={this.props.options.onChange} name={this.props.options.options.name} colorSet={this.props.options.options.colorSet} value={this.props.options.options.value}/>`
-    designVal = 
-      'background-color': @props.options.options.colorSet[@props.options.options.value]
-    return `<div className="b-design-option__item">
-      <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.options.name}</span>
-        <div className="b-design-option__item__val">
-          <div className="b-design-option__color" style={designVal}></div>
-        </div>
-      </div>
-      <div className="b-design-option__item__available-params">{designComponent}</div>
-      </div>`
-
-window.LayoutListProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
-  render: ->
-    designComponent = `<LayoutList onChange={this.props.options.onChange} name={this.props.options.options.name} layoutSet={this.props.options.options.layoutSet} value={this.props.options.options.value}/>`
-    designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
-    return `<div className="b-design-option__item">
-      <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.options.name}</span>
-        <div className="b-design-option__item__val">{designVal}</div>
-      </div>
-      <div className="b-design-option__item__available-params">{designComponent}</div>
-      </div>`
-
-window.BgListProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
-  render: ->
-    designComponent = `<BgList onChange={this.props.options.onChange} name={this.props.options.options.name} bgSet={this.props.options.options.bgSet} value={this.props.options.options.value}/>`
-    designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
-    return `<div className="b-design-option__item">
-      <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.options.name}</span>
-        <div className="b-design-option__item__val">{designVal}</div>
-      </div>
-      <div className="b-design-option__item__available-params">{designComponent}</div>
-      </div>`
-
-window.FontListProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
-  render: ->
-    designComponent = `<FontList onChange={this.props.options.onChange} name={this.props.options.options.name} fontSet={this.props.options.options.fontSet} value={this.props.options.options.value}/>`
-    return `<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.options.name}</span>
-      <div className="b-design-option__item__val">{designComponent}</div>
-      </div>`
-
-window.ValueSliderProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
-  render: ->
-    designComponent = `<ValueSlider onChange={this.props.options.onChange} name={this.props.options.options.name} range={this.props.options.options.range} value={this.props.options.options.value} step={this.props.options.options.step}/>`
-    return`<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.options.name}</span>
-      <div className="b-design-option__item__val">{designComponent}</div>
-      </div>`
-
-window.ToggleProxy = React.createClass
-  propTypes:
-    options: React.PropTypes.object.isRequired
-
-  render: ->
-    designComponent = `<Toggle onChange={this.props.options.onChange} name={this.props.options.options.name} value={this.props.options.options.value}/>`
-    return `<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.options.name}</span>
-      <div className="b-design-option__item__val">{designComponent}</div>
-      </div>`
+    if @props.type? && @props.type == 'simplified'
+      return `<div className="b-design-option__item">
+        <span className="b-design-option__item__name">{this.props.name}</span>
+        <div className="b-design-option__item__val">{this.props.children}</div>
+        </div>`
+    else
+      return `<div className="b-design-option__item">
+          <div className="b-design-option__item__current-params">
+            <span className="b-design-option__item__name">{this.props.name}</span>
+            <div className="b-design-option__item__val">
+            </div>
+          </div>
+          <div className="b-design-option__item__available-params">{this.props.children}</div>
+          </div>`

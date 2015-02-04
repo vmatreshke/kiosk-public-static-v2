@@ -21,9 +21,9 @@ require('./shared/mobile_navigation');
 
 require('./shared/checkout');
 
-require('./routes/api');
+window.Routes = require('./routes/routes');
 
-require('./routes/routes');
+window.ApiRoutes = require('./routes/api');
 
 require('./react/components/basket/button');
 
@@ -57,11 +57,13 @@ require('./react/actions/view/basket');
 
 require('./react/stores/basket');
 
+window.Api = require('./react/api/api');
+
 window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/catalogFilter/catalogFilter":7,"./react/components/common/tooltip/tooltip":14,"./react/components/design/bglist":15,"./react/components/design/colorlist":16,"./react/components/design/designer":17,"./react/components/design/fontlist":18,"./react/components/design/layoutlist":19,"./react/components/design/toggle":20,"./react/components/design/valueslider":21,"./react/components/instagram/instagram":22,"./react/components/product/add_to_basket_button":23,"./react/dispatchers/basket":25,"./react/stores/basket":27,"./routes/api":28,"./routes/routes":29,"./shared/app":30,"./shared/application_slider":31,"./shared/cart":32,"./shared/checkout":33,"./shared/jump":34,"./shared/lightbox":35,"./shared/load_more":36,"./shared/mobile_navigation":37,"./shared/product_images_slider":38,"./shared/theme_switcher":39}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":5,"./react/components/basket/button":6,"./react/components/basket/popup":7,"./react/components/catalogFilter/catalogFilter":9,"./react/components/common/tooltip/tooltip":16,"./react/components/design/bglist":17,"./react/components/design/colorlist":18,"./react/components/design/designer":19,"./react/components/design/fontlist":20,"./react/components/design/layoutlist":21,"./react/components/design/toggle":22,"./react/components/design/valueslider":23,"./react/components/instagram/instagram":24,"./react/components/product/add_to_basket_button":25,"./react/dispatchers/basket":27,"./react/stores/basket":29,"./routes/api":30,"./routes/routes":31,"./shared/app":32,"./shared/application_slider":33,"./shared/cart":34,"./shared/checkout":35,"./shared/jump":36,"./shared/lightbox":37,"./shared/load_more":38,"./shared/mobile_navigation":39,"./shared/product_images_slider":40,"./shared/theme_switcher":41}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -109,7 +111,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":40,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":42,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -148,6 +150,107 @@ window.BasketActions = {
 
 
 },{}],4:[function(require,module,exports){
+var Api, ProductsViewActions;
+
+Api = require('../../api/api');
+
+ProductsViewActions = {
+  filteredCount: function(filter) {
+    return Api.products.filteredCount(filter);
+  }
+};
+
+module.exports = ProductsViewActions;
+
+
+
+},{"../../api/api":5}],5:[function(require,module,exports){
+var Api, TIMEOUT, abortPendingRequests, deleteRequest, getRequest, postRequest, putRequest, request, _pendingRequests;
+
+TIMEOUT = 10000;
+
+_pendingRequests = {};
+
+abortPendingRequests = function(key) {
+  if (_pendingRequests[key]) {
+    _pendingRequests[key].abort();
+    return _pendingRequests[key] = null;
+  }
+};
+
+request = function(_method, url, data) {
+  var headers, method;
+  if (data == null) {
+    data = {};
+  }
+  headers = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-Vendor-Key': 'c3d753f03d73251bb4aa707e077ec8e7'
+  };
+  method = (function() {
+    switch (_method) {
+      case 'GET':
+        return 'GET';
+      case 'POST':
+      case 'PUT':
+      case 'DELETE':
+        return 'POST';
+      default:
+        return 'GET';
+    }
+  })();
+  _.extend(data, {
+    _method: _method
+  });
+  return $.ajax({
+    url: url,
+    method: method,
+    data: data,
+    headers: headers,
+    timeout: TIMEOUT,
+    xhrFields: {
+      withCredentials: true,
+      crossDomain: true
+    }
+  });
+};
+
+getRequest = function(url, data) {
+  return request('GET', url, data);
+};
+
+postRequest = function(url, data) {
+  return request('POST', url, data);
+};
+
+putRequest = function(url, data) {
+  return request('PUT', url, data);
+};
+
+deleteRequest = function(url, data) {
+  return request('DELETE', url, data);
+};
+
+Api = {
+  products: {
+    filteredCount: function(filter) {
+      var data, key, url;
+      url = ApiRoutes.productsFilteredCount();
+      key = 'productsFilteredCount';
+      data = {
+        f: filter
+      };
+      abortPendingRequests(key);
+      return _pendingRequests[key] = getRequest(url, data);
+    }
+  }
+};
+
+module.exports = Api;
+
+
+
+},{}],6:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.BasketButton = React.createClass({displayName: 'BasketButton',
@@ -206,7 +309,7 @@ window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty'
 
 
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.BasketPopup = React.createClass({displayName: 'BasketPopup',
@@ -349,7 +452,7 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 
 
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilter_ShowResultsButton, PropTypes;
@@ -372,7 +475,7 @@ module.exports = CatalogFilter_ShowResultsButton;
 
 
 
-},{}],7:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList, CatalogFilterMixin, PropTypes;
@@ -408,7 +511,7 @@ module.exports = CatalogFilter;
 
 
 
-},{"./list":8,"./mixins/catalogFilter":13}],8:[function(require,module,exports){
+},{"./list":10,"./mixins/catalogFilter":15}],10:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, CatalogFilter_ShowResultsButton, PropTypes;
@@ -480,7 +583,7 @@ module.exports = CatalogFilterList;
 
 
 
-},{"./buttons/showResults":6,"./list/checkbox":9,"./list/color":10,"./list/range":11,"./list/selectedOptions":12}],9:[function(require,module,exports){
+},{"./buttons/showResults":8,"./list/checkbox":11,"./list/color":12,"./list/range":13,"./list/selectedOptions":14}],11:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList_Checkbox, PropTypes;
@@ -528,7 +631,7 @@ module.exports = CatalogFilterList_Checkbox;
 
 
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList_Color, PropTypes;
@@ -576,7 +679,7 @@ module.exports = CatalogFilterList_Color;
 
 
 
-},{}],11:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList_Range, PropTypes;
@@ -652,7 +755,7 @@ module.exports = CatalogFilterList_Range;
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList_SelectedOptions;
@@ -674,7 +777,7 @@ module.exports = CatalogFilterList_SelectedOptions;
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 var CatalogFilterMixin;
 
 CatalogFilterMixin = {
@@ -809,17 +912,25 @@ module.exports = CatalogFilterMixin;
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var PropTypes, Tooltip;
+var ERROR_STATE, LOADED_STATE, LOADING_STATE, ProductsViewActions, PropTypes, Tooltip;
+
+ProductsViewActions = require('../../../actions/view/products');
 
 PropTypes = React.PropTypes;
+
+LOADING_STATE = 'loading';
+
+LOADED_STATE = 'loaded';
+
+ERROR_STATE = 'error';
 
 Tooltip = React.createClass({displayName: 'Tooltip',
   propTypes: {
     title: PropTypes.string,
-    url: PropTypes.string,
+    filter: PropTypes.object,
     position: PropTypes.shape({
       left: PropTypes.number,
       top: PropTypes.number
@@ -827,14 +938,51 @@ Tooltip = React.createClass({displayName: 'Tooltip',
   },
   getDefaultProps: function() {
     return {
-      title: 'Показать',
-      url: '#'
+      title: 'Показать'
     };
+  },
+  getInitialState: function() {
+    return {
+      currentState: LOADING_STATE,
+      count: null
+    };
+  },
+  componentDidMount: function() {
+    return ProductsViewActions.filteredCount().then((function(_this) {
+      return function(count) {
+        return _this.setState({
+          currentState: LOADED_STATE,
+          count: count
+        });
+      };
+    })(this)).fail(this.activateErrorState);
   },
   render: function() {
     return React.DOM.div({className: "b-tooltip"}, 
-       this.props.title, " ", React.DOM.a({href:  this.props.url}, "12 вариантов")
+       this.renderContent() 
     );
+  },
+  renderContent: function() {
+    switch (this.state.currentState) {
+      case LOADING_STATE:
+        return 'Загрузка..';
+      case ERROR_STATE:
+        return 'Ошибка загрузки:(';
+      case LOADED_STATE:
+        return React.DOM.span(null, 
+           this.props.title, " ", React.DOM.a({href:  this.props.url},  this.state.count, " вариантов")
+        );
+    }
+  },
+  activateLoadedState: function() {
+    return this.setState({
+      currentState: LOADED_STATE
+    });
+  },
+  activateErrorState: function() {
+    return this.setState({
+      currentState: ERROR_STATE
+    });
   }
 });
 
@@ -842,7 +990,7 @@ module.exports = Tooltip;
 
 
 
-},{}],15:[function(require,module,exports){
+},{"../../../actions/view/products":4}],17:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.BgList = React.createClass({displayName: 'BgList',
@@ -895,7 +1043,7 @@ window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ColorList = React.createClass({displayName: 'ColorList',
@@ -955,7 +1103,7 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
 
 
 
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Designer = React.createClass({displayName: 'Designer',
@@ -1117,7 +1265,7 @@ window.Designer = React.createClass({displayName: 'Designer',
 
 
 
-},{}],18:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.FontList = React.createClass({displayName: 'FontList',
@@ -1174,7 +1322,7 @@ window.FontSelect = React.createClass({displayName: 'FontSelect',
 
 
 
-},{}],19:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.LayoutList = React.createClass({displayName: 'LayoutList',
@@ -1229,7 +1377,7 @@ window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Toggle = React.createClass({displayName: 'Toggle',
@@ -1257,7 +1405,7 @@ window.Toggle = React.createClass({displayName: 'Toggle',
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ValueSlider = React.createClass({displayName: 'ValueSlider',
@@ -1305,7 +1453,7 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
@@ -1478,7 +1626,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],23:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -1508,7 +1656,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],24:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1542,7 +1690,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],25:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -1551,7 +1699,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":24}],26:[function(require,module,exports){
+},{"./_base":26}],28:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1585,7 +1733,7 @@ module.exports = BaseStore;
 
 
 
-},{}],27:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -1647,7 +1795,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":26}],28:[function(require,module,exports){
+},{"./_base":28}],30:[function(require,module,exports){
 var ApiRoutes;
 
 ApiRoutes = {
@@ -1656,9 +1804,11 @@ ApiRoutes = {
   }
 };
 
+module.exports = ApiRoutes;
 
 
-},{}],29:[function(require,module,exports){
+
+},{}],31:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -1667,7 +1817,7 @@ window.Routes = {
 
 
 
-},{}],30:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -1762,7 +1912,7 @@ $(function() {
 
 
 
-},{}],31:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -1800,7 +1950,7 @@ $(function() {
 
 
 
-},{}],32:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -1837,7 +1987,7 @@ $(function() {
 
 
 
-},{}],33:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -1906,7 +2056,7 @@ $(function() {
 
 
 
-},{}],34:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -1926,7 +2076,7 @@ $(function() {
 
 
 
-},{}],35:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -1947,7 +2097,7 @@ $(function() {
 
 
 
-},{}],36:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -1991,7 +2141,7 @@ $(function() {
 
 
 
-},{}],37:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -2014,7 +2164,7 @@ $(function() {
 
 
 
-},{}],38:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -2075,7 +2225,7 @@ $(function() {
 
 
 
-},{}],39:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -2090,7 +2240,7 @@ $(function() {
 
 
 
-},{}],40:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2102,7 +2252,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":41}],41:[function(require,module,exports){
+},{"./lib/Dispatcher":43}],43:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2354,7 +2504,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":42}],42:[function(require,module,exports){
+},{"./invariant":44}],44:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

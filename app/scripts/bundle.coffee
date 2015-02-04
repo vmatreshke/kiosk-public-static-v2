@@ -38,7 +38,9 @@ window.Tooltip = require './react/components/common/tooltip/tooltip'
 require './react/dispatchers/basket'
 require './react/actions/view/basket'
 require './react/stores/basket'
-window.Api = require './react/api/api'
+window.Api               = require './react/api/api'
+window.KioskEvents       = require './react/controllers/events'
+window.TooltipController = require './react/controllers/tooltip'
 
 # /*-----  End of React  ------*/
 

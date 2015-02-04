@@ -10,7 +10,8 @@ CatalogFilter_ShowResultsButton   = require './buttons/showResults'
 CatalogFilterList = React.createClass
 
   propTypes:
-    options: PropTypes.array.isRequired
+    options:    PropTypes.array.isRequired
+    filterName: PropTypes.string.isRequired
 
   render: ->
     `<ul className="b-full-filter__list-wrap">
@@ -22,6 +23,7 @@ CatalogFilterList = React.createClass
     </ul>`
 
   renderListItems: ->
+    that = @
     listItems = @props.options.map (item, i) ->
       switch item.type
         when 'checkbox'
@@ -30,6 +32,7 @@ CatalogFilterList = React.createClass
           `<CatalogFilterList_Checkbox
                title={ title }
                paramName={ paramName }
+               filterName={ that.props.filterName }
                items={ items }
                key={ i } />`
         when 'range'
@@ -38,6 +41,7 @@ CatalogFilterList = React.createClass
           `<CatalogFilterList_Range
                title={ title }
                paramName={ paramName }
+               filterName={ that.props.filterName }
                units={ units }
                from={ from }
                to={ to }
@@ -48,6 +52,7 @@ CatalogFilterList = React.createClass
           `<CatalogFilterList_Color
               title={ title }
               paramName={ paramName }
+              filterName={ that.props.filterName }
               items={ items }
               key={ i } />`
         else console.warn? 'Unknown item type of CatalogFilterList component', item

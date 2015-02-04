@@ -6,10 +6,14 @@ abortPendingRequests = (key) ->
     _pendingRequests[key].abort()
     _pendingRequests[key] = null
 
+vendorKey = ->
+  #FIXME: get real vendor key
+  'c3d753f03d73251bb4aa707e077ec8e7'
+
 request = (_method, url, data = {}) ->
   headers =
     'X-Requested-With': 'XMLHttpRequest'
-    'X-Vendor-Key':     'c3d753f03d73251bb4aa707e077ec8e7'
+    'X-Vendor-Key': vendorKey()
 
   method = switch _method
     when 'GET'                   then 'GET'
@@ -37,11 +41,10 @@ Api =
 
   products:
     filteredCount: (filter) ->
-      url  = ApiRoutes.productsFilteredCount()
+      url  = ApiRoutes.productsFilteredCount filter
       key  = 'productsFilteredCount'
-      data = f: filter
 
       abortPendingRequests key
-      _pendingRequests[key] = getRequest url, data
+      _pendingRequests[key] = getRequest url
 
 module.exports = Api

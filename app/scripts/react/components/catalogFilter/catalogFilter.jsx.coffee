@@ -8,7 +8,11 @@ window.CatalogFilter = React.createClass
   mixins: [CatalogFilterMixin]
 
   propTypes:
-    options: PropTypes.array.isRequired
+    options:    PropTypes.array.isRequired
+    filterName: PropTypes.string
+
+  getDefaultProps: ->
+    filterName: 'f'
 
   render: ->
    `<div className="b-full-filter">
@@ -21,7 +25,9 @@ window.CatalogFilter = React.createClass
           Скрыть фильтр
         </span>
       </label>
-      <CatalogFilterList options={ this.props.options } />
+      <CatalogFilterList
+          options={ this.props.options }
+          filterName={ this.props.filterName } />
     </div>`
 
 module.exports = CatalogFilter

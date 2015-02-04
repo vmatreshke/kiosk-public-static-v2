@@ -6036,7 +6036,41 @@ html.mm-opened.mm-black .mm-page {
 .b-breadcrumbs {
   font-size: 1rem; }
 
+<<<<<<< HEAD
 /* line 3, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/mmenu */
+=======
+/* line 1, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-tooltip */
+.b-tooltip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 3px;
+  background-color: #4e4e4e;
+  color: #fff;
+  font-size: 0.857rem;
+  padding: 9px 0.857rem;
+  margin: 0 0 0 19px;
+  white-space: nowrap;
+  z-index: 5; }
+  /* line 13, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-tooltip */
+  .b-tooltip:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4.5px 5px 4.5px 0;
+    border-color: transparent #4e4e4e transparent transparent;
+    position: absolute;
+    right: 100%;
+    top: 13px; }
+  /* line 23, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-tooltip */
+  .b-tooltip a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid; }
+
+/* line 3, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/mmenu */
+>>>>>>> Tooltip component [#87495274]
 .b-page .mm-list > li > a, .b-page .mm-list > li > span {
   color: #fff;
   padding: 23px 16px;
@@ -6741,17 +6775,29 @@ html {
   /* line 124, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-full-filter__notifiction {
     font-size: 1em; }
+<<<<<<< HEAD
   /* line 128, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .owl-pagination {
     display: inline-block;
     background: none; }
   /* line 132, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+  /* line 127, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-tooltip {
+    font-size: 1em; }
+  /* line 130, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .owl-pagination {
+    display: inline-block;
+    background: none; }
+  /* line 134, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
   .b-page_theme-cc .owl-theme .owl-controls .owl-page span {
     width: 6px;
     height: 6px; }
   @media only screen and (max-width: 480px) {
     .b-page_theme-cc .b-feature {
       margin: 15px 0 20px; } }
+<<<<<<< HEAD
   /* line 140, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
   .b-page_theme-cc .b-item-full {
     margin-top: 0; }
@@ -6765,6 +6811,21 @@ html {
     .b-page_theme-cc .b-item-full__header {
       text-align: center; }
     /* line 152, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+  /* line 142, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-item-full {
+    margin-top: 0; }
+    /* line 145, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__gallery, .b-page_theme-cc .b-item-full__description {
+      width: 100%; }
+    /* line 148, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__gallery {
+      margin-bottom: 20px; }
+    /* line 151, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__header {
+      text-align: center; }
+    /* line 154, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
     .b-page_theme-cc .b-item-full__title {
       margin: 12px 20px 8px;
       font-size: 3.214em;
@@ -6773,6 +6834,7 @@ html {
         .b-page_theme-cc .b-item-full__title {
           margin: 12px 10px 8px;
           font-size: 2em; } }
+<<<<<<< HEAD
     /* line 161, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-item-full__text_intro {
       font-size: 1.357em; }
@@ -6799,10 +6861,39 @@ html {
       .b-page_theme-cc .b-characteristics li:before {
         display: none; }
     /* line 180, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+    /* line 163, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__text_intro {
+      font-size: 1.357em; }
+    /* line 165, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__text_etc {
+      font-size: 1em; }
+      /* line 167, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+      .b-page_theme-cc .b-item-full__text_etc h2 {
+        margin: 0 0 12px;
+        font-size: 1.429em; }
+      /* line 170, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+      .b-page_theme-cc .b-item-full__text_etc p {
+        margin: 0 0 10px; }
+    /* line 173, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-item-full__price {
+      font-size: 2.429em; }
+  /* line 176, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-characteristics {
+    font-size: 1em; }
+    /* line 178, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-characteristics li {
+      margin: 0 0 12px; }
+      /* line 180, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+      .b-page_theme-cc .b-characteristics li:before {
+        display: none; }
+    /* line 182, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
     .b-page_theme-cc .b-characteristics__name {
       width: 105px;
       float: left;
       color: #999; }
+<<<<<<< HEAD
     /* line 184, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-characteristics__val {
       margin-left: 120px;
@@ -6812,10 +6903,22 @@ html {
     background-color: #242427;
     color: #7d7d7d; }
     /* line 191, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+    /* line 186, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-characteristics__val {
+      margin-left: 120px;
+      display: block; }
+  /* line 190, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-footer {
+    background-color: #242427;
+    color: #7d7d7d; }
+    /* line 193, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
     .b-page_theme-cc .b-footer__link {
       font-size: 1em;
       font-weight: bold;
       color: #fff; }
+<<<<<<< HEAD
       /* line 195, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
       .b-page_theme-cc .b-footer__link:hover {
         color: #7d7d7d; }
@@ -6823,11 +6926,21 @@ html {
   .b-page_theme-cc .b-cart__title {
     border: none; }
   /* line 203, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+      /* line 197, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+      .b-page_theme-cc .b-footer__link:hover {
+        color: #7d7d7d; }
+  /* line 201, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-cart__title {
+    border: none; }
+  /* line 205, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
   .b-page_theme-cc .b-cart__action__code {
     border-color: #cbcbcb;
     border-radius: 2em;
     padding-top: 10px;
     padding-bottom: 9px; }
+<<<<<<< HEAD
     /* line 208, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
     .b-page_theme-cc .b-cart__action__code:focus {
       outline: none;
@@ -6836,6 +6949,16 @@ html {
   .b-page_theme-cc .b-cart__message {
     margin-top: 10px; }
   /* line 216, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/theme/cc */
+=======
+    /* line 210, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+    .b-page_theme-cc .b-cart__action__code:focus {
+      outline: none;
+      border-color: #ef5a61; }
+  /* line 214, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+  .b-page_theme-cc .b-cart__message {
+    margin-top: 10px; }
+  /* line 218, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/theme/cc */
+>>>>>>> Tooltip component [#87495274]
   .b-page_theme-cc .b-paginator__item, .b-page_theme-cc .pagination .next a, .pagination .next .b-page_theme-cc a, .b-page_theme-cc .pagination .prev a, .pagination .prev .b-page_theme-cc a, .b-page_theme-cc .pagination .first a, .pagination .first .b-page_theme-cc a, .b-page_theme-cc .pagination .last a, .pagination .last .b-page_theme-cc a, .b-page_theme-cc .pagination .page a, .pagination .page .b-page_theme-cc a {
     padding: 0 6px;
     min-width: 22px;

@@ -10,6 +10,7 @@ require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
 
+require './routes/api'
 require './routes/routes'
 # /*=============================
 # =            React            =
@@ -30,6 +31,8 @@ require './react/components/design/valueslider'
 require './react/components/design/layoutlist'
 
 require './react/components/catalogFilter/catalogFilter'
+
+window.Tooltip = require './react/components/common/tooltip/tooltip'
 
 require './react/dispatchers/basket'
 require './react/actions/view/basket'

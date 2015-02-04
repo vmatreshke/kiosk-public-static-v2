@@ -5674,16 +5674,19 @@ html.mm-opened.mm-black .mm-page {
     border-radius: 0 0 3px 3px;
     padding: 5px;
     margin: -1px 0 1px; }
-/* line 59, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+/* line 60, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+.b-form textarea + .b-alert, .b-form textarea + .alert, .b-form textarea + .help-block {
+  margin-top: -6px; }
+/* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
 .b-form label {
   display: block;
   margin: 0 0 7px; }
-/* line 63, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+/* line 67, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
 .b-form__radio {
   display: block;
   padding-left: 20px;
   position: relative; }
-  /* line 67, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
+  /* line 71, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-form */
   .b-form__radio input {
     position: absolute;
     top: 2px;
@@ -6186,17 +6189,26 @@ html {
   line-height: 1.42857;
   -webkit-font-smoothing: antialiased; }
   /* line 25, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+  .b-page__content > .alert {
+    max-width: 916px;
+    margin: 20px auto; }
+    /* line 28, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    .b-page__content > .alert .close {
+      color: #fff;
+      float: right;
+      cursor: pointer; }
+  /* line 32, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
   .b-page__content__inner {
     max-width: 1010px;
     margin: 0 auto;
     transition: background-color 0.4s linear; }
-    /* line 29, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 36, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner:first-child {
       margin-top: 15px; }
-    /* line 31, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 38, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner:last-child {
       margin-bottom: 15px; }
-    /* line 33, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 40, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_slider {
       padding: 0 35px;
       box-sizing: border-box; }
@@ -6208,10 +6220,10 @@ html {
         .b-page__content__inner_slider {
           padding-left: 0;
           padding-right: 0; } }
-    /* line 39, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 46, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_slider-max-width {
       max-width: 100%; }
-    /* line 41, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
+    /* line 48, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/b-page */
     .b-page__content__inner_footer {
       padding-top: 70px; }
 

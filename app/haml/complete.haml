@@ -6,7 +6,12 @@
     .b-page__content
       .b-page__content__inner.b-page__content__inner_navbar
         +include 'app/haml/shared/_navbar.haml'
-      
+
+      .alert.alert-danger
+        %a.close{'data-dismiss': 'alert'} ×
+        #flash_alert
+          Добавьте товары в корзину для оформления заказа
+
       .b-page__content__inner.b-page__content__inner_content
         %section.b-cart
           .b-cart__content

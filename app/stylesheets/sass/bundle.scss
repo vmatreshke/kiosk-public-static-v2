@@ -71,14 +71,14 @@
 @import "block/b-nav"; // Основная навигация по сайту
 @import "block/b-footer"; // Подвал сайта
 
-@import "block/b-design-option"; // Попап смены диза
-
 //Themes
 @import "block/theme/dark"; // Темная тема
 @import "block/theme/wannabe"; // Вонаби тема
 @import "block/theme/sugar"; // Сахар тема
 @import "block/theme/etc"; // Etc тема
 @import "block/theme/cc"; // cc тема
+
+@import "block/b-design-option"; // Попап смены диза
 
 @import "demo"; // Login demo page
 @import "block/design-test"; //Design editor test

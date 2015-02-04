@@ -19,25 +19,30 @@ window.Designer = React.createClass
     newState[option.props.name] = newValue
     @setState newState
 
-  _createDesignComponent: (option) ->
-    switch option.type
+  _createDesignComponent: (options) ->
+    componentOptions = {}
+    componentOptions.onChange = this.handleChange.bind(this, options)
+    componentOptions.name = options.name
+    componentOptions.options = options.props
+    
+    switch options.type
       when 'ColorList'
-        `<DesignerColorList onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<ColorListProxy options={componentOptions}/>`
 
       when 'LayoutList'
-        `<DesignerLayoutList onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<LayoutListProxy options={componentOptions}/>`
 
       when 'BgList'
-        `<DesignerBgList onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<BgListProxy options={componentOptions}/>`
       
       when 'FontList'
-        `<DesignerFontList onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<FontListProxy options={componentOptions}/>`
 
       when 'ValueSlider'
-        `<DesignerValueSlider onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<ValueSliderProxy options={componentOptions}/>`
 
       when 'Toggle'
-        `<DesignerToggle onChange={this.handleChange.bind(this, option)} name={option.name} option={option.props}/>`
+        `<ToggleProxy options={componentOptions}/>`
 
   render: ->
     designItems = _.map @props.options, (option) =>
@@ -50,18 +55,17 @@ window.Designer = React.createClass
         <button type="button" className="b-design-option__save">Сохранить</button>
       </div>`
 
-window.DesignerColorList = React.createClass
+window.ColorListProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<ColorList onChange={this.props.onChange} name={this.props.option.name} colorSet={this.props.option.colorSet} value={this.props.option.value}/>`
+    designComponent = `<ColorList onChange={this.props.options.onChange} name={this.props.options.options.name} colorSet={this.props.options.options.colorSet} value={this.props.options.options.value}/>`
     designVal = 
-      'background-color': @props.option.colorSet[@props.option.value]
+      'background-color': @props.options.options.colorSet[@props.options.options.value]
     return `<div className="b-design-option__item">
       <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.name}</span>
+        <span className="b-design-option__item__name">{this.props.options.name}</span>
         <div className="b-design-option__item__val">
           <div className="b-design-option__color" style={designVal}></div>
         </div>
@@ -69,70 +73,65 @@ window.DesignerColorList = React.createClass
       <div className="b-design-option__item__available-params">{designComponent}</div>
       </div>`
 
-window.DesignerLayoutList = React.createClass
+window.LayoutListProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<LayoutList onChange={this.props.onChange} name={this.props.option.name} layoutSet={this.props.option.layoutSet} value={this.props.option.value}/>`
+    designComponent = `<LayoutList onChange={this.props.options.onChange} name={this.props.options.options.name} layoutSet={this.props.options.options.layoutSet} value={this.props.options.options.value}/>`
     designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
     return `<div className="b-design-option__item">
       <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.name}</span>
+        <span className="b-design-option__item__name">{this.props.options.name}</span>
         <div className="b-design-option__item__val">{designVal}</div>
       </div>
       <div className="b-design-option__item__available-params">{designComponent}</div>
       </div>`
 
-window.DesignerBgList = React.createClass
+window.BgListProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<BgList onChange={this.props.onChange} name={this.props.option.name} bgSet={this.props.option.bgSet} value={this.props.option.value}/>`
+    designComponent = `<BgList onChange={this.props.options.onChange} name={this.props.options.options.name} bgSet={this.props.options.options.bgSet} value={this.props.options.options.value}/>`
     designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
     return `<div className="b-design-option__item">
       <div className="b-design-option__item__current-params">
-        <span className="b-design-option__item__name">{this.props.name}</span>
+        <span className="b-design-option__item__name">{this.props.options.name}</span>
         <div className="b-design-option__item__val">{designVal}</div>
       </div>
       <div className="b-design-option__item__available-params">{designComponent}</div>
       </div>`
 
-window.DesignerFontList = React.createClass
+window.FontListProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<FontList onChange={this.props.onChange} name={this.props.option.name} fontSet={this.props.option.fontSet} value={this.props.option.value}/>`
+    designComponent = `<FontList onChange={this.props.options.onChange} name={this.props.options.options.name} fontSet={this.props.options.options.fontSet} value={this.props.options.options.value}/>`
     return `<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.name}</span>
+      <span className="b-design-option__item__name">{this.props.options.name}</span>
       <div className="b-design-option__item__val">{designComponent}</div>
       </div>`
 
-window.DesignerValueSlider = React.createClass
+window.ValueSliderProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<ValueSlider onChange={this.props.onChange} name={this.props.option.name} range={this.props.option.range} value={this.props.option.value} step={this.props.option.step}/>`
+    designComponent = `<ValueSlider onChange={this.props.options.onChange} name={this.props.options.options.name} range={this.props.options.options.range} value={this.props.options.options.value} step={this.props.options.options.step}/>`
     return`<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.name}</span>
+      <span className="b-design-option__item__name">{this.props.options.name}</span>
       <div className="b-design-option__item__val">{designComponent}</div>
       </div>`
 
-window.DesignerToggle = React.createClass
+window.ToggleProxy = React.createClass
   propTypes:
-    name: React.PropTypes.string.isRequired
-    option: React.PropTypes.array.isRequired
+    options: React.PropTypes.object.isRequired
 
   render: ->
-    designComponent = `<Toggle onChange={this.props.onChange} name={this.props.option.name} value={this.props.option.value}/>`
+    designComponent = `<Toggle onChange={this.props.options.onChange} name={this.props.options.options.name} value={this.props.options.options.value}/>`
     return `<div className="b-design-option__item">
-      <span className="b-design-option__item__name">{this.props.name}</span>
+      <span className="b-design-option__item__name">{this.props.options.name}</span>
       <div className="b-design-option__item__val">{designComponent}</div>
       </div>`

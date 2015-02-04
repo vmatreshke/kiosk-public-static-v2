@@ -21,6 +21,8 @@ require('./shared/mobile_navigation');
 
 require('./shared/checkout');
 
+require('./routes/api');
+
 require('./routes/routes');
 
 require('./react/components/basket/button');
@@ -47,6 +49,8 @@ require('./react/components/design/layoutlist');
 
 require('./react/components/catalogFilter/catalogFilter');
 
+window.Tooltip = require('./react/components/common/tooltip/tooltip');
+
 require('./react/dispatchers/basket');
 
 require('./react/actions/view/basket');
@@ -57,7 +61,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/catalogFilter/catalogFilter":7,"./react/components/design/bglist":14,"./react/components/design/colorlist":15,"./react/components/design/designer":16,"./react/components/design/fontlist":17,"./react/components/design/layoutlist":18,"./react/components/design/toggle":19,"./react/components/design/valueslider":20,"./react/components/instagram/instagram":21,"./react/components/product/add_to_basket_button":22,"./react/dispatchers/basket":24,"./react/stores/basket":26,"./routes/routes":27,"./shared/app":28,"./shared/application_slider":29,"./shared/cart":30,"./shared/checkout":31,"./shared/jump":32,"./shared/lightbox":33,"./shared/load_more":34,"./shared/mobile_navigation":35,"./shared/product_images_slider":36,"./shared/theme_switcher":37}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/catalogFilter/catalogFilter":7,"./react/components/common/tooltip/tooltip":14,"./react/components/design/bglist":15,"./react/components/design/colorlist":16,"./react/components/design/designer":17,"./react/components/design/fontlist":18,"./react/components/design/layoutlist":19,"./react/components/design/toggle":20,"./react/components/design/valueslider":21,"./react/components/instagram/instagram":22,"./react/components/product/add_to_basket_button":23,"./react/dispatchers/basket":25,"./react/stores/basket":27,"./routes/api":28,"./routes/routes":29,"./shared/app":30,"./shared/application_slider":31,"./shared/cart":32,"./shared/checkout":33,"./shared/jump":34,"./shared/lightbox":35,"./shared/load_more":36,"./shared/mobile_navigation":37,"./shared/product_images_slider":38,"./shared/theme_switcher":39}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -105,7 +109,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":38,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":40,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -808,6 +812,39 @@ module.exports = CatalogFilterMixin;
 },{}],14:[function(require,module,exports){
 
 /** @jsx React.DOM */
+var PropTypes, Tooltip;
+
+PropTypes = React.PropTypes;
+
+Tooltip = React.createClass({displayName: 'Tooltip',
+  propTypes: {
+    title: PropTypes.string,
+    url: PropTypes.string,
+    position: PropTypes.shape({
+      left: PropTypes.number,
+      top: PropTypes.number
+    }).isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      title: 'Показать',
+      url: '#'
+    };
+  },
+  render: function() {
+    return React.DOM.div({className: "b-tooltip"}, 
+       this.props.title, " ", React.DOM.a({href:  this.props.url}, "12 вариантов")
+    );
+  }
+});
+
+module.exports = Tooltip;
+
+
+
+},{}],15:[function(require,module,exports){
+
+/** @jsx React.DOM */
 window.BgList = React.createClass({displayName: 'BgList',
   propTypes: {
     name: React.PropTypes.string.isRequired,
@@ -858,7 +895,7 @@ window.BackgroundSelect = React.createClass({displayName: 'BackgroundSelect',
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ColorList = React.createClass({displayName: 'ColorList',
@@ -918,7 +955,7 @@ window.ColorSelect = React.createClass({displayName: 'ColorSelect',
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Designer = React.createClass({displayName: 'Designer',
@@ -1080,7 +1117,7 @@ window.Designer = React.createClass({displayName: 'Designer',
 
 
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.FontList = React.createClass({displayName: 'FontList',
@@ -1137,7 +1174,7 @@ window.FontSelect = React.createClass({displayName: 'FontSelect',
 
 
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.LayoutList = React.createClass({displayName: 'LayoutList',
@@ -1192,7 +1229,7 @@ window.LayoutSelect = React.createClass({displayName: 'LayoutSelect',
 
 
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.Toggle = React.createClass({displayName: 'Toggle',
@@ -1220,7 +1257,7 @@ window.Toggle = React.createClass({displayName: 'Toggle',
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.ValueSlider = React.createClass({displayName: 'ValueSlider',
@@ -1268,7 +1305,7 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
@@ -1441,7 +1478,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -1471,7 +1508,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1505,7 +1542,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -1514,7 +1551,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":23}],25:[function(require,module,exports){
+},{"./_base":24}],26:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -1548,7 +1585,7 @@ module.exports = BaseStore;
 
 
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -1610,7 +1647,18 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":25}],27:[function(require,module,exports){
+},{"./_base":26}],28:[function(require,module,exports){
+var ApiRoutes;
+
+ApiRoutes = {
+  productsFilteredCount: function() {
+    return gon.vendor_api_root_url + '/v1/operator/products/filtered/count';
+  }
+};
+
+
+
+},{}],29:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -1619,7 +1667,7 @@ window.Routes = {
 
 
 
-},{}],28:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -1714,7 +1762,7 @@ $(function() {
 
 
 
-},{}],29:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -1752,7 +1800,7 @@ $(function() {
 
 
 
-},{}],30:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -1789,7 +1837,7 @@ $(function() {
 
 
 
-},{}],31:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -1858,7 +1906,7 @@ $(function() {
 
 
 
-},{}],32:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -1878,7 +1926,7 @@ $(function() {
 
 
 
-},{}],33:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -1899,7 +1947,7 @@ $(function() {
 
 
 
-},{}],34:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -1943,7 +1991,7 @@ $(function() {
 
 
 
-},{}],35:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -1966,7 +2014,7 @@ $(function() {
 
 
 
-},{}],36:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -2027,7 +2075,7 @@ $(function() {
 
 
 
-},{}],37:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -2042,7 +2090,7 @@ $(function() {
 
 
 
-},{}],38:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2054,7 +2102,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":39}],39:[function(require,module,exports){
+},{"./lib/Dispatcher":41}],41:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2306,7 +2354,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":40}],40:[function(require,module,exports){
+},{"./invariant":42}],42:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

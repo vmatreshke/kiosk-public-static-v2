@@ -17,7 +17,7 @@
       .b-full-filter__item__title Показывать
       .b-full-filter__widget
         %label.b-cbox
-          %input.b-cbox__native{type: 'checkbox'}
+          %input.b-cbox__native{type: 'checkbox', 'disabled': 'disabled'}
           .b-cbox__val Все
         %label.b-cbox
           %input.b-cbox__native{type: 'checkbox'}
@@ -111,5 +111,4 @@
           %input.b-cbox__native{type: 'checkbox'}
           .b-cbox__val 2012
 
-    %li.b-full-filter__item
-      %button.b-full-filter__submit.b-btn{type: 'submit'} Показать
+    %button.b-full-filter__submit.b-btn{type: 'submit'} Показать

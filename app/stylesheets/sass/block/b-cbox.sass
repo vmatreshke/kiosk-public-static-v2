@@ -18,6 +18,11 @@
           color: #4e4e4e
           &:before
             background-color: #121212
+    &[disabled]
+      cursor: not-allowed
+      & ~ .b-cbox
+        &__val
+          opacity: 0.5
   &__val
     color: #a1a1a1
     padding-left: 23px

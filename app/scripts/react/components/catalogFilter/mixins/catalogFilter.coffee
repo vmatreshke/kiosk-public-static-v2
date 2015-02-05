@@ -1,6 +1,11 @@
 CatalogFilterMixin =
 
   getDefaultProps: ->
+    selectedOptions: [
+      { name: 'Цена от 20 000 до 5000 Р', url: '?filter_without_price' }
+      { name: 'Категория: гибридные', url: '?filter_without_category' }
+      { name: 'Материал: карбон', url: '?filter_without_material' }
+    ]
     options: [{
       title: 'Показывать'
       type: 'checkbox'

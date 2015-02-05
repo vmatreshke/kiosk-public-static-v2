@@ -1,44 +1,42 @@
 ###* @jsx React.DOM ###
 
-_pendingTooltip = null
+FilteredCountTooltip = require '../components/common/tooltip/filteredCount'
 
-getContainer = ->
-  container = document.querySelector '[tooltip-container]'
+class TooltipController
 
-  unless container?
-    container = document.createElement 'div'
-    container.setAttribute 'tooltip-container', ''
-    document.body.appendChild container
+  _pendingTooltip: null
 
-  container
+  constructor: ->
+    KioskEvents.on KioskEvents.keys.commandTooltipShow(), @show
 
-closeTooltip = ->
-  container = getContainer()
+  show: (position, filter, timeout = 3000) =>
+    container = @_getContainer()
 
-  React.unmountComponentAtNode container
-  _pendingTooltip = null
-
-TooltipController =
-
-  show: (position, filter, timeout = 3000) ->
-    container = getContainer()
-
-    closeTooltip()
+    @close()
 
     tooltip = React.renderComponent (
-      `<Tooltip
+      `<FilteredCountTooltip
           filter={ filter }
           position={ position }
-          onClose={ closeTooltip } />`
+          onClose={ this.close } />`
     ), container
 
-    _pendingTooltip = tooltip
+    @_pendingTooltip = tooltip
+
+  close: =>
+    container = @_getContainer()
+
+    React.unmountComponentAtNode container
+    @_pendingTooltip = null
+
+  _getContainer: =>
+    container = document.querySelector '[tooltip-container]'
+
+    unless container?
+      container = document.createElement 'div'
+      container.setAttribute 'tooltip-container', ''
+      document.body.appendChild container
+
+    container
 
 module.exports = TooltipController
-
-#*==========  Глобальные команды  ==========*#
-
-KioskEvents.on KioskEvents.keys.commandTooltipShow(), (position, filter) ->
-  TooltipController.show position, filter
-
-#*-----  End of Глобальные команды  ------*#

@@ -30,17 +30,18 @@ require './react/components/design/fontlist'
 require './react/components/design/toggle'
 require './react/components/design/valueslider'
 require './react/components/design/layoutlist'
-
 require './react/components/catalogFilter/catalogFilter'
-
-window.Tooltip = require './react/components/common/tooltip/tooltip'
 
 require './react/dispatchers/basket'
 require './react/actions/view/basket'
 require './react/stores/basket'
-window.Api               = require './react/api/api'
-window.KioskEvents       = require './react/controllers/events'
-window.TooltipController = require './react/controllers/tooltip'
+window.Api = require './react/api/api'
+
+# /*==========  Controllers  ==========*/
+
+window.KioskEvents = require './react/controllers/events'
+TooltipController  = require './react/controllers/tooltip'
+new TooltipController()
 
 # /*-----  End of React  ------*/
 

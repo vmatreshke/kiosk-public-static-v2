@@ -1,15 +1,17 @@
 ###* @jsx React.DOM ###
 
-CatalogFilterMixin = require './mixins/catalogFilter'
-CatalogFilterList  = require './list'
+CatalogFilterMixin              = require './mixins/catalogFilter'
+CatalogFilterList               = require './list'
+CatalogFilter_ShowResultsButton = require './buttons/showResults'
 { PropTypes } = React
 
 window.CatalogFilter = React.createClass
   mixins: [CatalogFilterMixin]
 
   propTypes:
-    options:    PropTypes.array.isRequired
-    filterName: PropTypes.string
+    options:         PropTypes.array.isRequired
+    selectedOptions: PropTypes.array
+    filterName:      PropTypes.string
 
   getDefaultProps: ->
     filterName: 'f'
@@ -27,7 +29,9 @@ window.CatalogFilter = React.createClass
       </label>
       <CatalogFilterList
           options={ this.props.options }
+          selectedOptions={ this.props.selectedOptions }
           filterName={ this.props.filterName } />
+      <CatalogFilter_ShowResultsButton />
     </div>`
 
 module.exports = CatalogFilter

@@ -4,22 +4,19 @@ CatalogFilterList_SelectedOptions = require './list/selectedOptions'
 CatalogFilterList_Checkbox        = require './list/checkbox'
 CatalogFilterList_Range           = require './list/range'
 CatalogFilterList_Color           = require './list/color'
-CatalogFilter_ShowResultsButton   = require './buttons/showResults'
 { PropTypes } = React
 
 CatalogFilterList = React.createClass
 
   propTypes:
-    options:    PropTypes.array.isRequired
-    filterName: PropTypes.string.isRequired
+    options:         PropTypes.array.isRequired
+    selectedOptions: PropTypes.array.isRequired
+    filterName:      PropTypes.string.isRequired
 
   render: ->
     `<ul className="b-full-filter__list-wrap">
-      <CatalogFilterList_SelectedOptions />
+      <CatalogFilterList_SelectedOptions selectedOptions={ this.props.selectedOptions } />
       { this.renderListItems() }
-      <li className="b-full-filter__item">
-        <CatalogFilter_ShowResultsButton onClick={ this.showResults } />
-      </li>
     </ul>`
 
   renderListItems: ->
@@ -56,8 +53,5 @@ CatalogFilterList = React.createClass
               items={ items }
               key={ i } />`
         else console.warn? 'Unknown item type of CatalogFilterList component', item
-
-  showResults: ->
-    console.log 'Displaying filtered results'
 
 module.exports = CatalogFilterList

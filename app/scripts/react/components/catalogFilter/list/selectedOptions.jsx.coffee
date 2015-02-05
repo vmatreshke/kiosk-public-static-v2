@@ -1,15 +1,37 @@
 ###* @jsx React.DOM ###
 
+{ PropTypes } = React
+
 CatalogFilterList_SelectedOptions = React.createClass
 
+  propTypes:
+    selectedOptions: PropTypes.array.isRequired
+
   render: ->
-   `<li className="b-full-filter__item">
-      <div className="b-full-filter__item__title">Текущий выбор</div>
-      <div className="b-full-filter__widget">
-        <span className="b-full-filter__value">Цена от 20 000 до 5000 Р</span>
-        <span className="b-full-filter__value">Категория: гибридные</span>
-        <span className="b-full-filter__value">Материал: карбон</span>
-      </div>
-    </li>`
+    if @hasOptions()
+      `<li className="b-full-filter__item">
+        <div className="b-full-filter__item__title">Текущий выбор</div>
+        { this.renderListItems() }
+      </li>`
+    else null
+
+  renderListItems: ->
+    selectedOptions = @
+    listItems = @props.selectedOptions.map (item, i) ->
+      `<span className="b-full-filter__value"
+             onClick={ selectedOptions.removeOption.bind(null, item.url) }
+             key={ i }>
+        { item.name }
+      </span>`
+    
+    return `<div className="b-full-filter__widget">
+              { listItems }
+            </div>`
+
+  hasOptions: ->
+    @props.selectedOptions.length
+
+  removeOption: (url) ->
+    window.location = url
 
 module.exports = CatalogFilterList_SelectedOptions

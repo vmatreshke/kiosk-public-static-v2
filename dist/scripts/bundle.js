@@ -1,4 +1,6 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var TooltipController;
+
 require('./libs');
 
 require('./shared/app');
@@ -49,8 +51,6 @@ require('./react/components/design/layoutlist');
 
 require('./react/components/catalogFilter/catalogFilter');
 
-window.Tooltip = require('./react/components/common/tooltip/tooltip');
-
 require('./react/dispatchers/basket');
 
 require('./react/actions/view/basket');
@@ -61,13 +61,15 @@ window.Api = require('./react/api/api');
 
 window.KioskEvents = require('./react/controllers/events');
 
-window.TooltipController = require('./react/controllers/tooltip');
+TooltipController = require('./react/controllers/tooltip');
+
+new TooltipController();
 
 window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/common/tooltip/tooltip":15,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/instagram/instagram":23,"./react/components/product/add_to_basket_button":24,"./react/controllers/events":25,"./react/controllers/tooltip":26,"./react/dispatchers/basket":28,"./react/stores/basket":30,"./routes/api":31,"./routes/routes":32,"./shared/app":33,"./shared/application_slider":34,"./shared/cart":35,"./shared/checkout":36,"./shared/jump":37,"./shared/lightbox":38,"./shared/load_more":39,"./shared/mobile_navigation":40,"./shared/product_images_slider":41,"./shared/theme_switcher":42}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/instagram/instagram":23,"./react/components/product/add_to_basket_button":24,"./react/controllers/events":25,"./react/controllers/tooltip":26,"./react/dispatchers/basket":28,"./react/stores/basket":30,"./routes/api":31,"./routes/routes":32,"./shared/app":33,"./shared/application_slider":34,"./shared/cart":35,"./shared/checkout":36,"./shared/jump":37,"./shared/lightbox":38,"./shared/load_more":39,"./shared/mobile_navigation":40,"./shared/product_images_slider":41,"./shared/theme_switcher":42}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -450,9 +452,6 @@ var CatalogFilter_ShowResultsButton, PropTypes;
 PropTypes = React.PropTypes;
 
 CatalogFilter_ShowResultsButton = React.createClass({displayName: 'CatalogFilter_ShowResultsButton',
-  propTypes: {
-    onClick: PropTypes.func.isRequired
-  },
   render: function() {
     return React.DOM.button({className: "b-btn b-full-filter__submit", 
             onClick:  this.props.onClick}, 
@@ -468,11 +467,13 @@ module.exports = CatalogFilter_ShowResultsButton;
 },{}],8:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var CatalogFilterList, CatalogFilterMixin, PropTypes;
+var CatalogFilterList, CatalogFilterMixin, CatalogFilter_ShowResultsButton, PropTypes;
 
 CatalogFilterMixin = require('./mixins/catalogFilter');
 
 CatalogFilterList = require('./list');
+
+CatalogFilter_ShowResultsButton = require('./buttons/showResults');
 
 PropTypes = React.PropTypes;
 
@@ -480,6 +481,7 @@ window.CatalogFilter = React.createClass({displayName: 'CatalogFilter',
   mixins: [CatalogFilterMixin],
   propTypes: {
     options: PropTypes.array.isRequired,
+    selectedOptions: PropTypes.array,
     filterName: PropTypes.string
   },
   getDefaultProps: function() {
@@ -500,7 +502,9 @@ window.CatalogFilter = React.createClass({displayName: 'CatalogFilter',
       ), 
       CatalogFilterList({
           options:  this.props.options, 
-          filterName:  this.props.filterName})
+          selectedOptions:  this.props.selectedOptions, 
+          filterName:  this.props.filterName}), 
+      CatalogFilter_ShowResultsButton(null)
     );
   }
 });
@@ -509,10 +513,10 @@ module.exports = CatalogFilter;
 
 
 
-},{"./list":9,"./mixins/catalogFilter":14}],9:[function(require,module,exports){
+},{"./buttons/showResults":7,"./list":9,"./mixins/catalogFilter":14}],9:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, CatalogFilter_ShowResultsButton, PropTypes;
+var CatalogFilterList, CatalogFilterList_Checkbox, CatalogFilterList_Color, CatalogFilterList_Range, CatalogFilterList_SelectedOptions, PropTypes;
 
 CatalogFilterList_SelectedOptions = require('./list/selectedOptions');
 
@@ -522,22 +526,18 @@ CatalogFilterList_Range = require('./list/range');
 
 CatalogFilterList_Color = require('./list/color');
 
-CatalogFilter_ShowResultsButton = require('./buttons/showResults');
-
 PropTypes = React.PropTypes;
 
 CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
   propTypes: {
     options: PropTypes.array.isRequired,
+    selectedOptions: PropTypes.array.isRequired,
     filterName: PropTypes.string.isRequired
   },
   render: function() {
     return React.DOM.ul({className: "b-full-filter__list-wrap"}, 
-      CatalogFilterList_SelectedOptions(null), 
-       this.renderListItems(), 
-      React.DOM.li({className: "b-full-filter__item"}, 
-        CatalogFilter_ShowResultsButton({onClick:  this.showResults})
-      )
+      CatalogFilterList_SelectedOptions({selectedOptions:  this.props.selectedOptions}), 
+       this.renderListItems() 
     );
   },
   renderListItems: function() {
@@ -576,9 +576,6 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
           return typeof console.warn === "function" ? console.warn('Unknown item type of CatalogFilterList component', item) : void 0;
       }
     });
-  },
-  showResults: function() {
-    return console.log('Displaying filtered results');
   }
 });
 
@@ -586,7 +583,7 @@ module.exports = CatalogFilterList;
 
 
 
-},{"./buttons/showResults":7,"./list/checkbox":10,"./list/color":11,"./list/range":12,"./list/selectedOptions":13}],10:[function(require,module,exports){
+},{"./list/checkbox":10,"./list/color":11,"./list/range":12,"./list/selectedOptions":13}],10:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var CatalogFilterList_Checkbox, PropTypes;
@@ -805,18 +802,43 @@ module.exports = CatalogFilterList_Range;
 },{}],13:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var CatalogFilterList_SelectedOptions;
+var CatalogFilterList_SelectedOptions, PropTypes;
+
+PropTypes = React.PropTypes;
 
 CatalogFilterList_SelectedOptions = React.createClass({displayName: 'CatalogFilterList_SelectedOptions',
+  propTypes: {
+    selectedOptions: PropTypes.array.isRequired
+  },
   render: function() {
-    return React.DOM.li({className: "b-full-filter__item"}, 
-      React.DOM.div({className: "b-full-filter__item__title"}, "Текущий выбор"), 
-      React.DOM.div({className: "b-full-filter__widget"}, 
-        React.DOM.span({className: "b-full-filter__value"}, "Цена от 20 000 до 5000 Р"), 
-        React.DOM.span({className: "b-full-filter__value"}, "Категория: гибридные"), 
-        React.DOM.span({className: "b-full-filter__value"}, "Материал: карбон")
-      )
-    );
+    if (this.hasOptions()) {
+      return React.DOM.li({className: "b-full-filter__item"}, 
+        React.DOM.div({className: "b-full-filter__item__title"}, "Текущий выбор"), 
+         this.renderListItems() 
+      );
+    } else {
+      return null;
+    }
+  },
+  renderListItems: function() {
+    var listItems, selectedOptions;
+    selectedOptions = this;
+    listItems = this.props.selectedOptions.map(function(item, i) {
+      return React.DOM.span({className: "b-full-filter__value", 
+             onClick:  selectedOptions.removeOption.bind(null, item.url), 
+             key: i }, 
+         item.name
+      );
+    });
+    return React.DOM.div({className: "b-full-filter__widget"}, 
+              listItems 
+            );
+  },
+  hasOptions: function() {
+    return this.props.selectedOptions.length;
+  },
+  removeOption: function(url) {
+    return window.location = url;
   }
 });
 
@@ -830,6 +852,18 @@ var CatalogFilterMixin;
 CatalogFilterMixin = {
   getDefaultProps: function() {
     return {
+      selectedOptions: [
+        {
+          name: 'Цена от 20 000 до 5000 Р',
+          url: '?filter_without_price'
+        }, {
+          name: 'Категория: гибридные',
+          url: '?filter_without_category'
+        }, {
+          name: 'Материал: карбон',
+          url: '?filter_without_material'
+        }
+      ],
       options: [
         {
           title: 'Показывать',
@@ -962,7 +996,7 @@ module.exports = CatalogFilterMixin;
 },{}],15:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var Api, ERROR_STATE, LOADED_STATE, LOADING_STATE, PropTypes, TIMEOUT, Tooltip;
+var Api, ERROR_STATE, FilteredCountTooltip, LOADED_STATE, LOADING_STATE, PropTypes, TIMEOUT;
 
 Api = require('../../../api/api');
 
@@ -976,7 +1010,7 @@ LOADED_STATE = 'loaded';
 
 ERROR_STATE = 'error';
 
-Tooltip = React.createClass({displayName: 'Tooltip',
+FilteredCountTooltip = React.createClass({displayName: 'FilteredCountTooltip',
   propTypes: {
     title: PropTypes.string,
     filter: PropTypes.string.isRequired,
@@ -1051,7 +1085,7 @@ Tooltip = React.createClass({displayName: 'Tooltip',
   }
 });
 
-module.exports = Tooltip;
+module.exports = FilteredCountTooltip;
 
 
 
@@ -1739,53 +1773,62 @@ module.exports = KioskEvents;
 },{}],26:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var TooltipController, closeTooltip, getContainer, _pendingTooltip;
+var FilteredCountTooltip, TooltipController,
+  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-_pendingTooltip = null;
+FilteredCountTooltip = require('../components/common/tooltip/filteredCount');
 
-getContainer = function() {
-  var container;
-  container = document.querySelector('[tooltip-container]');
-  if (container == null) {
-    container = document.createElement('div');
-    container.setAttribute('tooltip-container', '');
-    document.body.appendChild(container);
+TooltipController = (function() {
+  TooltipController.prototype._pendingTooltip = null;
+
+  function TooltipController() {
+    this._getContainer = __bind(this._getContainer, this);
+    this.close = __bind(this.close, this);
+    this.show = __bind(this.show, this);
+    KioskEvents.on(KioskEvents.keys.commandTooltipShow(), this.show);
   }
-  return container;
-};
 
-closeTooltip = function() {
-  var container;
-  container = getContainer();
-  React.unmountComponentAtNode(container);
-  return _pendingTooltip = null;
-};
-
-TooltipController = {
-  show: function(position, filter, timeout) {
+  TooltipController.prototype.show = function(position, filter, timeout) {
     var container, tooltip;
     if (timeout == null) {
       timeout = 3000;
     }
-    container = getContainer();
-    closeTooltip();
-    tooltip = React.renderComponent(Tooltip({
+    container = this._getContainer();
+    this.close();
+    tooltip = React.renderComponent(FilteredCountTooltip({
           filter: filter, 
           position: position, 
-          onClose: closeTooltip }), container);
-    return _pendingTooltip = tooltip;
-  }
-};
+          onClose:  this.close}), container);
+    return this._pendingTooltip = tooltip;
+  };
+
+  TooltipController.prototype.close = function() {
+    var container;
+    container = this._getContainer();
+    React.unmountComponentAtNode(container);
+    return this._pendingTooltip = null;
+  };
+
+  TooltipController.prototype._getContainer = function() {
+    var container;
+    container = document.querySelector('[tooltip-container]');
+    if (container == null) {
+      container = document.createElement('div');
+      container.setAttribute('tooltip-container', '');
+      document.body.appendChild(container);
+    }
+    return container;
+  };
+
+  return TooltipController;
+
+})();
 
 module.exports = TooltipController;
 
-KioskEvents.on(KioskEvents.keys.commandTooltipShow(), function(position, filter) {
-  return TooltipController.show(position, filter);
-});
 
 
-
-},{}],27:[function(require,module,exports){
+},{"../components/common/tooltip/filteredCount":15}],27:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };

@@ -7,7 +7,7 @@ LOADING_STATE = 'loading'
 LOADED_STATE  = 'loaded'
 ERROR_STATE   = 'error'
 
-Tooltip = React.createClass
+FilteredCountTooltip = React.createClass
 
   propTypes:
     title:    PropTypes.string
@@ -58,8 +58,9 @@ Tooltip = React.createClass
   activateErrorState: -> @setState(currentState: ERROR_STATE)
 
   getStyles: ->
+    # Here we can calculate something more than just passing keys from @props.position
     { left, top } = @props.position
 
     { left, top }
 
-module.exports = Tooltip
+module.exports = FilteredCountTooltip

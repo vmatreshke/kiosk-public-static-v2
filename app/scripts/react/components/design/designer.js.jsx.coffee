@@ -22,12 +22,12 @@ window.Designer = React.createClass
   _createDesignComponent: (options) ->
     switch options.type
       when 'ColorList'
-        `<DesignerElementLayout name={options.name}>
+        `<DesignerElementLayout name={options.name} type="color" set={options.props.colorSet} value={options.props.value}>
           <ColorList name={options.props.name} colorSet={options.props.colorSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
         </DesignerElementLayout>`
 
       when 'BgList'
-        `<DesignerElementLayout name={options.name}>
+        `<DesignerElementLayout name={options.name} type="image" set={options.props.bgSet} value={options.props.value}>
           <BackgroundList name={options.props.name} bgSet={options.props.bgSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
         </DesignerElementLayout>`
 
@@ -73,8 +73,31 @@ window.DesignerElementLayout = React.createClass
       return `<div className="b-design-option__item">
           <div className="b-design-option__item__current-params">
             <span className="b-design-option__item__name">{this.props.name}</span>
-            <div className="b-design-option__item__val">
-            </div>
+            <DesignerElementValueLayout value={this.props.value} type={this.props.type} set={this.props.set}/>
           </div>
           <div className="b-design-option__item__available-params">{this.props.children}</div>
           </div>`
+
+window.DesignerElementValueLayout = React.createClass
+  propTypes:
+    type: React.PropTypes.string.isRequired
+    set: React.PropTypes.array
+    value: React.PropTypes.string
+  
+  render: ->
+    value = @props.set[@props.value]
+    if @props.type == 'color'
+      divStyle =
+        'background-color': value
+      return `<div className="b-design-option__item__val">
+          <div className="b-design-option__color__ind" style={divStyle}/>
+        </div>`
+    if @props.type == 'image'
+      return `<div className="b-design-option__item__val">
+          <div className="b-design-option__color b-design-option__color_img">
+            <div className="b-design-option__color__ind">
+              <img src={value} alt=""/>
+            </div>
+          </div>
+        </div>`
+    return `null`

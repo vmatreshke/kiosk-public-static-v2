@@ -1,42 +1,37 @@
 .b-page
+  // Цвет фона страницы
   &_bg-dark
     background-color: #53777A
-  &_bg-pic-p
-    background-image: url(http://e08595.medialib.glogster.com/media/04/0463cfaf4ce3325b2d16bb5f56a4b5466f0df66553198c13ab0245486e872fd3/tumblr-lhlcynrexb1qapgvbo1-500-jpg.jpg)
+  &_bg-white
+    background-color: #fff
+  &_bg-black
+    background-color: #000
 
-  &_layer-light
-    .b-page__content__inner
-      background-color: #ECD078
+  // Шрифты
+  &_ff-helvetica
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
 
-  &_text-light
-    color: #542437
+  &_ff-ptserif
+    font-family: "PT Serif",TimesNewRoman,"Times New Roman",Times,Baskerville,Georgia,serif
 
-  &_active-dark
-    a
-      color: #C02942
-      &:hover
-        color: #542437
+  &_ff-ptsans
+    font-family: "PT Sans",Helvetica,Arial,sans-serif
 
-  &_ff-gotham
-    font-family: $font-stack-gotham-family
+  &_ff-verdana
+    font-family: Verdana,Geneva,sans-serif
 
-  &_hide-slider
-    .b-slider_promo
-      display: none !important
+  &_ff-courier
+    font-family: "Courier New",Courier,"Lucida Sans Typewriter","Lucida Typewriter",monospace
 
-  &_layout-l1
-    .b-item-full__content
-      @extend %grid--rev
+  // Лейаут для большой картинки в товаре (нужно тригернуть window.resize после установик класса)
+  &_layout-bigpic
+    .b-item-full
+      &__gallery,
+      &__description
+        @extend %one-whole
+        @extend %portable--one-whole
 
-
-  &_hide-catalog
-    .b-item-list_has-filter
-      .b-item-list__filter
-        float: none
-        display: none
-      .b-item-list__content
-        margin-left: 0
-
+  // Товаров в ряд
   &[data-in-row="2"]
     .b-item-list
       &__item

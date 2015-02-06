@@ -4698,7 +4698,7 @@ html.mm-opened.mm-black .mm-page {
   .noUi-horizontal .noUi-handle {
     width: 14px;
     height: 14px;
-    left: -13px;
+    left: -7px;
     top: -5px; }
 
 /* line 61, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/modules/range */
@@ -6939,7 +6939,7 @@ html {
               transform: scale(1.1); }
     /* line 54, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-design-option */
     .b-design-option__color__ind {
-      display: block;
+      display: inline-block;
       height: 18px;
       width: 18px;
       border-radius: 9px;

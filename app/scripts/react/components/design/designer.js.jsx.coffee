@@ -19,66 +19,37 @@ window.Designer = React.createClass
     newState[option.props.name] = newValue
     @setState newState
 
-  _createDesignComponent: (option) ->
-    switch option.type
+  _createDesignComponent: (options) ->
+    switch options.type
       when 'ColorList'
-        designComponent = `<ColorList onChange={this.handleChange.bind(this, option)} name={option.props.name} colorSet={option.props.colorSet} value={option.props.value}/>`
-        designVal = 
-          'background-color': option.props.colorSet[option.props.value]
-        designItem = `<div className="b-design-option__item">
-          <div className="b-design-option__item__current-params">
-            <span className="b-design-option__item__name">{option.name}</span>
-            <div className="b-design-option__item__val">
-              <div className="b-design-option__color" style={designVal}></div>
-            </div>
-          </div>
-          <div className="b-design-option__item__available-params">{designComponent}</div>
-          </div>`
-
-      when 'LayoutList'
-        designComponent = `<LayoutList onChange={this.handleChange.bind(this, option)} name={option.props.name} layoutSet={option.props.layoutSet} value={option.props.value}/>`
-        designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
-        designItem = `<div className="b-design-option__item">
-          <div className="b-design-option__item__current-params">
-            <span className="b-design-option__item__name">{option.name}</span>
-            <div className="b-design-option__item__val">{designVal}</div>
-          </div>
-          <div className="b-design-option__item__available-params">{designComponent}</div>
-          </div>`
+        `<DesignerElementLayout name={options.name} type="color" set={options.props.colorSet} value={options.props.value}>
+          <ColorList name={options.props.name} colorSet={options.props.colorSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'BgList'
-        designComponent = `<BgList onChange={this.handleChange.bind(this, option)} name={option.props.name} bgSet={option.props.bgSet} value={option.props.value}/>`
-        designVal = `<div className="b-design-option__color b-design-option__color_img"><img src="" alt=""/></div>`
-        designItem = `<div className="b-design-option__item">
-          <div className="b-design-option__item__current-params">
-            <span className="b-design-option__item__name">{option.name}</span>
-            <div className="b-design-option__item__val">{designVal}</div>
-          </div>
-          <div className="b-design-option__item__available-params">{designComponent}</div>
-          </div>`
+        `<DesignerElementLayout name={options.name} type="image" set={options.props.bgSet} value={options.props.value}>
+          <BackgroundList name={options.props.name} bgSet={options.props.bgSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
+
+      when 'LayoutList'
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <LayoutList name={options.props.name} layoutSet={options.props.layoutSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
       
       when 'FontList'
-        designComponent = `<FontList onChange={this.handleChange.bind(this, option)} name={option.props.name} fontSet={option.props.fontSet} value={option.props.value}/>`
-        designItem = `<div className="b-design-option__item">
-          <span className="b-design-option__item__name">{option.name}</span>
-          <div className="b-design-option__item__val">{designComponent}</div>
-          </div>`
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <FontList name={options.props.name} fontSet={options.props.fontSet} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'ValueSlider'
-        designComponent = `<ValueSlider onChange={this.handleChange.bind(this, option)} name={option.props.name} range={option.props.range} value={option.props.value} step={option.props.step}/>`
-        designItem = `<div className="b-design-option__item">
-          <span className="b-design-option__item__name">{option.name}</span>
-          <div className="b-design-option__item__val">{designComponent}</div>
-          </div>`
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <ValueSlider name={options.props.name} step={options.props.step} range={options.props.range} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
       when 'Toggle'
-        designComponent = `<Toggle onChange={this.handleChange.bind(this, option)} name={option.props.name} value={option.props.value}/>`
-        designItem = `<div className="b-design-option__item">
-          <span className="b-design-option__item__name">{option.name}</span>
-          <div className="b-design-option__item__val">{designComponent}</div>
-          </div>`
-
-    return designItem
+        `<DesignerElementLayout name={options.name} type="simplified">
+          <Toggle name={options.props.name} value={options.props.value} onChange={this.handleChange.bind(this, options)}/>
+        </DesignerElementLayout>`
 
   render: ->
     designItems = _.map @props.options, (option) =>
@@ -90,3 +61,43 @@ window.Designer = React.createClass
         <div className="b-design-option__body">{designItems}</div>
         <button type="button" className="b-design-option__save">Сохранить</button>
       </div>`
+
+window.DesignerElementLayout = React.createClass
+  render: ->
+    if @props.type? && @props.type == 'simplified'
+      return `<div className="b-design-option__item">
+        <span className="b-design-option__item__name">{this.props.name}</span>
+        <div className="b-design-option__item__val">{this.props.children}</div>
+        </div>`
+    else
+      return `<div className="b-design-option__item">
+          <div className="b-design-option__item__current-params">
+            <span className="b-design-option__item__name">{this.props.name}</span>
+            <DesignerElementValueLayout value={this.props.value} type={this.props.type} set={this.props.set}/>
+          </div>
+          <div className="b-design-option__item__available-params">{this.props.children}</div>
+          </div>`
+
+window.DesignerElementValueLayout = React.createClass
+  propTypes:
+    type: React.PropTypes.string.isRequired
+    set: React.PropTypes.array
+    value: React.PropTypes.string
+  
+  render: ->
+    value = @props.set[@props.value]
+    if @props.type == 'color'
+      divStyle =
+        'background-color': value
+      return `<div className="b-design-option__item__val">
+          <div className="b-design-option__color__ind" style={divStyle}/>
+        </div>`
+    if @props.type == 'image'
+      return `<div className="b-design-option__item__val">
+          <div className="b-design-option__color b-design-option__color_img">
+            <div className="b-design-option__color__ind">
+              <img src={value} alt=""/>
+            </div>
+          </div>
+        </div>`
+    return `null`

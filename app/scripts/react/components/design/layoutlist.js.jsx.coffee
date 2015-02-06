@@ -16,12 +16,9 @@ window.LayoutList = React.createClass
 
   render: ->
     layoutSetList = _.map @props.layoutSet, (layout, key) =>
-      console.log key
-      console.log layout
       checked = false
 
-      if @props.value && @props.value == key
-        checked = true
+      checked = @props.value && @props.value == key
       
       `<LayoutSelect name={_this.props.name} layoutName={key} layout={layout} key={key} checked={checked} onChange={_this.handleChange.bind(layout, key)}/>`
 

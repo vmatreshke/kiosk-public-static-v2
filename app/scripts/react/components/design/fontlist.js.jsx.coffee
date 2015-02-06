@@ -20,8 +20,7 @@ window.FontList = React.createClass
     fontSetList = _.map @props.fontSet, (font, key) =>
       checked = false
 
-      if @props.value && @props.value == key
-        checked = true
+      checked = @props.value && @props.value == key
 
       `<FontSelect font={font} key={font} name={_this.props.name} checked={checked} onChange={_this.handleChange.bind(key, font)}/>`
 

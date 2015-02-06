@@ -1,6 +1,6 @@
 ###* @jsx React.DOM ###
 
-window.BgList = React.createClass
+window.BackgroundList = React.createClass
   propTypes:
     name: React.PropTypes.string.isRequired
     bgSet: React.PropTypes.object.isRequired
@@ -18,14 +18,13 @@ window.BgList = React.createClass
     bgSetList = _.map @props.bgSet, (background, key) =>
       checked = false
 
-      if @props.value && @props.value == key
-        checked = true
+      checked = @props.value && @props.value == key
 
-      `<BackgroundSelect name={_this.props.name} checked={checked} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
+      `<BackgroundListElement name={_this.props.name} checked={checked} background={background} key={key} onChange={_this.handleChange.bind(background, key)}/>`
 
     return `<div>{bgSetList}</div>`
 
-window.BackgroundSelect = React.createClass
+window.BackgroundListElement = React.createClass
   propTypes:
     background: React.PropTypes.string.isRequired
     name: React.PropTypes.string.isRequired

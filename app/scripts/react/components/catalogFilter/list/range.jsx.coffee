@@ -33,8 +33,8 @@ CatalogFilterList_Range = React.createClass
   componentWillUnmount: ->
     slider = @refs.slider.getDOMNode()
 
-    $(slider).on 'off',    @handleSlide
-    $(slider).on 'change', @handleChange
+    $(slider).off 'slide',  @handleSlide
+    $(slider).off 'change', @handleChange
     $(slider).destroy()
 
   render: ->

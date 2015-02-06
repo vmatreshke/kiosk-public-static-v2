@@ -1,4 +1,5 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function (global){
 var TooltipController;
 
 require('./libs');
@@ -49,7 +50,9 @@ require('./react/components/design/valueslider');
 
 require('./react/components/design/layoutlist');
 
-require('./react/components/catalogFilter/catalogFilter');
+global.CatalogFilter = require('./react/components/catalogFilter/catalogFilter');
+
+global.DesignSettings = require('./react/components/designSettings/designSettings');
 
 require('./react/dispatchers/basket');
 
@@ -69,7 +72,8 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/instagram/instagram":23,"./react/components/product/add_to_basket_button":24,"./react/controllers/events":25,"./react/controllers/tooltip":26,"./react/dispatchers/basket":28,"./react/stores/basket":30,"./routes/api":31,"./routes/routes":32,"./shared/app":33,"./shared/application_slider":34,"./shared/cart":35,"./shared/checkout":36,"./shared/jump":37,"./shared/lightbox":38,"./shared/load_more":39,"./shared/mobile_navigation":40,"./shared/product_images_slider":41,"./shared/theme_switcher":42}],2:[function(require,module,exports){
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/designSettings/designSettings":27,"./react/components/instagram/instagram":35,"./react/components/product/add_to_basket_button":36,"./react/controllers/events":37,"./react/controllers/tooltip":38,"./react/dispatchers/basket":40,"./react/stores/basket":42,"./routes/api":43,"./routes/routes":44,"./shared/app":45,"./shared/application_slider":46,"./shared/cart":47,"./shared/checkout":48,"./shared/jump":49,"./shared/lightbox":50,"./shared/load_more":51,"./shared/mobile_navigation":52,"./shared/product_images_slider":53,"./shared/theme_switcher":54}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -117,7 +121,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":43,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":55,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -467,7 +471,7 @@ module.exports = CatalogFilter_ShowResultsButton;
 },{}],8:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var CatalogFilterList, CatalogFilterMixin, CatalogFilter_ShowResultsButton, PropTypes;
+var CatalogFilter, CatalogFilterList, CatalogFilterMixin, CatalogFilter_ShowResultsButton, PropTypes;
 
 CatalogFilterMixin = require('./mixins/catalogFilter');
 
@@ -477,7 +481,7 @@ CatalogFilter_ShowResultsButton = require('./buttons/showResults');
 
 PropTypes = React.PropTypes;
 
-window.CatalogFilter = React.createClass({displayName: 'CatalogFilter',
+CatalogFilter = React.createClass({displayName: 'CatalogFilter',
   mixins: [CatalogFilterMixin],
   propTypes: {
     options: PropTypes.array.isRequired,
@@ -746,8 +750,8 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
   componentWillUnmount: function() {
     var slider;
     slider = this.refs.slider.getDOMNode();
-    $(slider).on('off', this.handleSlide);
-    $(slider).on('change', this.handleChange);
+    $(slider).off('slide', this.handleSlide);
+    $(slider).off('change', this.handleChange);
     return $(slider).destroy();
   },
   render: function() {
@@ -1138,112 +1142,6 @@ window.BackgroundListElement = React.createClass({displayName: 'BackgroundListEl
   }
 });
 
-window.DesignerColorList = React.createClass({displayName: 'DesignerColorList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = ColorList({onChange: this.props.onChange, name: this.props.option.name, colorSet: this.props.option.colorSet, value: this.props.option.value});
-    designVal = {
-      'background-color': this.props.option.colorSet[this.props.option.value]
-    };
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, 
-          React.DOM.div({className: "b-design-option__color", style: designVal})
-        )
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.DesignerLayoutList = React.createClass({displayName: 'DesignerLayoutList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = LayoutList({onChange: this.props.onChange, name: this.props.option.name, layoutSet: this.props.option.layoutSet, value: this.props.option.value});
-    designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, designVal)
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.DesignerBgList = React.createClass({displayName: 'DesignerBgList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = BgList({onChange: this.props.onChange, name: this.props.option.name, bgSet: this.props.option.bgSet, value: this.props.option.value});
-    designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, designVal)
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.DesignerFontList = React.createClass({displayName: 'DesignerFontList',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent;
-    designComponent = FontList({onChange: this.props.onChange, name: this.props.option.name, fontSet: this.props.option.fontSet, value: this.props.option.value});
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-      React.DOM.div({className: "b-design-option__item__val"}, designComponent)
-      );
-  }
-});
-
-window.DesignerValueSlider = React.createClass({displayName: 'DesignerValueSlider',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent;
-    designComponent = ValueSlider({onChange: this.props.onChange, name: this.props.option.name, range: this.props.option.range, value: this.props.option.value, step: this.props.option.step});
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-      React.DOM.div({className: "b-design-option__item__val"}, designComponent)
-      );
-  }
-});
-
-window.DesignerToggle = React.createClass({displayName: 'DesignerToggle',
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    option: React.PropTypes.array.isRequired
-  },
-  render: function() {
-    var designComponent;
-    designComponent = Toggle({onChange: this.props.onChange, name: this.props.option.name, value: this.props.option.value});
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-      React.DOM.div({className: "b-design-option__item__val"}, designComponent)
-      );
-  }
-});
-
 
 
 },{}],17:[function(require,module,exports){
@@ -1388,11 +1286,11 @@ window.Designer = React.createClass({displayName: 'Designer',
   _createDesignComponent: function(options) {
     switch (options.type) {
       case 'ColorList':
-        return DesignerElementLayout({name: options.name}, 
+        return DesignerElementLayout({name: options.name, type: "color", set: options.props.colorSet, value: options.props.value}, 
           ColorList({name: options.props.name, colorSet: options.props.colorSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
         );
       case 'BgList':
-        return DesignerElementLayout({name: options.name}, 
+        return DesignerElementLayout({name: options.name, type: "image", set: options.props.bgSet, value: options.props.value}, 
           BackgroundList({name: options.props.name, bgSet: options.props.bgSet, value: options.props.value, onChange: this.handleChange.bind(this, options)})
         );
       case 'LayoutList':
@@ -1429,102 +1327,7 @@ window.Designer = React.createClass({displayName: 'Designer',
   }
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-window.ColorListProxy = React.createClass({displayName: 'ColorListProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = ColorList({onChange: this.props.options.onChange, name: this.props.options.options.name, colorSet: this.props.options.options.colorSet, value: this.props.options.options.value});
-    designVal = {
-      'background-color': this.props.options.options.colorSet[this.props.options.options.value]
-    };
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, 
-          React.DOM.div({className: "b-design-option__color", style: designVal})
-        )
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.LayoutListProxy = React.createClass({displayName: 'LayoutListProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = LayoutList({onChange: this.props.options.onChange, name: this.props.options.options.name, layoutSet: this.props.options.options.layoutSet, value: this.props.options.options.value});
-    designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, designVal)
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.BgListProxy = React.createClass({displayName: 'BgListProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    var designComponent, designVal;
-    designComponent = BgList({onChange: this.props.options.onChange, name: this.props.options.options.name, bgSet: this.props.options.options.bgSet, value: this.props.options.options.value});
-    designVal = React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, React.DOM.img({src: "", alt: ""}));
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.div({className: "b-design-option__item__current-params"}, 
-        React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
-        React.DOM.div({className: "b-design-option__item__val"}, designVal)
-      ), 
-      React.DOM.div({className: "b-design-option__item__available-params"}, designComponent)
-      );
-  }
-});
-
-window.FontListProxy = React.createClass({displayName: 'FontListProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    var designComponent;
-    designComponent = FontList({onChange: this.props.options.onChange, name: this.props.options.options.name, fontSet: this.props.options.options.fontSet, value: this.props.options.options.value});
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
-      React.DOM.div({className: "b-design-option__item__val"}, designComponent)
-      );
-  }
-});
-
-window.ValueSliderProxy = React.createClass({displayName: 'ValueSliderProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-  render: function() {
-    var designComponent;
-    designComponent = ValueSlider({onChange: this.props.options.onChange, name: this.props.options.options.name, range: this.props.options.options.range, value: this.props.options.options.value, step: this.props.options.options.step});
-    return React.DOM.div({className: "b-design-option__item"}, 
-      React.DOM.span({className: "b-design-option__item__name"}, this.props.options.name), 
-      React.DOM.div({className: "b-design-option__item__val"}, designComponent)
-      );
-  }
-});
-
-window.ToggleProxy = React.createClass({displayName: 'ToggleProxy',
-  propTypes: {
-    options: React.PropTypes.object.isRequired
-  },
-=======
 window.DesignerElementLayout = React.createClass({displayName: 'DesignerElementLayout',
->>>>>>> [#85260968] minor fixes
   render: function() {
     if ((this.props.type != null) && this.props.type === 'simplified') {
       return React.DOM.div({className: "b-design-option__item"}, 
@@ -1535,8 +1338,7 @@ window.DesignerElementLayout = React.createClass({displayName: 'DesignerElementL
       return React.DOM.div({className: "b-design-option__item"}, 
           React.DOM.div({className: "b-design-option__item__current-params"}, 
             React.DOM.span({className: "b-design-option__item__name"}, this.props.name), 
-            React.DOM.div({className: "b-design-option__item__val"}
-            )
+            DesignerElementValueLayout({value: this.props.value, type: this.props.type, set: this.props.set})
           ), 
           React.DOM.div({className: "b-design-option__item__available-params"}, this.props.children)
           );
@@ -1544,7 +1346,36 @@ window.DesignerElementLayout = React.createClass({displayName: 'DesignerElementL
   }
 });
 
->>>>>>> [#85260968] в options все параметры, переименовал компоненты
+window.DesignerElementValueLayout = React.createClass({displayName: 'DesignerElementValueLayout',
+  propTypes: {
+    type: React.PropTypes.string.isRequired,
+    set: React.PropTypes.array,
+    value: React.PropTypes.string
+  },
+  render: function() {
+    var divStyle, value;
+    value = this.props.set[this.props.value];
+    if (this.props.type === 'color') {
+      divStyle = {
+        'background-color': value
+      };
+      return React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color__ind", style: divStyle})
+        );
+    }
+    if (this.props.type === 'image') {
+      return React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
+            React.DOM.div({className: "b-design-option__color__ind"}, 
+              React.DOM.img({src: value, alt: ""})
+            )
+          )
+        );
+    }
+    return null;
+  }
+});
+
 
 
 },{}],19:[function(require,module,exports){
@@ -1732,6 +1563,779 @@ window.ValueSlider = React.createClass({displayName: 'ValueSlider',
 },{}],23:[function(require,module,exports){
 
 /** @jsx React.DOM */
+var BUTTON_TEXT, DesignSettings_SaveButton, PropTypes;
+
+PropTypes = React.PropTypes;
+
+BUTTON_TEXT = 'Сохранить';
+
+DesignSettings_SaveButton = React.createClass({displayName: 'DesignSettings_SaveButton',
+  propTypes: {
+    onClick: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.button({className: "b-design-option__save", 
+             onClick:  this.props.onClick}, 
+      BUTTON_TEXT 
+    );
+  }
+});
+
+module.exports = DesignSettings_SaveButton;
+
+
+
+},{}],24:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Checkbox, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Checkbox = React.createClass({displayName: 'DesignSettings_Checkbox',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.array.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(value, key) {
+      return React.DOM.label({className: "b-design-option__cbox", 
+              key: key }, 
+        React.DOM.input({type: "checkbox", 
+               name: value, 
+               defaultChecked:  that.isItemChecked(key), 
+               onChange:  that.handleChange.bind(null, key) }), 
+        value 
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  isItemChecked: function(key) {
+    var result;
+    result = this.props.value.filter(function(item) {
+      return item === key;
+    });
+    return !!result.length;
+  },
+  handleChange: function(key, e) {
+    var index, newValue;
+    newValue = this.props.value.slice(0);
+    index = newValue.indexOf(key);
+    if (e.target.checked) {
+      if (index === -1) {
+        newValue.push(key);
+      }
+    } else {
+      if (index !== -1) {
+        newValue.splice(index, 1);
+      }
+    }
+    return this.props.onChange(this.props.optionName, newValue);
+  }
+});
+
+module.exports = DesignSettings_Checkbox;
+
+
+
+},{}],25:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Color, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Color = React.createClass({displayName: 'DesignSettings_Color',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.div({className: "b-design-option__item__current-params"}, 
+        React.DOM.span({className: "b-design-option__item__name"}, 
+           this.props.title
+        ), 
+        React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({style: { backgroundColor: this.props.items[this.props.value]}, 
+               className: "b-design-option__color__ind"})
+        )
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, that;
+    that = this;
+    listItems = _.map(this.props.items, function(hexCode, name) {
+      var itemStyles;
+      itemStyles = {
+        backgroundColor: hexCode
+      };
+      return React.DOM.label({className: "b-design-option__color", 
+              key: name }, 
+         React.DOM.input({type: "radio", 
+                name:  that.props.optionName, 
+                defaultChecked:  name == that.props.value, 
+                value: name, 
+                onChange:  that.handleChange.bind(null, name) }), 
+        React.DOM.span({style: itemStyles, 
+              className: "b-design-option__color__ind"})
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__available-params"}, 
+              listItems 
+            );
+  },
+  handleChange: function(value) {
+    return this.props.onChange(this.props.optionName, value);
+  }
+});
+
+module.exports = DesignSettings_Color;
+
+
+
+},{}],26:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Range, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Range = React.createClass({displayName: 'DesignSettings_Range',
+  propTypes: {
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number,
+    to: PropTypes.number,
+    step: PropTypes.number,
+    onChange: PropTypes.func.isRequired
+  },
+  getDefaultProps: function() {
+    return {
+      from: 0,
+      to: 1,
+      step: .1
+    };
+  },
+  componentDidMount: function() {
+    var slider;
+    slider = this.getDOMNode();
+    $(slider).noUiSlider({
+      start: this.props.value,
+      step: this.props.step,
+      range: {
+        min: this.props.from,
+        max: this.props.to
+      }
+    });
+    return $(slider).on('change', this.handleChange);
+  },
+  componentWillUnmount: function() {
+    var slider;
+    slider = this.getDOMNode();
+    $(slider).off('change', this.handleChange);
+    return $(slider).destroy();
+  },
+  render: function() {
+    return React.DOM.div(null);
+  },
+  handleChange: function(e, value) {
+    return this.props.onChange(parseFloat(value));
+  }
+});
+
+module.exports = DesignSettings_Range;
+
+
+
+},{}],27:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DESIGN_SETTINGS_TITLE, DesignSettings, DesignSettingsMixin, DesignSettings_Checkbox, DesignSettings_Color, DesignSettings_FeedOpacity, DesignSettings_Font, DesignSettings_FontSize, DesignSettings_PageBackground, DesignSettings_ProductLayout, DesignSettings_ProductsInRow, DesignSettings_SaveButton, PropTypes;
+
+DesignSettingsMixin = require('./mixins/designSettings');
+
+DesignSettings_Color = require('./common/color');
+
+DesignSettings_Checkbox = require('./common/checkbox');
+
+DesignSettings_SaveButton = require('./buttons/save');
+
+DesignSettings_PageBackground = require('./pageBackground');
+
+DesignSettings_FeedOpacity = require('./feedOpacity');
+
+DesignSettings_Font = require('./font');
+
+DesignSettings_FontSize = require('./fontSize');
+
+DesignSettings_ProductLayout = require('./productLayout');
+
+DesignSettings_ProductsInRow = require('./productsInRow');
+
+PropTypes = React.PropTypes;
+
+DESIGN_SETTINGS_TITLE = 'Управление дизайном';
+
+DesignSettings = React.createClass({displayName: 'DesignSettings',
+  mixins: [DesignSettingsMixin],
+  propTypes: {
+    pageColor: PropTypes.object.isRequired,
+    pageBackground: PropTypes.object.isRequired,
+    feedColor: PropTypes.object.isRequired,
+    feedOpacity: PropTypes.object.isRequired,
+    font: PropTypes.object.isRequired,
+    fontColor: PropTypes.object.isRequired,
+    fontSize: PropTypes.object.isRequired,
+    activeElementsColor: PropTypes.object.isRequired,
+    productLayout: PropTypes.object.isRequired,
+    catalog: PropTypes.object.isRequired,
+    productsInRow: PropTypes.object.isRequired,
+    mainPage: PropTypes.object.isRequired
+  },
+  getInitialState: function() {
+    var initialSettings;
+    initialSettings = Object.keys(this.props).reduce((function(_this) {
+      return function(previous, current) {
+        previous[current] = _this.props[current].value;
+        return previous;
+      };
+    })(this), {});
+    return {
+      settings: initialSettings
+    };
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option"}, 
+      React.DOM.div({className: "b-design-option__title"}, 
+        DESIGN_SETTINGS_TITLE 
+      ), 
+      React.DOM.div({className: "b-design-option__close"}), 
+      React.DOM.div({className: "b-design-option__body"}, 
+        DesignSettings_Color({
+            title:  this.props.pageColor.title, 
+            optionName:  this.props.pageColor.optionName, 
+            value:  this.state.settings.pageColor, 
+            items:  this.props.pageColor.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_PageBackground({
+            title:  this.props.pageBackground.title, 
+            optionName:  this.props.pageBackground.optionName, 
+            value:  this.state.settings.pageBackground, 
+            items:  this.props.pageBackground.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Color({
+            title:  this.props.feedColor.title, 
+            optionName:  this.props.feedColor.optionName, 
+            value:  this.state.settings.feedColor, 
+            items:  this.props.feedColor.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_FeedOpacity({
+            title:  this.props.feedOpacity.title, 
+            optionName:  this.props.feedOpacity.optionName, 
+            value:  this.state.settings.feedOpacity, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Color({
+            title:  this.props.fontColor.title, 
+            optionName:  this.props.fontColor.optionName, 
+            value:  this.state.settings.fontColor, 
+            items:  this.props.fontColor.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Color({
+            title:  this.props.activeElementsColor.title, 
+            optionName:  this.props.activeElementsColor.optionName, 
+            value:  this.state.settings.activeElementsColor, 
+            items:  this.props.activeElementsColor.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Font({
+            title:  this.props.font.title, 
+            optionName:  this.props.font.optionName, 
+            value:  this.state.settings.font, 
+            items:  this.props.font.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_FontSize({
+            title:  this.props.fontSize.title, 
+            optionName:  this.props.fontSize.optionName, 
+            value:  this.state.settings.fontSize, 
+            from:  this.props.fontSize.from, 
+            to:  this.props.fontSize.to, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_ProductLayout({
+            title:  this.props.productLayout.title, 
+            optionName:  this.props.productLayout.optionName, 
+            value:  this.state.settings.productLayout, 
+            items:  this.props.productLayout.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Checkbox({
+            title:  this.props.catalog.title, 
+            optionName:  this.props.catalog.optionName, 
+            value:  this.state.settings.catalog, 
+            items:  this.props.catalog.items, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_ProductsInRow({
+            title:  this.props.productsInRow.title, 
+            optionName:  this.props.productsInRow.optionName, 
+            value:  this.state.settings.productsInRow, 
+            from:  this.props.productsInRow.from, 
+            to:  this.props.productsInRow.to, 
+            onChange:  this.updateSettings}), 
+        DesignSettings_Checkbox({
+            title:  this.props.mainPage.title, 
+            optionName:  this.props.mainPage.optionName, 
+            value:  this.state.settings.mainPage, 
+            items:  this.props.mainPage.items, 
+            onChange:  this.updateSettings})
+      ), 
+      DesignSettings_SaveButton({onClick:  this.saveSettings})
+    );
+  },
+  updateSettings: function(optionName, optionValue) {
+    var newSettings;
+    newSettings = this.state.settings;
+    newSettings[optionName] = optionValue;
+    return this.setState({
+      settings: newSettings
+    });
+  },
+  saveSettings: function() {
+    return console.log('saveSettings', this.state.settings);
+  }
+});
+
+module.exports = DesignSettings;
+
+
+
+},{"./buttons/save":23,"./common/checkbox":24,"./common/color":25,"./feedOpacity":28,"./font":29,"./fontSize":30,"./mixins/designSettings":31,"./pageBackground":32,"./productLayout":33,"./productsInRow":34}],28:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_FeedOpacity, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_FeedOpacity = React.createClass({displayName: 'DesignSettings_FeedOpacity',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(opacity) {
+    return this.props.onChange(this.props.optionName, opacity);
+  }
+});
+
+module.exports = DesignSettings_FeedOpacity;
+
+
+
+},{"./common/range":26}],29:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_Font, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_Font = React.createClass({displayName: 'DesignSettings_Font',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var fontComponent, listItems;
+    fontComponent = this;
+    listItems = _.map(this.props.items, function(fullName, name) {
+      var itemClasses;
+      itemClasses = 'b-design-option__type b-design-option__type_' + name;
+      return React.DOM.label({className: itemClasses, 
+              key: name }, 
+         React.DOM.input({type: "radio", 
+                defaultChecked:  name == fontComponent.props.value, 
+                name:  fontComponent.props.optionName, 
+                value: name, 
+                onChange:  fontComponent.handleChange.bind(null, name) }), 
+         React.DOM.span({className: "b-design-option__type__ind"}, "Aa")
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  handleChange: function(fontName) {
+    return this.props.onChange(this.props.optionName, fontName);
+  }
+});
+
+module.exports = DesignSettings_Font;
+
+
+
+},{}],30:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_FontSize, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_FontSize = React.createClass({displayName: 'DesignSettings_FontSize',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            from:  this.props.from, 
+            to:  this.props.to, 
+            step: 1, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(fontSize) {
+    return this.props.onChange(this.props.optionName, fontSize);
+  }
+});
+
+module.exports = DesignSettings_FontSize;
+
+
+
+},{"./common/range":26}],31:[function(require,module,exports){
+var DesignSettingsMixin;
+
+DesignSettingsMixin = {
+  getDefaultProps: function() {
+    return {
+      pageColor: {
+        title: 'цвет страницы',
+        optionName: 'pageColor',
+        value: 'gray',
+        items: {
+          dark: '#000',
+          white: '#fff',
+          gray: '#eee',
+          red: '#EF1919'
+        }
+      },
+      pageBackground: {
+        title: 'фон страницы',
+        optionName: 'pageBackground',
+        value: 'steve',
+        items: {
+          pokeball: 'https://s-media-cache-ak0.pinimg.com/originals/56/b8/bd/56b8bdb28de8e41c9acbaa993e16a1eb.jpg',
+          steve: 'http://img.faceyourmanga.com/mangatars/0/0/39/large_511.png'
+        }
+      },
+      feedColor: {
+        title: 'цвет ленты',
+        optionName: 'feedColor',
+        value: 'green',
+        items: {
+          black: '#000',
+          white: '#fff',
+          green: '#309060'
+        }
+      },
+      feedOpacity: {
+        title: 'прозрачность ленты',
+        optionName: 'feedOpacity',
+        value: .3
+      },
+      font: {
+        title: 'шрифт',
+        optionName: 'font',
+        value: 'gotham',
+        items: {
+          gotham: 'Gotham Serif',
+          times: 'Times New Roman',
+          arial: 'Arial',
+          helvetica: 'Helvetica'
+        }
+      },
+      fontColor: {
+        title: 'цвет текста',
+        optionName: 'fontColor',
+        value: 'white',
+        items: {
+          black: '#000',
+          white: '#fff',
+          green: '#309060'
+        }
+      },
+      fontSize: {
+        title: 'размер шрифта',
+        optionName: 'fontSize',
+        value: 14,
+        from: 13,
+        to: 15
+      },
+      activeElementsColor: {
+        title: 'цвет активных элементов',
+        optionName: 'activeElementsColor',
+        value: 'black',
+        items: {
+          black: '#000',
+          white: '#fff',
+          green: '#309060'
+        }
+      },
+      productLayout: {
+        title: 'лейаут товара',
+        optionName: 'productLayout',
+        value: 'layoutOne',
+        items: {
+          layoutOne: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg',
+          layoutTwo: 'http://cs9514.vk.me/v9514976/2b7d/dV_vHdU34H8.jpg'
+        }
+      },
+      catalog: {
+        title: 'каталог',
+        optionName: 'catalog',
+        value: ['filter', 'sidebar'],
+        items: {
+          filter: 'Фильтр',
+          sidebar: 'Меню',
+          search: 'Поиск'
+        }
+      },
+      productsInRow: {
+        title: 'товаров в ряд',
+        optionName: 'productsInRow',
+        value: 3,
+        from: 2,
+        to: 4
+      },
+      mainPage: {
+        title: 'главная страница',
+        optionName: 'mainPage',
+        value: ['bigBanner'],
+        items: {
+          bigBanner: 'Большой баннер',
+          callback: 'Форма обратного звонка'
+        }
+      }
+    };
+  }
+};
+
+module.exports = DesignSettingsMixin;
+
+
+
+},{}],32:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_PageBackground, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_PageBackground = React.createClass({displayName: 'DesignSettings_PageBackground',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.div({className: "b-design-option__item__current-params"}, 
+        React.DOM.span({className: "b-design-option__item__name"}, 
+           this.props.title
+        ), 
+        React.DOM.div({className: "b-design-option__item__val"}, 
+          React.DOM.div({className: "b-design-option__color b-design-option__color_img"}, 
+            React.DOM.div({className: "b-design-option__color__ind"}, 
+              React.DOM.img({src:  this.props.items[this.props.value] })
+            )
+          )
+        )
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, pageBackgroundComponent;
+    pageBackgroundComponent = this;
+    listItems = _.map(this.props.items, function(url, name) {
+      return React.DOM.label({className: "b-design-option__color b-design-option__color_img", 
+              key: name }, 
+         React.DOM.input({type: "radio", 
+                name:  pageBackgroundComponent.props.optionName, 
+                defaultChecked:  name == pageBackgroundComponent.props.value, 
+                value: name, 
+                onChange:  pageBackgroundComponent.handleChange.bind(null, name) }), 
+        React.DOM.span({className: "b-design-option__color__ind"}, 
+          React.DOM.img({src: url })
+        )
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__available-params"}, 
+              listItems 
+            );
+  },
+  handleChange: function(backgroundName) {
+    return this.props.onChange(this.props.optionName, backgroundName);
+  }
+});
+
+module.exports = DesignSettings_PageBackground;
+
+
+
+},{}],33:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ProductLayout, PropTypes;
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ProductLayout = React.createClass({displayName: 'DesignSettings_ProductLayout',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    items: PropTypes.object.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+       this.renderParamList() 
+    );
+  },
+  renderParamList: function() {
+    var listItems, productLayoutComponent;
+    productLayoutComponent = this;
+    listItems = _.map(this.props.items, function(url, name) {
+      return React.DOM.label({className: "b-design-option__layout", 
+              key: name }, 
+        React.DOM.input({type: "radio", 
+               name:  productLayoutComponent.props.optionName, 
+               defaultChecked:  name == productLayoutComponent.props.value, 
+               value: name, 
+               onChange:  productLayoutComponent.handleChange.bind(null, name) }), 
+        React.DOM.span({className: "b-design-option__layout__ind"}, 
+          name 
+        )
+      );
+    });
+    return React.DOM.div({className: "b-design-option__item__val"}, 
+              listItems 
+            );
+  },
+  handleChange: function(layout) {
+    return this.props.onChange(this.props.optionName, layout);
+  }
+});
+
+module.exports = DesignSettings_ProductLayout;
+
+
+
+},{}],34:[function(require,module,exports){
+
+/** @jsx React.DOM */
+var DesignSettings_ProductsInRow, DesignSettings_Range, PropTypes;
+
+DesignSettings_Range = require('./common/range');
+
+PropTypes = React.PropTypes;
+
+DesignSettings_ProductsInRow = React.createClass({displayName: 'DesignSettings_ProductsInRow',
+  propTypes: {
+    title: PropTypes.string.isRequired,
+    optionName: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired,
+    from: PropTypes.number.isRequired,
+    to: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
+  },
+  render: function() {
+    return React.DOM.div({className: "b-design-option__item"}, 
+      React.DOM.span({className: "b-design-option__item__name"}, 
+         this.props.title
+      ), 
+      React.DOM.div({className: "b-design-option__item__val"}, 
+        DesignSettings_Range({
+            value:  this.props.value, 
+            from:  this.props.from, 
+            to:  this.props.to, 
+            step: 1, 
+            onChange:  this.handleChange})
+      )
+    );
+  },
+  handleChange: function(productsInRow) {
+    return this.props.onChange(this.props.optionName, productsInRow);
+  }
+});
+
+module.exports = DesignSettings_ProductsInRow;
+
+
+
+},{"./common/range":26}],35:[function(require,module,exports){
+
+/** @jsx React.DOM */
 var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
 
 STATE_LOADING = 'loading';
@@ -1902,7 +2506,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 
-},{}],24:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -1932,7 +2536,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],25:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 var KioskEvents;
 
 KioskEvents = new EventEmitter();
@@ -1947,7 +2551,7 @@ module.exports = KioskEvents;
 
 
 
-},{}],26:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var FilteredCountTooltip, TooltipController,
@@ -2005,7 +2609,7 @@ module.exports = TooltipController;
 
 
 
-},{"../components/common/tooltip/filteredCount":15}],27:[function(require,module,exports){
+},{"../components/common/tooltip/filteredCount":15}],39:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -2039,7 +2643,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],28:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -2048,7 +2652,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":27}],29:[function(require,module,exports){
+},{"./_base":39}],41:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -2082,7 +2686,7 @@ module.exports = BaseStore;
 
 
 
-},{}],30:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -2144,7 +2748,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":29}],31:[function(require,module,exports){
+},{"./_base":41}],43:[function(require,module,exports){
 var ApiRoutes;
 
 ApiRoutes = {
@@ -2157,7 +2761,7 @@ module.exports = ApiRoutes;
 
 
 
-},{}],32:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -2166,7 +2770,7 @@ window.Routes = {
 
 
 
-},{}],33:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -2261,7 +2865,7 @@ $(function() {
 
 
 
-},{}],34:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -2299,7 +2903,7 @@ $(function() {
 
 
 
-},{}],35:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -2336,7 +2940,7 @@ $(function() {
 
 
 
-},{}],36:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -2405,7 +3009,7 @@ $(function() {
 
 
 
-},{}],37:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -2425,7 +3029,7 @@ $(function() {
 
 
 
-},{}],38:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -2446,7 +3050,7 @@ $(function() {
 
 
 
-},{}],39:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -2490,7 +3094,7 @@ $(function() {
 
 
 
-},{}],40:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -2513,7 +3117,7 @@ $(function() {
 
 
 
-},{}],41:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -2574,7 +3178,7 @@ $(function() {
 
 
 
-},{}],42:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -2589,7 +3193,7 @@ $(function() {
 
 
 
-},{}],43:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2601,7 +3205,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":44}],44:[function(require,module,exports){
+},{"./lib/Dispatcher":56}],56:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -2853,7 +3457,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":45}],45:[function(require,module,exports){
+},{"./invariant":57}],57:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.

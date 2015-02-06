@@ -5,7 +5,7 @@ CatalogFilterList               = require './list'
 CatalogFilter_ShowResultsButton = require './buttons/showResults'
 { PropTypes } = React
 
-window.CatalogFilter = React.createClass
+CatalogFilter = React.createClass
   mixins: [CatalogFilterMixin]
 
   propTypes:

@@ -7102,18 +7102,24 @@ html {
 /* line 6, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_bg-black {
   background-color: #000; }
-/* line 9, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+/* line 10, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+.b-page_line-white .b-page__content__inner {
+  background-color: white; }
+/* line 14, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+.b-page_line-black .b-page__content__inner {
+  background-color: black; }
+/* line 17, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_ff-helvetica {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 12, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+/* line 20, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_ff-ptserif {
   font-family: "PT Serif", TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif; }
-/* line 15, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+/* line 23, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_ff-ptsans {
   font-family: "PT Sans", Helvetica, Arial, sans-serif; }
-/* line 18, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+/* line 26, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_ff-verdana {
   font-family: Verdana, Geneva, sans-serif; }
-/* line 21, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
+/* line 29, /Volumes/hdd/work/kiosk-fork/app/stylesheets/sass/block/design-test */
 .b-page_ff-courier {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace; }

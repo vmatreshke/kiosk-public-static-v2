@@ -5,11 +5,10 @@
 DesignSettings_Checkbox = React.createClass
 
   propTypes:
-    title:      PropTypes.string.isRequired
-    optionName: PropTypes.string.isRequired
-    value:      PropTypes.array.isRequired
-    items:      PropTypes.object.isRequired
-    onChange:   PropTypes.func.isRequired
+    title:    PropTypes.string.isRequired
+    value:    PropTypes.array.isRequired
+    items:    PropTypes.object.isRequired
+    onChange: PropTypes.func.isRequired
 
   render: ->
     `<div className="b-design-option__item">
@@ -50,6 +49,6 @@ DesignSettings_Checkbox = React.createClass
     else
       newValue.splice index, 1 if index != -1
 
-    @props.onChange @props.optionName, newValue
+    @props.onChange newValue
 
 module.exports = DesignSettings_Checkbox

@@ -5,11 +5,10 @@
 DesignSettings_ProductLayout = React.createClass
 
   propTypes:
-    title:      PropTypes.string.isRequired
-    optionName: PropTypes.string.isRequired
-    value:      PropTypes.string.isRequired
-    items:      PropTypes.object.isRequired
-    onChange:   PropTypes.func.isRequired
+    title:    PropTypes.string.isRequired
+    value:    PropTypes.string.isRequired
+    items:    PropTypes.object.isRequired
+    onChange: PropTypes.func.isRequired
 
   render: ->
     `<div className="b-design-option__item">
@@ -20,15 +19,13 @@ DesignSettings_ProductLayout = React.createClass
     </div>`
 
   renderParamList: ->
-    productLayoutComponent = @
+    that = @
     listItems = _.map @props.items, (url, name) ->
       `<label className="b-design-option__layout"
               key={ name }>
         <input type="radio"
-               name={ productLayoutComponent.props.optionName }
-               defaultChecked={ name == productLayoutComponent.props.value }
-               value={ name }
-               onChange={ productLayoutComponent.handleChange.bind(null, name) } />
+               checked={ name == that.props.value }
+               onChange={ that.handleChange.bind(null, name) } />
         <span className="b-design-option__layout__ind">
           { name }
         </span>
@@ -39,6 +36,6 @@ DesignSettings_ProductLayout = React.createClass
             </div>`
 
   handleChange: (layout) ->
-    @props.onChange @props.optionName, layout
+    @props.onChange layout
 
 module.exports = DesignSettings_ProductLayout

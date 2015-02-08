@@ -6,10 +6,9 @@ DesignSettings_Range = require './common/range'
 DesignSettings_FeedOpacity = React.createClass
 
   propTypes:
-    title:      PropTypes.string.isRequired
-    optionName: PropTypes.string.isRequired
-    value:      PropTypes.number.isRequired
-    onChange:   PropTypes.func.isRequired
+    title:    PropTypes.string.isRequired
+    value:    PropTypes.number.isRequired
+    onChange: PropTypes.func.isRequired
 
   render: ->
     `<div className="b-design-option__item">
@@ -24,6 +23,6 @@ DesignSettings_FeedOpacity = React.createClass
     </div>`
 
   handleChange: (opacity) ->
-    @props.onChange @props.optionName, opacity
+    @props.onChange opacity
 
 module.exports = DesignSettings_FeedOpacity

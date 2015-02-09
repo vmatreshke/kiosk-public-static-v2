@@ -5,11 +5,10 @@
 DesignSettings_Font = React.createClass
 
   propTypes:
-    title:      PropTypes.string.isRequired
-    optionName: PropTypes.string.isRequired
-    value:      PropTypes.string.isRequired
-    items:      PropTypes.object.isRequired
-    onChange:   PropTypes.func.isRequired
+    title:    PropTypes.string.isRequired
+    value:    PropTypes.string.isRequired
+    items:    PropTypes.array.isRequired
+    onChange: PropTypes.func.isRequired
 
   render: ->
     `<div className="b-design-option__item">
@@ -20,19 +19,15 @@ DesignSettings_Font = React.createClass
     </div>`
 
   renderParamList: ->
-    #TODO: We can set inline font-family style with fullName value, instead of 
-    #      boring className
-    fontComponent = @
-    listItems = _.map @props.items, (fullName, name) ->
-      itemClasses = 'b-design-option__type b-design-option__type_' + name
+    that = @
+    listItems = _.map @props.items, (fontName) ->
+      itemClasses = 'b-design-option__type b-design-option__type_' + fontName
 
       `<label className={ itemClasses }
-              key={ name }>
+              key={ fontName }>
          <input type="radio"
-                defaultChecked={ name == fontComponent.props.value }
-                name={ fontComponent.props.optionName }
-                value={ name }
-                onChange={ fontComponent.handleChange.bind(null, name) } />
+                checked={ fontName == that.props.value }
+                onChange={ that.handleChange.bind(null, fontName) } />
          <span className="b-design-option__type__ind">Aa</span>
       </label>`
 
@@ -41,6 +36,6 @@ DesignSettings_Font = React.createClass
             </div>`
 
   handleChange: (fontName) ->
-    @props.onChange @props.optionName, fontName
+    @props.onChange fontName
 
 module.exports = DesignSettings_Font

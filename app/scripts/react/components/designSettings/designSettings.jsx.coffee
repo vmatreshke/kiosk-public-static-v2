@@ -1,5 +1,6 @@
 ###* @jsx React.DOM ###
 
+jss                           = require 'jss'
 DesignSettingsMixin           = require './mixins/designSettings'
 DesignSettings_Color          = require './common/color'
 DesignSettings_Checkbox       = require './common/checkbox'
@@ -39,6 +40,18 @@ DesignSettings = React.createClass
     , {}
 
     settings: initialSettings
+
+  componentDidMount: ->
+    @sheet = jss.createStyleSheet({},
+      named: false
+      link: true
+    ).attach()
+    window.sheet = @sheet
+    @sheet.element.setAttribute 'design-settings-sheet', ''
+
+  componentWillUnmount: ->
+    @sheet.detach()
+    @sheet = null
 
   render: ->
     `<div className="b-design-option">
@@ -116,6 +129,7 @@ DesignSettings = React.createClass
     newSettings = @state.settings
     newSettings[optionName] = value
 
+    pageEl = document.querySelector '.b-page'
     activeElSelectors = [
       '.b-btn'
       '.b-paginator__item'
@@ -126,37 +140,21 @@ DesignSettings = React.createClass
       '.pagination .page a'
     ]
 
-    pageEl    = document.querySelector '.b-page'
-    feedEls   = document.querySelectorAll '.b-page__content__inner'
-    activeEls = document.querySelectorAll activeElSelectors.join(', ')
-
     switch optionName
-      when 'pageColor'
-        pageEl.style.backgroundColor = value if pageEl?
-      when 'pageBackground'
-        pageEl.style.backgroundImage = "url('#{ value }')" if pageEl?
-      when 'feedColor'
-        if feedEls.length
-          _.map feedEls, (el) -> changeBackgroundColor el, value
-      when 'feedOpacity'
-        if feedEls.length
-          _.map feedEls, (el) -> changeAlpha el, value
-      when 'fontColor'
-        pageEl.style.color = value if pageEl?
-      when 'activeElementsColor'
-        if activeEls.length
-          _.map activeEls, (el) -> el.style.color = value
-      when 'font'
-        setDesignClass(pageEl, 'b-page_ff-', value) if pageEl?
-      when 'fontSize'
-        pageEl.style.fontSize = "#{ value }px" if pageEl?
+      when 'pageColor'           then @setStyles '.b-page', 'background-color': value
+      when 'pageBackground'      then @setStyles '.b-page', 'background-image': "url('#{ value }')"
+      when 'feedColor'           then @setStyles '.b-page__content__inner', 'background-color__color': value
+      when 'feedOpacity'         then @setStyles '.b-page__content__inner', 'background-color__opacity': value
+      when 'fontColor'           then @setStyles '.b-page', 'color': value
+      when 'activeElementsColor' then @setStyles activeElSelectors.join(', '), 'color': value
+      when 'font'                then setDesignClass(pageEl, 'b-page_ff-', value) if pageEl?
+      when 'fontSize'            then @setStyles '.b-page', 'font-size': "#{ value }px"
+      when 'productsInRow'       then pageEl.setAttribute 'data-in-row', value if pageEl?
       when 'productLayout'
         setDesignClass(pageEl, 'b-page_layout-', value) if pageEl?
         $(window).trigger 'resize' # Сергей Дёмин сказал, что это нужно для карусели
       # when 'catalog'
       #   setDesignClass(pageEl, 'b-page_catalog-', value) if pageEl?
-      when 'productsInRow'
-        pageEl.setAttribute 'data-in-row', value if pageEl?
       # when 'mainPage'
       else console.warn? 'Unknown type of design option', optionName
 
@@ -164,6 +162,31 @@ DesignSettings = React.createClass
 
   saveSettings: ->
     console.log 'saveSettings', @state.settings
+
+  setStyles: (selector, styles = {}) ->
+    rule      = @sheet.getRule selector
+    newStyles = {}
+
+    # Если у одного элемента могут изменяться и цвет и прозрачность,
+    # для свойства мы добавляем нужный постфикс вида __color или __opacity.
+    _.map styles, (value, key) ->
+      match = /(.*)__(\w+)/g.exec key
+      if match?
+        rgba = rule?.prop('background-color') || 'rgba(0,0,0,1)'
+
+        switch match[2]
+          when 'color'            
+            updatedRgba = changeBackgroundColor rgba, value
+            newStyles['background-color'] = updatedRgba
+          when 'opacity'
+            updatedRgba = changeAlpha rgba, value
+            newStyles['background-color'] = updatedRgba
+      else newStyles[key] = value
+
+    if rule?
+      _.map newStyles, (value, key) -> rule.prop key, value
+    else
+      @sheet.addRule selector, newStyles
 
 module.exports = DesignSettings
 
@@ -173,18 +196,18 @@ hexToRgb = (hex) ->
   result         = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec hex
   if result then [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)] else null
 
-changeBackgroundColor = (el, hex) ->
-  currentColor = getComputedStyle(el).getPropertyValue 'background-color'
-  match        = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,)?(\s*\d+[\.\d+]*)*\)/g.exec currentColor
-  rgb          = hexToRgb hex
-  a            = parseFloat(match[4]) || 1
-  el.style.backgroundColor = 'rgba(' + [rgb[0], rgb[1], rgb[2], a].join(',') + ')'
+changeBackgroundColor = (rgba, hex) ->
+  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,)?(\s*\d+[\.\d+]*)*\)/g.exec rgba
+  rgb   = hexToRgb hex
+  a     = parseFloat(match[4]) || 1
 
-changeAlpha = (el, a) ->
-  currentColor = getComputedStyle(el).getPropertyValue 'background-color'
-  match        = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec currentColor
-  a            = if a > 1 then a / 100 else a
-  el.style.backgroundColor = 'rgba(' + [match[1], match[2], match[3], a].join(',') + ')'
+  'rgba(' + [rgb[0], rgb[1], rgb[2], a].join(',') + ')'
+
+changeAlpha = (rgba, a) ->
+  match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec rgba
+  a     = if a > 1 then a / 100 else a
+
+  'rgba(' + [match[1], match[2], match[3], a].join(',') + ')'
 
 setDesignClass = (el, name, value) ->
   classes = el.className.split(' ').filter (c) ->

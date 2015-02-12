@@ -7,23 +7,21 @@ $ ->
     navigation: true
 
   $('[application-slider]').each ->
-    thisInner = $(this).find '.application-slider__inner'
-    options = defaultCarouselOptions
-    if $(this).hasClass 'b-slider_promo'
+    options = _.clone defaultCarouselOptions
+
+    if $(@).hasClass 'b-slider_promo'
       options['singleItem'] = true
       options['autoHeight'] = true
-      options['autoPlay'] = false
-      options['lazyLoad'] = true
-      options['afterInit'] = ()->
-        @.$elem.addClass 'loaded'
-    if $(this).hasClass 'application-slider_photos'
-      options['singleItem'] = false
-      options['items'] = 3
+      options['lazyLoad']   = true
+      options['afterInit']  = -> @.$elem.addClass 'loaded'
+    if $(@).hasClass 'application-slider_photos'
+      options['singleItem']   = false
+      options['items']        = 3
       options['itemsDesktop'] = 3
-    if $(this).hasClass 'application-slider_instagram'
-      options['singleItem'] = false
-      options['items'] = 6
+    if $(@).hasClass 'application-slider_instagram'
+      options['singleItem']   = false
+      options['items']        = 6
       options['itemsDesktop'] = 6
-      options['lazyLoad'] = true
+      options['lazyLoad']     = true
 
-    $(this).owlCarousel options
+    $(@).owlCarousel options

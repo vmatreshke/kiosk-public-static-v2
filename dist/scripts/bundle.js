@@ -3035,13 +3035,11 @@ $(function() {
     navigation: true
   };
   return $('[application-slider]').each(function() {
-    var options, thisInner;
-    thisInner = $(this).find('.application-slider__inner');
-    options = defaultCarouselOptions;
+    var options;
+    options = _.clone(defaultCarouselOptions);
     if ($(this).hasClass('b-slider_promo')) {
       options['singleItem'] = true;
       options['autoHeight'] = true;
-      options['autoPlay'] = false;
       options['lazyLoad'] = true;
       options['afterInit'] = function() {
         return this.$elem.addClass('loaded');

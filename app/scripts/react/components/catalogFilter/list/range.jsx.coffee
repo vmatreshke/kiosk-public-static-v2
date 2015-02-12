@@ -9,23 +9,24 @@ CatalogFilterList_Range = React.createClass
     paramName:  PropTypes.string.isRequired
     filterName: PropTypes.string.isRequired
     units:      PropTypes.string
+    valueFrom:  PropTypes.number
+    valueTo:    PropTypes.number
     from:       PropTypes.number.isRequired
     to:         PropTypes.number.isRequired
 
   getInitialState: ->
-    from: @props.from
-    to:   @props.to
+    from: @props.valueFrom || @props.from
+    to:   @props.valueTo   || @props.to
 
   componentDidMount: ->
     slider = @refs.slider.getDOMNode()
 
-    $(slider)
-      .noUiSlider
-        start: [@state.from, @state.to]
-        connect: true
-        range:
-          'min': @state.from
-          'max': @state.to
+    $(slider).noUiSlider
+      start: [@state.from, @state.to]
+      range: 
+        min: @props.from
+        max: @props.to
+      connect: true
 
     $(slider).on 'slide',  @handleSlide
     $(slider).on 'change', @handleChange
@@ -48,7 +49,7 @@ CatalogFilterList_Range = React.createClass
           <div ref="rangeValue"
                className="b-full-filter__slider__value">
             { this.state.from }
-            <span> – </span>
+            <span className="slider-divider"> – </span>
             { this.state.to } <span dangerouslySetInnerHTML={{ __html: this.props.units }} />
           </div>
           <div ref="slider"

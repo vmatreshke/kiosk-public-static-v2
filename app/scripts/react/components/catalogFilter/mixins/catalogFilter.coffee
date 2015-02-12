@@ -21,6 +21,8 @@ CatalogFilterMixin =
       type: 'range'
       paramName: 'price'
       units: '&#x20BD;'
+      valueFrom: 20322
+      valueTo: 35023
       from: 10000
       to: 50000
     }, {

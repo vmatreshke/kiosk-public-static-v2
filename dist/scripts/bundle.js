@@ -68,7 +68,7 @@ TooltipController = require('./react/controllers/tooltip');
 
 new TooltipController();
 
-window.ReactUjs.initialize();
+ReactUjs.initialize();
 
 
 
@@ -548,7 +548,7 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
     var listItems, that;
     that = this;
     return listItems = this.props.options.map(function(item, i) {
-      var from, items, paramName, title, to, units;
+      var from, items, paramName, title, to, units, valueFrom, valueTo;
       switch (item.type) {
         case 'checkbox':
           title = item.title, paramName = item.paramName, items = item.items;
@@ -559,12 +559,14 @@ CatalogFilterList = React.createClass({displayName: 'CatalogFilterList',
                items: items, 
                key: i });
         case 'range':
-          title = item.title, paramName = item.paramName, units = item.units, from = item.from, to = item.to;
+          title = item.title, paramName = item.paramName, units = item.units, valueFrom = item.valueFrom, valueTo = item.valueTo, from = item.from, to = item.to;
           return CatalogFilterList_Range({
                title: title, 
                paramName: paramName, 
                filterName:  that.props.filterName, 
                units: units, 
+               valueFrom: valueFrom, 
+               valueTo: valueTo, 
                from: from, 
                to: to, 
                key: i });
@@ -724,13 +726,15 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
     paramName: PropTypes.string.isRequired,
     filterName: PropTypes.string.isRequired,
     units: PropTypes.string,
+    valueFrom: PropTypes.number,
+    valueTo: PropTypes.number,
     from: PropTypes.number.isRequired,
     to: PropTypes.number.isRequired
   },
   getInitialState: function() {
     return {
-      from: this.props.from,
-      to: this.props.to
+      from: this.props.valueFrom || this.props.from,
+      to: this.props.valueTo || this.props.to
     };
   },
   componentDidMount: function() {
@@ -738,11 +742,11 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
     slider = this.refs.slider.getDOMNode();
     $(slider).noUiSlider({
       start: [this.state.from, this.state.to],
-      connect: true,
       range: {
-        'min': this.state.from,
-        'max': this.state.to
-      }
+        min: this.props.from,
+        max: this.props.to
+      },
+      connect: true
     });
     $(slider).on('slide', this.handleSlide);
     return $(slider).on('change', this.handleChange);
@@ -765,7 +769,7 @@ CatalogFilterList_Range = React.createClass({displayName: 'CatalogFilterList_Ran
           React.DOM.div({ref: "rangeValue", 
                className: "b-full-filter__slider__value"}, 
              this.state.from, 
-            React.DOM.span(null, " – "), 
+            React.DOM.span({className: "slider-divider"}, " – "), 
              this.state.to, " ", React.DOM.span({dangerouslySetInnerHTML: { __html: this.props.units}})
           ), 
           React.DOM.div({ref: "slider", 
@@ -897,6 +901,8 @@ CatalogFilterMixin = {
           type: 'range',
           paramName: 'price',
           units: '&#x20BD;',
+          valueFrom: 20322,
+          valueTo: 35023,
           from: 10000,
           to: 50000
         }, {
@@ -2914,7 +2920,7 @@ var ApiRoutes;
 
 ApiRoutes = {
   productsFilteredCount: function(filter) {
-    return gon.vendor_api_root_url + '/v1/operator/products/filtered/count?' + filter;
+    return gon.vendor_api_root_url + '/v1/products/filtered/count?' + filter;
   }
 };
 

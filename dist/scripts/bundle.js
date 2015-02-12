@@ -34,7 +34,11 @@ require('./react/components/basket/popup');
 
 require('./react/components/product/add_to_basket_button');
 
+require('./react/components/instagram/instagram_feed_mixin');
+
 require('./react/components/instagram/instagram');
+
+require('./react/components/instagram/instagram_v2');
 
 require('./react/components/design/designer');
 
@@ -73,7 +77,7 @@ ReactUjs.initialize();
 
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/designSettings/designSettings":29,"./react/components/instagram/instagram":37,"./react/components/product/add_to_basket_button":38,"./react/controllers/events":39,"./react/controllers/tooltip":40,"./react/dispatchers/basket":42,"./react/stores/basket":44,"./routes/api":45,"./routes/routes":46,"./shared/app":47,"./shared/application_slider":48,"./shared/cart":49,"./shared/checkout":50,"./shared/jump":51,"./shared/lightbox":52,"./shared/load_more":53,"./shared/mobile_navigation":54,"./shared/product_images_slider":55,"./shared/theme_switcher":56}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/api/api":4,"./react/components/basket/button":5,"./react/components/basket/popup":6,"./react/components/catalogFilter/catalogFilter":8,"./react/components/design/bglist":16,"./react/components/design/colorlist":17,"./react/components/design/designer":18,"./react/components/design/fontlist":19,"./react/components/design/layoutlist":20,"./react/components/design/toggle":21,"./react/components/design/valueslider":22,"./react/components/designSettings/designSettings":29,"./react/components/instagram/instagram":37,"./react/components/instagram/instagram_feed_mixin":38,"./react/components/instagram/instagram_v2":39,"./react/components/product/add_to_basket_button":40,"./react/controllers/events":41,"./react/controllers/tooltip":42,"./react/dispatchers/basket":44,"./react/stores/basket":46,"./routes/api":47,"./routes/routes":48,"./shared/app":49,"./shared/application_slider":50,"./shared/cart":51,"./shared/checkout":52,"./shared/jump":53,"./shared/lightbox":54,"./shared/load_more":55,"./shared/mobile_navigation":56,"./shared/product_images_slider":57,"./shared/theme_switcher":58}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -121,7 +125,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":57,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
+},{"accounting":"accounting","bootstrapSass":"bootstrapSass","eventEmitter":"eventEmitter","fancybox":"fancybox","fancybox.wannabe":"fancybox.wannabe","flux":59,"jquery":"jquery","jquery.mmenu":"jquery.mmenu","jquery.role":"jquery.role","lodash":"lodash","nouislider":"nouislider","owlCarousel":"owlCarousel","react":"react","react-mixin-manager":"react-mixin-manager","reactUjs":"reactUjs"}],3:[function(require,module,exports){
 window.BasketActions = {
   addGood: function(good) {
     return this._addItemToServer(good);
@@ -631,7 +635,7 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -693,7 +697,7 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, listRect, offsetLeft, position;
@@ -2027,7 +2031,7 @@ DesignSettings = React.createClass({displayName: 'DesignSettings',
         break;
       case 'fontSize':
         this.setStyles('.b-page', {
-          'font-size': "" + value + "px"
+          'font-size': value + "px"
         });
         break;
       case 'productsInRow':
@@ -2129,7 +2133,7 @@ setDesignClass = function(el, name, value) {
 
 
 
-},{"./buttons/save":23,"./common/checkbox":24,"./common/color":25,"./feedOpacity":30,"./font":31,"./fontSize":32,"./mixins/designSettings":33,"./pageBackground":34,"./productLayout":35,"./productsInRow":36,"jss":60}],30:[function(require,module,exports){
+},{"./buttons/save":23,"./common/checkbox":24,"./common/color":25,"./feedOpacity":30,"./font":31,"./fontSize":32,"./mixins/designSettings":33,"./pageBackground":34,"./productLayout":35,"./productsInRow":36,"jss":62}],30:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var DesignSettings_FeedOpacity, DesignSettings_Range, PropTypes;
@@ -2503,55 +2507,12 @@ module.exports = DesignSettings_ProductsInRow;
 },{"./common/range":28}],37:[function(require,module,exports){
 
 /** @jsx React.DOM */
-var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
-
-STATE_LOADING = 'loading';
-
-STATE_LOADED = 'loaded';
-
-STATE_ERROR = 'error';
-
-INSTAGRAM_API_URL = 'https://api.instagram.com/v1/';
-
-InstagramFeed_Mixin = {
-  _getRequestUrl: function() {
-    return INSTAGRAM_API_URL + 'users/' + this.props.userId + '/media/recent/?client_id=' + this.props.clientId;
-  },
-  _loadPhotos: function() {
-    return $.ajax({
-      dataType: "jsonp",
-      url: this._getRequestUrl(),
-      success: (function(_this) {
-        return function(photos) {
-          if (_this.isMounted() && (photos != null)) {
-            return _this.setState({
-              currentState: STATE_LOADED,
-              photos: photos.data
-            });
-          }
-        };
-      })(this),
-      error: (function(_this) {
-        return function(data) {
-          return _this._activateErrorState();
-        };
-      })(this)
-    });
-  },
-  _activateErrorState: function() {
-    if (this.isMounted()) {
-      return this.setState({
-        currentState: STATE_ERROR
-      });
-    }
-  }
-};
-
 window.InstagramFeed_Controllable = React.createClass({displayName: 'InstagramFeed_Controllable',
   propTypes: {
     isVisible: React.PropTypes.bool.isRequired,
     clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
   },
   getInitialState: function() {
     return {
@@ -2566,13 +2527,13 @@ window.InstagramFeed_Controllable = React.createClass({displayName: 'InstagramFe
   },
   render: function() {
     if (this.state.isVisible) {
-      return InstagramFeed({clientId: this.props.clientId, userId: this.props.userId});
+      return InstagramFeed({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
     } else {
       return React.DOM.span(null);
     }
   },
   toggleVisibleState: function() {
-    if (STATE_LOADED) {
+    if (InstagramFeed_Mixin.STATE_LOADED) {
       return this.setState({
         isVisible: !this.state.isVisible
       });
@@ -2584,13 +2545,16 @@ window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
   mixins: [InstagramFeed_Mixin],
   propTypes: {
     clientId: React.PropTypes.string.isRequired,
-    userId: React.PropTypes.number.isRequired
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
   },
   getInitialState: function() {
     return {
-      currentState: STATE_LOADING,
+      currentState: this.STATE_LOADING,
       isVisible: false,
-      photos: null
+      photos: null,
+      username: '',
+      hashtag: ''
     };
   },
   componentDidMount: function() {
@@ -2598,11 +2562,11 @@ window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
   },
   render: function() {
     switch (this.state.currentState) {
-      case STATE_LOADED:
+      case this.STATE_LOADED:
         return InstagramFeed_Carousel({photos:  this.state.photos});
-      case STATE_LOADING:
+      case this.STATE_LOADING:
         return InstagramFeed_Spinner(null);
-      case STATE_ERROR:
+      case this.STATE_ERROR:
         return InstagramFeed_Error(null);
       default:
         return console.warn('Неизвестное состояние #{@state.currentState}');
@@ -2674,6 +2638,184 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
 
 
 },{}],38:[function(require,module,exports){
+window.InstagramFeed_Mixin = {
+  STATE_LOADING: 'loading',
+  STATE_LOADED: 'loaded',
+  STATE_ERROR: 'error',
+  INSTAGRAM_API_URL: 'https://api.instagram.com/v1/',
+  _getRequestUrl: function() {
+    var url;
+    url = this.INSTAGRAM_API_URL + 'users/' + this.props.userId + '/media/recent/?client_id=' + this.props.clientId;
+    if (this.props.limit != null) {
+      url += '&count=' + this.props.limit;
+    }
+    return url;
+  },
+  _loadPhotos: function() {
+    return $.ajax({
+      dataType: "jsonp",
+      url: this._getRequestUrl(),
+      success: (function(_this) {
+        return function(photos) {
+          if (_this.isMounted() && (photos != null)) {
+            return _this.setState({
+              currentState: _this.STATE_LOADED,
+              photos: photos.data,
+              username: photos.data[0].user.full_name,
+              hashtag: '#' + photos.data[0].user.full_name
+            });
+          }
+        };
+      })(this),
+      error: (function(_this) {
+        return function(data) {
+          return _this._activateErrorState();
+        };
+      })(this)
+    });
+  },
+  _activateErrorState: function() {
+    if (this.isMounted()) {
+      return this.setState({
+        currentState: this.STATE_ERROR
+      });
+    }
+  }
+};
+
+
+
+},{}],39:[function(require,module,exports){
+
+/** @jsx React.DOM */
+window.InstagramFeed_Controllable_v2 = React.createClass({displayName: 'InstagramFeed_Controllable_v2',
+  propTypes: {
+    isVisible: React.PropTypes.bool.isRequired,
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getDefaultProps: function() {
+    return {
+      limit: 10
+    };
+  },
+  getInitialState: function() {
+    return {
+      isVisible: this.props.isVisible
+    };
+  },
+  componentDidMount: function() {
+    return $(document).on("instagram:clicked", this.toggleVisibleState);
+  },
+  componentWillUnmount: function() {
+    return $(document).off("instagram:clicked", this.toggleVisibleState);
+  },
+  render: function() {
+    if (this.state.isVisible) {
+      return InstagramFeed_v2({clientId: this.props.clientId, userId: this.props.userId, limit: this.props.limit});
+    } else {
+      return React.DOM.span(null);
+    }
+  },
+  toggleVisibleState: function() {
+    if (InstagramFeed_Mixin.STATE_LOADED) {
+      return this.setState({
+        isVisible: !this.state.isVisible
+      });
+    }
+  }
+});
+
+window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
+  mixins: [InstagramFeed_Mixin],
+  propTypes: {
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired,
+    limit: React.PropTypes.number
+  },
+  getInitialState: function() {
+    return {
+      currentState: this.STATE_LOADING,
+      isVisible: false,
+      photos: null,
+      username: '',
+      hashtag: ''
+    };
+  },
+  componentDidMount: function() {
+    return this._loadPhotos();
+  },
+  render: function() {
+    var result;
+    result = (function() {
+      switch (this.state.currentState) {
+        case this.STATE_LOADED:
+          return InstagramFeed_v2_Feed({photos:  this.state.photos, username:  this.state.username});
+        case this.STATE_LOADING:
+          return InstagramFeed_v2_Spinner(null);
+        case this.STATE_ERROR:
+          return InstagramFeed_v2_Error(null);
+        default:
+          return console.warn('Неизвестное состояние #{@state.currentState}');
+      }
+    }).call(this);
+    return React.DOM.div(null, 
+      React.DOM.h2({className: "b-item-list__title b-instafeed-v2__title"},  this.state.hashtag), 
+      result 
+    );
+  }
+});
+
+window.InstagramFeed_v2_Error = React.createClass({displayName: 'InstagramFeed_v2_Error',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed-v2 b-insafeed_error"}, 
+      "Ошибка при загрузке фотографий"
+    );
+  }
+});
+
+window.InstagramFeed_v2_Spinner = React.createClass({displayName: 'InstagramFeed_v2_Spinner',
+  render: function() {
+    return React.DOM.div({className: "b-instafeed-v2 b-instafeed-v2_loading"}, 
+      React.DOM.span({className: "b-instafeed-v2__loader"})
+    );
+  }
+});
+
+window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2_Feed',
+  propTypes: {
+    photos: React.PropTypes.array.isRequired,
+    username: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    var photos, that;
+    that = this;
+    photos = _.map(this.props.photos, function(photo) {
+      return InstagramFeed_v2_Photo({
+        photo: photo.images, 
+        username: that.props.username, 
+        key: photo.id});
+    });
+    return React.DOM.div({className: "b-instafeed-v2"}, photos);
+  }
+});
+
+window.InstagramFeed_v2_Photo = React.createClass({displayName: 'InstagramFeed_v2_Photo',
+  propTypes: {
+    photo: React.PropTypes.object.isRequired,
+    username: React.PropTypes.string.isRequired
+  },
+  render: function() {
+    return React.DOM.a({className: "b-instafeed-v2__photo", rel: "nofollow", target: "_blank", href:  'http://instagram.com/' + this.props.username}, 
+      React.DOM.img({src: this.props.photo.low_resolution.url})
+    );
+  }
+});
+
+
+
+},{}],40:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
@@ -2703,7 +2845,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],39:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 var KioskEvents;
 
 KioskEvents = new EventEmitter();
@@ -2718,7 +2860,7 @@ module.exports = KioskEvents;
 
 
 
-},{}],40:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 
 /** @jsx React.DOM */
 var FilteredCountTooltip, TooltipController,
@@ -2776,10 +2918,10 @@ module.exports = TooltipController;
 
 
 
-},{"../components/common/tooltip/filteredCount":15}],41:[function(require,module,exports){
+},{"../components/common/tooltip/filteredCount":15}],43:[function(require,module,exports){
 var BaseDispatcher,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 BaseDispatcher = (function(_super) {
   __extends(BaseDispatcher, _super);
@@ -2810,7 +2952,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],42:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -2819,10 +2961,10 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":41}],43:[function(require,module,exports){
+},{"./_base":43}],45:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 CHANGE_EVENT = 'change';
 
@@ -2853,7 +2995,7 @@ module.exports = BaseStore;
 
 
 
-},{}],44:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 var BaseStore, _cartItems;
 
 BaseStore = require('./_base');
@@ -2915,7 +3057,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":43}],45:[function(require,module,exports){
+},{"./_base":45}],47:[function(require,module,exports){
 var ApiRoutes;
 
 ApiRoutes = {
@@ -2928,7 +3070,7 @@ module.exports = ApiRoutes;
 
 
 
-},{}],46:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -2937,7 +3079,7 @@ window.Routes = {
 
 
 
-},{}],47:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 $(function() {
   var bPage, lenta, page, thisPage;
   if ('ontouchstart' in document) {
@@ -3032,7 +3174,7 @@ $(function() {
 
 
 
-},{}],48:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -3068,7 +3210,7 @@ $(function() {
 
 
 
-},{}],49:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -3105,7 +3247,7 @@ $(function() {
 
 
 
-},{}],50:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -3174,7 +3316,7 @@ $(function() {
 
 
 
-},{}],51:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -3194,7 +3336,7 @@ $(function() {
 
 
 
-},{}],52:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -3215,7 +3357,7 @@ $(function() {
 
 
 
-},{}],53:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -3259,7 +3401,7 @@ $(function() {
 
 
 
-},{}],54:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen, searchBlock;
   menuCopy = $('[ks-mob-nav]');
@@ -3282,7 +3424,7 @@ $(function() {
 
 
 
-},{}],55:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -3343,7 +3485,7 @@ $(function() {
 
 
 
-},{}],56:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.b-logo__img');
@@ -3358,7 +3500,7 @@ $(function() {
 
 
 
-},{}],57:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -3370,7 +3512,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":58}],58:[function(require,module,exports){
+},{"./lib/Dispatcher":60}],60:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -3622,7 +3764,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":59}],59:[function(require,module,exports){
+},{"./invariant":61}],61:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -3677,7 +3819,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-},{}],60:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 /**
  * StyleSheets written in javascript.
  *
@@ -3688,7 +3830,7 @@ module.exports = invariant;
 
 module.exports = require('./lib/index')
 
-},{"./lib/index":63}],61:[function(require,module,exports){
+},{"./lib/index":65}],63:[function(require,module,exports){
 'use strict'
 
 var plugins = require('./plugins')
@@ -3913,7 +4055,7 @@ function indent(level, str) {
     return indentStr + str
 }
 
-},{"./plugins":64}],62:[function(require,module,exports){
+},{"./plugins":66}],64:[function(require,module,exports){
 'use strict'
 
 var Rule = require('./Rule')
@@ -4178,7 +4320,7 @@ StyleSheet.prototype.createElement = function () {
     return element
 }
 
-},{"./Rule":61,"./plugins":64}],63:[function(require,module,exports){
+},{"./Rule":63,"./plugins":66}],65:[function(require,module,exports){
 'use strict'
 
 var StyleSheet = require('./StyleSheet')
@@ -4225,7 +4367,7 @@ exports.createRule = function (selector, style) {
  */
 exports.use = exports.plugins.use
 
-},{"./Rule":61,"./StyleSheet":62,"./plugins":64}],64:[function(require,module,exports){
+},{"./Rule":63,"./StyleSheet":64,"./plugins":66}],66:[function(require,module,exports){
 'use strict'
 
 /**

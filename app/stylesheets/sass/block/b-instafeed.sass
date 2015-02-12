@@ -19,3 +19,38 @@
     width: 40px
     background: url(#{$images-path}/loader.gif)
 
+.b-instafeed-v2
+  max-width: 1600px
+  margin: 0 auto
+  overflow: hidden
+  transition: height .2s ease
+  margin-left: -24px
+  @include grid-media-query(palm)
+    margin-left: 0
+  &__photo
+    display: inline-block
+    padding: 0 0 24px 24px
+    box-sizing: border-box
+    @extend %one-fifth
+    @extend %palm--one-half
+    @extend %lap--one-half
+    @extend %desk--one-fifth
+    @include grid-media-query(palm)
+      padding-left: 0
+      &:nth-child(n+7)
+        display: none
+    img
+      width: 100%
+  &__title
+    @include grid-media-query(palm)
+      font-size: 2rem
+  &_invisible
+    height: 0
+  &_error
+  &_loading
+    text-align: center
+  &__loader
+    display: inline-block
+    height: 40px
+    width: 40px
+    background: url(#{$images-path}/loader.gif)

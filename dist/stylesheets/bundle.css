@@ -5793,7 +5793,7 @@ html.mm-opened.mm-black .mm-page {
 .b-full-filter__slider {
   padding: 5px 0 0; }
   /* line 29, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-full-filter */
-  .b-full-filter__slider__value span {
+  .b-full-filter__slider__value span.slider-divider {
     color: #bebebe; }
   /* line 31, /Users/sergeylaptev/Desktop/brandymint/kiosk-public-static-v2/app/stylesheets/sass/block/b-full-filter */
   .b-full-filter__slider__embed {

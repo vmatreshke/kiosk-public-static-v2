@@ -13,12 +13,6 @@ require './shared/checkout'
 window.Routes    = require './routes/routes'
 window.ApiRoutes = require './routes/api'
 
-# /*=============================
-# =            React            =
-# =============================*/
-
-# /*==========  Components  ==========*/
-
 require './react/components/basket/button'
 require './react/components/basket/popup'
 require './react/components/product/add_to_basket_button'
@@ -38,12 +32,9 @@ require './react/actions/view/basket'
 require './react/stores/basket'
 window.Api = require './react/api/api'
 
-# /*==========  Controllers  ==========*/
 
 window.KioskEvents = require './react/controllers/events'
 TooltipController  = require './react/controllers/tooltip'
 new TooltipController()
 
-# /*-----  End of React  ------*/
-
-window.ReactUjs.initialize()
+ReactUjs.initialize()

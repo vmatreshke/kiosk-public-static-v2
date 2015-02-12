@@ -33,13 +33,15 @@ CatalogFilterList = React.createClass
                items={ items }
                key={ i } />`
         when 'range'
-          { title, paramName, units, from, to } = item
+          { title, paramName, units, valueFrom, valueTo, from, to } = item
 
           `<CatalogFilterList_Range
                title={ title }
                paramName={ paramName }
                filterName={ that.props.filterName }
                units={ units }
+               valueFrom={ valueFrom }
+               valueTo={ valueTo }
                from={ from }
                to={ to }
                key={ i } />`

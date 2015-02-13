@@ -2,7 +2,10 @@
   margin: 0 auto
   &__item
     display: block
+    a
+      display: block
     img
+      display: inline-block
       max-width: 100%
       vertical-align: top
 
@@ -31,7 +34,7 @@
     @include grid-media-query((palm, lap))
       padding-left: 0
       padding-right: 0
-    
+
     .owl-controls
       position: static
     .b-slider

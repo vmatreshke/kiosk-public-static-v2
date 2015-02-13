@@ -8,13 +8,14 @@ CatalogFilterMixin =
     ]
     options: [{
       title: 'Показывать'
-      type: 'checkbox'
+      type: 'radio'
       paramName: 'availability'
+      value: 'all'
       items: [
-        { name: 'Все', paramValue: 'all', checked: true }
-        { name: 'В наличии', paramValue: 'in-stock', checked: false }
-        { name: 'Под заказ', paramValue: 'on-request', checked: false }
-        { name: 'Распродажа', paramValue: 'sale', checked: true }
+        { name: 'Все', paramValue: 'all' }
+        { name: 'В наличии', paramValue: 'in-stock' }
+        { name: 'Под заказ', paramValue: 'on-request' }
+        { name: 'Распродажа', paramValue: 'sale' }
       ]
     }, {
       title: 'Ценовой диапазон'

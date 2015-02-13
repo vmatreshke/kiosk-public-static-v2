@@ -2,6 +2,7 @@
 
 CatalogFilterList_SelectedOptions = require './list/selectedOptions'
 CatalogFilterList_Checkbox        = require './list/checkbox'
+CatalogFilterList_Radio           = require './list/radio'
 CatalogFilterList_Range           = require './list/range'
 CatalogFilterList_Color           = require './list/color'
 { PropTypes } = React
@@ -28,6 +29,16 @@ CatalogFilterList = React.createClass
 
           `<CatalogFilterList_Checkbox
                title={ title }
+               paramName={ paramName }
+               filterName={ that.props.filterName }
+               items={ items }
+               key={ i } />`
+        when 'radio'
+          { title, value, paramName, items } = item
+
+          `<CatalogFilterList_Radio
+               title={ title }
+               value={ value }
                paramName={ paramName }
                filterName={ that.props.filterName }
                items={ items }

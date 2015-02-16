@@ -19,7 +19,7 @@ window.InstagramFeed_Mixin =
           @setState {
             currentState: @STATE_LOADED
             photos: photos.data
-            username: photos.data[0].user.full_name
+            profileUrl: 'http://instagram.com/' + photos.data[0].user.full_name
             hashtag: '#'+photos.data[0].user.full_name
           }
       error: (data) =>

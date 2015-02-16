@@ -646,7 +646,7 @@ CatalogFilterList_Checkbox = React.createClass({displayName: 'CatalogFilterList_
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -708,7 +708,7 @@ CatalogFilterList_Color = React.createClass({displayName: 'CatalogFilterList_Col
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
+    return this.props.filterName + "[" + this.props.paramName + "][" + item.paramValue + "]";
   },
   handleChange: function(e) {
     var elRect, filter, listRect, offsetLeft, position;
@@ -772,7 +772,7 @@ CatalogFilterList_Radio = React.createClass({displayName: 'CatalogFilterList_Rad
             );
   },
   getFieldName: function(item) {
-    return "" + this.props.filterName + "[" + this.props.paramName + "]";
+    return this.props.filterName + "[" + this.props.paramName + "]";
   },
   handleChange: function(e) {
     var elRect, filter, offsetLeft, position;
@@ -2102,7 +2102,7 @@ DesignSettings = React.createClass({displayName: 'DesignSettings',
         break;
       case 'fontSize':
         this.setStyles('.b-page', {
-          'font-size': "" + value + "px"
+          'font-size': value + "px"
         });
         break;
       case 'productsInRow':
@@ -2732,7 +2732,7 @@ window.InstagramFeed_Mixin = {
             return _this.setState({
               currentState: _this.STATE_LOADED,
               photos: photos.data,
-              username: photos.data[0].user.full_name,
+              profileUrl: 'http://instagram.com/' + photos.data[0].user.full_name,
               hashtag: '#' + photos.data[0].user.full_name
             });
           }
@@ -2810,7 +2810,7 @@ window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
       currentState: this.STATE_LOADING,
       isVisible: false,
       photos: null,
-      username: '',
+      profileUrl: '',
       hashtag: ''
     };
   },
@@ -2822,7 +2822,7 @@ window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
     result = (function() {
       switch (this.state.currentState) {
         case this.STATE_LOADED:
-          return InstagramFeed_v2_Feed({photos:  this.state.photos, username:  this.state.username});
+          return InstagramFeed_v2_Feed({photos:  this.state.photos, profileUrl:  this.state.profileUrl});
         case this.STATE_LOADING:
           return InstagramFeed_v2_Spinner(null);
         case this.STATE_ERROR:
@@ -2832,7 +2832,7 @@ window.InstagramFeed_v2 = React.createClass({displayName: 'InstagramFeed_v2',
       }
     }).call(this);
     return React.DOM.div(null, 
-      React.DOM.h2({className: "b-item-list__title b-instafeed-v2__title"},  this.state.hashtag), 
+      React.DOM.h2({className: "b-item-list__title b-instafeed-v2__title"}, React.DOM.a({href:  this.state.profileUrl, rel: "nofollow", target: "_blank"},  this.state.hashtag)), 
       result 
     );
   }
@@ -2857,7 +2857,7 @@ window.InstagramFeed_v2_Spinner = React.createClass({displayName: 'InstagramFeed
 window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2_Feed',
   propTypes: {
     photos: React.PropTypes.array.isRequired,
-    username: React.PropTypes.string.isRequired
+    profileUrl: React.PropTypes.string.isRequired
   },
   render: function() {
     var photos, that;
@@ -2865,7 +2865,7 @@ window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2
     photos = _.map(this.props.photos, function(photo) {
       return InstagramFeed_v2_Photo({
         photo: photo.images, 
-        username: that.props.username, 
+        profileUrl: that.props.profileUrl, 
         key: photo.id});
     });
     return React.DOM.div({className: "b-instafeed-v2"}, photos);
@@ -2875,10 +2875,10 @@ window.InstagramFeed_v2_Feed = React.createClass({displayName: 'InstagramFeed_v2
 window.InstagramFeed_v2_Photo = React.createClass({displayName: 'InstagramFeed_v2_Photo',
   propTypes: {
     photo: React.PropTypes.object.isRequired,
-    username: React.PropTypes.string.isRequired
+    profileUrl: React.PropTypes.string.isRequired
   },
   render: function() {
-    return React.DOM.a({className: "b-instafeed-v2__photo", rel: "nofollow", target: "_blank", href:  'http://instagram.com/' + this.props.username}, 
+    return React.DOM.a({className: "b-instafeed-v2__photo", rel: "nofollow", target: "_blank", href:  this.props.profileUrl}, 
       React.DOM.img({src: this.props.photo.low_resolution.url})
     );
   }
@@ -2991,8 +2991,8 @@ module.exports = TooltipController;
 
 },{"../components/common/tooltip/filteredCount":16}],44:[function(require,module,exports){
 var BaseDispatcher,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 BaseDispatcher = (function(_super) {
   __extends(BaseDispatcher, _super);
@@ -3034,8 +3034,8 @@ window.BasketDispatcher = new BaseDispatcher();
 
 },{"./_base":44}],46:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  __hasProp = {}.hasOwnProperty;
 
 CHANGE_EVENT = 'change';
 

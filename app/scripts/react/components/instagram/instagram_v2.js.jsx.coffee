@@ -39,7 +39,7 @@ window.InstagramFeed_v2 = React.createClass
     currentState: @STATE_LOADING
     isVisible: false
     photos: null
-    username: ''
+    profileUrl: ''
     hashtag: ''
 
   componentDidMount: ->
@@ -47,12 +47,12 @@ window.InstagramFeed_v2 = React.createClass
 
   render: ->
     result = switch @state.currentState
-      when @STATE_LOADED  then `<InstagramFeed_v2_Feed photos={ this.state.photos } username={ this.state.username } />`
+      when @STATE_LOADED  then `<InstagramFeed_v2_Feed photos={ this.state.photos } profileUrl={ this.state.profileUrl } />`
       when @STATE_LOADING then `<InstagramFeed_v2_Spinner/>`
       when @STATE_ERROR   then `<InstagramFeed_v2_Error/>`
       else console.warn 'Неизвестное состояние #{@state.currentState}'
     `<div>
-      <h2 className="b-item-list__title b-instafeed-v2__title">{ this.state.hashtag }</h2>
+      <h2 className="b-item-list__title b-instafeed-v2__title"><a href={ this.state.profileUrl } rel='nofollow' target='_blank'>{ this.state.hashtag }</a></h2>
       { result }
     </div>`
 
@@ -71,14 +71,14 @@ window.InstagramFeed_v2_Spinner = React.createClass
 window.InstagramFeed_v2_Feed = React.createClass
   propTypes:
     photos: React.PropTypes.array.isRequired
-    username: React.PropTypes.string.isRequired
+    profileUrl: React.PropTypes.string.isRequired
 
   render: ->
     that = @
     photos = _.map @props.photos, (photo) ->
       `<InstagramFeed_v2_Photo
         photo={photo.images}
-        username={that.props.username}
+        profileUrl={that.props.profileUrl}
         key={photo.id} />`
 
     return `<div className="b-instafeed-v2">{photos}</div>`
@@ -86,9 +86,9 @@ window.InstagramFeed_v2_Feed = React.createClass
 window.InstagramFeed_v2_Photo = React.createClass
   propTypes:
     photo: React.PropTypes.object.isRequired
-    username: React.PropTypes.string.isRequired
+    profileUrl: React.PropTypes.string.isRequired
 
   render: ->
-    `<a className='b-instafeed-v2__photo' rel='nofollow' target='_blank' href={ 'http://instagram.com/' + this.props.username }>
+    `<a className='b-instafeed-v2__photo' rel='nofollow' target='_blank' href={ this.props.profileUrl }>
       <img src={this.props.photo.low_resolution.url}/>
     </a>`

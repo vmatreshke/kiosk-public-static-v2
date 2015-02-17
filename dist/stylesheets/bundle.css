@@ -5010,14 +5010,20 @@ html.mm-opened.mm-black .mm-page {
   /* line 86, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__text {
     margin-bottom: 1em; }
-  /* line 90, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
+  /* line 89, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
+  .b-item-full__sold_out_text {
+    margin: 1em 0;
+    padding-left: 24px;
+    letter-spacing: normal;
+    word-spacing: normal; }
+  /* line 96, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
   .b-item-full .b-characteristics, .b-item-full__text {
     font-size: 1.143rem; }
-  /* line 93, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
+  /* line 99, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
   .b-item-full__form {
     margin-top: 10px;
     margin-bottom: 17px; }
-    /* line 99, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
+    /* line 105, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__option select {
       box-sizing: border-box;
       height: 43px;
@@ -5034,7 +5040,7 @@ html.mm-opened.mm-black .mm-page {
       -moz-appearance: none;
       -webkit-appearance: none;
       appearance: none; }
-    /* line 117, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
+    /* line 123, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-item-full */
     .b-item-full__form__submit .b-btn, .b-item-full__form__submit .b-paginator__item, .b-item-full__form__submit .pagination .next a, .pagination .next .b-item-full__form__submit a, .b-item-full__form__submit .pagination .prev a, .pagination .prev .b-item-full__form__submit a, .b-item-full__form__submit .pagination .first a, .pagination .first .b-item-full__form__submit a, .b-item-full__form__submit .pagination .last a, .pagination .last .b-item-full__form__submit a, .b-item-full__form__submit .pagination .page a, .pagination .page .b-item-full__form__submit a, .b-item-full__form__submit .b-design-option__save {
       display: block;
       width: 100%; }

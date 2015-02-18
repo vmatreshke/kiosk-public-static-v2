@@ -3247,13 +3247,14 @@ $(function() {
 
 },{}],51:[function(require,module,exports){
 $(function() {
-  var defaultCarouselOptions;
+  var defaultCarouselOptions, slider, sliderThumbs, sliderThumbsContainer;
   defaultCarouselOptions = {
     pagination: false,
     autoPlay: 5000,
     navigation: true
   };
-  return $('[application-slider]').each(function() {
+  slider = $('[application-slider]');
+  slider.each(function() {
     var options;
     options = _.clone(defaultCarouselOptions);
     if ($(this).hasClass('b-slider_promo')) {
@@ -3276,6 +3277,16 @@ $(function() {
       options['lazyLoad'] = true;
     }
     return $(this).owlCarousel(options);
+  });
+  sliderThumbsContainer = $('[slider-thumbs]');
+  sliderThumbs = sliderThumbsContainer.find('.b-slider-thumbs__item');
+  return sliderThumbsContainer.on('click', '.b-slider-thumbs__item', function(e) {
+    var number;
+    e.preventDefault();
+    sliderThumbs.removeClass('active');
+    $(this).addClass('active');
+    number = $(this).index();
+    return slider.trigger('owl.goTo', number);
   });
 });
 

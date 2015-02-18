@@ -6,7 +6,8 @@ $ ->
     autoPlay: 5000
     navigation: true
 
-  $('[application-slider]').each ->
+  slider = $('[application-slider]')
+  slider.each ->
     options = _.clone defaultCarouselOptions
 
     if $(@).hasClass 'b-slider_promo'
@@ -25,3 +26,12 @@ $ ->
       options['lazyLoad']     = true
 
     $(@).owlCarousel options
+
+  sliderThumbsContainer = $('[slider-thumbs]')
+  sliderThumbs = sliderThumbsContainer.find('.b-slider-thumbs__item')
+  sliderThumbsContainer.on 'click', '.b-slider-thumbs__item', (e)->
+    e.preventDefault()
+    sliderThumbs.removeClass('active')
+    $(this).addClass('active')
+    number = $(this).index()
+    slider.trigger('owl.goTo',number)

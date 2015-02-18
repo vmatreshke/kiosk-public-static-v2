@@ -603,7 +603,7 @@ td, th {
      * Sixths
      */
 /* line 401, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
-.b-cart__item__col-img, .b-cart__item__col-price, .b-page_theme-cc .b-header__logo, .b-feature-list > li {
+.b-cart__item__col-img, .b-cart__item__col-price, .b-page_theme-cc .b-header__logo, .b-slider-thumbs__item, .b-feature-list > li {
   width: 16.666%; }
 
 /* line 405, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
@@ -672,7 +672,7 @@ td, th {
   .b-cart__item__col-quantity {
     width: 33.333%; }
   /* line 384, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
-  .b-cart__item__col-img {
+  .b-cart__item__col-img, .b-slider-thumbs__item {
     width: 25%; }
   /* line 386, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
   .b-cart__item__col-content {
@@ -720,7 +720,10 @@ td, th {
     width: 33.333%; }
   /* line 378, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
   .b-cart__action__col-code {
-    width: 66.666%; } }
+    width: 66.666%; }
+  /* line 384, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/utilities/grid */
+  .b-slider-thumbs__item {
+    width: 25%; } }
 
 @media only screen and (max-width: 1023px) {
   /**
@@ -5292,6 +5295,29 @@ html.mm-opened.mm-black .mm-page {
     /* line 41, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-slider */
     .b-slider_promo .b-slider__item {
       text-align: center; }
+
+/* line 44, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-slider */
+.b-slider-thumbs {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  overflow: hidden; }
+  /* line 49, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-slider */
+  .b-slider-thumbs__item {
+    float: left;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    height: 69px;
+    cursor: pointer;
+    overflow: hidden; }
+    /* line 59, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-slider */
+    .b-slider-thumbs__item.active {
+      opacity: 0.8; }
+    /* line 61, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-slider */
+    .b-slider-thumbs__item img {
+      display: border-left;
+      max-width: 100%;
+      height: auto; }
 
 /* line 1, /home/heretge/code/merchantly/vendor/static/kiosk-public2/app/stylesheets/sass/block/b-characteristics */
 .b-characteristics {

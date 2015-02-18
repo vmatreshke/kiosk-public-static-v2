@@ -40,3 +40,25 @@
     .b-slider
       &__item
         text-align: center
+
+.b-slider-thumbs
+  display: block
+  width: 100%
+  margin-top: 10px
+  overflow: hidden
+  &__item
+    float: left
+    box-sizing: border-box
+    border-right: 1px solid #ccc
+    height: 69px
+    cursor: pointer
+    overflow: hidden
+    @extend %one-sixth
+    @extend %palm--one-quarter
+    @extend %lap--one-quarter
+    &.active
+      opacity: .8
+    img
+      display: border-left
+      max-width: 100%
+      height: auto
